@@ -136,10 +136,10 @@ https://ecoposolstvo.ru
 
 ## Скриншоты
 
-## Desktop версия:
+### Desktop версия:
 
 ![Скриншот сайта Экопосольство](screenshots/eco.png 'Экопосольство')
 
-## Mobile версия:
+### Mobile версия:
 
 ![Скриншот сайта мобильной версии Экопосольство](screenshots/eco-mobile.png 'Экопосольство')
