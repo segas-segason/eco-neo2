@@ -11,8 +11,11 @@ export function initAccordionFaq() {
 
         if (!content || !plus || !minus) return;
 
+        let isOpen = false;
+
         gsap.set(content, {
             height: 0,
+            opacity: 0,
             overflow: 'hidden',
         });
 
@@ -26,15 +29,14 @@ export function initAccordionFaq() {
             rotate: -90,
         });
 
-        let isOpen = false;
-
         item.addEventListener('click', () => {
             if (isOpen) {
                 gsap.to(content, {
                     height: 0,
-                    duration: 0.45,
+                    opacity: 0,
+                    duration: 0.4,
                     ease: 'power2.inOut',
-                    paddingTop: 0,
+                    marginTop: 0,
                 });
 
                 gsap.to(plus, {
@@ -51,12 +53,21 @@ export function initAccordionFaq() {
                     ease: 'power2.out',
                 });
             } else {
-                gsap.to(content, {
-                    height: 'auto',
-                    duration: 0.45,
-                    ease: 'power2.inOut',
-                    paddingTop: '24px',
-                });
+                gsap.fromTo(
+                    content,
+                    {
+                        height: 0,
+                        opacity: 0,
+                        marginTop: 0,
+                    },
+                    {
+                        height: 'auto',
+                        opacity: 1,
+                        duration: 0.4,
+                        ease: 'power2.inOut',
+                        marginTop: '24px',
+                    },
+                );
 
                 gsap.to(plus, {
                     autoAlpha: 0,
