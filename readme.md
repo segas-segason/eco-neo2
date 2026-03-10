@@ -69,19 +69,19 @@ production сборка проекта
 
 ### Установить зависимости:
 
-'npm install'
+    npm install
 
 ### Запуск dev-сервера:
 
-'npm run dev'
+    npm run dev
 
 ### Сборка production версии:
 
-'npm run build'
+    npm run build
 
 ### Предпросмотр сборки:
 
-'npm run preview'
+    npm run preview
 
 ## Интерактив
 
