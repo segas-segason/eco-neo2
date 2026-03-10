@@ -1,0 +1,168 @@
+@import 'tailwindcss';
+
+@theme {
+    --font-base: 'PT Sans', sans-serif;
+    --font-ui: 'Montserrat', sans-serif;
+
+    --text-base: 1.25rem;
+
+    --color-*: initial;
+    --color-primary: #8ab3ac;
+    --color-primary-transparent: rgba(102, 153, 153, 0.2);
+    --color-grey-light: #f2f2f2;
+    --color-grey-light-transparent: rgba(238, 238, 236, 0.5);
+    --color-grey: #666666;
+    --color-grey-dark: #474a51;
+    --color-green-light: #d6e5be;
+    --color-green: #a1c938;
+    --color-white: #ffffff;
+
+    --shadow: 0 4px 4px 0 rgba(102, 102, 102, 0.1);
+    --text-shadow: 0 4px 4px rgba(53, 14, 14, 0.1);
+
+    --radius-5xl: 2.5rem;
+    --radius-6xl: 4rem;
+}
+
+/* Секция Статистика */
+.stat-card {
+    @apply flex flex-col items-center gap-3 p-6;
+}
+
+.stat-card__indicator {
+    @apply text-primary flex flex-row items-end gap-1;
+}
+
+/* Секция Приемущества */
+.adventage-card {
+    @apply flex h-36 w-full flex-col justify-center gap-4 p-6 text-center;
+}
+
+/* Секция Пространство */
+.space-card {
+    @apply flex flex-col gap-4 lg:gap-7;
+}
+
+.space-card__number {
+    @apply font-ui text-grey-dark w-fit bg-white px-1 text-xl font-bold lg:text-2xl;
+}
+
+.space-card__title {
+    @apply font-ui text-xl font-bold uppercase sm:min-h-14 md:min-h-auto lg:text-3xl;
+}
+
+/* Секция Услуги */
+.service-card {
+    @apply h-52 rounded-4xl px-6 py-10 shadow lg:py-15 xl:h-80;
+}
+
+.service-card__title {
+    @apply font-ui text-shadow text-xl font-bold text-white lowercase xl:text-3xl;
+}
+
+/* Секция Почему мы? */
+.why-us__item--grey {
+    @apply rounded-t-5xl relative flex flex-col gap-3 px-6 py-14 md:px-14;
+}
+
+/* Секция Что включено? */
+.included-item {
+    @apply border-b-primary flex gap-2 border-b py-4;
+}
+
+.included-item__title {
+    @apply text-primary uppercase;
+}
+
+.included-item__icon--check {
+    @apply aspect-square w-6 shrink-0 bg-[url(./assets/icons/check.svg)] bg-no-repeat;
+}
+
+.add-service-item {
+    @apply border-b-grey-dark flex gap-2 border-b py-4;
+}
+
+.add-service-item__icon--plus {
+    @apply aspect-square w-6 shrink-0 bg-[url(./assets/icons/plus.svg)] bg-no-repeat;
+}
+
+/* Секция Вопросы и ответы */
+.faq-card {
+    @apply bg-grey-light border-primary grid h-fit w-full cursor-pointer grid-cols-[auto_1fr] grid-rows-[1fr] items-center gap-x-4 rounded-3xl border p-6 shadow;
+}
+
+.faq-card__icon {
+    @apply bg-primary relative flex h-8 w-8 items-center justify-center rounded-full shadow;
+}
+
+.faq-card__icon--plus {
+    @apply absolute block h-6 w-6 bg-white mask-[url(./assets/icons/plus.svg)] mask-contain mask-center mask-no-repeat;
+}
+
+.faq-card__icon--minus {
+    @apply absolute block h-6 w-6 bg-white mask-[url(./assets/icons/minus.svg)] mask-contain mask-center mask-no-repeat;
+}
+
+@font-face {
+    font-family: 'PT Sans';
+    src: url('./assets/fonts/PT-Sans/PTSans-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PT Sans';
+    src: url('./assets/fonts/PT-Sans/PTSans-Bold.ttf');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PT Sans';
+    src: url('./assets/fonts/PT-Sans/PTSans-Italic.ttf');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PT Sans';
+    src: url('./assets/fonts/PT-Sans/PTSans-BoldItalic.ttf');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('./assets/fonts/Montserrat/Montserrat-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('./assets/fonts/Montserrat/Montserrat-Bold.ttf');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('./assets/fonts/Montserrat/Montserrat-Italic.ttf');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('./assets/fonts/Montserrat/Montserrat-BlackItalic.ttf');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
