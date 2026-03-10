@@ -8,6 +8,93 @@
     </head>
 
     <body class="font-base text-grey-dark selection:bg-primary-transparent relative text-base">
+        <div class="fixed z-100 mx-auto hidden h-full w-full items-center justify-center">
+            <div class="bg-grey-dark text-white shadow">
+                <div
+                    class="after:to-#00000025 relative mb-1.5 h-full w-full bg-white bg-[conic-gradient(from_1.18deg_at_35.93%_62.78%,rgba(71,74,81,0.725923)_-69.06deg,#474A51_45.15deg,rgba(71,74,81,0.5)_290.9deg,rgba(71,74,81,0.725923)_290.94deg,#474A51_405.15deg)] after:absolute after:-bottom-1.5 after:h-1.5 after:w-full after:bg-linear-to-t after:from-white"
+                >
+                    <div class="mx-auto flex flex-row justify-between gap-40 px-40">
+                        <div class="relative flex items-end pb-45">
+                            <div
+                                class="absolute top-0 left-1/2 w-96 -translate-x-1/2 -translate-y-1/3 rounded-full p-9 shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] backdrop-blur-[3px]"
+                            >
+                                <img
+                                    class="aspect-square h-full w-full object-contain"
+                                    src="/src/assets/images/symbol-circle.png"
+                                    alt=""
+                                />
+                            </div>
+                            <div class="mt-auto">
+                                <h2 class="font-ui text-6xl font-medium -tracking-wider uppercase">
+                                    Оставить заявку
+                                </h2>
+                            </div>
+                        </div>
+                        <form action="" method="post" class="flex flex-col gap-6 py-20">
+                            <p class="flex flex-col">
+                                <label for="name" class="font-ui font-medium">Имя и фамилия</label>
+                                <input
+                                    class="border-b border-b-white p-4 text-[1rem] focus:outline-0"
+                                    type="text"
+                                    name="name"
+                                    id="name"
+                                    placeholder="Как к вам обращаться"
+                                    required
+                                />
+                            </p>
+                            <p class="flex flex-col">
+                                <label for="email" class="font-ui font-medium">E-mail</label>
+                                <input
+                                    class="border-b border-b-white p-4 text-[1rem] focus:outline-0"
+                                    type=""
+                                    name="email"
+                                    id="email"
+                                    placeholder="example@mail.ru"
+                                    required
+                                />
+                            </p>
+                            <p class="flex flex-col">
+                                <label for="phone" class="font-ui font-medium">Телефон</label>
+                                <input
+                                    class="border-b border-b-white p-4 text-[1rem] focus:outline-0"
+                                    type="tel"
+                                    name="phone"
+                                    id="phone"
+                                    placeholder="+7 (000) 000-00-00"
+                                    required
+                                />
+                            </p>
+                            <div class="flex flex-row items-baseline gap-2">
+                                <input
+                                    class="checked:after:mask-repeat-no relative flex h-4 w-4 shrink-0 appearance-none items-center justify-center rounded-sm border border-white after:block after:h-3 after:w-3 after:rounded-xs checked:after:bg-white checked:after:mask-[url(./assets/icons/check.svg)] checked:after:mask-contain"
+                                    type="checkbox"
+                                    id="privacy-policy"
+                                    name="privacy"
+                                    value="agreed"
+                                    required
+                                />
+                                <label class="block max-w-96 text-[1rem]" for="">
+                                    Нажимая на кнопку «Получить консультацию», вы соглашаетесь с
+                                    политикой в отношении обработки персональных данных и даете
+                                    <a
+                                        class="underline underline-offset-4 hover:decoration-transparent"
+                                        href="/"
+                                        >согласие на обработку персональных данных</a
+                                    >.
+                                </label>
+                            </div>
+                            <button
+                                type="submit"
+                                class="border-primary font-ui hover:bg-primary w-full cursor-pointer rounded-md border-4 py-3 font-bold uppercase"
+                            >
+                                Получить консультацию
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div
             class="pointer-events-none invisible fixed z-100 flex h-full w-full items-center justify-center"
             data-popup
@@ -61,7 +148,8 @@
                 >
                     <img
                         class="absolute top-0 left-0 z-54 w-[50%] -translate-x-[20%] translate-y-[5%] rotate-45 sm:translate-y-[0%] md:top-auto md:bottom-0 md:w-full md:translate-y-[20%]"
-                        src="/src/assets/images/open-balls.png"
+                        src="/src/assets/images/open-balls.webp"
+                        loading="eager"
                         alt="/"
                         data-popup-balls
                     />
@@ -157,7 +245,7 @@
         <div>
             <header class="rounded-b-6xl relative z-10 mb-6 lg:mb-15">
                 <div
-                    class="rounded-b-6xl after:rounded-b-6xl overflow-clip bg-white after:absolute after:-bottom-10 after:z-[-5] after:h-40 after:w-full after:bg-[url(./assets/images/bg-wall-white.jpg)] after:bg-cover after:bg-no-repeat lg:after:-bottom-15"
+                    class="rounded-b-6xl after:rounded-b-6xl overflow-clip bg-white after:absolute after:-bottom-10 after:z-[-5] after:h-40 after:w-full after:bg-[url(./assets/images/bg-wall-white.webp)] after:bg-cover after:bg-no-repeat lg:after:-bottom-15"
                 >
                     <div
                         class="before:from-primary relative hidden before:absolute before:top-0 before:right-0 before:z-0 before:aspect-square before:w-full before:rounded-full before:bg-radial before:to-white before:to-100% before:blur-3xl after:absolute after:top-0 after:right-0 after:z-1 after:aspect-square after:w-full after:-translate-y-[40%] after:bg-white after:mask-[url(./assets/images/circle.svg)] after:bg-cover after:bg-no-repeat after:opacity-70"
@@ -200,7 +288,8 @@
                             >
                                 <img
                                     class="pointer-events-none aspect-auto w-full"
-                                    src="/src/assets/images/home.png"
+                                    src="/src/assets/images/home.webp"
+                                    loading="eager"
                                     alt="Экопосольство"
                                 />
                             </div>
@@ -282,14 +371,17 @@
             </header>
 
             <div
-                class="after:rounded-b-6xl relative after:absolute after:-bottom-6 after:left-0 after:-z-2 after:h-40 after:w-full after:bg-[url(./assets/images/bg-wall-graphite.jpg)] after:bg-cover after:bg-no-repeat after:shadow lg:after:-bottom-15"
+                class="after:rounded-b-6xl relative after:absolute after:-bottom-6 after:left-0 after:-z-2 after:h-40 after:w-full after:bg-[url(./assets/images/bg-wall-graphite.webp)] after:bg-cover after:bg-no-repeat after:shadow lg:after:-bottom-15"
+                loading="lazy"
             >
                 <section
                     id="section-space"
-                    class="bg-grey-dark rounded-b-6xl after:rounded-b-6xl relative -mt-15 mb-6 overflow-clip text-white after:absolute after:-bottom-6 after:z-[-1] after:h-40 after:w-full after:bg-[url(./assets/images/bg-wall-graphite.jpg)] after:bg-cover after:bg-no-repeat lg:mb-15"
+                    class="bg-grey-dark rounded-b-6xl after:rounded-b-6xl relative -mt-15 mb-6 overflow-clip text-white after:absolute after:-bottom-6 after:z-[-1] after:h-40 after:w-full after:bg-[url(./assets/images/bg-wall-graphite.webp)] after:bg-cover after:bg-no-repeat lg:mb-15"
+                    loading="lazy"
                 >
                     <div
                         class="before:from-primary before:to-grey-light after:bg-primary relative overflow-hidden before:absolute before:top-1/2 before:left-1/2 before:aspect-square before:w-full before:-translate-y-1/2 before:rounded-full before:bg-radial-[at_0%_100%] before:opacity-30 before:blur-3xl after:absolute after:top-1/2 after:left-1/2 after:aspect-square after:w-full after:-translate-y-1/2 after:mask-[url(./assets/images/circle.svg)] after:bg-cover after:bg-no-repeat after:opacity-25"
+                        loading="lazy"
                     >
                         <div
                             class="before:from-primary before:to-grey-light rounded-b-6xl relative overflow-hidden before:absolute before:right-full before:bottom-0 before:aspect-square before:w-1/2 before:translate-1/2 before:rounded-full before:bg-radial-[at_0%_100%] before:opacity-30 before:blur-3xl"
@@ -387,7 +479,8 @@
             <section id="section-possibilities">
                 <div class="mx-auto grid gap-4 px-6 sm:grid-cols-2 lg:grid-cols-3 lg:px-20">
                     <article
-                        class="service-card before:rounded-b-5xl relative mb-6 shadow before:absolute before:-bottom-6 before:left-0 before:z-0 before:h-20 before:w-full before:bg-[url(./assets/images/bg-wall-primary.jpg)] before:bg-contain before:shadow"
+                        class="service-card before:rounded-b-5xl relative mb-6 shadow before:absolute before:-bottom-6 before:left-0 before:z-0 before:h-20 before:w-full before:bg-[url(./assets/images/bg-wall-primary.webp)] before:bg-contain before:shadow"
+                        loading="lazy"
                     >
                         <div
                             class="bg-primary rounded-5xl absolute inset-0 z-10 bg-linear-[206.73deg,#FFFFFF_-69.43%,#8AB3AC_83.22%] shadow"
@@ -407,6 +500,7 @@
                                 <img
                                     class="aspect-auto h-60 -rotate-15 opacity-50 2xl:h-65"
                                     src="/src/assets/images/cap.svg"
+                                    loading="lazy"
                                     alt="/"
                                 />
                             </div>
@@ -414,7 +508,8 @@
                     </article>
 
                     <article
-                        class="service-card before:rounded-b-5xl relative mb-6 shadow before:absolute before:-bottom-6 before:left-0 before:z-0 before:h-20 before:w-full before:bg-[url(./assets/images/bg-wall-primary.jpg)] before:bg-contain before:shadow"
+                        class="service-card before:rounded-b-5xl relative mb-6 shadow before:absolute before:-bottom-6 before:left-0 before:z-0 before:h-20 before:w-full before:bg-[url(./assets/images/bg-wall-primary.webp)] before:bg-contain before:shadow"
+                        loading="lazy"
                     >
                         <div
                             class="bg-primary rounded-5xl absolute inset-0 z-10 bg-linear-[149.11deg,#FFFFFF_-57.24%,#8AB3AC_81.32%] shadow"
@@ -434,6 +529,7 @@
                                 <img
                                     class="aspect-auto h-65 -rotate-15 opacity-50"
                                     src="/src/assets/images/glasses.svg"
+                                    loading="lazy"
                                     alt="/"
                                 />
                             </div>
@@ -441,7 +537,8 @@
                     </article>
 
                     <article
-                        class="service-card before:rounded-b-5xl relative mb-6 shadow before:absolute before:-bottom-6 before:left-0 before:z-0 before:h-20 before:w-full before:bg-[url(./assets/images/bg-wall-primary.jpg)] before:bg-contain before:shadow"
+                        class="service-card before:rounded-b-5xl relative mb-6 shadow before:absolute before:-bottom-6 before:left-0 before:z-0 before:h-20 before:w-full before:bg-[url(./assets/images/bg-wall-primary.webp)] before:bg-contain before:shadow"
+                        loading="lazy"
                     >
                         <div
                             class="bg-primary rounded-5xl absolute inset-0 z-10 bg-linear-[210.64deg,#FFFFFF_-46.41%,#8AB3AC_81.36%] shadow"
@@ -459,6 +556,7 @@
                                 <img
                                     class="aspect-auto h-60 -rotate-20 opacity-50"
                                     src="/src/assets/images/art.svg"
+                                    loading="lazy"
                                     alt="/"
                                 />
                             </div>
@@ -466,7 +564,8 @@
                     </article>
 
                     <article
-                        class="service-card before:rounded-b-5xl relative mb-6 shadow before:absolute before:-bottom-6 before:left-0 before:z-0 before:h-20 before:w-full before:bg-[url(./assets/images/bg-wall-primary.jpg)] before:bg-contain before:shadow"
+                        class="service-card before:rounded-b-5xl relative mb-6 shadow before:absolute before:-bottom-6 before:left-0 before:z-0 before:h-20 before:w-full before:bg-[url(./assets/images/bg-wall-primary.webp)] before:bg-contain before:shadow"
+                        loading="lazy"
                     >
                         <div
                             class="bg-primary rounded-5xl absolute inset-0 z-10 bg-linear-[332.91deg,#FFFFFF_-68.53%,#8AB3AC_83.08%] shadow"
@@ -485,6 +584,7 @@
                                 <img
                                     class="aspect-auto h-60 opacity-50 2xl:h-80"
                                     src="/src/assets/images/mic.svg"
+                                    loading="lazy"
                                     alt="/"
                                 />
                             </div>
@@ -492,7 +592,8 @@
                     </article>
 
                     <article
-                        class="service-card before:rounded-b-5xl relative mb-6 shadow before:absolute before:-bottom-6 before:left-0 before:z-0 before:h-20 before:w-full before:bg-[url(./assets/images/bg-wall-primary.jpg)] before:bg-contain before:shadow"
+                        class="service-card before:rounded-b-5xl relative mb-6 shadow before:absolute before:-bottom-6 before:left-0 before:z-0 before:h-20 before:w-full before:bg-[url(./assets/images/bg-wall-primary.webp)] before:bg-contain before:shadow"
+                        loading="lazy"
                     >
                         <div
                             class="bg-primary rounded-5xl absolute inset-0 z-10 bg-linear-[29.51deg,#FFFFFF_-71.23%,#8AB3AC_84.65%] shadow"
@@ -511,6 +612,7 @@
                                 <img
                                     class="aspect-auto h-55 -rotate-10 opacity-50"
                                     src="/src/assets/images/book.svg"
+                                    loading="lazy"
                                     alt="/"
                                 />
                             </div>
@@ -518,7 +620,8 @@
                     </article>
 
                     <article
-                        class="service-card before:rounded-b-5xl relative mb-6 shadow before:absolute before:-bottom-6 before:left-0 before:z-0 before:h-20 before:w-full before:bg-[url(./assets/images/bg-wall-primary.jpg)] before:bg-contain before:shadow"
+                        class="service-card before:rounded-b-5xl relative mb-6 shadow before:absolute before:-bottom-6 before:left-0 before:z-0 before:h-20 before:w-full before:bg-[url(./assets/images/bg-wall-primary.webp)] before:bg-contain before:shadow"
+                        loading="lazy"
                     >
                         <div
                             class="bg-primary rounded-5xl absolute inset-0 z-10 bg-linear-[330.73deg,#FFFFFF_-54.84%,#8AB3AC_82.04%] shadow"
@@ -538,6 +641,7 @@
                                 <img
                                     class="aspect-auto h-60 -rotate-20 opacity-50 2xl:h-65"
                                     src="/src/assets/images/balls.svg"
+                                    loading="lazy"
                                     alt="/"
                                 />
                             </div>
@@ -567,7 +671,8 @@
                         >
                             <img
                                 class="pointer-events-none w-full object-cover object-center sm:h-full xl:absolute xl:inset-0 xl:min-h-full"
-                                src="/src/assets/images/green-cat.jpg"
+                                src="/src/assets/images/green-cat.avif"
+                                loading="lazy"
                                 alt="Локация Зеленого кота"
                             />
                         </div>
@@ -600,7 +705,9 @@
                             </p>
                         </div>
 
-                        <div class="z-2 -mt-6 rounded-4xl bg-white pt-15 inset-shadow-sm xl:pt-10">
+                        <div
+                            class="relative z-2 -mt-6 rounded-4xl bg-white pt-15 inset-shadow-sm before:absolute before:top-0 before:h-15 before:w-full before:translate-y-1/2 before:bg-white xl:pt-10 xl:before:top-auto xl:before:h-10 xl:before:translate-0"
+                        >
                             <div
                                 class="bg-grey-light rounded-t-5xl relative flex flex-col gap-3 px-6 pt-20 pb-15 md:px-20 md:pt-10 md:pr-10 lg:gap-7"
                             >
@@ -627,7 +734,7 @@
                         </div>
 
                         <div
-                            class="relative z-4 -mt-6 rounded-4xl bg-white pt-15 inset-shadow-sm xl:pt-10"
+                            class="relative z-2 -mt-6 rounded-4xl bg-white pt-15 inset-shadow-sm before:absolute before:top-0 before:h-15 before:w-full before:translate-y-1/2 before:bg-white xl:pt-10 xl:before:top-auto xl:before:h-10 xl:before:translate-0"
                         >
                             <div
                                 class="bg-green-light rounded-5xl relative flex flex-col gap-3 px-6 py-10 pt-20 shadow md:px-20 md:pt-10 md:pr-10 lg:gap-7"
@@ -659,7 +766,8 @@
             </section>
 
             <div
-                class="bg-grey-light rounded-6xl after:rounded-b-6xl relative after:absolute after:-bottom-6 after:left-0 after:-z-2 after:h-40 after:w-full after:bg-[url(./assets/images/bg-wall-white.jpg)] after:bg-cover after:bg-no-repeat after:shadow lg:after:-bottom-15"
+                class="bg-grey-light rounded-6xl after:rounded-b-6xl relative after:absolute after:-bottom-6 after:left-0 after:-z-2 after:h-40 after:w-full after:bg-[url(./assets/images/bg-wall-white.webp)] after:bg-cover after:bg-no-repeat after:shadow lg:after:-bottom-15"
+                loading="lazy"
             >
                 <div
                     class="before:bg-grey-dark rounded-6xl relative overflow-clip before:absolute before:right-0 before:bottom-0 before:z-10 before:aspect-407/435 before:w-80 before:rotate-180 before:mask-[url(./assets/images/dotted.svg)] before:opacity-40"
@@ -673,10 +781,11 @@
                             </h2>
 
                             <div class="flex flex-col gap-6">
-                                <ul class="grid grid-flow-col overflow-x-auto">
+                                <ul class="grid grid-flow-col overflow-x-auto" data-layout-tabs>
                                     <li>
                                         <button
                                             class="border-primary flex w-full cursor-pointer flex-col items-start border-b-4 px-4 py-3 whitespace-nowrap"
+                                            data-layout-tab
                                         >
                                             <span
                                                 class="font-ui text-xl font-bold uppercase xl:text-3xl"
@@ -697,6 +806,7 @@
                                     <li>
                                         <button
                                             class="border-primary-transparent flex w-full cursor-pointer flex-col items-start border-b px-4 py-3 whitespace-nowrap"
+                                            data-layout-tab
                                         >
                                             <span
                                                 class="font-ui text-xl font-bold uppercase xl:text-3xl"
@@ -717,6 +827,7 @@
                                     <li>
                                         <button
                                             class="border-primary-transparent flex w-full cursor-pointer flex-col items-start border-b px-4 py-3 whitespace-nowrap"
+                                            data-layout-tab
                                         >
                                             <span
                                                 class="font-ui text-xl font-bold uppercase xl:text-3xl"
@@ -737,6 +848,7 @@
                                     <li>
                                         <button
                                             class="border-primary-transparent flex w-full cursor-pointer flex-col items-start border-b px-4 py-3 whitespace-nowrap"
+                                            data-layout-tab
                                         >
                                             <span
                                                 class="font-ui text-xl font-bold uppercase xl:text-3xl"
@@ -757,6 +869,7 @@
                                     <li>
                                         <button
                                             class="border-primary-transparent flex w-full cursor-pointer flex-col items-start border-b px-4 py-3 whitespace-nowrap"
+                                            data-layout-tab
                                         >
                                             <span
                                                 class="font-ui text-xl font-bold uppercase xl:text-3xl"
@@ -778,7 +891,7 @@
                                 <!-- <div class="mx-auto aspect-auto w-full max-w-[80%]">
                                     <img
                                         class="pointer-events-none"
-                                        src="/src/assets/images/hall-layout.png"
+                                        src="/src/assets/images/hall-layout.webp"
                                         alt="Схема зала"
                                     />
                                 </div> -->
@@ -804,7 +917,8 @@
                                     >
                                         <img
                                             class="pointer-events-none w-full object-cover object-center sm:h-full xl:absolute xl:inset-0 xl:min-h-full"
-                                            src="/src/assets/images/entrance-eco.jpg"
+                                            src="/src/assets/images/entrance-eco.avif"
+                                            loading="lazy"
                                             alt="Локация Зеленого кота"
                                         />
                                     </div>
@@ -890,7 +1004,8 @@
             </div>
 
             <div
-                class="after:rounded-b-6xl relative -z-5 -mt-32 mb-6 after:absolute after:-bottom-6 after:left-0 after:-z-3 after:h-40 after:w-full after:bg-[url(./assets/images/bg-wall-primary.jpg)] after:bg-cover after:bg-no-repeat after:shadow lg:-mt-25 lg:mb-15 lg:after:-bottom-15"
+                class="after:rounded-b-6xl relative -z-5 -mt-32 mb-6 after:absolute after:-bottom-6 after:left-0 after:-z-3 after:h-40 after:w-full after:bg-[url(./assets/images/bg-wall-primary.webp)] after:bg-cover after:bg-no-repeat after:shadow lg:-mt-25 lg:mb-15 lg:after:-bottom-15"
+                loading="lazy"
             >
                 <section
                     id="section-stock"
@@ -1138,97 +1253,6 @@
                 </div>
             </div>
         </footer>
-
-        <dialog
-            aria-labelledby="dialog-callback"
-            class="bg-grey-dark container mx-auto hidden text-white shadow"
-            open
-        >
-            <div
-                class="after:to-#00000025 relative mb-1.5 h-full w-full bg-white bg-[conic-gradient(from_1.18deg_at_35.93%_62.78%,rgba(71,74,81,0.725923)_-69.06deg,#474A51_45.15deg,rgba(71,74,81,0.5)_290.9deg,rgba(71,74,81,0.725923)_290.94deg,#474A51_405.15deg)] after:absolute after:-bottom-1.5 after:h-1.5 after:w-full after:bg-linear-to-t after:from-white"
-            >
-                <div class="mx-auto flex flex-row justify-between px-40">
-                    <div class="relative flex items-end pb-45">
-                        <div
-                            class="absolute top-0 left-1/2 w-96 -translate-x-1/2 -translate-y-1/3 rounded-full p-9 shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] backdrop-blur-[3px]"
-                        >
-                            <img
-                                class="aspect-square h-full w-full object-contain"
-                                src="/src/assets/images/symbol-circle.png"
-                                alt=""
-                            />
-                        </div>
-
-                        <div class="mt-auto">
-                            <h2 class="font-ui text-6xl font-medium -tracking-wider uppercase">
-                                Оставить заявку
-                            </h2>
-                        </div>
-                    </div>
-
-                    <form action="" method="post" class="flex flex-col gap-6 py-20">
-                        <p class="flex flex-col">
-                            <label for="name" class="font-ui font-medium">Имя и фамилия</label>
-                            <input
-                                class="border-b border-b-white p-4 text-[1rem] focus:outline-0"
-                                type="text"
-                                name="name"
-                                id="name"
-                                placeholder="Как к вам обращаться"
-                                required
-                            />
-                        </p>
-                        <p class="flex flex-col">
-                            <label for="email" class="font-ui font-medium">E-mail</label>
-                            <input
-                                class="border-b border-b-white p-4 text-[1rem] focus:outline-0"
-                                type=""
-                                name="email"
-                                id="email"
-                                placeholder="example@mail.ru"
-                                required
-                            />
-                        </p>
-                        <p class="flex flex-col">
-                            <label for="phone" class="font-ui font-medium">Телефон</label>
-                            <input
-                                class="border-b border-b-white p-4 text-[1rem] focus:outline-0"
-                                type="tel"
-                                name="phone"
-                                id="phone"
-                                placeholder="+7 (000) 000-00-00"
-                                required
-                            />
-                        </p>
-                        <div class="flex flex-row items-baseline gap-2">
-                            <input
-                                class="checked:after:mask-repeat-no relative flex h-4 w-4 shrink-0 appearance-none items-center justify-center rounded-sm border border-white after:block after:h-3 after:w-3 after:rounded-xs checked:after:bg-white checked:after:mask-[url(./assets/icons/check.svg)] checked:after:mask-contain"
-                                type="checkbox"
-                                id="privacy-policy"
-                                name="privacy"
-                                value="agreed"
-                                required
-                            />
-                            <label class="block max-w-96 text-[1rem]" for="">
-                                Нажимая на кнопку «Получить консультацию», вы соглашаетесь с
-                                политикой в отношении обработки персональных данных и даете
-                                <a
-                                    class="underline underline-offset-4 hover:decoration-transparent"
-                                    href="/"
-                                    >согласие на обработку персональных данных</a
-                                >.
-                            </label>
-                        </div>
-                        <button
-                            type="submit"
-                            class="border-primary font-ui hover:bg-primary w-full cursor-pointer rounded-md border-4 py-3 font-bold uppercase"
-                        >
-                            Получить консультацию
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </dialog>
 
         <script type="module" src="/src/scripts/main.js"></script>
 
