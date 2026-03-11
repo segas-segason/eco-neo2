@@ -88,7 +88,7 @@
 
 /* Секция Вопросы и ответы */
 .faq-card {
-    @apply bg-grey-light border-primary grid h-fit w-full cursor-pointer grid-cols-[auto_1fr] grid-rows-[1fr] items-center gap-x-4 rounded-3xl border p-6 shadow;
+    @apply bg-grey-light border-primary grid w-full cursor-pointer grid-cols-[auto_1fr] grid-rows-[1fr] items-center gap-x-4 rounded-3xl border p-6 shadow;
 }
 
 .faq-card__icon {
