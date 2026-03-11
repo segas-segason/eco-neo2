@@ -1,50 +1,90 @@
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { closeMobileMenu, isMobileMenuOpen } from './mobileMenu';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export function initBackdropMenu() {
-    const menu = document.querySelector('[data-menu-backdrop]');
-    if (!menu) return;
+    const menuShell = document.querySelector('[data-menu-shell]');
+    const menuBackdrop = document.querySelector('[data-menu-backdrop]');
 
-    let lastDirection = 0;
+    if (!menuShell || !menuBackdrop) return;
+
+    let isHidden = false;
+    let isProcessing = false;
+
+    const hideShell = () => {
+        if (isHidden) return;
+
+        isHidden = true;
+
+        gsap.to(menuShell, {
+            y: -menuShell.offsetHeight - 24,
+            duration: 0.35,
+            ease: 'power2.inOut',
+            overwrite: 'auto',
+            onStart: () => {
+                menuShell.style.pointerEvents = 'none';
+            },
+        });
+    };
+
+    const showShell = () => {
+        if (!isHidden) return;
+
+        isHidden = false;
+
+        gsap.to(menuShell, {
+            y: 0,
+            duration: 0.35,
+            ease: 'power2.inOut',
+            overwrite: 'auto',
+            onStart: () => {
+                menuShell.style.pointerEvents = 'auto';
+            },
+        });
+    };
+
+    const handleHideOnScrollDown = async () => {
+        if (isProcessing || isHidden) return;
+        isProcessing = true;
+
+        if (isMobileMenuOpen()) {
+            await closeMobileMenu();
+        }
+
+        hideShell();
+        isProcessing = false;
+    };
 
     ScrollTrigger.create({
         start: 0,
         end: 'max',
         onUpdate: (self) => {
+            const scrollY = self.scroll();
             const direction = self.direction;
 
-            if (direction !== lastDirection) {
-                lastDirection = direction;
+            if (scrollY <= 80) {
+                showShell();
+                return;
+            }
 
-                if (direction === 1) {
-                    // скролл вниз
-                    gsap.to(menu, {
-                        yPercent: -140,
-                        duration: 0.35,
-                        ease: 'power2.in',
-                    });
-                } else {
-                    // скролл вверх
-                    gsap.to(menu, {
-                        yPercent: 0,
-                        duration: 0.35,
-                        ease: 'power2.out',
-                    });
-                }
+            if (direction === 1) {
+                handleHideOnScrollDown();
+            } else if (direction === -1) {
+                showShell();
             }
         },
     });
 
-    gsap.to(menu, {
+    gsap.to(menuBackdrop, {
         backdropFilter: 'blur(10px)',
         backgroundColor: 'rgba(138,179,172,0.8)',
         ease: 'power1.inOut',
         scrollTrigger: {
             trigger: document.body,
-            start: 'top',
-            end: '300',
+            start: 'top top',
+            end: '+=300',
             scrub: true,
         },
     });

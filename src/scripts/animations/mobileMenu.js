@@ -1,6 +1,20 @@
 import { gsap } from 'gsap';
 
 let isInited = false;
+let externalCloseMenu = null;
+let externalIsOpen = () => false;
+
+export function isMobileMenuOpen() {
+    return externalIsOpen();
+}
+
+export function closeMobileMenu() {
+    if (typeof externalCloseMenu === 'function') {
+        return externalCloseMenu();
+    }
+
+    return Promise.resolve();
+}
 
 export function initMobileMenu() {
     if (isInited) return;
@@ -9,7 +23,6 @@ export function initMobileMenu() {
     const button = document.querySelector('[data-button]');
     const burger = document.querySelector('[data-burger]');
     const close = document.querySelector('[data-close]');
-
     const nav = document.querySelector('[data-mobile-nav]');
     const links = Array.from(document.querySelectorAll('[data-mobile-links] li'));
 
@@ -34,6 +47,7 @@ export function initMobileMenu() {
         gsap.set(burger, {
             rotate: 0,
             scale: 1,
+            opacity: 1,
         });
 
         gsap.set(close, {
@@ -90,7 +104,7 @@ export function initMobileMenu() {
             );
 
         const openMenu = () => {
-            if (menuTl.isActive() || iconTl.isActive()) return;
+            if (isOpen || menuTl.isActive() || iconTl.isActive()) return;
 
             isOpen = true;
             button.setAttribute('aria-expanded', 'true');
@@ -99,13 +113,38 @@ export function initMobileMenu() {
         };
 
         const closeMenu = () => {
-            if (menuTl.isActive() || iconTl.isActive()) return;
+            return new Promise((resolve) => {
+                if (!isOpen) {
+                    resolve();
+                    return;
+                }
 
-            isOpen = false;
-            button.setAttribute('aria-expanded', 'false');
-            menuTl.reverse();
-            iconTl.reverse();
+                isOpen = false;
+                button.setAttribute('aria-expanded', 'false');
+
+                let doneCount = 0;
+                const done = () => {
+                    doneCount += 1;
+                    if (doneCount === 2) resolve();
+                };
+
+                menuTl.eventCallback('onReverseComplete', () => {
+                    menuTl.eventCallback('onReverseComplete', null);
+                    done();
+                });
+
+                iconTl.eventCallback('onReverseComplete', () => {
+                    iconTl.eventCallback('onReverseComplete', null);
+                    done();
+                });
+
+                menuTl.reverse();
+                iconTl.reverse();
+            });
         };
+
+        externalCloseMenu = closeMenu;
+        externalIsOpen = () => isOpen;
 
         const onButtonClick = () => {
             isOpen ? closeMenu() : openMenu();
@@ -120,8 +159,12 @@ export function initMobileMenu() {
         links.forEach((link) => link.addEventListener('click', onLinkClick));
 
         return () => {
+            externalCloseMenu = null;
+            externalIsOpen = () => false;
+
             button.removeEventListener('click', onButtonClick);
             links.forEach((link) => link.removeEventListener('click', onLinkClick));
+
             menuTl.kill();
             iconTl.kill();
         };
