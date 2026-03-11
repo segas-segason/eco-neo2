@@ -296,33 +296,52 @@
 
                             <div
                                 class="bg-grey-light rounded-6xl relative z-1 grid px-6 py-20 lowercase sm:grid-cols-2 sm:gap-y-12 lg:py-25 xl:grid-cols-4"
+                                data-stats
                             >
                                 <div class="stat-card">
-                                    <div class="stat-card__indicator">
+                                    <div class="stat-card__indicator gap-1">
                                         <span class="text-2xl">До</span>
-                                        <span class="text-5xl font-bold lg:text-7xl">400</span>
+                                        <span
+                                            class="text-5xl font-bold lg:text-7xl"
+                                            data-counter="400"
+                                            >0</span
+                                        >
                                         <div class="text-2xl">Гостей</div>
                                     </div>
                                     <p class="text-center text-xl">Общая вместимость площадки</p>
                                 </div>
 
                                 <div class="stat-card">
-                                    <div class="stat-card__indicator">
-                                        <span class="text-5xl font-bold lg:text-7xl">420 м²</span>
+                                    <div class="stat-card__indicator gap-4">
+                                        <span
+                                            class="text-5xl font-bold lg:text-7xl"
+                                            data-counter="420"
+                                            >0</span
+                                        >
+                                        <span class="text-5xl font-bold lg:text-7xl">м²</span>
                                     </div>
                                     <p class="text-center text-xl">Основной зал со сценой</p>
                                 </div>
 
                                 <div class="stat-card">
-                                    <div class="stat-card__indicator">
-                                        <span class="text-5xl font-bold lg:text-7xl">180 м²</span>
+                                    <div class="stat-card__indicator gap-4">
+                                        <span
+                                            class="text-5xl font-bold lg:text-7xl"
+                                            data-counter="180"
+                                            >0</span
+                                        >
+                                        <span class="text-5xl font-bold lg:text-7xl">м²</span>
                                     </div>
                                     <p class="text-center text-xl">Просторная зона приветствия</p>
                                 </div>
 
                                 <div class="stat-card">
-                                    <div class="stat-card__indicator">
-                                        <span class="text-5xl font-bold lg:text-7xl">35</span>
+                                    <div class="stat-card__indicator gap-1">
+                                        <span
+                                            class="text-5xl font-bold lg:text-7xl"
+                                            data-counter="35"
+                                            >0</span
+                                        >
                                         <div class="text-2xl">Минут</div>
                                     </div>
                                     <p class="text-center text-xl normal-case">
@@ -332,7 +351,7 @@
                             </div>
 
                             <div
-                                class="relative z-0 grid items-center px-6 py-20 text-white lowercase sm:grid-cols-2 lg:py-25 xl:grid-cols-4"
+                                class="z-0 grid items-center px-6 py-20 text-white lowercase sm:grid-cols-2 lg:py-25 xl:grid-cols-4"
                             >
                                 <div
                                     class="border-b-grey-light-transparent sm:border-r-grey-light-transparent adventage-card border-b sm:border-r xl:border-b-0"
@@ -371,7 +390,7 @@
             </header>
 
             <div
-                class="after:rounded-b-6xl relative after:absolute after:-bottom-6 after:left-0 after:-z-2 after:h-40 after:w-full after:bg-[url(./assets/images/bg-wall-graphite.webp)] after:bg-cover after:bg-no-repeat after:shadow lg:after:-bottom-15"
+                class="after:rounded-b-6xl sticky top-0 after:absolute after:-bottom-6 after:left-0 after:-z-2 after:h-40 after:w-full after:bg-[url(./assets/images/bg-wall-graphite.webp)] after:bg-cover after:bg-no-repeat after:shadow lg:after:-bottom-15"
                 loading="lazy"
             >
                 <section
@@ -387,7 +406,7 @@
                             class="before:from-primary before:to-grey-light rounded-b-6xl relative overflow-hidden before:absolute before:right-full before:bottom-0 before:aspect-square before:w-1/2 before:translate-1/2 before:rounded-full before:bg-radial-[at_0%_100%] before:opacity-30 before:blur-3xl"
                         >
                             <div
-                                class="relative z-1 mx-auto flex flex-col gap-15 px-6 py-25 pt-35 lg:gap-25 lg:p-20 lg:pt-37.5 lg:pb-25"
+                                class="z-1 mx-auto flex flex-col gap-15 px-6 py-25 pt-35 lg:gap-25 lg:p-20 lg:pt-37.5 lg:pb-25"
                             >
                                 <h2
                                     class="text-primary font-ui text-3xl font-bold uppercase sm:text-5xl lg:text-6xl"
@@ -1017,9 +1036,9 @@
                         >
                             Специальные предложения
                         </h2>
-                        <div class="bg-grey-light rounded-5xl shadow">
+                        <div class="rounded-5xl bg-grey-light overflow-clip">
                             <div
-                                class="bg-grey-light rounded-5xl flex flex-col gap-4 px-6 py-10 shadow lg:gap-7 lg:px-20 lg:py-15"
+                                class="bg-grey-light rounded-5xl relative z-2 flex flex-col gap-4 px-6 py-10 shadow lg:gap-7 lg:px-20 lg:py-15"
                             >
                                 <span
                                     class="font-ui bg-primary text-grey-light w-fit px-2 text-xl font-bold xl:text-2xl"
@@ -1040,7 +1059,9 @@
                                 </p>
                             </div>
 
-                            <div class="flex flex-col gap-4 px-6 py-10 lg:gap-7 lg:px-20 lg:py-15">
+                            <div
+                                class="bg-grey-light bottom-0 flex flex-col gap-4 px-6 py-10 lg:gap-7 lg:px-20 lg:py-15"
+                            >
                                 <span
                                     class="font-ui bg-primary text-grey-light w-fit px-2 text-xl font-bold xl:text-2xl"
                                     >02</span

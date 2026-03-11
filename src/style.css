@@ -30,7 +30,7 @@
 }
 
 .stat-card__indicator {
-    @apply text-primary flex flex-row items-end gap-1;
+    @apply text-primary flex flex-row items-end;
 }
 
 /* Секция Приемущества */
