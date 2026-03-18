@@ -1,187 +1,226 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @theme {
-    --font-base: 'PT Sans', sans-serif;
-    --font-ui: 'Montserrat', sans-serif;
-    --font-brand: 'Arial', sans-serif;
+   --font-base: "PT Sans", sans-serif;
+   --font-ui: "Montserrat", sans-serif;
+   --font-brand: "Arial", sans-serif;
 
-    --text-base: 1.25rem;
+   --text-base: 1.25rem;
 
-    --color-*: initial;
-    --color-primary: #8ab3ac;
-    --color-primary-transparent: rgba(102, 153, 153, 0.2);
-    --color-grey-light: #f2f2f2;
-    --color-grey-light-transparent: rgba(238, 238, 236, 0.5);
-    --color-grey: #666666;
-    --color-grey-dark: #474a51;
-    --color-green-light: #e2ecd2;
-    --color-green: #a1c938;
-    --color-white: #ffffff;
+   --color-*: initial;
+   --color-primary: #8ab3ac;
+   --color-primary-transparent: rgba(102, 153, 153, 0.2);
+   --color-grey-light: #f2f2f2;
+   --color-grey-light-transparent: rgba(238, 238, 236, 0.5);
+   --color-grey: #666666;
+   --color-grey-dark: #474a51;
+   --color-green-light: #e2ecd2;
+   --color-green: #a1c938;
+   --color-white: #ffffff;
 
-    --shadow: 0 4px 4px 0 rgba(102, 102, 102, 0.1);
-    --text-shadow: 0 4px 4px rgba(102, 102, 102, 0.1);
+   --shadow: 0 4px 4px 0 rgba(102, 102, 102, 0.1);
+   --text-shadow: 0 4px 4px rgba(102, 102, 102, 0.1);
 
-    --radius-5xl: 2.5rem;
-    --radius-6xl: 4rem;
+   --radius-5xl: 2.5rem;
+   --radius-6xl: 4rem;
 
-    --breakpoint-3xl: 120rem;
-    --breakpoint-4xl: 150rem;
+   --breakpoint-3xl: 120rem;
+   --breakpoint-4xl: 150rem;
 }
 
-/* Секция Hero */
+@font-face {
+   font-family: "PT Sans";
+   src: url("./assets/fonts/PT-Sans/PTSans-Regular.ttf");
+   font-weight: 400;
+   font-style: normal;
+   font-display: swap;
+}
+
+@font-face {
+   font-family: "PT Sans";
+   src: url("./assets/fonts/PT-Sans/PTSans-Bold.ttf");
+   font-weight: 700;
+   font-style: normal;
+   font-display: swap;
+}
+
+@font-face {
+   font-family: "PT Sans";
+   src: url("./assets/fonts/PT-Sans/PTSans-Italic.ttf");
+   font-weight: 400;
+   font-style: italic;
+   font-display: swap;
+}
+
+@font-face {
+   font-family: "PT Sans";
+   src: url("./assets/fonts/PT-Sans/PTSans-BoldItalic.ttf");
+   font-weight: 700;
+   font-style: italic;
+   font-display: swap;
+}
+
+@font-face {
+   font-family: "Montserrat";
+   src: url("./assets/fonts/Montserrat/Montserrat-Regular.ttf");
+   font-weight: 400;
+   font-style: normal;
+   font-display: swap;
+}
+
+@font-face {
+   font-family: "Montserrat";
+   src: url("./assets/fonts/Montserrat/Montserrat-Bold.ttf");
+   font-weight: 700;
+   font-style: normal;
+   font-display: swap;
+}
+
+@font-face {
+   font-family: "Montserrat";
+   src: url("./assets/fonts/Montserrat/Montserrat-Italic.ttf");
+   font-weight: 400;
+   font-style: italic;
+   font-display: swap;
+}
+
+@font-face {
+   font-family: "Montserrat";
+   src: url("./assets/fonts/Montserrat/Montserrat-BlackItalic.ttf");
+   font-weight: 900;
+   font-style: italic;
+   font-display: swap;
+}
+
+/* Верхнее меню */
+.nav-list__item {
+   @apply border-b-grey-light-transparent border-b xl:border-0;
+}
+
+.nav-list__link {
+   @apply block px-4 py-4 hover:underline hover:underline-offset-6;
+}
 
 /* Секция Статистика */
 .stat-card {
-    @apply flex flex-col items-center gap-3 p-6;
+   @apply flex flex-col items-center gap-3 p-6;
 }
 
 .stat-card__indicator {
-    @apply text-primary flex flex-row items-end;
+   @apply text-primary text-shadow flex flex-row items-end;
+}
+
+.stat-card__counter {
+   @apply text-5xl font-bold 2xl:text-[6.25rem];
+}
+
+.stat-card__append {
+   @apply text-[1.75rem] 2xl:leading-normal;
+}
+
+.stat-card__unit {
+   @apply text-5xl font-bold 2xl:text-[6.25rem];
+}
+
+.stat-card__desc {
+   @apply text-center text-2xl;
 }
 
 /* Секция Приемущества */
 .adventage-card {
-    @apply flex h-36 w-full flex-col justify-center gap-4 p-6 text-center;
+   @apply flex h-36 w-full flex-col justify-center gap-4 p-6 text-center;
+}
+
+.adventage-title {
+   @apply font-ui text-xl leading-[1.3] font-bold 2xl:text-[1.75rem];
+}
+
+.adventage-desc {
+   @apply 2xl:text-2xl;
 }
 
 /* Секция Пространство */
 .space-card {
-    @apply flex flex-col gap-4 lg:gap-7;
+   @apply flex flex-col gap-4 lg:gap-7;
 }
 
 .space-card__number {
-    @apply font-ui text-grey-dark w-fit bg-white px-1 text-xl font-bold lg:text-2xl;
+   @apply font-ui text-grey-dark w-fit bg-white px-1 text-xl font-bold lg:text-2xl;
 }
 
 .space-card__title {
-    @apply font-ui text-xl font-bold tracking-[1px] uppercase sm:min-h-14 md:min-h-auto lg:text-3xl;
+   @apply font-ui text-xl font-bold tracking-[1px] uppercase sm:min-h-14 md:min-h-auto lg:text-3xl;
+}
+
+.space-card__desc {
+   @apply opacity-80;
 }
 
 .space__light-left {
-    @apply before:from-primary before:to-grey-light before:absolute before:right-full before:bottom-0 before:aspect-square before:w-1/2 before:translate-1/2 before:rounded-full before:bg-radial-[at_0%_100%] before:opacity-30 before:blur-3xl;
+   @apply before:from-primary before:to-grey-light before:absolute before:right-full before:bottom-0 before:aspect-square before:w-1/2 before:translate-1/2 before:rounded-full before:bg-radial-[at_0%_100%] before:opacity-30 before:blur-3xl;
 }
 
 /* Секция Услуги */
 .service-card {
-    @apply before:rounded-b-5xl relative mb-6 aspect-[3/1.9] w-full rounded-4xl p-10 shadow before:absolute before:-bottom-6 before:left-0 before:z-0 before:h-20 before:w-full before:bg-[url(./assets/images/bg-wall-primary.webp)] before:bg-contain before:shadow 2xl:p-12.5;
+   @apply before:rounded-b-5xl relative mb-6 aspect-[3/1.9] w-full rounded-4xl p-10 shadow before:absolute before:-bottom-6 before:left-0 before:z-0 before:h-20 before:w-full before:bg-[url(./assets/images/bg-wall-primary.webp)] before:bg-contain before:shadow 2xl:p-12.5;
+}
+
+.service-card__bg {
+   @apply bg-primary rounded-5xl absolute inset-0 z-10 shadow;
 }
 
 .service-card__title {
-    @apply font-ui text-shadow relative z-20 text-xl font-bold text-white lowercase xl:text-3xl;
+   @apply font-ui text-shadow relative z-20 text-xl font-bold text-white lowercase xl:text-3xl;
 }
 
 /* Секция Почему мы? */
 .why-us__item--grey {
-    @apply rounded-t-5xl relative flex flex-col gap-3 px-6 py-14 md:px-14;
+   @apply rounded-t-5xl relative flex flex-col gap-3 px-6 py-14 md:px-14;
 }
 
 /* Секция Что включено? */
 .included-item {
-    @apply border-b-primary flex gap-2 border-b py-4;
+   @apply border-b-primary flex gap-2 border-b py-4;
 }
 
 .included-item__title {
-    @apply text-primary uppercase;
+   @apply text-primary uppercase;
 }
 
 .included-item__icon--check {
-    @apply aspect-square w-6 shrink-0 bg-[url(./assets/icons/check.svg)] bg-no-repeat;
+   @apply aspect-square w-6 shrink-0 bg-[url(./assets/icons/check.svg)] bg-no-repeat;
 }
 
 .add-service-item {
-    @apply border-b-grey-dark flex gap-2 border-b py-4;
+   @apply border-b-grey-dark flex gap-2 border-b py-4;
 }
 
 .add-service-item__icon--plus {
-    @apply aspect-square w-6 shrink-0 bg-[url(./assets/icons/plus.svg)] bg-no-repeat;
+   @apply aspect-square w-6 shrink-0 bg-[url(./assets/icons/plus.svg)] bg-no-repeat;
 }
 
 /* Секция Вопросы и ответы */
 .faq-card {
-    @apply bg-grey-light border-primary grid h-fit w-full cursor-pointer grid-cols-[auto_1fr] grid-rows-[1fr] items-center gap-x-4 rounded-3xl border p-6 shadow;
+   @apply bg-grey-light border-primary grid h-fit w-full cursor-pointer grid-cols-[auto_1fr] grid-rows-[1fr] items-center gap-x-4 rounded-3xl border p-6 shadow;
 }
 
 .faq-card__question {
-    @apply flex items-center lg:min-h-15 2xl:min-h-auto;
+   @apply flex items-center lg:min-h-15 2xl:min-h-auto;
 }
 
 .faq-card__icon {
-    @apply bg-primary relative flex h-8 w-8 items-center justify-center rounded-full shadow;
+   @apply bg-primary relative flex h-8 w-8 items-center justify-center rounded-full shadow;
 }
 
 .faq-card__icon--plus {
-    @apply absolute block h-6 w-6 bg-white mask-[url(./assets/icons/plus.svg)] mask-contain mask-center mask-no-repeat;
+   @apply absolute block h-6 w-6 bg-white mask-[url(./assets/icons/plus.svg)] mask-contain mask-center mask-no-repeat;
 }
 
 .faq-card__icon--minus {
-    @apply absolute block h-6 w-6 bg-white mask-[url(./assets/icons/minus.svg)] mask-contain mask-center mask-no-repeat;
-}
-
-@font-face {
-    font-family: 'PT Sans';
-    src: url('./assets/fonts/PT-Sans/PTSans-Regular.ttf');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'PT Sans';
-    src: url('./assets/fonts/PT-Sans/PTSans-Bold.ttf');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'PT Sans';
-    src: url('./assets/fonts/PT-Sans/PTSans-Italic.ttf');
-    font-weight: 400;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'PT Sans';
-    src: url('./assets/fonts/PT-Sans/PTSans-BoldItalic.ttf');
-    font-weight: 700;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Montserrat';
-    src: url('./assets/fonts/Montserrat/Montserrat-Regular.ttf');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Montserrat';
-    src: url('./assets/fonts/Montserrat/Montserrat-Bold.ttf');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Montserrat';
-    src: url('./assets/fonts/Montserrat/Montserrat-Italic.ttf');
-    font-weight: 400;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Montserrat';
-    src: url('./assets/fonts/Montserrat/Montserrat-BlackItalic.ttf');
-    font-weight: 900;
-    font-style: italic;
-    font-display: swap;
+   @apply absolute block h-6 w-6 bg-white mask-[url(./assets/icons/minus.svg)] mask-contain mask-center mask-no-repeat;
 }
 
 /* Техническое */
 [data-menu-shell] {
-    will-change: transform;
+   will-change: transform;
 }

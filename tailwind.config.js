@@ -1,5 +1,5 @@
 export default {
-    content: ['./index.pug', './src/**/*.{js,ts}'],
+    content: ['./index.html', './src/**/*.{js}'],
     theme: { extend: {} },
     plugins: []
 };

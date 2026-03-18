@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
     plugins: [tailwindcss()],
     optimizeDeps: {
-        exclude: ['gsap'],
+        exclude: ['gsap']
     },
-    base: './',
+    base: './'
 });
