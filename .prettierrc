@@ -1,9 +1,19 @@
 {
-  "plugins": ["prettier-plugin-tailwindcss"],
-  "printWidth": 100,
-  "tabWidth": 4,
-  "useTabs": false,
-  "semi": true,
-  "singleQuote": true,
-  "jsxBracketSameLine": false
+    "plugins": ["prettier-plugin-tailwindcss"],
+    "printWidth": 80,
+    "tabWidth": 4,
+    "tailwindFunctions": ["clsx", "cn", "cva"],
+    "tailwindAttributes": ["className", "class", "tw"],
+    "singleQuote": true,
+    "trailingComma": "none",
+    "htmlWhitespaceSensitivity": "ignore",
+    "bracketSameLine": false,
+    "overrides": [
+        {
+            "files": ["*.jsx", "*.tsx", "*.html"],
+            "options": {
+                "printWidth": 60
+            }
+        }
+    ]
 }
