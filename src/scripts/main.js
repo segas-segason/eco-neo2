@@ -1,21 +1,39 @@
 import '../style.css';
 
+import { initIntro } from './animations/intro';
 import { initMobileMenu } from './animations/mobileMenu';
 import { initBackdropMenu } from './animations/backdropMenu';
-import { initPopup } from './animations/popup';
+import { initPopupOpen } from './animations/popupOpen';
 import { initAccordionFaq } from './animations/accordionFaq';
-import { initStatCounters } from './animations/statCounters';
+import { initStartPage } from './animations/startPage';
+
+import { initStatsSection } from './sections/statsSection';
+import { initSpaceSection } from './sections/spaceSection';
+import { initServicesSection } from './sections/servicesSection';
+import { initWhyusSection } from './sections/whyusSection';
 
 import { initLayoutTabs } from './layoutTabs';
 
 import { initYaMap } from './initYaMap';
 import { initYaMetrika } from './initYaMetrika';
 
-initMobileMenu();
-initBackdropMenu();
-initPopup();
-initAccordionFaq();
-initLayoutTabs();
+async function initApp() {
+    await initIntro();
+
+    initPopupOpen();
+    initBackdropMenu();
+    initStartPage();
+
+    initSpaceSection();
+    initStatsSection();
+    initServicesSection();
+    initWhyusSection();
+}
+
+initApp();
+
 initYaMap();
 initYaMetrika();
-initStatCounters();
+initMobileMenu();
+initAccordionFaq();
+initLayoutTabs();

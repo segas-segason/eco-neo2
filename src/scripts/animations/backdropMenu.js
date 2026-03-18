@@ -10,6 +10,8 @@ export function initBackdropMenu() {
 
     if (!menuShell || !menuBackdrop) return;
 
+    const tl = gsap.timeline({});
+
     let isHidden = false;
     let isProcessing = false;
 

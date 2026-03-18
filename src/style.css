@@ -3,6 +3,7 @@
 @theme {
     --font-base: 'PT Sans', sans-serif;
     --font-ui: 'Montserrat', sans-serif;
+    --font-brand: 'Arial', sans-serif;
 
     --text-base: 1.25rem;
 
@@ -13,15 +14,18 @@
     --color-grey-light-transparent: rgba(238, 238, 236, 0.5);
     --color-grey: #666666;
     --color-grey-dark: #474a51;
-    --color-green-light: #d6e5be;
+    --color-green-light: #e2ecd2;
     --color-green: #a1c938;
     --color-white: #ffffff;
 
     --shadow: 0 4px 4px 0 rgba(102, 102, 102, 0.1);
-    --text-shadow: 0 4px 4px rgba(53, 14, 14, 0.1);
+    --text-shadow: 0 4px 4px rgba(102, 102, 102, 0.1);
 
     --radius-5xl: 2.5rem;
     --radius-6xl: 4rem;
+
+    --breakpoint-3xl: 120rem;
+    --breakpoint-4xl: 150rem;
 }
 
 /* Секция Статистика */
@@ -48,12 +52,16 @@
 }
 
 .space-card__title {
-    @apply font-ui text-xl font-bold uppercase sm:min-h-14 md:min-h-auto lg:text-3xl;
+    @apply font-ui text-xl font-bold tracking-[1px] uppercase sm:min-h-14 md:min-h-auto lg:text-3xl;
+}
+
+.space__light-left {
+    @apply before:from-primary before:to-grey-light before:absolute before:right-full before:bottom-0 before:aspect-square before:w-1/2 before:translate-1/2 before:rounded-full before:bg-radial-[at_0%_100%] before:opacity-30 before:blur-3xl;
 }
 
 /* Секция Услуги */
 .service-card {
-    @apply h-52 rounded-4xl px-6 py-10 shadow lg:py-15 xl:h-80;
+    @apply aspect-[3/1.9] w-full rounded-4xl p-10 shadow 2xl:p-12.5;
 }
 
 .service-card__title {
@@ -166,7 +174,12 @@
 @font-face {
     font-family: 'Montserrat';
     src: url('./assets/fonts/Montserrat/Montserrat-BlackItalic.ttf');
-    font-weight: 700;
+    font-weight: 900;
     font-style: italic;
     font-display: swap;
+}
+
+/* Техническое */
+[data-menu-shell] {
+    will-change: transform;
 }

@@ -1,14 +1,22 @@
 import { gsap } from 'gsap';
 
-export function initPopup() {
+export function initPopupOpen() {
     const popup = document.querySelector('[data-popup]');
     const close = document.querySelector('[data-popup-close]');
     const balls = document.querySelector('[data-popup-balls]');
 
     if (!popup) return;
 
-    const showDelay = 1;
-    const hideDelay = 20000;
+    const showDelay = 5;
+    const hideDelay = 1000;
+
+    const lastShown = localStorage.getItem('popupLastShown');
+    const now = Date.now();
+    const oneDay = 24 * 60 * 60 * 1000; // 24 часа в мс
+
+    if (lastShown && now - lastShown < oneDay) {
+        return;
+    }
 
     gsap.set(popup, {
         autoAlpha: 0,
@@ -26,6 +34,7 @@ export function initPopup() {
         y: 0,
         onStart: () => {
             document.body.style.overflow = 'hidden';
+            localStorage.setItem('popupLastShown', Date.now());
         },
     });
 
@@ -34,9 +43,9 @@ export function initPopup() {
         {
             autoAlpha: 0,
             pointerEvents: 'none',
-            duration: 0.5,
-            ease: 'power2.in',
+            duration: 0.6,
             y: 20,
+            ease: 'power2.in',
             onComplete: () => {
                 document.body.style.overflow = '';
             },
@@ -51,8 +60,8 @@ export function initPopup() {
         gsap.to(popup, {
             autoAlpha: 0,
             pointerEvents: 'none',
-            duration: 0.4,
-            ease: 'power2.in',
+            duration: 0.6,
+            ease: 'power2.out',
             y: 20,
             onComplete: () => {
                 document.body.style.overflow = '';

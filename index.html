@@ -4,13 +4,63 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <title>Экопосольство — уникальное пространство для мероприятий</title>
+        <link rel="icon" href="/favicon.png" sizes="32x32" type="image/png" />
+        <title>ЭКОПОСОЛЬСТВО | Аренда ивент-площадки в Зеленоградске до 400 человек</title>
+        <meta
+            name="description"
+            content="Пространство 900 м² для конференций, свадеб и корпоративов. Современное техническое оснащение, VIP-балкон, зона кейтеринга и собственная парковка. 35 минут от Калининграда."
+        />
     </head>
 
     <body
         class="font-base text-grey-dark selection:bg-primary-transparent relative bg-white text-base"
     >
-        <div class="fixed z-100 mx-auto hidden h-full w-full items-center justify-center">
+        <div class="fixed z-1000 h-full w-full overflow-hidden bg-white select-none" data-intro>
+            <div class="relative flex h-full w-full flex-col items-center justify-center">
+                <div
+                    class="bg-grey-light flex flex-col items-center justify-center opacity-0"
+                    data-intro-box
+                >
+                    <div
+                        class="font-brand grid grid-cols-2 items-center gap-[clamp(0.5rem,0.0455rem+2.2727vw,1.5rem)] overflow-hidden px-[clamp(1.5rem,0.3636rem+5.6818vw,4rem)] py-[clamp(1rem,0.0909rem+4.5455vw,3rem)] text-center text-[clamp(2rem,8vw,8.75rem)] leading-none font-bold uppercase"
+                        data-intro-grid
+                    >
+                        <div class="flex" data-intro-left-short>
+                            <span data-static-letter>Э</span>
+                            <span class="hidden" data-hidden-letter>к</span>
+                            <span class="hidden" data-hidden-letter>о</span>
+
+                            <span data-static-letter>П</span>
+                            <span class="hidden" data-hidden-letter>о</span>
+                            <span class="hidden" data-hidden-letter>с</span>
+                            <span class="hidden" data-hidden-letter>о</span>
+                            <span class="hidden" data-hidden-letter>л</span>
+                            <span class="hidden" data-hidden-letter>ь</span>
+                            <span class="hidden" data-hidden-letter>с</span>
+                            <span class="hidden" data-hidden-letter>т</span>
+                            <span class="hidden" data-hidden-letter>в</span>
+                            <span class="hidden" data-hidden-letter>о</span>
+                        </div>
+                        <div class="flex" data-intro-right-short>
+                            <span data-static-letter>З</span>
+                            <span class="hidden" data-hidden-letter>е</span>
+                            <span class="hidden" data-hidden-letter>л</span>
+                            <span class="hidden" data-hidden-letter>е</span>
+                            <span class="hidden" data-hidden-letter>н</span>
+                            <span class="hidden" data-hidden-letter>ы</span>
+                            <span class="hidden" data-hidden-letter>й</span>
+
+                            <span class="hidden" data-hidden-letter>&nbsp;</span>
+
+                            <span data-static-letter>К</span>
+                            <span class="hidden" data-hidden-letter>о</span>
+                            <span class="hidden" data-hidden-letter>т</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="fixed z-100 mx-auto hidden h-full w-full items-center justify-center">
             <div class="bg-grey-dark text-white shadow">
                 <div
                     class="after:to-#00000025 relative mb-1.5 h-full w-full bg-white bg-[conic-gradient(from_1.18deg_at_35.93%_62.78%,rgba(71,74,81,0.725923)_-69.06deg,#474A51_45.15deg,rgba(71,74,81,0.5)_290.9deg,rgba(71,74,81,0.725923)_290.94deg,#474A51_405.15deg)] after:absolute after:-bottom-1.5 after:h-1.5 after:w-full after:bg-linear-to-t after:from-white"
@@ -95,10 +145,10 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <div
-            class="pointer-events-none invisible fixed z-100 flex h-full w-full items-center justify-center"
+            class="pointer-events-none invisible fixed z-100 flex h-full w-full items-center justify-center backdrop-blur-lg"
             data-popup
         >
             <div
@@ -121,14 +171,10 @@
                             на проведение мероприятий:
                         </p>
                         <div class="flex flex-col items-center gap-2">
-                            <a
-                                class="hover:underline hover:underline-offset-6"
-                                href="tel:+79118607773"
+                            <a class="hover:opacity-70" href="tel:+79118607773"
                                 >+7 (911) 860-77-73</a
                             >
-                            <a
-                                class="hover:underline hover:underline-offset-6"
-                                href="mailto:promo@ecoposolstvo.ru"
+                            <a class="hover:opacity-70" href="mailto:promo@ecoposolstvo.ru"
                                 >promo@ecoposolstvo.ru</a
                             >
                         </div>
@@ -159,16 +205,18 @@
             </div>
         </div>
 
-        <div class="fixed top-6 z-50 w-full lg:px-6" data-menu-shell>
+        <div class="fixed top-4 z-50 w-full lg:px-6" data-menu-shell>
             <div
                 class="bg-primary flex flex-col rounded-4xl shadow xl:flex-row xl:justify-between"
                 data-menu-backdrop
             >
                 <div class="flex items-center justify-between rounded-full p-1 pr-6">
-                    <a href="/" class="max-h-14 rounded-4xl bg-white px-6 py-2">
-                        <span
-                            class="block aspect-198/47 h-11 bg-[url(./assets/images/logo.svg)] bg-contain bg-no-repeat"
-                        ></span>
+                    <a href="/" class="flex h-14 items-center rounded-4xl bg-white px-6 py-1">
+                        <img
+                            class="h-full w-auto"
+                            src="/src/assets/images/logo.svg"
+                            alt="Экопосольство"
+                        />
                     </a>
                     <button
                         type="button"
@@ -252,8 +300,10 @@
                     <div
                         class="before:from-primary relative hidden before:absolute before:top-0 before:right-0 before:z-0 before:aspect-square before:w-full before:rounded-full before:bg-radial before:to-white before:to-100% before:blur-3xl after:absolute after:top-0 after:right-0 after:z-1 after:aspect-square after:w-full after:-translate-y-[40%] after:bg-white after:mask-[url(./assets/images/circle.svg)] after:bg-cover after:bg-no-repeat after:opacity-70"
                     ></div>
-                    <div class="relative z-10 mx-auto mb-35 flex flex-col gap-6 p-6 pt-28 lg:px-20">
-                        <div class="hidden w-full sm:block">
+                    <div
+                        class="md:mb-[] relative z-20 mx-auto mb-[clamp(11.25rem,3.75rem+37.5vw,18.75rem)] flex flex-col gap-8 p-6 pt-28 sm:mb-[clamp(12.5rem,calc(50rem-78.125vw),18.75rem)] lg:mb-[clamp(5rem,20rem-15.625vw,10rem)] lg:px-20"
+                    >
+                        <div class="hidden w-full sm:block" data-hero-logo>
                             <img
                                 class="pointer-events-none w-full"
                                 src="/src/assets/images/logo_hero.svg"
@@ -263,7 +313,8 @@
 
                         <div class="flex flex-col gap-2">
                             <h1
-                                class="text-primary text-[2rem] leading-tight uppercase sm:text-[2.5rem] md:max-w-[70%] lg:max-w-[70%] xl:max-w-[62%] xl:text-[3.5rem] 2xl:max-w-[60%] 2xl:text-[4rem]"
+                                class="text-primary text-[2rem] leading-tight tracking-[1px] uppercase sm:text-[2.5rem] md:max-w-[80%] lg:max-w-[70%] xl:max-w-[75%] xl:text-[3.5rem]"
+                                data-hero-title
                             >
                                 Единственное большое <br />
                                 ивент-пространство <br />
@@ -271,7 +322,8 @@
                             </h1>
 
                             <p
-                                class="text-grey-dark text-2xl lowercase min-[494px]:w-[80%] sm:max-w-[60%] md:max-w-[55%] lg:max-w-[50%] xl:max-w-[52%] xl:text-[2.5rem] 2xl:max-w-[40%]"
+                                class="text-grey-dark text-2xl lowercase min-[494px]:w-[80%] sm:max-w-[60%] md:max-w-[55%] lg:max-w-[50%] xl:max-w-[48%] xl:text-[2.5rem] 2xl:max-w-160"
+                                data-hero-desc
                             >
                                 Для проведения событий любого формата и масштаба
                             </p>
@@ -279,111 +331,137 @@
                     </div>
 
                     <div
-                        class="rounded-6xl relative mx-auto pb-12 md:px-6 lg:p-20 lg:pt-0 lg:pb-25"
+                        class="relative mx-auto rounded-[inherit] pb-12 md:px-6 lg:p-20 lg:pt-0 lg:pb-15"
                     >
                         <section
                             id="section-about"
-                            class="bg-primary rounded-6xl relative z-2 rounded-t-[4.5rem] shadow before:absolute before:bottom-0 before:left-0 before:z-0 before:aspect-407/435 before:w-80 before:-translate-y-[130%] before:bg-[url(./assets/images/dotted.svg)] before:sm:-translate-y-1/2"
+                            class="bg-primary relative z-10 rounded-[inherit] rounded-t-[4.5rem] shadow"
+                            data-section-about
                         >
                             <div
-                                class="absolute right-0 z-5 max-w-96 -translate-y-[65%] p-6 min-[425px]:max-w-[90%] min-[540px]:max-w-[80%] md:max-w-[75%] md:-translate-y-[70%] lg:max-w-[65%] lg:-translate-y-[75%] xl:max-w-[60%] 2xl:max-w-[55%]"
+                                class="absolute right-0 z-5 w-[clamp(20rem,6.25rem+68.75vw,33.75rem)] -translate-y-[85%] p-6 lg:w-[clamp(33.75rem,11.25rem+35.1563vw,45rem)] xl:w-[clamp(43.75rem,calc(46.875rem-1.9531vw),45rem)]"
+                                data-hero-home
                             >
                                 <img
-                                    class="pointer-events-none aspect-auto w-full"
-                                    src="/src/assets/images/home.webp"
+                                    class="pointer-events-none relative z-10 aspect-auto w-full"
+                                    src="/src/assets/images/home.avif"
                                     loading="eager"
                                     alt="Экопосольство"
                                 />
                             </div>
 
                             <div
-                                class="bg-grey-light rounded-6xl relative z-1 grid px-6 py-20 lowercase sm:grid-cols-2 sm:gap-y-12 lg:py-25 xl:grid-cols-4"
-                                data-stats
+                                class="before:from-primary absolute top-0 right-0 -z-20 aspect-square w-[clamp(20rem,6.25rem+68.75vw,33.75rem)] -translate-y-[85%] p-6 before:absolute before:-z-20 before:aspect-square before:w-full before:rounded-full before:bg-radial before:to-white before:blur-3xl lg:w-[clamp(33.75rem,11.25rem+35.1563vw,45rem)] xl:w-[clamp(43.75rem,calc(46.875rem-1.9531vw),45rem)]"
+                                data-hero-light
+                            >
+                                <img
+                                    class="pointer-events-none absolute z-5 aspect-auto w-full"
+                                    src="src/assets/images/circle-hero-bg.svg"
+                                    loading="eager"
+                                    alt="Экопосольство"
+                                />
+                            </div>
+
+                            <div
+                                class="bg-grey-light rounded-6xl grid px-6 py-20 lowercase sm:grid-cols-2 sm:gap-y-12 lg:py-25 xl:grid-cols-4"
+                                data-stats-section
                             >
                                 <div class="stat-card">
-                                    <div class="stat-card__indicator gap-1">
-                                        <span class="text-2xl">До</span>
+                                    <div
+                                        class="stat-card__indicator text-shadow gap-1 leading-none"
+                                    >
+                                        <span class="text-[1.75rem] 2xl:leading-normal">До</span>
                                         <span
-                                            class="text-5xl font-bold lg:text-7xl"
+                                            class="text-5xl font-bold 2xl:text-[6.25rem]"
                                             data-counter="400"
                                             >0</span
                                         >
-                                        <div class="text-2xl">Гостей</div>
+                                        <div class="text-[1.75rem] 2xl:leading-normal">Гостей</div>
                                     </div>
-                                    <p class="text-center text-xl">Общая вместимость площадки</p>
+                                    <p class="text-center text-2xl">общая вместимость</p>
                                 </div>
 
                                 <div class="stat-card">
-                                    <div class="stat-card__indicator gap-4">
+                                    <div class="stat-card__indicator text-shadow gap-4">
                                         <span
-                                            class="text-5xl font-bold lg:text-7xl"
-                                            data-counter="420"
+                                            class="text-5xl font-bold 2xl:text-[6.25rem]"
+                                            data-counter="600"
                                             >0</span
                                         >
-                                        <span class="text-5xl font-bold lg:text-7xl">м²</span>
+                                        <span class="text-5xl font-bold 2xl:text-[6.25rem]"
+                                            >м²</span
+                                        >
                                     </div>
-                                    <p class="text-center text-xl">Основной зал со сценой</p>
+                                    <p class="text-center text-2xl">Основной зал со сценой</p>
                                 </div>
 
                                 <div class="stat-card">
-                                    <div class="stat-card__indicator gap-4">
+                                    <div class="stat-card__indicator text-shadow gap-4">
                                         <span
-                                            class="text-5xl font-bold lg:text-7xl"
+                                            class="text-5xl font-bold 2xl:text-[6.25rem]"
                                             data-counter="180"
                                             >0</span
                                         >
-                                        <span class="text-5xl font-bold lg:text-7xl">м²</span>
+                                        <span class="text-5xl font-bold 2xl:text-[6.25rem]"
+                                            >м²</span
+                                        >
                                     </div>
-                                    <p class="text-center text-xl">Просторная зона приветствия</p>
+                                    <p class="text-center text-2xl">Просторная зона приветствия</p>
                                 </div>
 
                                 <div class="stat-card">
-                                    <div class="stat-card__indicator gap-1">
+                                    <div
+                                        class="stat-card__indicator text-shadow gap-1 leading-none"
+                                    >
                                         <span
-                                            class="text-5xl font-bold lg:text-7xl"
+                                            class="text-5xl font-bold 2xl:text-[6.25rem]"
                                             data-counter="35"
                                             >0</span
                                         >
-                                        <div class="text-2xl">Минут</div>
+                                        <div class="text-[1.75rem] 2xl:leading-normal">Минут</div>
                                     </div>
-                                    <p class="text-center text-xl normal-case">
+                                    <p class="text-center text-2xl normal-case">
                                         от центра Калининграда
                                     </p>
                                 </div>
                             </div>
 
                             <div
-                                class="z-0 grid items-center px-6 py-20 text-white lowercase sm:grid-cols-2 lg:py-25 xl:grid-cols-4"
+                                class="relative z-0 grid items-center px-6 py-20 text-white lowercase before:absolute before:top-0 before:left-0 before:-z-1 before:aspect-407/435 before:h-100 before:-translate-y-1/5 before:bg-[url(./assets/images/dotted.svg)] sm:grid-cols-2 lg:py-25 xl:grid-cols-4"
                             >
                                 <div
                                     class="border-b-grey-light-transparent sm:border-r-grey-light-transparent adventage-card border-b sm:border-r xl:border-b-0"
                                 >
-                                    <span class="font-ui text-xl leading-[1.3] font-bold"
-                                        >Пространство</span
+                                    <span
+                                        class="font-ui text-xl leading-[1.3] font-bold 2xl:text-[1.75rem]"
+                                        >Площадка</span
                                     >
-                                    <span class="italic">Под любые сценарии и идеи</span>
+                                    <span class="2xl:text-2xl">Под любые сценарии и идеи</span>
                                 </div>
                                 <div
                                     class="border-b-grey-light-transparent xl:border-r-grey-light-transparent adventage-card border-b xl:border-r xl:border-b-0"
                                 >
-                                    <span class="font-ui text-xl leading-[1.3] font-bold"
+                                    <span
+                                        class="font-ui text-xl leading-[1.3] font-bold 2xl:text-[1.75rem]"
                                         >Отдельная VIP-зона</span
                                     >
-                                    <span class="italic">Балкон 100 м²</span>
+                                    <span class="2xl:text-2xl">Балкон 100 м²</span>
                                 </div>
                                 <div
                                     class="border-b-grey-light-transparent sm:border-r-grey-light-transparent adventage-card border-b sm:border-r sm:border-b-0"
                                 >
-                                    <span class="font-ui text-xl leading-[1.3] font-bold"
+                                    <span
+                                        class="font-ui text-xl leading-[1.3] font-bold 2xl:text-[1.75rem]"
                                         >Зона кейтеринга</span
                                     >
-                                    <span class="italic">Для организации питания</span>
+                                    <span class="2xl:text-2xl">Для организации питания</span>
                                 </div>
                                 <div class="adventage-card">
-                                    <span class="font-ui text-xl leading-[1.3] font-bold"
+                                    <span
+                                        class="font-ui text-xl leading-[1.3] font-bold 2xl:text-[1.75rem]"
                                         >Собственная парковка</span
                                     >
-                                    <span class="italic">Для автомобилей и автобусов</span>
+                                    <span class="2xl:text-2xl">Для автомобилей и автобусов</span>
                                 </div>
                             </div>
                         </section>
@@ -393,45 +471,43 @@
 
             <div
                 class="after:rounded-b-6xl sticky top-0 after:absolute after:-bottom-6 after:left-0 after:-z-2 after:h-40 after:w-full after:bg-[url(./assets/images/bg-wall-graphite.webp)] after:bg-cover after:bg-no-repeat after:shadow lg:after:-bottom-15"
-                loading="lazy"
+                data-space-section
             >
                 <section
                     id="section-space"
                     class="bg-grey-dark rounded-b-6xl after:rounded-b-6xl relative -mt-15 mb-6 overflow-clip text-white after:absolute after:-bottom-6 after:z-[-1] after:h-40 after:w-full after:bg-[url(./assets/images/bg-wall-graphite.webp)] after:bg-cover after:bg-no-repeat lg:mb-15"
-                    loading="lazy"
                 >
                     <div
                         class="before:from-primary before:to-grey-light after:bg-primary relative overflow-hidden before:absolute before:top-1/2 before:left-1/2 before:aspect-square before:w-full before:-translate-y-1/2 before:rounded-full before:bg-radial-[at_0%_100%] before:opacity-30 before:blur-3xl after:absolute after:top-1/2 after:left-1/2 after:aspect-square after:w-full after:-translate-y-1/2 after:mask-[url(./assets/images/circle.svg)] after:bg-cover after:bg-no-repeat after:opacity-25"
-                        loading="lazy"
                     >
-                        <div
-                            class="before:from-primary before:to-grey-light rounded-b-6xl relative overflow-hidden before:absolute before:right-full before:bottom-0 before:aspect-square before:w-1/2 before:translate-1/2 before:rounded-full before:bg-radial-[at_0%_100%] before:opacity-30 before:blur-3xl"
-                        >
+                        <div class="rounded-b-6xl space__light-left relative overflow-hidden">
                             <div
                                 class="z-1 mx-auto flex flex-col gap-15 px-6 py-25 pt-35 lg:gap-25 lg:p-20 lg:pt-37.5 lg:pb-25"
                             >
                                 <h2
-                                    class="text-primary font-ui text-3xl font-bold uppercase sm:text-5xl lg:text-6xl"
+                                    class="text-primary font-ui text-3xl font-bold tracking-[1px] uppercase sm:text-5xl lg:text-6xl"
+                                    data-space-title
                                 >
                                     Пространство
                                 </h2>
 
                                 <div
                                     class="grid gap-10 sm:grid-rows-3 lg:grid-flow-col lg:gap-y-15 xl:gap-x-32"
+                                    data-space-grid
                                 >
-                                    <article class="space-card">
+                                    <article class="space-card" data-space-card>
                                         <span class="space-card__number">01</span>
                                         <span class="space-card__title">Функциональный дизайн</span>
                                         <p class="opacity-80">
-                                            Основное пространство — 600 м² свободной площади без
-                                            колонн, выполненное в соответствии с современными
-                                            требованиями технического оснащения и безопасности.
-                                            Реализация мероприятий любой сложности — от камерных
-                                            приемов до выставочных экспозиций.
+                                            Основной зал — 600 м² свободной площади без колонн,
+                                            выполненный в соответствии с современными требованиями
+                                            технического оснащения и безопасности. Реализация
+                                            мероприятий любой сложности — от камерных приемов
+                                            до выставочных экспозиций.
                                         </p>
                                     </article>
 
-                                    <article class="space-card">
+                                    <article class="space-card" data-space-card>
                                         <span class="space-card__number">02</span>
                                         <span class="space-card__title"
                                             >Комплексная доступность</span
@@ -444,7 +520,7 @@
                                             адаптирована для маломобильных групп населения.
                                         </p>
                                     </article>
-                                    <article class="space-card">
+                                    <article class="space-card" data-space-card>
                                         <span class="space-card__number">03</span>
                                         <span class="space-card__title"
                                             >Профессиональное техническое оснащение</span
@@ -457,7 +533,7 @@
                                             с любыми спецэффектами и декорациями.
                                         </p>
                                     </article>
-                                    <article class="space-card">
+                                    <article class="space-card" data-space-card>
                                         <span class="space-card__number">04</span>
                                         <span class="space-card__title">Зона кейтеринга</span>
                                         <p class="opacity-80">
@@ -467,7 +543,7 @@
                                             без пересечения с гостевыми потоками.
                                         </p>
                                     </article>
-                                    <article class="space-card">
+                                    <article class="space-card" data-space-card>
                                         <span class="space-card__number">05</span>
                                         <span class="space-card__title"
                                             >Инфраструктура бэкстейджа</span
@@ -478,7 +554,7 @@
                                             решения рабочих задач, вдали от внимания гостей.
                                         </p>
                                     </article>
-                                    <article class="space-card">
+                                    <article class="space-card" data-space-card>
                                         <span class="space-card__number">06</span>
                                         <span class="space-card__title">Удобная навигация</span>
                                         <p class="opacity-80">
@@ -496,12 +572,12 @@
             </div>
         </div>
 
-        <main class="flex flex-col gap-16 py-16 lg:gap-25 lg:pt-37.5 lg:pb-25">
-            <section id="section-possibilities">
-                <div class="mx-auto grid gap-4 px-6 sm:grid-cols-2 lg:grid-cols-3 lg:px-20">
+        <main class="flex flex-col gap-16 py-16 lg:gap-25 lg:pt-30 lg:pb-25">
+            <section id="section-possibilities" data-services-section>
+                <div class="mx-auto grid gap-4 px-6 sm:grid-cols-2 lg:mb-9 lg:grid-cols-3 lg:px-20">
                     <article
                         class="service-card before:rounded-b-5xl relative mb-6 shadow before:absolute before:-bottom-6 before:left-0 before:z-0 before:h-20 before:w-full before:bg-[url(./assets/images/bg-wall-primary.webp)] before:bg-contain before:shadow"
-                        loading="lazy"
+                        data-service-card
                     >
                         <div
                             class="bg-primary rounded-5xl absolute inset-0 z-10 bg-linear-[206.73deg,#FFFFFF_-69.43%,#8AB3AC_83.22%] shadow"
@@ -516,10 +592,10 @@
                             class="rounded-5xl absolute right-0 bottom-0 z-19 h-full w-full overflow-hidden"
                         >
                             <div
-                                class="absolute top-1/2 right-0 -translate-x-[10%] -translate-y-1/2 2xl:-translate-x-[30%]"
+                                class="absolute top-1/2 right-0 flex h-full -translate-x-[10%] -translate-y-1/2 items-center p-6 2xl:-translate-x-[30%]"
                             >
                                 <img
-                                    class="aspect-auto h-60 -rotate-15 opacity-50 2xl:h-65"
+                                    class="aspect-auto h-full rotate-[5.42deg] opacity-90 2xl:h-65"
                                     src="/src/assets/images/cap.svg"
                                     loading="lazy"
                                     alt="/"
@@ -530,7 +606,7 @@
 
                     <article
                         class="service-card before:rounded-b-5xl relative mb-6 shadow before:absolute before:-bottom-6 before:left-0 before:z-0 before:h-20 before:w-full before:bg-[url(./assets/images/bg-wall-primary.webp)] before:bg-contain before:shadow"
-                        loading="lazy"
+                        data-service-card
                     >
                         <div
                             class="bg-primary rounded-5xl absolute inset-0 z-10 bg-linear-[149.11deg,#FFFFFF_-57.24%,#8AB3AC_81.32%] shadow"
@@ -545,10 +621,10 @@
                             class="rounded-5xl absolute right-0 bottom-0 z-19 h-full w-full overflow-hidden"
                         >
                             <div
-                                class="absolute top-1/2 right-0 -translate-x-[30%] -translate-y-1/2"
+                                class="absolute top-1/2 right-0 h-full -translate-x-[30%] -translate-y-1/2 items-center p-6 2xl:-translate-x-[30%]"
                             >
                                 <img
-                                    class="aspect-auto h-65 -rotate-15 opacity-50"
+                                    class="aspect-auto h-full rotate-[7.85deg] opacity-90"
                                     src="/src/assets/images/glasses.svg"
                                     loading="lazy"
                                     alt="/"
@@ -559,7 +635,7 @@
 
                     <article
                         class="service-card before:rounded-b-5xl relative mb-6 shadow before:absolute before:-bottom-6 before:left-0 before:z-0 before:h-20 before:w-full before:bg-[url(./assets/images/bg-wall-primary.webp)] before:bg-contain before:shadow"
-                        loading="lazy"
+                        data-service-card
                     >
                         <div
                             class="bg-primary rounded-5xl absolute inset-0 z-10 bg-linear-[210.64deg,#FFFFFF_-46.41%,#8AB3AC_81.36%] shadow"
@@ -575,7 +651,7 @@
                         >
                             <div class="absolute right-0 bottom-0 translate-[15%]">
                                 <img
-                                    class="aspect-auto h-60 -rotate-20 opacity-50"
+                                    class="aspect-auto h-60 -rotate-20 opacity-90"
                                     src="/src/assets/images/art.svg"
                                     loading="lazy"
                                     alt="/"
@@ -586,7 +662,7 @@
 
                     <article
                         class="service-card before:rounded-b-5xl relative mb-6 shadow before:absolute before:-bottom-6 before:left-0 before:z-0 before:h-20 before:w-full before:bg-[url(./assets/images/bg-wall-primary.webp)] before:bg-contain before:shadow"
-                        loading="lazy"
+                        data-service-card
                     >
                         <div
                             class="bg-primary rounded-5xl absolute inset-0 z-10 bg-linear-[332.91deg,#FFFFFF_-68.53%,#8AB3AC_83.08%] shadow"
@@ -603,7 +679,7 @@
                                 class="absolute right-0 bottom-0 -translate-x-[10%] translate-y-[30%]"
                             >
                                 <img
-                                    class="aspect-auto h-60 opacity-50 2xl:h-80"
+                                    class="aspect-auto h-60 opacity-90 2xl:h-80"
                                     src="/src/assets/images/mic.svg"
                                     loading="lazy"
                                     alt="/"
@@ -614,7 +690,7 @@
 
                     <article
                         class="service-card before:rounded-b-5xl relative mb-6 shadow before:absolute before:-bottom-6 before:left-0 before:z-0 before:h-20 before:w-full before:bg-[url(./assets/images/bg-wall-primary.webp)] before:bg-contain before:shadow"
-                        loading="lazy"
+                        data-service-card
                     >
                         <div
                             class="bg-primary rounded-5xl absolute inset-0 z-10 bg-linear-[29.51deg,#FFFFFF_-71.23%,#8AB3AC_84.65%] shadow"
@@ -631,7 +707,7 @@
                                 class="absolute right-0 bottom-0 translate-x-[20%] translate-y-[10%]"
                             >
                                 <img
-                                    class="aspect-auto h-55 -rotate-10 opacity-50"
+                                    class="aspect-auto h-55 -rotate-10 opacity-90"
                                     src="/src/assets/images/book.svg"
                                     loading="lazy"
                                     alt="/"
@@ -642,7 +718,7 @@
 
                     <article
                         class="service-card before:rounded-b-5xl relative mb-6 shadow before:absolute before:-bottom-6 before:left-0 before:z-0 before:h-20 before:w-full before:bg-[url(./assets/images/bg-wall-primary.webp)] before:bg-contain before:shadow"
-                        loading="lazy"
+                        data-service-card
                     >
                         <div
                             class="bg-primary rounded-5xl absolute inset-0 z-10 bg-linear-[330.73deg,#FFFFFF_-54.84%,#8AB3AC_82.04%] shadow"
@@ -660,7 +736,7 @@
                                 class="absolute right-0 bottom-0 translate-x-[10%] translate-y-[10%]"
                             >
                                 <img
-                                    class="aspect-auto h-60 -rotate-20 opacity-50 2xl:h-65"
+                                    class="aspect-auto h-60 -rotate-20 opacity-90 2xl:h-65"
                                     src="/src/assets/images/balls.svg"
                                     loading="lazy"
                                     alt="/"
@@ -671,14 +747,14 @@
                 </div>
             </section>
 
-            <section>
+            <section data-whyus-section>
                 <div class="mx-auto grid gap-4 px-6 lg:gap-10 lg:px-20 xl:grid-cols-2">
-                    <div class="relative">
+                    <div class="relative" data-whyus-box-left>
                         <div
                             class="absolute z-10 rounded-br-3xl bg-white p-2 before:absolute before:bottom-0 before:left-0 before:aspect-square before:w-10 before:translate-y-full before:bg-[url(./assets/images/triangle-rounded.svg)] after:absolute after:top-0 after:right-0 after:aspect-square after:w-10 after:translate-x-full after:bg-[url(./assets/images/triangle-rounded.svg)] xl:w-xs"
                         >
                             <span
-                                class="font-ui block max-w-30 pr-4 text-2xl font-bold uppercase sm:max-w-none sm:text-5xl xl:text-6xl"
+                                class="font-ui block max-w-30 pr-4 text-2xl font-bold tracking-[1px] uppercase sm:max-w-none sm:text-5xl xl:text-6xl"
                             >
                                 Почему мы?
                             </span>
@@ -691,7 +767,7 @@
                             class="rounded-5xl h-full max-h-80 w-full overflow-hidden xl:relative xl:max-h-none"
                         >
                             <img
-                                class="pointer-events-none w-full object-cover object-center sm:h-full xl:absolute xl:inset-0 xl:min-h-full"
+                                class="pointer-events-none w-full object-cover object-top sm:h-full xl:absolute xl:inset-0 xl:min-h-full"
                                 src="/src/assets/images/green-cat.avif"
                                 loading="lazy"
                                 alt="Локация Зеленого кота"
@@ -701,9 +777,11 @@
 
                     <div
                         class="bg-grey-light rounded-5xl text-grey relative mt-10 h-fit md:mt-0 md:ml-10.5"
+                        data-whyus-box-right
                     >
                         <div
                             class="rounded-t-5xl relative flex flex-col gap-3 px-6 pt-20 pb-15 md:pt-10 md:pr-10 md:pl-20 lg:gap-7"
+                            data-whyus-card
                         >
                             <div
                                 class="border-grey-light absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border-6 bg-white shadow md:top-1/2 md:left-0"
@@ -715,7 +793,7 @@
                             </div>
 
                             <span
-                                class="text-shadow font-ui text-xl font-bold uppercase md:text-3xl"
+                                class="text-shadow font-ui text-xl font-bold tracking-[1px] uppercase md:text-3xl"
                                 >Уникальность как факт</span
                             >
 
@@ -727,10 +805,11 @@
                         </div>
 
                         <div
-                            class="relative z-2 -mt-6 rounded-4xl bg-white pt-15 inset-shadow-sm before:absolute before:top-0 before:h-15 before:w-full before:translate-y-1/2 before:bg-white xl:pt-10 xl:before:top-auto xl:before:h-10 xl:before:translate-0"
+                            class="relative z-2 -mt-6 rounded-[inherit] bg-white pt-15 inset-shadow-sm before:absolute before:top-0 before:h-15 before:w-full before:translate-y-1/2 before:bg-white xl:pt-10 xl:before:top-auto xl:before:h-10 xl:before:translate-0"
+                            data-whyus-card
                         >
                             <div
-                                class="bg-grey-light rounded-t-5xl relative flex flex-col gap-3 px-6 pt-20 pb-15 md:px-20 md:pt-10 md:pr-10 lg:gap-7"
+                                class="bg-grey-light relative flex flex-col gap-3 rounded-[inherit] px-6 pt-20 pb-15 md:px-20 md:pt-10 md:pr-10 lg:gap-7"
                             >
                                 <div
                                     class="border-grey-light absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border-6 bg-white shadow md:top-1/2 md:left-0"
@@ -742,7 +821,7 @@
                                 </div>
 
                                 <span
-                                    class="text-shadow font-ui text-xl font-bold uppercase md:text-3xl"
+                                    class="text-shadow font-ui text-xl font-bold tracking-[1px] uppercase md:text-3xl"
                                     >В одной команде</span
                                 >
 
@@ -755,10 +834,11 @@
                         </div>
 
                         <div
-                            class="relative z-2 -mt-6 rounded-4xl bg-white pt-15 inset-shadow-sm before:absolute before:top-0 before:h-15 before:w-full before:translate-y-1/2 before:bg-white xl:pt-10 xl:before:top-auto xl:before:h-10 xl:before:translate-0"
+                            class="relative z-2 -mt-6 rounded-[inherit] bg-white pt-15 inset-shadow-sm before:absolute before:top-0 before:h-15 before:w-full before:translate-y-1/2 before:bg-white xl:pt-10 xl:before:top-auto xl:before:h-10 xl:before:translate-0"
+                            data-whyus-card
                         >
                             <div
-                                class="bg-green-light rounded-5xl relative flex flex-col gap-3 px-6 py-10 pt-20 shadow md:px-20 md:pt-10 md:pr-10 lg:gap-7"
+                                class="bg-green-light relative flex flex-col gap-3 rounded-[inherit] px-6 py-10 pt-20 shadow md:px-20 md:pt-10 md:pr-10 lg:gap-7"
                             >
                                 <div
                                     class="border-green-light absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border-6 bg-white shadow md:top-1/2 md:left-0"
@@ -770,9 +850,11 @@
                                 </div>
 
                                 <div
-                                    class="text-shadow font-ui text-xl font-bold uppercase md:text-3xl"
+                                    class="text-shadow font-ui text-xl font-bold tracking-[1px] uppercase md:text-3xl"
                                 >
-                                    Часть экоплощадки<span class="text-green"> «Зеленый КОТ»</span>
+                                    Часть экоплощадки<span class="text-green">
+                                        «Зеленый&nbsp;КОТ»</span
+                                    >
                                 </div>
 
                                 <p>
@@ -798,20 +880,20 @@
                     >
                         <div class="flex flex-col gap-16 lg:gap-25">
                             <h2
-                                class="text-primary font-ui text-3xl font-bold uppercase sm:text-5xl xl:text-6xl"
+                                class="text-primary font-ui text-3xl font-bold tracking-[1px] uppercase sm:text-5xl xl:text-6xl"
                             >
                                 Варианты рассадки
                             </h2>
 
                             <div class="flex flex-col gap-6">
-                                <ul class="grid grid-flow-col overflow-x-auto" data-layout-tabs>
-                                    <li>
+                                <ul class="flex w-full flex-row overflow-x-auto" data-layout-tabs>
+                                    <li class="w-full">
                                         <button
                                             class="border-primary flex w-full cursor-pointer flex-col items-start border-b-4 px-4 py-3 whitespace-nowrap"
                                             data-layout-tab
                                         >
                                             <span
-                                                class="font-ui text-xl font-bold uppercase xl:text-3xl"
+                                                class="font-ui text-xl font-bold tracking-[1px] uppercase xl:text-3xl"
                                                 >Банкет</span
                                             >
                                             <div
@@ -826,13 +908,13 @@
                                         </button>
                                     </li>
 
-                                    <li>
+                                    <li class="w-full">
                                         <button
                                             class="border-primary-transparent flex w-full cursor-pointer flex-col items-start border-b px-4 py-3 whitespace-nowrap"
                                             data-layout-tab
                                         >
                                             <span
-                                                class="font-ui text-xl font-bold uppercase xl:text-3xl"
+                                                class="font-ui text-xl font-bold tracking-[1px] uppercase xl:text-3xl"
                                                 >Фуршет</span
                                             >
                                             <div
@@ -847,13 +929,13 @@
                                         </button>
                                     </li>
 
-                                    <li>
+                                    <li class="w-full">
                                         <button
                                             class="border-primary-transparent flex w-full cursor-pointer flex-col items-start border-b px-4 py-3 whitespace-nowrap"
                                             data-layout-tab
                                         >
                                             <span
-                                                class="font-ui text-xl font-bold uppercase xl:text-3xl"
+                                                class="font-ui text-xl font-bold tracking-[1px] uppercase xl:text-3xl"
                                                 >Театр</span
                                             >
                                             <div
@@ -861,20 +943,20 @@
                                             >
                                                 <span>До</span>
                                                 <span class="text-xl font-bold xl:text-2xl"
-                                                    >350</span
+                                                    >230</span
                                                 >
                                                 <span>человек</span>
                                             </div>
                                         </button>
                                     </li>
 
-                                    <li>
+                                    <li class="w-full">
                                         <button
                                             class="border-primary-transparent flex w-full cursor-pointer flex-col items-start border-b px-4 py-3 whitespace-nowrap"
                                             data-layout-tab
                                         >
                                             <span
-                                                class="font-ui text-xl font-bold uppercase xl:text-3xl"
+                                                class="font-ui text-xl font-bold tracking-[1px] uppercase xl:text-3xl"
                                                 >Лекция</span
                                             >
                                             <div
@@ -882,20 +964,20 @@
                                             >
                                                 <span>До</span>
                                                 <span class="text-xl font-bold xl:text-2xl"
-                                                    >200</span
+                                                    >250</span
                                                 >
                                                 <span>человек</span>
                                             </div>
                                         </button>
                                     </li>
 
-                                    <li>
+                                    <li class="w-full">
                                         <button
                                             class="border-primary-transparent flex w-full cursor-pointer flex-col items-start border-b px-4 py-3 whitespace-nowrap"
                                             data-layout-tab
                                         >
                                             <span
-                                                class="font-ui text-xl font-bold uppercase xl:text-3xl"
+                                                class="font-ui text-xl font-bold tracking-[1px] uppercase xl:text-3xl"
                                                 >Ваш вариант</span
                                             >
                                             <div
@@ -968,7 +1050,7 @@
                                         <li class="included-item">
                                             <span class="included-item__icon--check"></span>
                                             <span class="included-item__title"
-                                                >Full HD проектор и экран размером 3x2 м</span
+                                                >Full HD проектор и экран размером 3.8×3 м</span
                                             >
                                         </li>
                                         <li class="included-item">
@@ -989,15 +1071,15 @@
                                                 >Световое оборудование (базовое сценическое)</span
                                             >
                                         </li>
-                                        <li class="included-item">
+                                        <li class="included-item border-0!">
                                             <span class="included-item__icon--check"></span>
                                             <span class="included-item__title"
-                                                >Пользование примеркой</span
+                                                >Пользование гримеркой</span
                                             >
                                         </li>
                                     </ul>
                                     <div class="flex flex-col gap-6">
-                                        <span class="font-ui font-bold uppercase"
+                                        <span class="font-ui font-bold tracking-[1px] uppercase"
                                             >Дополнительные услуги</span
                                         >
                                         <ul class="flex flex-col">
@@ -1011,7 +1093,7 @@
                                                 <span class="add-service-item__icon--plus"></span>
                                                 <span class="uppercase">Аренда флипчартов</span>
                                             </li>
-                                            <li class="add-service-item">
+                                            <li class="add-service-item border-0">
                                                 <span class="add-service-item__icon--plus"></span>
                                                 <span class="uppercase"
                                                     >Организация кейтеринга</span
@@ -1026,30 +1108,27 @@
                 </div>
             </div>
 
-            <div
-                class="after:rounded-b-6xl relative z-1 -mt-32 mb-6 after:absolute after:-bottom-6 after:left-0 after:-z-3 after:h-40 after:w-full after:bg-[url(./assets/images/bg-wall-primary.webp)] after:bg-cover after:bg-no-repeat after:shadow lg:-mt-25 lg:mb-15 lg:after:-bottom-15"
-                loading="lazy"
-            >
+            <div class="relative z-1 -mt-32 lg:-mt-25">
                 <section
                     id="section-stock"
                     class="bg-primary rounded-b-6xl relative -z-2 py-16 pt-38 shadow before:absolute before:top-0 before:left-0 before:-z-1 before:aspect-407/435 before:w-80 before:bg-[url(./assets/images/dotted.svg)] lg:pb-25"
                 >
                     <div class="z-0 mx-auto flex flex-col gap-12 px-6 lg:gap-25 lg:px-20">
                         <h2
-                            class="font-ui text-3xl font-bold text-white uppercase text-shadow-xs sm:text-5xl"
+                            class="font-ui text-3xl font-bold tracking-[1px] text-white uppercase text-shadow-xs sm:text-5xl"
                         >
                             Специальные предложения
                         </h2>
-                        <div class="rounded-5xl bg-grey-light overflow-clip">
+                        <div class="rounded-6xl bg-grey-light overflow-clip lg:rounded-[5rem]">
                             <div
-                                class="bg-grey-light rounded-5xl relative z-2 flex flex-col gap-4 px-6 py-10 shadow lg:gap-7 lg:px-20 lg:py-15"
+                                class="bg-grey-light rounded-6xl relative z-2 flex flex-col gap-4 px-6 py-10 shadow lg:gap-7 lg:rounded-[5rem] lg:px-20 lg:py-15"
                             >
                                 <span
                                     class="font-ui bg-primary text-grey-light w-fit px-2 text-xl font-bold xl:text-2xl"
                                     >01</span
                                 >
                                 <h3
-                                    class="text-primary font-ui text-2xl font-bold uppercase xl:text-3xl"
+                                    class="text-primary font-ui text-2xl font-bold tracking-[1px] uppercase xl:text-3xl"
                                 >
                                     Экоскидка
                                 </h3>
@@ -1071,7 +1150,7 @@
                                     >02</span
                                 >
                                 <h3
-                                    class="text-primary font-ui text-2xl font-bold uppercase xl:text-3xl"
+                                    class="text-primary font-ui text-2xl font-bold tracking-[1px] uppercase xl:text-3xl"
                                 >
                                     Бесплатный день
                                 </h3>
@@ -1092,7 +1171,7 @@
 
             <section id="section-faq">
                 <div class="mx-auto flex flex-col gap-12 px-6 lg:gap-25 lg:px-20">
-                    <h2 class="font-ui text-3xl font-bold uppercase sm:text-5xl">
+                    <h2 class="font-ui text-3xl font-bold tracking-[1px] uppercase sm:text-5xl">
                         Вопросы и ответы
                     </h2>
 
@@ -1104,13 +1183,27 @@
                             </div>
                             <span class="faq-card__question">Какие размеры у площадки?</span>
                             <div></div>
-                            <p class="text-grey" data-accordion-content>
-                                Площадь основного зала — 420 м². <br />
-                                Площадь welcome-зоны — 180 м². <br />
-                                Площадь VIP-зоны — 100 м². <br />
-                                Максимальная вместимость — 400 человек. <br />
-                                Дополнительные зоны: гримёрка — 56 м², зона кейтеринга — 65 м².
-                            </p>
+                            <div class="text-grey" data-accordion-content>
+                                <p>
+                                    Общая площадь пространства — 900 м². <br />
+                                    Максимальная вместимость — 400 человек.<br /><br />
+                                </p>
+                                <span>Основной зал — 600 м²:</span>
+                                <ul class="list-disc pl-6">
+                                    <li>выставочный зал со сценой — 420 м²;</li>
+                                    <li>зона бара — 75 м²;</li>
+                                    <li>VIP-зона (балкон) — 100 м².</li>
+                                </ul>
+
+                                <p><br />Зона приветствия — 180 м².</p>
+                                <br />
+
+                                <span>Дополнительные зоны:</span>
+                                <ul class="list-disc pl-6">
+                                    <li>гримёрка — 56 м²;</li>
+                                    <li>зона кейтеринга — 65 м².</li>
+                                </ul>
+                            </div>
                         </div>
 
                         <div class="faq-card" data-accordion-item>
@@ -1149,10 +1242,21 @@
                                 >Какое мультимедийное оборудование доступно?</span
                             >
                             <div></div>
-                            <p class="text-grey" data-accordion-content>
-                                Экран размером 3×2 м, акустическая система и сценическое световое
-                                оборудование.
-                            </p>
+                            <div class="text-grey" data-accordion-content>
+                                <p>1. Экран размером 3.8×3 м;</p>
+                                <span>2. FullHD проектор;<br /></span>
+                                <span>3. Концертная акустическая система:</span>
+
+                                <ul class="list-disc pl-6">
+                                    <li>RCF 712, 700 Вт (6 шт);</li>
+                                    <li>RCF 8003-II, сабвуфер, 1100 Вт (3 шт);</li>
+                                </ul>
+                                <p>
+                                    4. Аудиопроцессор Behringer DCX 2496 ULTRA-DRIVE; <br />
+                                    5. Цифровой микшерный пульт Behringer Flow 8; <br />
+                                    6. Сценическое световое оборудование.
+                                </p>
+                            </div>
                         </div>
 
                         <div class="faq-card" data-accordion-item>
@@ -1214,7 +1318,9 @@
             <div
                 class="mx-auto flex flex-col gap-12 px-6 py-16 lg:gap-25 lg:p-20 lg:px-20 lg:py-25"
             >
-                <h2 class="text-primary font-ui text-3xl font-bold uppercase sm:text-5xl">
+                <h2
+                    class="text-primary font-ui text-3xl font-bold tracking-[1px] uppercase sm:text-5xl"
+                >
                     Контакты
                 </h2>
 
@@ -1265,17 +1371,13 @@
                     </div>
                 </div>
 
-                <div id="map" class="rounded-5xl h-80 w-full overflow-hidden"></div>
+                <div id="map" class="rounded-5xl aspect-auto h-100 overflow-hidden lg:h-140"></div>
 
                 <div class="flex flex-col gap-4">
                     <div class="flex justify-center gap-6">
                         <a
                             href="https://t.me/joinchat/@EcoPosolstvo"
                             class="bg-primary aspect-square w-8 shrink-0 mask-[url(./assets/icons/social-telegram.svg)] mask-contain mask-no-repeat lg:w-12"
-                        ></a>
-                        <a
-                            href="https://wa.me/79118607773"
-                            class="bg-primary aspect-square w-8 shrink-0 mask-[url(./assets/icons/social-wa.svg)] mask-contain mask-no-repeat lg:w-12"
                         ></a>
                         <a
                             href="/"

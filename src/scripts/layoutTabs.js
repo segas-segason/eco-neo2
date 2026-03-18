@@ -1,3 +1,4 @@
+//кнопки в секции варианты рассадки
 export function initLayoutTabs() {
     const container = document.querySelector('[data-layout-tabs]');
     if (!container) return;
