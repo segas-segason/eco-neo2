@@ -1,8 +1,9 @@
 <!doctype html>
-<html lang="ru" class="bg-grey-dark scroll-smooth">
+<html lang="ru" class="scroll-smooth">
    <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="format-detection" content="telephone=no" />
       <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
       <link rel="icon" href="/favicon.png" sizes="32x32" type="image/png" />
       <title>ЭКОПОСОЛЬСТВО | Аренда ивент-площадки в Зеленоградске до 400 человек</title>
@@ -10,8 +11,16 @@
          name="description"
          content="Пространство 900 м² для конференций, свадеб и корпоративов. Современное техническое оснащение, VIP-балкон, зона кейтеринга и собственная парковка. 35 минут от Калининграда."
       />
+      <meta property="og:title" content="ЭКОПОСОЛЬСТВО | Аренда ивент-площадки в Зеленоградске до 400 человек" />
+      <meta
+         property="og:description"
+         content="Пространство 900 м² для конференций, свадеб и корпоративов. Современное техническое оснащение, VIP-балкон, зона кейтеринга и собственная парковка. 35 минут от Калининграда."
+      />
+      <meta property="og:image" content="http://ecoposolstvo.ru/favicon.svg" />
+      <meta property="og:url" content="http://ecoposolstvo.ru" />
    </head>
-   <body class="font-base text-grey-dark selection:bg-primary-transparent relative bg-white text-base">
+
+   <body class="font-base text-grey-dark selection:bg-primary-transparent bg-white text-base">
       <div class="fixed z-1000 h-full w-full overflow-hidden bg-white select-none" data-intro>
          <div class="relative flex h-full w-full flex-col items-center justify-center">
             <div class="bg-grey-light flex flex-col items-center justify-center opacity-0" data-intro-box>
@@ -64,7 +73,6 @@
                         <img
                            class="aspect-square h-full w-full object-contain"
                            src="/src/assets/images/symbol-circle.png"
-                           alt=""
                         />
                      </div>
                      <div class="mt-auto">
@@ -114,7 +122,7 @@
                            value="agreed"
                            required
                         />
-                        <label class="block max-w-96 text-[1rem]" for=""
+                        <label class="block max-w-96 text-[1rem]" for="privacy-policy"
                            >Нажимая на кнопку «Получить консультацию», вы соглашаетесь с политикой в отношении обработки
                            персональных данных и даете
                            <a class="underline underline-offset-4 hover:decoration-transparent" href="/"
@@ -175,7 +183,8 @@
                   class="absolute top-0 left-0 z-54 w-[50%] -translate-x-[20%] translate-y-[5%] rotate-45 sm:translate-y-[0%] md:top-auto md:bottom-0 md:w-full md:translate-y-[20%]"
                   src="/src/assets/images/open-balls.webp"
                   loading="eager"
-                  alt="/"
+                  alt=""
+                  aria-hidden="true"
                   data-popup-balls
                />
             </div>
@@ -186,7 +195,12 @@
          <div class="bg-primary flex flex-col rounded-4xl shadow xl:flex-row xl:justify-between" data-menu-backdrop>
             <div class="flex items-center justify-between rounded-full p-1 pr-6">
                <a href="/" class="flex h-14 items-center rounded-4xl bg-white px-6 py-1">
-                  <img class="h-full w-auto" src="/src/assets/images/logo.svg" alt="Экопосольство" />
+                  <img
+                     class="h-full w-auto"
+                     src="/src/assets/images/logo.svg"
+                     alt="Экопосольство «Зеленый Кот»"
+                     title="Экопосольство «Зеленый Кот»"
+                  />
                </a>
 
                <button
@@ -207,497 +221,495 @@
                </button>
             </div>
 
-            <div class="overflow-hidden px-6 text-xl text-white lowercase xl:flex xl:basis-[75%]" data-mobile-nav>
+            <nav
+               id="mobileNav"
+               class="overflow-hidden px-6 text-xl text-white lowercase xl:flex xl:basis-[75%]"
+               data-mobile-nav
+            >
                <ul
                   id="nav-list"
                   class="flex w-full flex-col pb-1 lg:pb-0 xl:flex-row xl:justify-between"
                   data-mobile-links
                ></ul>
-            </div>
+            </nav>
          </div>
       </div>
-      <div>
-         <header class="rounded-b-6xl relative z-10 mb-6 lg:mb-15">
-            <div class="hero__decor">
-               <div
-                  class="relative z-20 mx-auto mb-[clamp(11.25rem,3.75rem+37.5vw,18.75rem)] flex flex-col gap-8 p-6 pt-28 sm:mb-[clamp(12.5rem,calc(50rem-78.125vw),18.75rem)] lg:mb-[clamp(5rem,20rem-15.625vw,10rem)] lg:px-20"
-               >
-                  <div class="hidden w-full sm:block" data-hero-logo>
-                     <img
-                        class="pointer-events-none w-full"
-                        src="/src/assets/images/logo_hero.svg"
-                        alt="Экопосольство"
-                     />
-                  </div>
 
-                  <div class="flex flex-col gap-2">
-                     <h1
-                        class="text-primary text-[2rem] leading-tight tracking-[1px] uppercase sm:text-[2.5rem] md:max-w-[80%] lg:max-w-[70%] xl:max-w-[75%] xl:text-[3.5rem]"
-                        data-hero-title
-                     >
-                        Единственное большое
-                        <br />
-                        ивент-пространство
-                        <br />
-                        в Зеленоградске
-                     </h1>
-                     <p
-                        class="text-grey-dark text-2xl lowercase min-[494px]:w-[80%] sm:max-w-[60%] md:max-w-[55%] lg:max-w-[50%] xl:max-w-[48%] xl:text-[2.5rem] 2xl:max-w-160"
-                        data-hero-desc
-                     >
-                        Для проведения событий любого формата и масштаба
-                     </p>
-                  </div>
+      <header class="hero" data-hero>
+         <div class="overflow-hidden">
+            <div
+               class="relative z-20 mx-auto mb-[clamp(11.25rem,3.75rem+37.5vw,18.75rem)] flex flex-col gap-8 p-6 pt-28 sm:mb-[clamp(12.5rem,calc(50rem-78.125vw),18.75rem)] lg:mb-[clamp(5rem,20rem-15.625vw,10rem)] lg:px-20"
+            >
+               <div class="hidden w-full sm:block" data-hero-logo>
+                  <img class="pointer-events-none w-full" src="/src/assets/images/logo_hero.svg" alt="Экопосольство" />
                </div>
-
-               <div class="relative mx-auto rounded-[inherit] pb-12 md:px-6 lg:p-20 lg:pt-0 lg:pb-15">
-                  <section
-                     id="section-about"
-                     class="bg-primary relative z-10 rounded-[inherit] rounded-t-[4.5rem] shadow"
-                     data-section-about
+               <div class="flex flex-col gap-2">
+                  <h1
+                     class="text-primary text-[2rem] leading-tight tracking-[1px] uppercase sm:text-[2.5rem] md:max-w-[80%] lg:max-w-[70%] xl:max-w-[75%] xl:text-[3.5rem]"
+                     data-hero-title
                   >
-                     <div
-                        class="absolute right-0 z-5 w-[clamp(20rem,6.25rem+68.75vw,33.75rem)] -translate-y-[85%] p-6 lg:w-[clamp(33.75rem,11.25rem+35.1563vw,45rem)] xl:w-[clamp(43.75rem,calc(46.875rem-1.9531vw),45rem)]"
-                        data-hero-home
-                     >
-                        <img
-                           class="pointer-events-none relative z-10 aspect-auto w-full"
-                           src="/src/assets/images/home.avif"
-                           loading="eager"
-                           alt="Экопосольство"
-                        />
-                     </div>
-
-                     <div class="hero__bg" data-hero-light>
-                        <img
-                           class="pointer-events-none absolute z-5 aspect-auto w-full"
-                           src="/src/assets/images/circle-hero-bg.svg"
-                           loading="eager"
-                           alt="Экопосольство"
-                        />
-                     </div>
-
-                     <div
-                        id="stats"
-                        class="bg-grey-light rounded-6xl grid px-6 py-20 lowercase sm:grid-cols-2 sm:gap-y-12 lg:py-25 xl:grid-cols-4"
-                        data-stats
-                     ></div>
-
-                     <div id="adventages" class="adventages" data-adventages></div>
-                  </section>
+                     Единственное большое
+                     <br />
+                     ивент-пространство
+                     <br />
+                     в Зеленоградске
+                  </h1>
+                  <p
+                     class="text-grey-dark text-2xl lowercase min-[494px]:w-[80%] sm:max-w-[60%] md:max-w-[55%] lg:max-w-[50%] xl:max-w-[48%] xl:text-[2.5rem] 2xl:max-w-160"
+                     data-hero-desc
+                  >
+                     Для проведения событий любого формата и масштаба
+                  </p>
                </div>
             </div>
-         </header>
 
-         <div class="space-wrapper" data-space>
-            <section id="space" class="space">
-               <div class="space__container">
-                  <div class="space__bg">
-                     <div
-                        class="z-1 mx-auto flex flex-col gap-15 px-6 py-25 pt-35 lg:gap-25 lg:p-20 lg:pt-37.5 lg:pb-25"
-                     >
-                        <h2
-                           class="text-primary font-ui text-3xl font-bold tracking-[1px] uppercase sm:text-5xl lg:text-6xl"
-                           data-space-title
-                        >
-                           Пространство
-                        </h2>
-                        <div id="space-grid" class="space__grid" data-space-grid></div>
-                     </div>
+            <section id="about" class="about" data-section-about>
+               <div class="mx-auto">
+                  <div
+                     class="absolute right-0 z-30 w-[clamp(20rem,6.25rem+68.75vw,33.75rem)] -translate-y-[85%] p-6 lg:w-[clamp(33.75rem,11.25rem+35.1563vw,45rem)] xl:w-[clamp(43.75rem,calc(46.875rem-1.9531vw),45rem)]"
+                     data-hero-home
+                  >
+                     <img
+                        class="pointer-events-none aspect-auto w-full"
+                        src="/src/assets/images/home.avif"
+                        loading="eager"
+                        alt="Домик Экопосольства"
+                        aria-hidden="true"
+                     />
                   </div>
+                  <div class="hero__bg" data-hero-light>
+                     <img
+                        class="pointer-events-none absolute z-5 aspect-auto w-full"
+                        src="/src/assets/images/circle-hero-bg.svg"
+                        loading="eager"
+                        alt=""
+                        aria-hidden="true"
+                     />
+                  </div>
+                  <div id="stats" class="stats" data-stats></div>
+                  <div id="adventages" class="adventages" data-adventages></div>
                </div>
             </section>
          </div>
-      </div>
+      </header>
 
-      <main class="flex flex-col gap-16 py-16 lg:gap-25 lg:pt-30 lg:pb-25">
-         <section id="section-services" class="services" data-services-section>
-            <div class="mx-auto grid gap-4 px-6 sm:grid-cols-2 lg:mb-9 lg:grid-cols-3 lg:px-20">
-               <article class="service-card" data-service-card>
-                  <div class="service-card__bg bg-linear-[206.73deg,#FFFFFF_-69.43%,#8AB3AC_83.22%]"></div>
-                  <span class="service-card__title">
-                     Корпоративы
-                     <br />
-                     и тимбилдинги
-                  </span>
-
-                  <div class="service-card__img-container">
-                     <div
-                        class="absolute top-1/2 right-0 flex h-full -translate-x-[10%] -translate-y-1/2 items-center p-6 2xl:-translate-x-[30%]"
-                     >
-                        <img
-                           class="service-card__img h-full rotate-[5.42deg] 2xl:h-65"
-                           src="/src/assets/images/cap.svg"
-                           loading="lazy"
-                           alt="/"
-                        />
-                     </div>
-                  </div>
-               </article>
-
-               <article class="service-card" data-service-card>
-                  <div class="service-card__bg bg-linear-[149.11deg,#FFFFFF_-57.24%,#8AB3AC_81.32%]"></div>
-                  <span class="service-card__title">
-                     Свадьбы
-                     <br />
-                     и дни рождения
-                  </span>
-                  <div class="service-card__img-container">
-                     <div
-                        class="absolute top-1/2 right-0 h-full -translate-x-[30%] -translate-y-1/2 items-center p-6 2xl:-translate-x-[30%]"
-                     >
-                        <img
-                           class="service-card__img h-full rotate-[7.85deg]"
-                           src="/src/assets/images/glasses.svg"
-                           loading="lazy"
-                           alt="/"
-                        />
-                     </div>
-                  </div>
-               </article>
-
-               <article class="service-card" data-service-card>
-                  <div class="service-card__bg bg-linear-[210.64deg,#FFFFFF_-46.41%,#8AB3AC_81.36%]"></div>
-                  <span class="service-card__title">
-                     Выставки
-                     <br />
-                     и презентации
-                  </span>
-                  <div class="service-card__img-container">
-                     <div class="absolute right-0 bottom-0 translate-[15%]">
-                        <img
-                           class="service-card__img h-60 -rotate-20"
-                           src="/src/assets/images/art.svg"
-                           loading="lazy"
-                           alt="/"
-                        />
-                     </div>
-                  </div>
-               </article>
-
-               <article class="service-card" data-service-card>
-                  <div class="service-card__bg bg-linear-[332.91deg,#FFFFFF_-68.53%,#8AB3AC_83.08%]"></div>
-                  <span class="service-card__title">
-                     Конференции
-                     <br />
-                     и форумы
-                  </span>
-                  <div class="service-card__img-container">
-                     <div class="absolute right-0 bottom-0 -translate-x-[10%] translate-y-[30%]">
-                        <img
-                           class="service-card__img h-60 2xl:h-80"
-                           src="/src/assets/images/mic.svg"
-                           loading="lazy"
-                           alt="/"
-                        />
-                     </div>
-                  </div>
-               </article>
-
-               <article class="service-card" data-service-card>
-                  <div class="service-card__bg bg-linear-[29.51deg,#FFFFFF_-71.23%,#8AB3AC_84.65%]"></div>
-                  <span class="service-card__title">
-                     Лекции
-                     <br />
-                     и мастер-классы
-                  </span>
-                  <div class="service-card__img-container">
-                     <div class="absolute right-0 bottom-0 translate-x-[20%] translate-y-[10%]">
-                        <img
-                           class="service-card__img h-55 -rotate-10"
-                           src="/src/assets/images/book.svg"
-                           loading="lazy"
-                           alt="/"
-                        />
-                     </div>
-                  </div>
-               </article>
-
-               <article class="service-card" data-service-card>
-                  <div class="service-card__bg bg-linear-[330.73deg,#FFFFFF_-54.84%,#8AB3AC_82.04%]"></div>
-                  <span class="service-card__title">
-                     Торжества
-                     <br />
-                     и выпускные
-                     <br />
-                     вечера
-                  </span>
-
-                  <div class="service-card__img-container">
-                     <div class="absolute right-0 bottom-0 translate-x-[10%] translate-y-[10%]">
-                        <img
-                           class="service-card__img h-60 -rotate-20 2xl:h-65"
-                           src="/src/assets/images/balls.svg"
-                           loading="lazy"
-                           alt="/"
-                        />
-                     </div>
-                  </div>
-               </article>
+      <section id="space" class="space" data-space>
+         <div class="space__container">
+            <div class="space__decor">
+               <div class="space__content">
+                  <h2 class="space__title" data-space-title>Пространство</h2>
+                  <div id="space-grid" class="space__grid" data-space-grid></div>
+               </div>
             </div>
-         </section>
+         </div>
+      </section>
 
-         <section class="why-us" data-whyus-section>
-            <div class="mx-auto grid gap-4 px-6 lg:gap-10 lg:px-20 xl:grid-cols-2">
-               <div class="relative" data-whyus-img-container>
-                  <div
-                     class="why-us__img-wrapper absolute z-10 rounded-br-3xl bg-white p-2 lg:pt-10"
-                     data-whyus-img-wrapper
-                  >
-                     <span
-                        class="font-ui block max-w-30 pr-4 text-2xl font-bold tracking-[1px] uppercase sm:max-w-none sm:text-5xl xl:text-6xl"
-                        data-whyus-title
-                     >
-                        Почему мы?
+      <main class="flex flex-col">
+         <div id="possibillities">
+            <section id="services" class="services" data-services-section>
+               <div class="mx-auto grid gap-4 px-6 sm:grid-cols-2 lg:grid-cols-3 lg:px-20">
+                  <article class="service-card" data-service-card>
+                     <div class="service-card__bg bg-linear-[206.73deg,#FFFFFF_-69.43%,#8AB3AC_83.22%]"></div>
+                     <span class="service-card__title">
+                        Корпоративы
+                        <br />
+                        и тимбилдинги
                      </span>
 
-                     <span
-                        class="ml-auto block aspect-square w-8 bg-[url(./assets/icons/arrow_outward.svg)] bg-contain bg-no-repeat xl:w-12"
-                        data-whyus-icon-arrow
-                     ></span>
-                  </div>
+                     <div class="service-card__img-container">
+                        <div
+                           class="absolute top-1/2 right-0 flex h-full -translate-x-[10%] -translate-y-1/2 items-center p-6 2xl:-translate-x-[30%]"
+                        >
+                           <img
+                              class="service-card__img h-full rotate-[5.42deg] 2xl:h-65"
+                              src="/src/assets/images/cap.svg"
+                              loading="lazy"
+                              alt="Корпоративы и тимбилдинги"
+                              aria-hidden="true"
+                           />
+                        </div>
+                     </div>
+                  </article>
 
-                  <div class="rounded-5xl h-full max-h-80 w-full overflow-hidden xl:relative xl:max-h-none">
-                     <img
-                        class="pointer-events-none w-full object-cover object-center sm:h-full xl:absolute xl:inset-0 xl:min-h-full"
-                        src="/src/assets/images/zelekot.avif"
-                        loading="lazy"
-                        alt="Локация Зеленого кота"
-                        data-whyus-img
-                     />
-                  </div>
+                  <article class="service-card" data-service-card>
+                     <div class="service-card__bg bg-linear-[149.11deg,#FFFFFF_-57.24%,#8AB3AC_81.32%]"></div>
+                     <span class="service-card__title">
+                        Свадьбы
+                        <br />
+                        и дни рождения
+                     </span>
+                     <div class="service-card__img-container">
+                        <div
+                           class="absolute top-1/2 right-0 h-full -translate-x-[30%] -translate-y-1/2 items-center p-6 2xl:-translate-x-[30%]"
+                        >
+                           <img
+                              class="service-card__img h-full rotate-[7.85deg]"
+                              src="/src/assets/images/glasses.svg"
+                              loading="lazy"
+                              alt="Свадьбы и дни рождения"
+                              aria-hidden="true"
+                           />
+                        </div>
+                     </div>
+                  </article>
+
+                  <article class="service-card" data-service-card>
+                     <div class="service-card__bg bg-linear-[210.64deg,#FFFFFF_-46.41%,#8AB3AC_81.36%]"></div>
+                     <span class="service-card__title">
+                        Выставки
+                        <br />
+                        и презентации
+                     </span>
+                     <div class="service-card__img-container">
+                        <div class="absolute right-0 bottom-0 translate-[15%]">
+                           <img
+                              class="service-card__img h-60 -rotate-20"
+                              src="/src/assets/images/art.svg"
+                              loading="lazy"
+                              alt="Выставки и презентации"
+                              aria-hidden="true"
+                           />
+                        </div>
+                     </div>
+                  </article>
+
+                  <article class="service-card" data-service-card>
+                     <div class="service-card__bg bg-linear-[332.91deg,#FFFFFF_-68.53%,#8AB3AC_83.08%]"></div>
+                     <span class="service-card__title">
+                        Конференции
+                        <br />
+                        и форумы
+                     </span>
+                     <div class="service-card__img-container">
+                        <div class="absolute right-0 bottom-0 -translate-x-[10%] translate-y-[30%]">
+                           <img
+                              class="service-card__img h-60 2xl:h-80"
+                              src="/src/assets/images/mic.svg"
+                              loading="lazy"
+                              alt="Конференции и форумы"
+                              aria-hidden="true"
+                           />
+                        </div>
+                     </div>
+                  </article>
+
+                  <article class="service-card" data-service-card>
+                     <div class="service-card__bg bg-linear-[29.51deg,#FFFFFF_-71.23%,#8AB3AC_84.65%]"></div>
+                     <span class="service-card__title">
+                        Лекции
+                        <br />
+                        и мастер-классы
+                     </span>
+                     <div class="service-card__img-container">
+                        <div class="absolute right-0 bottom-0 translate-x-[20%] translate-y-[10%]">
+                           <img
+                              class="service-card__img h-55 -rotate-10"
+                              src="/src/assets/images/book.svg"
+                              loading="lazy"
+                              alt="Лекции и мастер-классы"
+                              aria-hidden="true"
+                           />
+                        </div>
+                     </div>
+                  </article>
+
+                  <article class="service-card" data-service-card>
+                     <div class="service-card__bg bg-linear-[330.73deg,#FFFFFF_-54.84%,#8AB3AC_82.04%]"></div>
+                     <span class="service-card__title">
+                        Торжества
+                        <br />
+                        и выпускные
+                        <br />
+                        вечера
+                     </span>
+
+                     <div class="service-card__img-container">
+                        <div class="absolute right-0 bottom-0 translate-x-[10%] translate-y-[10%]">
+                           <img
+                              class="service-card__img h-60 -rotate-20 2xl:h-65"
+                              src="/src/assets/images/balls.svg"
+                              loading="lazy"
+                              alt="Торжества и выпускные вечера"
+                              aria-hidden="true"
+                           />
+                        </div>
+                     </div>
+                  </article>
                </div>
+            </section>
 
-               <div class="rounded-5xl text-grey relative flex flex-col md:ml-10.5" data-whyus-cards>
-                  <article class="why-us__card why-us__card--grey" data-whyus-card>
-                     <div class="why-us__card-number-wrapper why-us__card-number-wrapper--grey" data-whyus-card-number>
-                        <span class="why-us__card-number">01</span>
-                     </div>
-
-                     <span class="why-us__card-title">Уникальность как факт</span>
-
-                     <p>
-                        Обычно слово «уникальный» — это маркетинг. В нашем случае — это географическая сводка.
-                        Единственная ивент-площадка в области под события любого масштаба. Остальное — детали.
-                     </p>
-                  </article>
-
-                  <article class="why-us__card why-us__card--grey" data-whyus-card>
-                     <div class="why-us__card-number-wrapper why-us__card-number-wrapper--grey" data-whyus-card-number>
-                        <span class="why-us__card-number">02</span>
-                     </div>
-
-                     <span class="why-us__card-title">В одной команде</span>
-
-                     <p>
-                        Мы не противопоставляем себя организаторам, а становимся частью вашей команды. Помогаем советом,
-                        ресурсами и участием — от первой встречи до финальных аплодисментов.
-                     </p>
-                  </article>
-
-                  <article class="why-us__card why-us__card--green-light" data-whyus-card>
+            <section class="why-us" data-whyus-section>
+               <div class="mx-auto grid gap-4 px-6 lg:gap-10 lg:px-20 xl:grid-cols-2">
+                  <div class="relative" data-whyus-img-container>
                      <div
-                        class="why-us__card-number-wrapper why-us__card-number-wrapper--green-light"
-                        data-whyus-card-number
+                        class="why-us__img-wrapper absolute z-10 rounded-br-3xl bg-white p-2 lg:pt-10"
+                        data-whyus-img-wrapper
                      >
-                        <span class="why-us__card-number">03</span>
+                        <span
+                           class="font-ui block max-w-30 pr-4 text-2xl font-bold tracking-[1px] uppercase sm:max-w-none sm:text-5xl xl:text-6xl"
+                           data-whyus-title
+                        >
+                           Почему мы?
+                        </span>
+
+                        <span
+                           class="ml-auto block aspect-square w-8 bg-[url(./assets/icons/arrow_outward.svg)] bg-contain bg-no-repeat xl:w-12"
+                           data-whyus-icon-arrow
+                        ></span>
                      </div>
 
-                     <div class="why-us__card-title">
-                        Часть экоплощадки
-                        <span class="text-green">«Зеленый&nbsp;КОТ»</span>
+                     <div class="rounded-5xl h-full max-h-80 w-full overflow-hidden xl:relative xl:max-h-none">
+                        <img
+                           class="pointer-events-none w-full object-cover object-center sm:h-full xl:absolute xl:inset-0 xl:min-h-full"
+                           src="/src/assets/images/zelekot.avif"
+                           loading="lazy"
+                           alt="Локация Зеленого кота"
+                           data-whyus-img
+                        />
                      </div>
+                  </div>
 
-                     <p>
-                        В перерывах гости могут прогуляться по единому пространству, сделать небанальные кадры, посетить
-                        МУзей МУсора «МУ МУ КА» и познакомиться с экоповесткой.
-                     </p>
-                  </article>
+                  <div class="rounded-5xl text-grey relative flex flex-col md:ml-10.5" data-whyus-cards>
+                     <article class="why-us__card why-us__card--grey" data-whyus-card>
+                        <div
+                           class="why-us__card-number-wrapper why-us__card-number-wrapper--grey"
+                           data-whyus-card-number
+                        >
+                           <span class="why-us__card-number">01</span>
+                        </div>
+
+                        <span class="why-us__card-title">Уникальность как факт</span>
+
+                        <p>
+                           Обычно слово «уникальный» — это маркетинг. В нашем случае — это географическая сводка.
+                           Единственная ивент-площадка в области под события любого масштаба. Остальное — детали.
+                        </p>
+                     </article>
+
+                     <article class="why-us__card why-us__card--grey" data-whyus-card>
+                        <div
+                           class="why-us__card-number-wrapper why-us__card-number-wrapper--grey"
+                           data-whyus-card-number
+                        >
+                           <span class="why-us__card-number">02</span>
+                        </div>
+
+                        <span class="why-us__card-title">В одной команде</span>
+
+                        <p>
+                           Мы не противопоставляем себя организаторам, а становимся частью вашей команды. Помогаем
+                           советом, ресурсами и участием — от первой встречи до финальных аплодисментов.
+                        </p>
+                     </article>
+
+                     <article class="why-us__card why-us__card--green-light" data-whyus-card>
+                        <div
+                           class="why-us__card-number-wrapper why-us__card-number-wrapper--green-light"
+                           data-whyus-card-number
+                        >
+                           <span class="why-us__card-number">03</span>
+                        </div>
+
+                        <div class="why-us__card-title">
+                           Часть экоплощадки
+                           <span class="text-green">«Зеленый&nbsp;КОТ»</span>
+                        </div>
+
+                        <p>
+                           В перерывах гости могут прогуляться по единому пространству, сделать небанальные кадры,
+                           посетить МУзей МУсора «МУ МУ КА» и познакомиться с экоповесткой.
+                        </p>
+                     </article>
+                  </div>
                </div>
-            </div>
-         </section>
+            </section>
 
-         <div class="tabs-wrapper">
-            <div class="tabs-decor">
-               <section class="tabs">
-                  <div class="flex flex-col gap-16 lg:gap-25">
-                     <h2
-                        class="text-primary font-ui text-3xl font-bold tracking-[1px] uppercase sm:text-5xl xl:text-6xl"
-                     >
-                        Варианты рассадки
-                     </h2>
+            <div class="tabs-wrapper">
+               <div class="tabs-decor">
+                  <section class="tabs">
+                     <div class="flex flex-col gap-16 lg:gap-25">
+                        <h2
+                           class="text-primary font-ui text-3xl font-bold tracking-[1px] uppercase sm:text-5xl xl:text-6xl"
+                        >
+                           Варианты рассадки
+                        </h2>
 
-                     <div class="flex flex-col gap-6">
-                        <ul class="flex w-full flex-row overflow-x-auto" data-layout-tabs>
-                           <li class="w-full">
-                              <button
-                                 class="border-primary flex w-full cursor-pointer flex-col items-start border-b-4 px-4 py-3 whitespace-nowrap"
-                                 data-layout-tab
-                              >
-                                 <span class="font-ui text-xl font-bold tracking-[1px] uppercase xl:text-3xl">
-                                    Банкет
-                                 </span>
-                                 <div class="text-primary font-base text-shadow text-center font-normal lowercase">
-                                    <span>До</span>
-                                    <span class="text-xl font-bold xl:text-2xl"> 220 </span>
-                                    <span>человек</span>
-                                 </div>
-                              </button>
-                           </li>
+                        <div class="flex flex-col gap-6">
+                           <ul class="flex w-full flex-row overflow-x-auto" data-layout-tabs>
+                              <li class="w-full">
+                                 <button
+                                    class="border-primary flex w-full cursor-pointer flex-col items-start border-b-4 px-4 py-3 whitespace-nowrap"
+                                    data-layout-tab
+                                 >
+                                    <span class="font-ui text-xl font-bold tracking-[1px] uppercase xl:text-3xl">
+                                       Банкет
+                                    </span>
+                                    <div class="text-primary font-base text-shadow text-center font-normal lowercase">
+                                       <span>До</span>
+                                       <span class="text-xl font-bold xl:text-2xl"> 220 </span>
+                                       <span>человек</span>
+                                    </div>
+                                 </button>
+                              </li>
 
-                           <li class="w-full">
-                              <button
-                                 class="border-primary-transparent flex w-full cursor-pointer flex-col items-start border-b px-4 py-3 whitespace-nowrap"
-                                 data-layout-tab
-                              >
-                                 <span class="font-ui text-xl font-bold tracking-[1px] uppercase xl:text-3xl">
-                                    Фуршет
-                                 </span>
-                                 <div class="text-primary font-base text-shadow text-center font-normal lowercase">
-                                    <span>До</span>
-                                    <span class="text-xl font-bold xl:text-2xl"> 250 </span>
-                                    <span>человек</span>
-                                 </div>
-                              </button>
-                           </li>
+                              <li class="w-full">
+                                 <button
+                                    class="border-primary-transparent flex w-full cursor-pointer flex-col items-start border-b px-4 py-3 whitespace-nowrap"
+                                    data-layout-tab
+                                 >
+                                    <span class="font-ui text-xl font-bold tracking-[1px] uppercase xl:text-3xl">
+                                       Фуршет
+                                    </span>
+                                    <div class="text-primary font-base text-shadow text-center font-normal lowercase">
+                                       <span>До</span>
+                                       <span class="text-xl font-bold xl:text-2xl"> 250 </span>
+                                       <span>человек</span>
+                                    </div>
+                                 </button>
+                              </li>
 
-                           <li class="w-full">
-                              <button
-                                 class="border-primary-transparent flex w-full cursor-pointer flex-col items-start border-b px-4 py-3 whitespace-nowrap"
-                                 data-layout-tab
-                              >
-                                 <span class="font-ui text-xl font-bold tracking-[1px] uppercase xl:text-3xl">
-                                    Театр
-                                 </span>
-                                 <div class="text-primary font-base text-shadow text-center font-normal lowercase">
-                                    <span>До</span>
-                                    <span class="text-xl font-bold xl:text-2xl"> 230 </span>
-                                    <span>человек</span>
-                                 </div>
-                              </button>
-                           </li>
+                              <li class="w-full">
+                                 <button
+                                    class="border-primary-transparent flex w-full cursor-pointer flex-col items-start border-b px-4 py-3 whitespace-nowrap"
+                                    data-layout-tab
+                                 >
+                                    <span class="font-ui text-xl font-bold tracking-[1px] uppercase xl:text-3xl">
+                                       Театр
+                                    </span>
+                                    <div class="text-primary font-base text-shadow text-center font-normal lowercase">
+                                       <span>До</span>
+                                       <span class="text-xl font-bold xl:text-2xl"> 230 </span>
+                                       <span>человек</span>
+                                    </div>
+                                 </button>
+                              </li>
 
-                           <li class="w-full">
-                              <button
-                                 class="border-primary-transparent flex w-full cursor-pointer flex-col items-start border-b px-4 py-3 whitespace-nowrap"
-                                 data-layout-tab
-                              >
-                                 <span class="font-ui text-xl font-bold tracking-[1px] uppercase xl:text-3xl">
-                                    Лекция
-                                 </span>
-                                 <div class="text-primary font-base text-shadow text-center font-normal lowercase">
-                                    <span>До</span>
-                                    <span class="text-xl font-bold xl:text-2xl"> 250 </span>
-                                    <span>человек</span>
-                                 </div>
-                              </button>
-                           </li>
+                              <li class="w-full">
+                                 <button
+                                    class="border-primary-transparent flex w-full cursor-pointer flex-col items-start border-b px-4 py-3 whitespace-nowrap"
+                                    data-layout-tab
+                                 >
+                                    <span class="font-ui text-xl font-bold tracking-[1px] uppercase xl:text-3xl">
+                                       Лекция
+                                    </span>
+                                    <div class="text-primary font-base text-shadow text-center font-normal lowercase">
+                                       <span>До</span>
+                                       <span class="text-xl font-bold xl:text-2xl"> 250 </span>
+                                       <span>человек</span>
+                                    </div>
+                                 </button>
+                              </li>
 
-                           <li class="w-full">
-                              <button
-                                 class="border-primary-transparent flex w-full cursor-pointer flex-col items-start border-b px-4 py-3 whitespace-nowrap"
-                                 data-layout-tab
-                              >
-                                 <span class="font-ui text-xl font-bold tracking-[1px] uppercase xl:text-3xl">
-                                    Ваш вариант
-                                 </span>
-                                 <div class="text-primary font-base text-shadow text-center font-normal lowercase">
-                                    <span>До</span>
-                                    <span class="text-xl font-bold xl:text-2xl"> 400 </span>
-                                    <span>человек</span>
-                                 </div>
-                              </button>
-                           </li>
-                        </ul>
-                        <!-- <div class="mx-auto aspect-auto w-full max-w-[80%]">
+                              <li class="w-full">
+                                 <button
+                                    class="border-primary-transparent flex w-full cursor-pointer flex-col items-start border-b px-4 py-3 whitespace-nowrap"
+                                    data-layout-tab
+                                 >
+                                    <span class="font-ui text-xl font-bold tracking-[1px] uppercase xl:text-3xl">
+                                       Ваш вариант
+                                    </span>
+                                    <div class="text-primary font-base text-shadow text-center font-normal lowercase">
+                                       <span>До</span>
+                                       <span class="text-xl font-bold xl:text-2xl"> 400 </span>
+                                       <span>человек</span>
+                                    </div>
+                                 </button>
+                              </li>
+                           </ul>
+                           <!-- <div class="mx-auto aspect-auto w-full max-w-[80%]">
                            <img
                               class="pointer-events-none"
                               src="/src/assets/images/hall-layout.webp"
                               alt="Схема зала"
                            />
                         </div> -->
-                     </div>
-
-                     <div class="grid gap-6 md:gap-14 xl:grid-cols-2">
-                        <div class="relative">
-                           <div class="included__title-container">
-                              <span class="included__title"> Что включено </span>
-                              <span
-                                 class="ml-auto block aspect-square w-8 bg-[url(./assets/icons/arrow_outward.svg)] bg-contain bg-no-repeat xl:w-12"
-                              ></span>
-                           </div>
-                           <div class="rounded-5xl h-full max-h-80 w-full overflow-hidden xl:relative xl:max-h-none">
-                              <img
-                                 class="pointer-events-none w-full object-cover object-center sm:h-full xl:absolute xl:inset-0 xl:min-h-full"
-                                 src="/src/assets/images/entrance-eco.avif"
-                                 loading="lazy"
-                                 alt="Локация Зеленого кота"
-                              />
-                           </div>
                         </div>
 
-                        <div class="grid gap-6">
-                           <ul>
-                              <li class="included-item">
-                                 <span class="included-item__icon--check"></span>
-                                 <span class="included-item__title"> Пространство общей площадью 900 м² </span>
-                              </li>
-                              <li class="included-item">
-                                 <span class="included-item__icon--check"></span>
-                                 <span class="included-item__title"> Сцена и подиум </span>
-                              </li>
-                              <li class="included-item">
-                                 <span class="included-item__icon--check"></span>
-                                 <span class="included-item__title"> Wi-Fi с высокой скоростью передачи данных </span>
-                              </li>
-                              <li class="included-item">
-                                 <span class="included-item__icon--check"></span>
-                                 <span class="included-item__title"> Full HD проектор и экран размером 3.8×3 м </span>
-                              </li>
-                              <li class="included-item">
-                                 <span class="included-item__icon--check"></span>
-                                 <span class="included-item__title"> Концертная акустическая система </span>
-                              </li>
-                              <li class="included-item">
-                                 <span class="included-item__icon--check"></span>
-                                 <span class="included-item__title"> Аудиопроцессор и микшерный пульт </span>
-                              </li>
-                              <li class="included-item">
-                                 <span class="included-item__icon--check"></span>
-                                 <span class="included-item__title"> Световое оборудование (базовое сценическое) </span>
-                              </li>
-                              <li class="included-item border-0!">
-                                 <span class="included-item__icon--check"></span>
-                                 <span class="included-item__title"> Пользование гримеркой </span>
-                              </li>
-                           </ul>
+                        <div class="grid gap-6 md:gap-14 xl:grid-cols-2">
+                           <div class="relative">
+                              <div class="included__title-container">
+                                 <span class="included__title"> Что включено </span>
+                                 <span
+                                    class="ml-auto block aspect-square w-8 bg-[url(./assets/icons/arrow_outward.svg)] bg-contain bg-no-repeat xl:w-12"
+                                 ></span>
+                              </div>
+                              <div class="rounded-5xl h-full max-h-80 w-full overflow-hidden xl:relative xl:max-h-none">
+                                 <img
+                                    class="pointer-events-none w-full object-cover object-center sm:h-full xl:absolute xl:inset-0 xl:min-h-full"
+                                    src="/src/assets/images/entrance-eco.avif"
+                                    loading="lazy"
+                                    alt="Локация Зеленого кота"
+                                 />
+                              </div>
+                           </div>
 
-                           <div class="flex flex-col gap-6">
-                              <span class="font-ui font-bold tracking-[1px] uppercase"> Дополнительные услуги </span>
-                              <ul class="flex flex-col">
-                                 <li class="add-service-item">
-                                    <span class="add-service-item__icon--plus"></span>
-                                    <span class="uppercase"> Оформление зала (в т. ч. флористическое) </span>
+                           <div class="grid gap-6">
+                              <ul>
+                                 <li class="included-item">
+                                    <span class="included-item__icon--check"></span>
+                                    <span class="included-item__title"> Пространство общей площадью 900 м² </span>
                                  </li>
-                                 <li class="add-service-item">
-                                    <span class="add-service-item__icon--plus"></span>
-                                    <span class="uppercase"> Аренда флипчартов </span>
+                                 <li class="included-item">
+                                    <span class="included-item__icon--check"></span>
+                                    <span class="included-item__title"> Сцена и подиум </span>
                                  </li>
-                                 <li class="add-service-item border-0!">
-                                    <span class="add-service-item__icon--plus"></span>
-                                    <span class="uppercase"> Организация кейтеринга </span>
+                                 <li class="included-item">
+                                    <span class="included-item__icon--check"></span>
+                                    <span class="included-item__title">
+                                       Wi-Fi с высокой скоростью передачи данных
+                                    </span>
+                                 </li>
+                                 <li class="included-item">
+                                    <span class="included-item__icon--check"></span>
+                                    <span class="included-item__title">
+                                       Full HD проектор и экран размером 3.8×3 м
+                                    </span>
+                                 </li>
+                                 <li class="included-item">
+                                    <span class="included-item__icon--check"></span>
+                                    <span class="included-item__title"> Концертная акустическая система </span>
+                                 </li>
+                                 <li class="included-item">
+                                    <span class="included-item__icon--check"></span>
+                                    <span class="included-item__title"> Аудиопроцессор и микшерный пульт </span>
+                                 </li>
+                                 <li class="included-item">
+                                    <span class="included-item__icon--check"></span>
+                                    <span class="included-item__title">
+                                       Световое оборудование (базовое сценическое)
+                                    </span>
+                                 </li>
+                                 <li class="included-item border-0!">
+                                    <span class="included-item__icon--check"></span>
+                                    <span class="included-item__title"> Пользование гримеркой </span>
                                  </li>
                               </ul>
+
+                              <div class="flex flex-col gap-6">
+                                 <span class="font-ui font-bold tracking-[1px] uppercase"> Дополнительные услуги </span>
+                                 <ul class="flex flex-col">
+                                    <li class="add-service-item">
+                                       <span class="add-service-item__icon--plus"></span>
+                                       <span class="uppercase"> Оформление зала (в т. ч. флористическое) </span>
+                                    </li>
+                                    <li class="add-service-item">
+                                       <span class="add-service-item__icon--plus"></span>
+                                       <span class="uppercase"> Аренда флипчартов </span>
+                                    </li>
+                                    <li class="add-service-item border-0!">
+                                       <span class="add-service-item__icon--plus"></span>
+                                       <span class="uppercase"> Организация кейтеринга </span>
+                                    </li>
+                                 </ul>
+                              </div>
                            </div>
                         </div>
                      </div>
-                  </div>
-               </section>
+                  </section>
+               </div>
             </div>
-         </div>
 
-         <div class="relative z-1 -mt-32 lg:-mt-25">
-            <section id="section-stock" class="stock">
+            <section id="stock" class="stock">
                <div class="z-0 mx-auto flex flex-col gap-12 px-6 lg:gap-25 lg:px-20">
                   <h2 class="font-ui text-3xl font-bold tracking-[1px] text-white uppercase text-shadow-xs sm:text-5xl">
                      Специальные предложения
@@ -734,7 +746,8 @@
                </div>
             </section>
          </div>
-         <section id="section-faq">
+
+         <section id="faq" class="my-16 lg:my-25">
             <div class="mx-auto flex flex-col gap-12 px-6 lg:gap-25 lg:px-20">
                <h2 class="font-ui text-3xl font-bold tracking-[1px] uppercase sm:text-5xl">Вопросы и ответы</h2>
                <div class="grid gap-4 lg:grid-cols-2">
@@ -869,7 +882,8 @@
             </div>
          </section>
       </main>
-      <footer id="section-contacts" class="bg-grey-dark rounded-t-6xl text-white">
+
+      <footer id="contacts" class="bg-grey-dark rounded-t-6xl text-white">
          <div class="mx-auto flex flex-col gap-12 px-6 py-16 lg:gap-25 lg:p-20 lg:px-20 lg:py-25">
             <h2 class="text-primary font-ui text-3xl font-bold tracking-[1px] uppercase sm:text-5xl">Контакты</h2>
             <div class="grid justify-between gap-10 xl:grid-cols-3">
@@ -911,10 +925,16 @@
                   <a
                      href="https://t.me/joinchat/@EcoPosolstvo"
                      class="bg-primary aspect-square w-8 shrink-0 mask-[url(./assets/icons/social-telegram.svg)] mask-contain mask-no-repeat lg:w-12"
+                     target="_blank"
+                     rel="noopener noreferrer"
+                     title="Telegram"
                   ></a>
                   <a
                      href="/"
                      class="bg-primary aspect-square w-8 shrink-0 mask-[url(./assets/icons/social-max.svg)] mask-contain mask-no-repeat lg:w-12"
+                     target="_blank"
+                     rel="noopener noreferrer"
+                     title="MAX"
                   ></a>
                </div>
                <span class="text-center"> © Экопосольство. Официальный сайт. 2025 </span>
@@ -925,7 +945,7 @@
       <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=307006f6-584d-408e-9f3c-687300b32685&amp;ver=1.0"></script>
       <noscript>
          <div>
-            <img src="https://mc.yandex.ru/watch/107190957" style="position: absolute; left: -9999px" alt="" />
+            <img src="https://mc.yandex.ru/watch/107190957" style="position: absolute; left: -9999px" alt="Карта" />
          </div>
       </noscript>
    </body>

@@ -97,18 +97,26 @@
    @apply border-b-grey-light-transparent border-b xl:border-0;
 }
 
+.nav-list__item:last-child {
+   @apply border-0;
+}
+
 .nav-list__link {
    @apply block px-4 py-4 hover:underline hover:underline-offset-6;
 }
 
-/* Блок Герой */
-.hero__decor {
-   @apply rounded-b-6xl after:rounded-b-6xl overflow-clip bg-white;
+.nav-list__link.active {
+   @apply underline underline-offset-6;
 }
 
-.hero__decor::after {
+/* Блок Герой */
+.hero {
+   @apply rounded-b-6xl relative mb-10 bg-white lg:mb-15;
+}
+
+.hero::after {
    content: "";
-   @apply absolute -bottom-10 z-[-5] h-40 w-full bg-[url(./assets/images/bg-wall-white.webp)] bg-cover bg-no-repeat lg:-bottom-15;
+   @apply absolute -bottom-10 -z-10 h-40 w-full rounded-[inherit] bg-[url(./assets/images/bg-wall-white.webp)] bg-cover bg-no-repeat lg:-bottom-15;
 }
 
 .hero__bg {
@@ -120,7 +128,16 @@
    @apply from-primary absolute -z-20 aspect-square w-full rounded-full bg-radial to-white blur-3xl;
 }
 
+/* Секция О нас */
+.about {
+   @apply relative z-10 pb-12 md:px-6 lg:p-20 lg:pt-0 lg:pb-15;
+}
+
 /* Секция Статистика */
+.stats {
+   @apply bg-grey-light rounded-6xl relative z-20 grid px-6 py-20 lowercase shadow sm:grid-cols-2 sm:gap-y-12 lg:py-25 xl:grid-cols-4;
+}
+
 .stat-card {
    @apply flex flex-col items-center gap-3 p-6;
 }
@@ -130,7 +147,7 @@
 }
 
 .stat-card__counter {
-   @apply text-5xl font-bold 2xl:text-[6.25rem];
+   @apply text-6xl font-bold 2xl:text-[6.25rem];
 }
 
 .stat-card__append {
@@ -147,16 +164,16 @@
 
 /* Секция Приемущества */
 .adventages {
-   @apply relative z-0 grid items-center px-6 py-20 text-white lowercase sm:grid-cols-2 lg:py-25 xl:grid-cols-4;
+   @apply bg-primary rounded-b-6xl relative z-0 -mt-20 grid items-stretch overflow-hidden px-6 py-20 pt-35 text-white lowercase shadow sm:grid-cols-2 lg:py-25 lg:pt-45 xl:grid-cols-4;
 }
 
 .adventages::before {
    content: "";
-   @apply absolute top-0 left-0 -z-1 aspect-407/435 h-100 -translate-y-1/5 bg-[url(./assets/images/dotted.svg)];
+   @apply absolute top-0 left-0 -z-1 aspect-407/435 h-full bg-[url(./assets/images/dotted.svg)] bg-no-repeat;
 }
 
 .adventage-card {
-   @apply flex h-36 w-full flex-col justify-center gap-4 p-6 text-center;
+   @apply flex w-full flex-col justify-start gap-4 p-6 text-center;
 }
 
 .adventage-title {
@@ -169,25 +186,21 @@
 
 /* Секция Пространство */
 .space {
-   @apply bg-grey-dark rounded-b-6xl relative z-2 -mt-15 overflow-hidden text-white;
+   @apply rounded-b-6xl relative -mt-15 mb-10 text-white shadow lg:mb-15;
 }
 
-.space-wrapper {
-   @apply relative mb-10 shadow lg:mb-15;
-}
-
-.space-wrapper::after {
+.space::after {
    content: "";
-   @apply rounded-b-6xl absolute -bottom-10 left-0 z-1 h-40 w-full bg-[url(./assets/images/bg-wall-graphite.webp)] bg-cover bg-no-repeat lg:-bottom-15;
+   @apply absolute -bottom-10 left-0 -z-30 h-40 w-full rounded-b-[inherit] bg-[url(./assets/images/bg-wall-graphite.webp)] bg-cover bg-no-repeat lg:-bottom-15;
 }
 
 .space__container {
-   @apply relative overflow-hidden;
+   @apply bg-grey-dark relative -z-20 overflow-hidden rounded-b-[inherit];
 }
 
 .space__container::after {
    content: "";
-   @apply after:bg-primary after:absolute after:top-1/2 after:left-1/2 after:aspect-square after:w-full after:-translate-y-1/2 after:mask-[url(./assets/images/circle.svg)] after:bg-cover after:bg-no-repeat after:opacity-25;
+   @apply bg-primary absolute top-1/2 left-1/2 aspect-square w-full -translate-y-1/2 mask-[url(./assets/images/circle.svg)] bg-cover bg-no-repeat opacity-25;
 }
 
 .space__container::before {
@@ -195,8 +208,17 @@
    @apply from-primary to-grey-light absolute top-1/2 left-1/2 aspect-square w-full -translate-y-1/2 rounded-full bg-radial-[at_0%_100%] opacity-30 blur-3xl;
 }
 
-.space__bg {
-   @apply relative overflow-hidden rounded-b-[inherit];
+.space__decor::before {
+   content: "";
+   @apply from-primary to-grey-light absolute right-full bottom-0 aspect-square w-1/2 translate-1/2 rounded-full bg-radial-[at_0%_100%] opacity-30 blur-3xl;
+}
+
+.space__content {
+   @apply mx-auto flex flex-col gap-15 overflow-hidden px-6 py-25 pt-35 lg:gap-25 lg:p-20 lg:pt-37.5 lg:pb-25;
+}
+
+.space__title {
+   @apply text-primary font-ui text-3xl font-bold tracking-[1px] uppercase sm:text-5xl lg:text-6xl;
 }
 
 .space__grid {
@@ -219,12 +241,11 @@
    @apply opacity-80;
 }
 
-.space__bg::before {
-   content: "";
-   @apply from-primary to-grey-light absolute right-full bottom-0 aspect-square w-1/2 translate-1/2 rounded-full bg-radial-[at_0%_100%] opacity-30 blur-3xl;
+/* Секция Услуги */
+.services {
+   @apply my-16 lg:my-25;
 }
 
-/* Секция Услуги */
 .service-card {
    @apply relative mb-6 aspect-[3/1.9] w-full rounded-4xl p-10 shadow 2xl:p-12.5;
 }
@@ -251,6 +272,10 @@
 }
 
 /* Секция Почему мы? */
+.why-us {
+   @apply mb-16 lg:mb-25;
+}
+
 .why-us__img-wrapper::after {
    content: "";
    @apply absolute top-0 right-0 aspect-square w-10 translate-x-full bg-[url(./assets/images/triangle-rounded.svg)];
@@ -373,7 +398,7 @@
 }
 
 .stock {
-   @apply bg-primary rounded-b-6xl relative -z-2 py-16 pt-38 shadow lg:pb-25;
+   @apply bg-primary rounded-b-6xl relative z-2 -mt-15 pt-38 shadow lg:pt-40 lg:pb-25;
 }
 
 .stock::before {

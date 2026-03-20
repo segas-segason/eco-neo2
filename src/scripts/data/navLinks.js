@@ -1,31 +1,31 @@
 export const navLinks = [
    {
-      href: "#section-about",
+      href: "#about",
       text: "О нас",
    },
 
    {
-      href: "#section-space",
+      href: "#space",
       text: "Пространство",
    },
 
    {
-      href: "#section-possibilities",
+      href: "#possibillities",
       text: "Возможности",
    },
 
    {
-      href: "#section-stock",
+      href: "#stock",
       text: "Акции",
    },
 
    {
-      href: "#section-faq",
+      href: "#faq",
       text: "Вопрос/Ответ",
    },
 
    {
-      href: "#section-contacts",
+      href: "#contacts",
       text: "Контакты",
    },
 ];
