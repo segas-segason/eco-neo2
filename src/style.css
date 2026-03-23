@@ -18,6 +18,7 @@
    --color-green-light: #e2ecd2;
    --color-green: #a1c938;
    --color-white: #ffffff;
+   --color-white-transparent: rgba(255, 255, 255, 0.5);
 
    --shadow: 0 4px 4px 0 rgba(102, 102, 102, 0.1);
    --text-shadow: 0 4px 4px rgba(102, 102, 102, 0.1);

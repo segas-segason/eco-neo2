@@ -7,6 +7,8 @@ import { initBackdropMenu } from "./animations/backdropMenu";
 import { initPopupOpen } from "./animations/popupOpen";
 import { initAccordionFaq } from "./animations/accordionFaq";
 import { initStartPage } from "./animations/startPage";
+import { initContactsFooter } from "./animations/contactsFooter";
+import { initStockOpen } from "./animations/stockOpen";
 
 // Import Sections
 import { initSpaceSection } from "./sections/spaceSection";
@@ -32,6 +34,8 @@ async function initApp() {
    initStartPage();
    initPopupOpen();
    initBackdropMenu();
+   initContactsFooter();
+   initStockOpen();
 
    // Sections
    initSpaceSection();

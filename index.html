@@ -705,18 +705,21 @@
 
             <section
                id="stock"
-               class="stock bg-primary selection:text-primary! rounded-b-5xl relative -z-2 -mt-15 overflow-hidden pt-29 pb-10 shadow selection:bg-white! lg:pt-49 lg:pb-25"
+               class="stock bg-primary selection:text-primary! rounded-b-5xl relative -z-2 -mt-15 overflow-hidden pt-29 pb-10 selection:bg-white! lg:pt-49 lg:pb-25"
+               data-stock
             >
                <div class="z-0 mx-auto flex flex-col gap-12 px-6 lg:gap-25 lg:px-20">
                   <h2
                      class="font-heading text-3xl font-bold tracking-[1px] text-white uppercase text-shadow-xs sm:text-5xl"
+                     data-stock-title
                   >
                      Специальные предложения
                   </h2>
 
-                  <div class="lg:rounded-6xl rounded-5xl overflow-hidden shadow">
-                     <div
-                        class="bg-grey-light relative z-1 flex flex-col gap-4 rounded-b-[inherit] px-6 py-10 shadow lg:gap-7 lg:px-20 lg:py-15"
+                  <div class="lg:rounded-6xl rounded-5xl overflow-hidden">
+                     <article
+                        class="bg-grey-light relative z-1 flex flex-col gap-4 rounded-[inherit] px-6 py-10 shadow lg:gap-7 lg:px-20 lg:py-15"
+                        data-stock-card
                      >
                         <span class="font-heading bg-primary text-grey-light w-fit px-2 text-xl font-bold xl:text-2xl">
                            01
@@ -724,12 +727,17 @@
                         <h3 class="text-primary font-heading text-2xl font-bold tracking-[1px] uppercase xl:text-3xl">
                            Экоскидка
                         </h3>
-                        <p>Для мероприятий экологической направленности — дополнительное оборудование бесплатно*.</p>
-                        <p class="italic">*Перечень оборудования согласовывается в индивидуальном порядке</p>
-                     </div>
+                        <p>
+                           Для мероприятий экологической направленности — дополнительное оборудование бесплатно*.
+                           <br />
+                           <br />
+                           <em>*Перечень оборудования согласовывается в индивидуальном порядке</em>
+                        </p>
+                     </article>
 
-                     <div
-                        class="bg-grey-light relative -mt-20 flex flex-col gap-4 px-6 py-10 pt-25 lg:gap-7 lg:px-20 lg:py-15 lg:pt-35"
+                     <article
+                        class="bg-grey-light relative -mt-20 flex flex-col gap-4 rounded-b-[inherit] px-6 py-10 pt-25 shadow lg:gap-7 lg:px-20 lg:py-15 lg:pt-35"
+                        data-stock-card
                      >
                         <span class="font-heading bg-primary text-grey-light w-fit px-2 text-xl font-bold xl:text-2xl">
                            02
@@ -737,21 +745,24 @@
                         <h3 class="text-primary font-heading text-2xl font-bold tracking-[1px] uppercase xl:text-3xl">
                            Бесплатный день
                         </h3>
-                        <p>При аренде площадки на срок от 2 дней — день накануне мероприятия в подарок.</p>
                         <p>
+                           При аренде площадки на срок от 2 дней — день накануне мероприятия в подарок.
+                           <br />
+                           <br />
                            Приезжайте заранее, чтобы спокойно смонтировать оборудование, встретить подрядчиков и
                            провести генеральную репетицию.
                         </p>
-                     </div>
+                     </article>
                   </div>
                </div>
             </section>
          </div>
 
-         <section id="faq" class="my-16 lg:my-25">
+         <section id="faq" class="my-16 lg:my-25" data-faq>
             <div class="mx-auto flex flex-col gap-12 px-6 lg:gap-25 lg:px-20">
-               <h2 class="font-heading text-3xl font-bold tracking-[1px] uppercase sm:text-5xl">Вопросы и ответы</h2>
-
+               <h2 class="font-heading text-3xl font-bold tracking-[1px] uppercase sm:text-5xl" data-faq-title>
+                  Вопросы и ответы
+               </h2>
                <div class="grid gap-4 lg:grid-cols-2">
                   <article class="faq-card" data-accordion-item>
                      <div class="faq-card__icon">
@@ -885,27 +896,35 @@
       <footer
          id="contacts"
          class="bg-grey-dark rounded-t-5xl lg:rounded-t-6xl selection:text-primary! curs text-white selection:bg-white!"
+         data-contacts
       >
          <div class="mx-auto flex flex-col gap-12 px-6 py-16 lg:gap-25 lg:p-20 lg:px-20 lg:py-25">
-            <h2 class="text-primary font-heading text-3xl font-bold tracking-[1px] uppercase sm:text-5xl">Контакты</h2>
+            <h2
+               class="text-primary font-heading text-3xl font-bold tracking-[1px] uppercase sm:text-5xl"
+               data-contacts-title
+            >
+               Контакты
+            </h2>
             <div class="grid justify-between gap-10 xl:grid-cols-3">
-               <div class="flex flex-row gap-2">
+               <article class="flex flex-row gap-2" data-contacts-item>
                   <span
                      class="mt-1 aspect-square w-6 shrink-0 bg-[url(./assets/icons/location.svg)] bg-no-repeat"
                   ></span>
                   <div class="flex flex-col gap-2">
                      <span> г. Зеленоградск, ул. Калининградская, д. 4а </span>
-                     <span class="text-grey-light-transparent"> территория Экоплощадки «Зелёный КОТ» </span>
+                     <span class="text-white-transparent"> территория Экоплощадки «Зелёный КОТ» </span>
                   </div>
-               </div>
-               <div class="flex flex-row gap-2">
+               </article>
+
+               <article class="flex flex-row gap-2" data-contacts-item>
                   <span class="mt-1 aspect-square w-6 shrink-0 bg-[url(./assets/icons/pace.svg)] bg-no-repeat"></span>
                   <div class="flex flex-col gap-2">
-                     <span class="text-grey-light-transparent"> Время работы: </span>
+                     <span class="text-white-transparent"> Время работы: </span>
                      <span>ежедневно с 10:00 до 18:00</span>
                   </div>
-               </div>
-               <div class="flex flex-col gap-2">
+               </article>
+
+               <article class="flex flex-col gap-2" data-contacts-item>
                   <a class="flex items-center gap-2 hover:underline hover:underline-offset-6" href="tel:+79118607773">
                      <span
                         class="aspect-square w-6 shrink-0 bg-[url(./assets/icons/phone_forwarded.svg)] bg-no-repeat"
@@ -919,9 +938,15 @@
                      <span class="aspect-square w-6 shrink-0 bg-[url(./assets/icons/email.svg)] bg-no-repeat"></span>
                      <span>promo@ecoposolstvo.ru</span>
                   </a>
-               </div>
+               </article>
             </div>
-            <div id="map" class="lg:rounded-5xl aspect-auto h-100 overflow-hidden rounded-4xl lg:h-140"></div>
+
+            <div
+               id="map"
+               class="lg:rounded-5xl aspect-auto h-100 overflow-hidden rounded-4xl lg:h-140"
+               data-contacts-map
+            ></div>
+
             <div class="flex flex-col gap-4">
                <div class="flex justify-center gap-6">
                   <a
@@ -930,6 +955,7 @@
                      target="_blank"
                      rel="noopener noreferrer"
                      title="Telegram"
+                     data-contacts-social-icon
                   ></a>
                   <a
                      href="/"
@@ -937,9 +963,12 @@
                      target="_blank"
                      rel="noopener noreferrer"
                      title="MAX"
+                     data-contacts-social-icon
                   ></a>
                </div>
-               <span class="text-center"> © Экопосольство. Официальный сайт. 2025 </span>
+               <span class="text-white-transparent text-center" data-contacts-copy>
+                  © Экопосольство. Официальный сайт. 2025
+               </span>
             </div>
          </div>
       </footer>

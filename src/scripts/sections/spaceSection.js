@@ -20,7 +20,7 @@ export function initSpaceSection() {
 
    gsap.set(spaceTitle, {
       opacity: 0,
-      y: -100,
+      yPercent: -100,
    });
 
    const tl = gsap.timeline({
@@ -33,11 +33,11 @@ export function initSpaceSection() {
    tl.to(spaceTitle, {
       opacity: 1,
       duration: 0.5,
-      y: 0,
+      yPercent: 0,
       ease: "power2.out",
    }).from(spaceCard, {
       opacity: 0,
-      y: 50,
+      yPercent: 10,
       stagger: 0.25,
    });
 }
