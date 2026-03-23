@@ -31,8 +31,8 @@ export function initStatsSection() {
             counter.textContent = Math.round(obj.val);
          },
          scrollTrigger: {
-            trigger: counter,
-            start: "top 90%",
+            trigger: statsSection,
+            start: "top 100%",
          },
       });
    });

@@ -20,7 +20,7 @@
       <meta property="og:url" content="http://ecoposolstvo.ru" />
    </head>
 
-   <body class="font-base text-grey-dark selection:bg-primary-transparent bg-white text-base">
+   <body class="text-grey-dark selection:bg-primary-transparent bg-white font-sans text-base">
       <div class="fixed z-1000 h-full w-full overflow-hidden bg-white select-none" data-intro>
          <div class="relative flex h-full w-full flex-col items-center justify-center">
             <div class="bg-grey-light flex flex-col items-center justify-center opacity-0" data-intro-box>
@@ -28,34 +28,8 @@
                   class="font-brand grid grid-cols-2 items-center gap-[clamp(0.5rem,0.0455rem+2.2727vw,1.5rem)] overflow-hidden px-[clamp(1.5rem,0.3636rem+5.6818vw,4rem)] py-[clamp(1rem,0.0909rem+4.5455vw,3rem)] text-center text-[clamp(2rem,8vw,8.75rem)] leading-none font-bold uppercase"
                   data-intro-grid
                >
-                  <div class="flex" data-intro-left-short>
-                     <span data-static-letter>Э</span>
-                     <span class="hidden" data-hidden-letter> к </span>
-                     <span class="hidden" data-hidden-letter> о </span>
-                     <span data-static-letter>П</span>
-                     <span class="hidden" data-hidden-letter> о </span>
-                     <span class="hidden" data-hidden-letter> с </span>
-                     <span class="hidden" data-hidden-letter> о </span>
-                     <span class="hidden" data-hidden-letter> л </span>
-                     <span class="hidden" data-hidden-letter> ь </span>
-                     <span class="hidden" data-hidden-letter> с </span>
-                     <span class="hidden" data-hidden-letter> т </span>
-                     <span class="hidden" data-hidden-letter> в </span>
-                     <span class="hidden" data-hidden-letter> о </span>
-                  </div>
-                  <div class="flex" data-intro-right-short>
-                     <span data-static-letter>З</span>
-                     <span class="hidden" data-hidden-letter> е </span>
-                     <span class="hidden" data-hidden-letter> л </span>
-                     <span class="hidden" data-hidden-letter> е </span>
-                     <span class="hidden" data-hidden-letter> н </span>
-                     <span class="hidden" data-hidden-letter> ы </span>
-                     <span class="hidden" data-hidden-letter> й </span>
-                     <span class="hidden" data-hidden-letter> &nbsp; </span>
-                     <span data-static-letter>К</span>
-                     <span class="hidden" data-hidden-letter> о </span>
-                     <span class="hidden" data-hidden-letter> т </span>
-                  </div>
+                  <div class="flex" data-intro-left-short></div>
+                  <div class="flex" data-intro-right-short></div>
                </div>
             </div>
          </div>
@@ -76,12 +50,12 @@
                         />
                      </div>
                      <div class="mt-auto">
-                        <h2 class="font-ui text-6xl font-medium -tracking-wider uppercase">Оставить заявку</h2>
+                        <h2 class="font-heading text-6xl font-medium -tracking-wider uppercase">Оставить заявку</h2>
                      </div>
                   </div>
                   <form action="" method="post" class="flex flex-col gap-6 py-20">
                      <p class="flex flex-col">
-                        <label for="name" class="font-ui font-medium">Имя и фамилия</label>
+                        <label for="name" class="font-heading font-medium">Имя и фамилия</label>
                         <input
                            class="border-b border-b-white p-4 text-[1rem] focus:outline-0"
                            type="text"
@@ -92,7 +66,7 @@
                         />
                      </p>
                      <p class="flex flex-col">
-                        <label for="email" class="font-ui font-medium">E-mail</label>
+                        <label for="email" class="font-heading font-medium">E-mail</label>
                         <input
                            class="border-b border-b-white p-4 text-[1rem] focus:outline-0"
                            type="email"
@@ -103,7 +77,7 @@
                         />
                      </p>
                      <p class="flex flex-col">
-                        <label for="phone" class="font-ui font-medium">Телефон</label>
+                        <label for="phone" class="font-heading font-medium">Телефон</label>
                         <input
                            class="border-b border-b-white p-4 text-[1rem] focus:outline-0"
                            type="tel"
@@ -132,7 +106,7 @@
                      </div>
                      <button
                         type="submit"
-                        class="border-primary font-ui hover:bg-primary w-full cursor-pointer rounded-md border-4 py-3 font-bold uppercase"
+                        class="border-primary font-heading hover:bg-primary w-full cursor-pointer rounded-md border-4 py-3 font-bold uppercase"
                      >
                         Получить консультацию
                      </button>
@@ -141,6 +115,7 @@
             </div>
          </div>
       </div> -->
+
       <div
          class="pointer-events-none invisible fixed z-100 flex h-full w-full items-center justify-center backdrop-blur-lg"
          data-popup
@@ -153,7 +128,7 @@
                data-popup-close
             ></span>
             <div
-               class="font-ui relative z-55 flex w-full flex-col items-center justify-center gap-8 p-6 pt-15 pb-0 sm:p-16 sm:pb-0 md:pb-16 md:pl-0"
+               class="font-heading relative z-55 flex w-full flex-col items-center justify-center gap-8 p-6 pt-15 pb-0 sm:p-16 sm:pb-0 md:pb-16 md:pl-0"
             >
                <span class="text-primary font-bold uppercase"> Открытие в апреле 2026 года! </span>
                <div class="flex flex-col gap-6">
@@ -181,7 +156,7 @@
             <div class="relative h-full w-full shrink-0 md:order-first md:mt-auto md:max-w-[30%]">
                <img
                   class="absolute top-0 left-0 z-54 w-[50%] -translate-x-[20%] translate-y-[5%] rotate-45 sm:translate-y-[0%] md:top-auto md:bottom-0 md:w-full md:translate-y-[20%]"
-                  src="/src/assets/images/open-balls.webp"
+                  src="/images/open-balls.webp"
                   loading="eager"
                   alt=""
                   aria-hidden="true"
@@ -235,7 +210,7 @@
          </div>
       </div>
 
-      <header class="hero" data-hero>
+      <header id="hero" class="hero rounded-5xl lg:rounded-b-6xl relative mb-6 bg-white lg:mb-15" data-hero>
          <div class="overflow-hidden">
             <div
                class="relative z-20 mx-auto mb-[clamp(11.25rem,3.75rem+37.5vw,18.75rem)] flex flex-col gap-8 p-6 pt-28 sm:mb-[clamp(12.5rem,calc(50rem-78.125vw),18.75rem)] lg:mb-[clamp(5rem,20rem-15.625vw,10rem)] lg:px-20"
@@ -263,7 +238,7 @@
                </div>
             </div>
 
-            <section id="about" class="about" data-section-about>
+            <section id="about" class="relative z-10 pb-6 md:px-6 lg:p-20 lg:pt-0 lg:pb-15" data-section-about>
                <div class="mx-auto">
                   <div
                      class="absolute right-0 z-30 w-[clamp(20rem,6.25rem+68.75vw,33.75rem)] -translate-y-[85%] p-6 lg:w-[clamp(33.75rem,11.25rem+35.1563vw,45rem)] xl:w-[clamp(43.75rem,calc(46.875rem-1.9531vw),45rem)]"
@@ -271,7 +246,7 @@
                   >
                      <img
                         class="pointer-events-none aspect-auto w-full"
-                        src="/src/assets/images/home.avif"
+                        src="/images/home.avif"
                         loading="eager"
                         alt="Домик Экопосольства"
                         aria-hidden="true"
@@ -286,28 +261,52 @@
                         aria-hidden="true"
                      />
                   </div>
-                  <div id="stats" class="stats" data-stats></div>
-                  <div id="adventages" class="adventages" data-adventages></div>
+                  <div
+                     id="stats"
+                     class="bg-grey-light rounded-5xl lg:rounded-6xl relative z-20 grid px-6 py-20 lowercase shadow sm:grid-cols-2 sm:gap-y-12 lg:py-25 xl:grid-cols-4"
+                     data-stats
+                  ></div>
+                  <div
+                     id="adventages"
+                     class="bg-primary adventages rounded-b-5xl lg:rounded-b-6xl relative z-0 -mt-20 grid items-stretch overflow-hidden px-6 py-10 pt-25 text-white lowercase shadow sm:grid-cols-2 lg:py-25 lg:pt-45 xl:grid-cols-4"
+                     data-adventages
+                  ></div>
                </div>
             </section>
          </div>
       </header>
 
-      <section id="space" class="space" data-space>
-         <div class="space__container">
-            <div class="space__decor">
-               <div class="space__content">
-                  <h2 class="space__title" data-space-title>Пространство</h2>
-                  <div id="space-grid" class="space__grid" data-space-grid></div>
+      <main id="main">
+         <section
+            id="space"
+            class="space lg:rounded-b-6xl selection:text-primary! rounded-b-5xl relative -mt-15 mb-6 text-white shadow selection:bg-white! lg:mb-15"
+            data-space
+         >
+            <div class="space__container bg-grey-dark relative -z-20 overflow-hidden rounded-b-[inherit]">
+               <div class="space__decor">
+                  <div
+                     class="mx-auto flex flex-col gap-10 overflow-hidden px-6 py-12 pt-25 lg:gap-25 lg:p-20 lg:py-25 lg:pt-37.5 lg:pb-25"
+                  >
+                     <h2
+                        class="text-primary font-heading text-3xl font-bold tracking-[1px] uppercase sm:text-5xl lg:text-6xl"
+                        data-space-title
+                     >
+                        Пространство
+                     </h2>
+
+                     <div
+                        id="space-grid"
+                        class="grid gap-10 sm:grid-rows-3 lg:grid-flow-col lg:gap-y-15 xl:gap-x-32"
+                        data-space-grid
+                     ></div>
+                  </div>
                </div>
             </div>
-         </div>
-      </section>
+         </section>
 
-      <main class="flex flex-col">
          <div id="possibillities">
             <section id="services" class="services" data-services-section>
-               <div class="mx-auto grid gap-4 px-6 sm:grid-cols-2 lg:grid-cols-3 lg:px-20">
+               <div class="grid gap-4 px-6 sm:grid-cols-2 lg:grid-cols-3 lg:px-20">
                   <article class="service-card" data-service-card>
                      <div class="service-card__bg bg-linear-[206.73deg,#FFFFFF_-69.43%,#8AB3AC_83.22%]"></div>
                      <span class="service-card__title">
@@ -446,7 +445,7 @@
                         data-whyus-img-wrapper
                      >
                         <span
-                           class="font-ui block max-w-30 pr-4 text-2xl font-bold tracking-[1px] uppercase sm:max-w-none sm:text-5xl xl:text-6xl"
+                           class="font-heading block max-w-30 pr-4 text-2xl font-bold tracking-[1px] uppercase sm:max-w-none sm:text-5xl xl:text-6xl"
                            data-whyus-title
                         >
                            Почему мы?
@@ -458,10 +457,12 @@
                         ></span>
                      </div>
 
-                     <div class="rounded-5xl h-full max-h-80 w-full overflow-hidden xl:relative xl:max-h-none">
+                     <div
+                        class="lg:rounded-5xl h-full max-h-80 w-full overflow-hidden rounded-4xl xl:relative xl:max-h-none"
+                     >
                         <img
                            class="pointer-events-none w-full object-cover object-center sm:h-full xl:absolute xl:inset-0 xl:min-h-full"
-                           src="/src/assets/images/zelekot.avif"
+                           src="/images/zelekot.avif"
                            loading="lazy"
                            alt="Локация Зеленого кота"
                            data-whyus-img
@@ -469,7 +470,7 @@
                      </div>
                   </div>
 
-                  <div class="rounded-5xl text-grey relative flex flex-col md:ml-10.5" data-whyus-cards>
+                  <div class="lg:rounded-5xl text-grey relative flex flex-col rounded-4xl md:ml-10.5" data-whyus-cards>
                      <article class="why-us__card why-us__card--grey" data-whyus-card>
                         <div
                            class="why-us__card-number-wrapper why-us__card-number-wrapper--grey"
@@ -524,216 +525,216 @@
                </div>
             </section>
 
-            <div class="tabs-wrapper">
-               <div class="tabs-decor">
-                  <section class="tabs">
-                     <div class="flex flex-col gap-16 lg:gap-25">
-                        <h2
-                           class="text-primary font-ui text-3xl font-bold tracking-[1px] uppercase sm:text-5xl xl:text-6xl"
-                        >
-                           Варианты рассадки
-                        </h2>
+            <section
+               class="tabs rounded-5xl lg:rounded-6xl bg-grey-light relative mx-auto mb-6 px-6 py-16 lg:p-20 lg:py-25"
+            >
+               <div class="flex flex-col gap-16 lg:gap-25">
+                  <h2
+                     class="text-primary font-heading text-3xl font-bold tracking-[1px] uppercase sm:text-5xl xl:text-6xl"
+                     data-tabs-title
+                  >
+                     Варианты рассадки
+                  </h2>
 
-                        <div class="flex flex-col gap-6">
-                           <ul class="flex w-full flex-row overflow-x-auto" data-layout-tabs>
-                              <li class="w-full">
-                                 <button
-                                    class="border-primary flex w-full cursor-pointer flex-col items-start border-b-4 px-4 py-3 whitespace-nowrap"
-                                    data-layout-tab
-                                 >
-                                    <span class="font-ui text-xl font-bold tracking-[1px] uppercase xl:text-3xl">
-                                       Банкет
-                                    </span>
-                                    <div class="text-primary font-base text-shadow text-center font-normal lowercase">
-                                       <span>До</span>
-                                       <span class="text-xl font-bold xl:text-2xl"> 220 </span>
-                                       <span>человек</span>
-                                    </div>
-                                 </button>
-                              </li>
+                  <div class="flex flex-col gap-6">
+                     <ul class="flex w-full flex-row overflow-x-auto" data-layout-tabs>
+                        <li class="w-full">
+                           <button
+                              class="border-primary flex w-full cursor-pointer flex-col items-start border-b-4 px-4 py-3 whitespace-nowrap"
+                              data-layout-tab
+                           >
+                              <span class="font-heading text-xl font-bold tracking-[1px] uppercase xl:text-3xl">
+                                 Банкет
+                              </span>
+                              <div class="text-primary text-shadow text-center font-sans font-normal lowercase">
+                                 <span>До</span>
+                                 <span class="text-xl font-bold xl:text-2xl"> 220 </span>
+                                 <span>человек</span>
+                              </div>
+                           </button>
+                        </li>
 
-                              <li class="w-full">
-                                 <button
-                                    class="border-primary-transparent flex w-full cursor-pointer flex-col items-start border-b px-4 py-3 whitespace-nowrap"
-                                    data-layout-tab
-                                 >
-                                    <span class="font-ui text-xl font-bold tracking-[1px] uppercase xl:text-3xl">
-                                       Фуршет
-                                    </span>
-                                    <div class="text-primary font-base text-shadow text-center font-normal lowercase">
-                                       <span>До</span>
-                                       <span class="text-xl font-bold xl:text-2xl"> 250 </span>
-                                       <span>человек</span>
-                                    </div>
-                                 </button>
-                              </li>
+                        <li class="w-full">
+                           <button
+                              class="border-primary-transparent flex w-full cursor-pointer flex-col items-start border-b px-4 py-3 whitespace-nowrap"
+                              data-layout-tab
+                           >
+                              <span class="font-heading text-xl font-bold tracking-[1px] uppercase xl:text-3xl">
+                                 Фуршет
+                              </span>
+                              <div class="text-primary text-shadow text-center font-sans font-normal lowercase">
+                                 <span>До</span>
+                                 <span class="text-xl font-bold xl:text-2xl"> 250 </span>
+                                 <span>человек</span>
+                              </div>
+                           </button>
+                        </li>
 
-                              <li class="w-full">
-                                 <button
-                                    class="border-primary-transparent flex w-full cursor-pointer flex-col items-start border-b px-4 py-3 whitespace-nowrap"
-                                    data-layout-tab
-                                 >
-                                    <span class="font-ui text-xl font-bold tracking-[1px] uppercase xl:text-3xl">
-                                       Театр
-                                    </span>
-                                    <div class="text-primary font-base text-shadow text-center font-normal lowercase">
-                                       <span>До</span>
-                                       <span class="text-xl font-bold xl:text-2xl"> 230 </span>
-                                       <span>человек</span>
-                                    </div>
-                                 </button>
-                              </li>
+                        <li class="w-full">
+                           <button
+                              class="border-primary-transparent flex w-full cursor-pointer flex-col items-start border-b px-4 py-3 whitespace-nowrap"
+                              data-layout-tab
+                           >
+                              <span class="font-heading text-xl font-bold tracking-[1px] uppercase xl:text-3xl">
+                                 Театр
+                              </span>
+                              <div class="text-primary text-shadow text-center font-sans font-normal lowercase">
+                                 <span>До</span>
+                                 <span class="text-xl font-bold xl:text-2xl"> 230 </span>
+                                 <span>человек</span>
+                              </div>
+                           </button>
+                        </li>
 
-                              <li class="w-full">
-                                 <button
-                                    class="border-primary-transparent flex w-full cursor-pointer flex-col items-start border-b px-4 py-3 whitespace-nowrap"
-                                    data-layout-tab
-                                 >
-                                    <span class="font-ui text-xl font-bold tracking-[1px] uppercase xl:text-3xl">
-                                       Лекция
-                                    </span>
-                                    <div class="text-primary font-base text-shadow text-center font-normal lowercase">
-                                       <span>До</span>
-                                       <span class="text-xl font-bold xl:text-2xl"> 250 </span>
-                                       <span>человек</span>
-                                    </div>
-                                 </button>
-                              </li>
+                        <li class="w-full">
+                           <button
+                              class="border-primary-transparent flex w-full cursor-pointer flex-col items-start border-b px-4 py-3 whitespace-nowrap"
+                              data-layout-tab
+                           >
+                              <span class="font-heading text-xl font-bold tracking-[1px] uppercase xl:text-3xl">
+                                 Лекция
+                              </span>
+                              <div class="text-primary text-shadow text-center font-sans font-normal lowercase">
+                                 <span>До</span>
+                                 <span class="text-xl font-bold xl:text-2xl"> 250 </span>
+                                 <span>человек</span>
+                              </div>
+                           </button>
+                        </li>
 
-                              <li class="w-full">
-                                 <button
-                                    class="border-primary-transparent flex w-full cursor-pointer flex-col items-start border-b px-4 py-3 whitespace-nowrap"
-                                    data-layout-tab
-                                 >
-                                    <span class="font-ui text-xl font-bold tracking-[1px] uppercase xl:text-3xl">
-                                       Ваш вариант
-                                    </span>
-                                    <div class="text-primary font-base text-shadow text-center font-normal lowercase">
-                                       <span>До</span>
-                                       <span class="text-xl font-bold xl:text-2xl"> 400 </span>
-                                       <span>человек</span>
-                                    </div>
-                                 </button>
-                              </li>
-                           </ul>
-                           <!-- <div class="mx-auto aspect-auto w-full max-w-[80%]">
+                        <li class="w-full">
+                           <button
+                              class="border-primary-transparent flex w-full cursor-pointer flex-col items-start border-b px-4 py-3 whitespace-nowrap"
+                              data-layout-tab
+                           >
+                              <span class="font-heading text-xl font-bold tracking-[1px] uppercase xl:text-3xl">
+                                 Ваш вариант
+                              </span>
+                              <div class="text-primary text-shadow text-center font-sans font-normal lowercase">
+                                 <span>До</span>
+                                 <span class="text-xl font-bold xl:text-2xl"> 400 </span>
+                                 <span>человек</span>
+                              </div>
+                           </button>
+                        </li>
+                     </ul>
+                     <!-- <div class="mx-auto aspect-auto w-full max-w-[80%]">
                            <img
                               class="pointer-events-none"
-                              src="/src/assets/images/hall-layout.webp"
+                              src="/images/hall-layout.webp"
                               alt="Схема зала"
                            />
                         </div> -->
+                  </div>
+
+                  <div class="grid gap-6 md:gap-14 xl:grid-cols-2">
+                     <div class="relative">
+                        <div class="included__title-container">
+                           <span class="included__title"> Что включено </span>
+                           <span
+                              class="ml-auto block aspect-square w-8 bg-[url(./assets/icons/arrow_outward.svg)] bg-contain bg-no-repeat xl:w-12"
+                           ></span>
                         </div>
-
-                        <div class="grid gap-6 md:gap-14 xl:grid-cols-2">
-                           <div class="relative">
-                              <div class="included__title-container">
-                                 <span class="included__title"> Что включено </span>
-                                 <span
-                                    class="ml-auto block aspect-square w-8 bg-[url(./assets/icons/arrow_outward.svg)] bg-contain bg-no-repeat xl:w-12"
-                                 ></span>
-                              </div>
-                              <div class="rounded-5xl h-full max-h-80 w-full overflow-hidden xl:relative xl:max-h-none">
-                                 <img
-                                    class="pointer-events-none w-full object-cover object-center sm:h-full xl:absolute xl:inset-0 xl:min-h-full"
-                                    src="/src/assets/images/entrance-eco.avif"
-                                    loading="lazy"
-                                    alt="Локация Зеленого кота"
-                                 />
-                              </div>
-                           </div>
-
-                           <div class="grid gap-6">
-                              <ul>
-                                 <li class="included-item">
-                                    <span class="included-item__icon--check"></span>
-                                    <span class="included-item__title"> Пространство общей площадью 900 м² </span>
-                                 </li>
-                                 <li class="included-item">
-                                    <span class="included-item__icon--check"></span>
-                                    <span class="included-item__title"> Сцена и подиум </span>
-                                 </li>
-                                 <li class="included-item">
-                                    <span class="included-item__icon--check"></span>
-                                    <span class="included-item__title">
-                                       Wi-Fi с высокой скоростью передачи данных
-                                    </span>
-                                 </li>
-                                 <li class="included-item">
-                                    <span class="included-item__icon--check"></span>
-                                    <span class="included-item__title">
-                                       Full HD проектор и экран размером 3.8×3 м
-                                    </span>
-                                 </li>
-                                 <li class="included-item">
-                                    <span class="included-item__icon--check"></span>
-                                    <span class="included-item__title"> Концертная акустическая система </span>
-                                 </li>
-                                 <li class="included-item">
-                                    <span class="included-item__icon--check"></span>
-                                    <span class="included-item__title"> Аудиопроцессор и микшерный пульт </span>
-                                 </li>
-                                 <li class="included-item">
-                                    <span class="included-item__icon--check"></span>
-                                    <span class="included-item__title">
-                                       Световое оборудование (базовое сценическое)
-                                    </span>
-                                 </li>
-                                 <li class="included-item border-0!">
-                                    <span class="included-item__icon--check"></span>
-                                    <span class="included-item__title"> Пользование гримеркой </span>
-                                 </li>
-                              </ul>
-
-                              <div class="flex flex-col gap-6">
-                                 <span class="font-ui font-bold tracking-[1px] uppercase"> Дополнительные услуги </span>
-                                 <ul class="flex flex-col">
-                                    <li class="add-service-item">
-                                       <span class="add-service-item__icon--plus"></span>
-                                       <span class="uppercase"> Оформление зала (в т. ч. флористическое) </span>
-                                    </li>
-                                    <li class="add-service-item">
-                                       <span class="add-service-item__icon--plus"></span>
-                                       <span class="uppercase"> Аренда флипчартов </span>
-                                    </li>
-                                    <li class="add-service-item border-0!">
-                                       <span class="add-service-item__icon--plus"></span>
-                                       <span class="uppercase"> Организация кейтеринга </span>
-                                    </li>
-                                 </ul>
-                              </div>
-                           </div>
+                        <div class="h-full max-h-80 w-full overflow-hidden rounded-4xl xl:relative xl:max-h-none">
+                           <img
+                              class="pointer-events-none w-full object-cover object-center sm:h-full xl:absolute xl:inset-0 xl:min-h-full"
+                              src="/images/entrance-eco.avif"
+                              loading="lazy"
+                              alt="Локация Зеленого кота"
+                           />
                         </div>
                      </div>
-                  </section>
-               </div>
-            </div>
 
-            <section id="stock" class="stock">
+                     <div class="grid gap-6">
+                        <ul>
+                           <li class="included-item">
+                              <span class="included-item__icon--check"></span>
+                              <span class="included-item__title"> Пространство общей площадью 900 м² </span>
+                           </li>
+                           <li class="included-item">
+                              <span class="included-item__icon--check"></span>
+                              <span class="included-item__title"> Сцена и подиум </span>
+                           </li>
+                           <li class="included-item">
+                              <span class="included-item__icon--check"></span>
+                              <span class="included-item__title"> Wi-Fi с высокой скоростью передачи данных </span>
+                           </li>
+                           <li class="included-item">
+                              <span class="included-item__icon--check"></span>
+                              <span class="included-item__title"> Full HD проектор и экран размером 3.8×3 м </span>
+                           </li>
+                           <li class="included-item">
+                              <span class="included-item__icon--check"></span>
+                              <span class="included-item__title"> Концертная акустическая система </span>
+                           </li>
+                           <li class="included-item">
+                              <span class="included-item__icon--check"></span>
+                              <span class="included-item__title"> Аудиопроцессор и микшерный пульт </span>
+                           </li>
+                           <li class="included-item">
+                              <span class="included-item__icon--check"></span>
+                              <span class="included-item__title"> Световое оборудование (базовое сценическое) </span>
+                           </li>
+                           <li class="included-item border-0!">
+                              <span class="included-item__icon--check"></span>
+                              <span class="included-item__title"> Пользование гримеркой </span>
+                           </li>
+                        </ul>
+
+                        <div class="flex flex-col gap-6">
+                           <span class="font-heading font-bold tracking-[1px] uppercase"> Дополнительные услуги </span>
+                           <ul class="flex flex-col">
+                              <li class="add-service-item">
+                                 <span class="add-service-item__icon--plus"></span>
+                                 <span class="uppercase"> Оформление зала (в т. ч. флористическое) </span>
+                              </li>
+                              <li class="add-service-item">
+                                 <span class="add-service-item__icon--plus"></span>
+                                 <span class="uppercase"> Аренда флипчартов </span>
+                              </li>
+                              <li class="add-service-item border-0!">
+                                 <span class="add-service-item__icon--plus"></span>
+                                 <span class="uppercase"> Организация кейтеринга </span>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </section>
+
+            <section
+               id="stock"
+               class="stock bg-primary selection:text-primary! rounded-b-5xl relative -z-2 -mt-15 overflow-hidden pt-29 pb-10 shadow selection:bg-white! lg:pt-49 lg:pb-25"
+            >
                <div class="z-0 mx-auto flex flex-col gap-12 px-6 lg:gap-25 lg:px-20">
-                  <h2 class="font-ui text-3xl font-bold tracking-[1px] text-white uppercase text-shadow-xs sm:text-5xl">
+                  <h2
+                     class="font-heading text-3xl font-bold tracking-[1px] text-white uppercase text-shadow-xs sm:text-5xl"
+                  >
                      Специальные предложения
                   </h2>
 
-                  <div class="rounded-6xl bg-grey-light overflow-clip lg:rounded-[5rem]">
+                  <div class="lg:rounded-6xl rounded-5xl overflow-hidden shadow">
                      <div
-                        class="bg-grey-light rounded-6xl relative z-2 flex flex-col gap-4 px-6 py-10 shadow lg:gap-7 lg:rounded-[5rem] lg:px-20 lg:py-15"
+                        class="bg-grey-light relative z-1 flex flex-col gap-4 rounded-b-[inherit] px-6 py-10 shadow lg:gap-7 lg:px-20 lg:py-15"
                      >
-                        <span class="font-ui bg-primary text-grey-light w-fit px-2 text-xl font-bold xl:text-2xl">
+                        <span class="font-heading bg-primary text-grey-light w-fit px-2 text-xl font-bold xl:text-2xl">
                            01
                         </span>
-                        <h3 class="text-primary font-ui text-2xl font-bold tracking-[1px] uppercase xl:text-3xl">
+                        <h3 class="text-primary font-heading text-2xl font-bold tracking-[1px] uppercase xl:text-3xl">
                            Экоскидка
                         </h3>
                         <p>Для мероприятий экологической направленности — дополнительное оборудование бесплатно*.</p>
                         <p class="italic">*Перечень оборудования согласовывается в индивидуальном порядке</p>
                      </div>
 
-                     <div class="bg-grey-light bottom-0 flex flex-col gap-4 px-6 py-10 lg:gap-7 lg:px-20 lg:py-15">
-                        <span class="font-ui bg-primary text-grey-light w-fit px-2 text-xl font-bold xl:text-2xl">
+                     <div
+                        class="bg-grey-light relative -mt-20 flex flex-col gap-4 px-6 py-10 pt-25 lg:gap-7 lg:px-20 lg:py-15 lg:pt-35"
+                     >
+                        <span class="font-heading bg-primary text-grey-light w-fit px-2 text-xl font-bold xl:text-2xl">
                            02
                         </span>
-                        <h3 class="text-primary font-ui text-2xl font-bold tracking-[1px] uppercase xl:text-3xl">
+                        <h3 class="text-primary font-heading text-2xl font-bold tracking-[1px] uppercase xl:text-3xl">
                            Бесплатный день
                         </h3>
                         <p>При аренде площадки на срок от 2 дней — день накануне мероприятия в подарок.</p>
@@ -749,79 +750,77 @@
 
          <section id="faq" class="my-16 lg:my-25">
             <div class="mx-auto flex flex-col gap-12 px-6 lg:gap-25 lg:px-20">
-               <h2 class="font-ui text-3xl font-bold tracking-[1px] uppercase sm:text-5xl">Вопросы и ответы</h2>
+               <h2 class="font-heading text-3xl font-bold tracking-[1px] uppercase sm:text-5xl">Вопросы и ответы</h2>
+
                <div class="grid gap-4 lg:grid-cols-2">
-                  <div class="faq-card" data-accordion-item>
+                  <article class="faq-card" data-accordion-item>
                      <div class="faq-card__icon">
                         <span class="faq-card__icon--plus" data-accordion-plus></span>
                         <span class="faq-card__icon--minus" data-accordion-minus></span>
                      </div>
                      <span class="faq-card__question"> Какие размеры у площадки? </span>
-                     <div></div>
-                     <div class="text-grey" data-accordion-content>
+                     <div class="faq-card__answer" data-accordion-content>
                         <p>
                            Общая площадь пространства — 900 м².
                            <br />
                            Максимальная вместимость — 400 человек.
-                           <br />
-                           <br />
                         </p>
-                        <span>Основной зал — 600 м²:</span>
+                        <br />
+                        <p>Основной зал — 600 м²:</p>
                         <ul class="list-disc pl-6">
                            <li>выставочный зал со сценой — 420 м²;</li>
                            <li>зона бара — 75 м²;</li>
                            <li>VIP-зона (балкон) — 100 м².</li>
                         </ul>
-                        <p>
-                           <br />
-                           Зона приветствия — 180 м².
-                        </p>
                         <br />
-                        <span>Дополнительные зоны:</span>
+                        <p>Зона приветствия — 180 м².</p>
+                        <br />
+                        <p>Дополнительные зоны:</p>
                         <ul class="list-disc pl-6">
                            <li>гримёрка — 56 м²;</li>
                            <li>зона кейтеринга — 65 м².</li>
                         </ul>
                      </div>
-                  </div>
-                  <div class="faq-card" data-accordion-item>
+                  </article>
+
+                  <article class="faq-card" data-accordion-item>
                      <div class="faq-card__icon">
                         <span class="faq-card__icon--plus" data-accordion-plus></span>
                         <span class="faq-card__icon--minus" data-accordion-minus></span>
                      </div>
                      <span class="faq-card__question"> Какие условия аренды площадки? </span>
-                     <div></div>
-                     <p class="text-grey" data-accordion-content>
+                     <p class="faq-card__answer" data-accordion-content>
                         Бронирование осуществляется после внесения 30% предоплаты.
                      </p>
-                  </div>
-                  <div class="faq-card" data-accordion-item>
+                  </article>
+
+                  <article class="faq-card" data-accordion-item>
                      <div class="faq-card__icon">
                         <span class="faq-card__icon--plus" data-accordion-plus></span>
                         <span class="faq-card__icon--minus" data-accordion-minus></span>
                      </div>
                      <span class="faq-card__question"> На какой период можно арендовать площадку? </span>
-                     <div></div>
-                     <p class="text-grey" data-accordion-content>
+                     <p class="faq-card__answer" data-accordion-content>
                         Минимальное время аренды — 4 часа.
                         <br />
                         Время аренды включает монтаж, репетиции, мероприятие и демонтаж.
                      </p>
-                  </div>
-                  <div class="faq-card" data-accordion-item>
+                  </article>
+
+                  <article class="faq-card" data-accordion-item>
                      <div class="faq-card__icon">
                         <span class="faq-card__icon--plus" data-accordion-plus></span>
                         <span class="faq-card__icon--minus" data-accordion-minus></span>
                      </div>
                      <span class="faq-card__question"> Какое мультимедийное оборудование доступно? </span>
-                     <div></div>
-                     <div class="text-grey" data-accordion-content>
-                        <p>1. Экран размером 3.8×3 м;</p>
-                        <span>
+                     <div class="faq-card__answer" data-accordion-content>
+                        <p>
+                           1. Экран размером 3.8×3 м;
+                           <br />
                            2. FullHD проектор;
                            <br />
-                        </span>
-                        <span> 3. Концертная акустическая система: </span>
+                           3. Концертная акустическая система:
+                        </p>
                         <ul class="list-disc pl-6">
                            <li>RCF 712, 700 Вт (6 шт);</li>
                            <li>RCF 8003-II, сабвуфер, 1100 Вт (3 шт);</li>
@@ -834,21 +833,22 @@
                            6. Сценическое световое оборудование.
                         </p>
                      </div>
-                  </div>
-                  <div class="faq-card" data-accordion-item>
+                  </article>
+
+                  <article class="faq-card" data-accordion-item>
                      <div class="faq-card__icon">
                         <span class="faq-card__icon--plus" data-accordion-plus></span>
                         <span class="faq-card__icon--minus" data-accordion-minus></span>
                      </div>
                      <span class="faq-card__question"> Есть ли на территории Экопосольства парковка? </span>
-                     <div></div>
-                     <p class="text-grey" data-accordion-content>
+                     <p class="faq-card__answer" data-accordion-content>
                         Для гостей Экопосольства доступна бесплатная парковка на 50 машино-мест. Также предусмотрено 5
                         мест для автобусов и 6 парковочных мест для автомобилей людей с ограниченными возможностями
                         здоровья.
                      </p>
-                  </div>
-                  <div class="faq-card" data-accordion-item>
+                  </article>
+
+                  <article class="faq-card" data-accordion-item>
                      <div class="faq-card__icon">
                         <span class="faq-card__icon--plus" data-accordion-plus></span>
                         <span class="faq-card__icon--minus" data-accordion-minus></span>
@@ -856,15 +856,15 @@
                      <span class="faq-card__question">
                         Как добраться до Экопосольства на общественном транспорте?
                      </span>
-                     <div></div>
-                     <p class="text-grey" data-accordion-content>
+                     <p class="faq-card__answer" data-accordion-content>
                         Доехать до Экопосольства можно на автобусе или маршрутке — рядом находится автобусная остановка
                         «Сосновка-1». Дорога от остановки занимает 8 минут.
                         <br />
                         Возможна организация трансфера для гостей.
                      </p>
-                  </div>
-                  <div class="faq-card" data-accordion-item>
+                  </article>
+
+                  <article class="faq-card" data-accordion-item>
                      <div class="faq-card__icon">
                         <span class="faq-card__icon--plus" data-accordion-plus></span>
                         <span class="faq-card__icon--minus" data-accordion-minus></span>
@@ -872,20 +872,22 @@
                      <span class="faq-card__question">
                         Сколько времени занимает дорога до Экопосольства на автомобиле?
                      </span>
-                     <div></div>
-                     <p class="text-grey" data-accordion-content>
+                     <p class="faq-card__answer" data-accordion-content>
                         Дорога без пробок занимает примерно 10 минут от центра Зеленоградска, 20 минут от аэропорта
                         Храброво и 35 минут от центра Калининграда.
                      </p>
-                  </div>
+                  </article>
                </div>
             </div>
          </section>
       </main>
 
-      <footer id="contacts" class="bg-grey-dark rounded-t-6xl text-white">
+      <footer
+         id="contacts"
+         class="bg-grey-dark rounded-t-5xl lg:rounded-t-6xl selection:text-primary! curs text-white selection:bg-white!"
+      >
          <div class="mx-auto flex flex-col gap-12 px-6 py-16 lg:gap-25 lg:p-20 lg:px-20 lg:py-25">
-            <h2 class="text-primary font-ui text-3xl font-bold tracking-[1px] uppercase sm:text-5xl">Контакты</h2>
+            <h2 class="text-primary font-heading text-3xl font-bold tracking-[1px] uppercase sm:text-5xl">Контакты</h2>
             <div class="grid justify-between gap-10 xl:grid-cols-3">
                <div class="flex flex-row gap-2">
                   <span
@@ -919,7 +921,7 @@
                   </a>
                </div>
             </div>
-            <div id="map" class="rounded-5xl aspect-auto h-100 overflow-hidden lg:h-140"></div>
+            <div id="map" class="lg:rounded-5xl aspect-auto h-100 overflow-hidden rounded-4xl lg:h-140"></div>
             <div class="flex flex-col gap-4">
                <div class="flex justify-center gap-6">
                   <a
@@ -941,6 +943,7 @@
             </div>
          </div>
       </footer>
+
       <script type="module" src="/src/scripts/main.js"></script>
       <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=307006f6-584d-408e-9f3c-687300b32685&amp;ver=1.0"></script>
       <noscript>

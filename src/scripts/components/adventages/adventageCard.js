@@ -14,11 +14,11 @@ export function createAdventageCard(item, index) {
    }
 
    const title = document.createElement("span");
-   title.className = "adventage-title";
+   title.className = "adventage-card__title";
    title.textContent = item.title;
 
    const desc = document.createElement("span");
-   desc.className = "adventage-desc";
+   desc.className = "adventage-card__desc";
    desc.textContent = item.description;
 
    card.append(title, desc);

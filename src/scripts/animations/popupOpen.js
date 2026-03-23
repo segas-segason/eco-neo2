@@ -1,71 +1,72 @@
-import { gsap } from 'gsap';
+import { gsap } from "gsap";
 
 export function initPopupOpen() {
-    const popup = document.querySelector('[data-popup]');
-    const close = document.querySelector('[data-popup-close]');
-    const balls = document.querySelector('[data-popup-balls]');
+   const popup = document.querySelector("[data-popup]");
+   const close = document.querySelector("[data-popup-close]");
+   const balls = document.querySelector("[data-popup-balls]");
 
-    if (!popup) return;
+   if (!popup) return;
 
-    const showDelay = 5;
-    const hideDelay = 1000;
+   const showDelay = 5;
+   const hideDelay = 1000;
 
-    const lastShown = localStorage.getItem('popupLastShown');
-    const now = Date.now();
-    const oneDay = 24 * 60 * 60 * 1000; // 24 часа в мс
+   const lastShown = Number(localStorage.getItem("popupLastShown"));
+   const now = Date.now();
+   const oneDay = 24 * 60 * 60 * 1000; // 24 часа в мс
 
-    if (lastShown && now - lastShown < oneDay) {
-        return;
-    }
+   if (lastShown && now - lastShown < oneDay) {
+      return;
+   }
 
-    gsap.set(popup, {
-        autoAlpha: 0,
-        pointerEvents: 'none',
-        y: 20,
-    });
+   gsap.set(popup, {
+      autoAlpha: 0,
+      pointerEvents: "none",
+      y: 20,
+   });
 
-    const tl = gsap.timeline({ paused: true });
+   const tl = gsap.timeline({ paused: true });
 
-    tl.to(popup, {
-        autoAlpha: 1,
-        pointerEvents: 'auto',
-        duration: 0.6,
-        ease: 'power2.out',
-        y: 0,
-        onStart: () => {
-            document.body.style.overflow = 'hidden';
-            localStorage.setItem('popupLastShown', Date.now());
-        },
-    });
+   tl.to(popup, {
+      autoAlpha: 1,
+      pointerEvents: "auto",
+      duration: 0.6,
+      ease: "power2.out",
+      y: 0,
+      onStart: () => {
+         document.body.style.overflow = "hidden";
+      },
+   });
 
-    tl.to(
-        popup,
-        {
-            autoAlpha: 0,
-            pointerEvents: 'none',
-            duration: 0.6,
-            y: 20,
-            ease: 'power2.in',
-            onComplete: () => {
-                document.body.style.overflow = '';
-            },
-        },
-        `+=${hideDelay}`,
-    );
+   tl.to(
+      popup,
+      {
+         autoAlpha: 0,
+         pointerEvents: "none",
+         duration: 0.6,
+         y: 20,
+         ease: "power2.in",
+         onComplete: () => {
+            document.body.style.overflow = "";
+            localStorage.setItem("popupLastShown", Date.now());
+         },
+      },
+      `+=${hideDelay}`,
+   );
 
-    gsap.delayedCall(showDelay, () => tl.play());
+   gsap.delayedCall(showDelay, () => tl.play());
 
-    close?.addEventListener('click', () => {
-        tl.kill();
-        gsap.to(popup, {
-            autoAlpha: 0,
-            pointerEvents: 'none',
-            duration: 0.6,
-            ease: 'power2.out',
-            y: 20,
-            onComplete: () => {
-                document.body.style.overflow = '';
-            },
-        });
-    });
+   close?.addEventListener("click", () => {
+      tl.kill();
+      gsap.to(popup, {
+         autoAlpha: 0,
+         pointerEvents: "none",
+         duration: 0.6,
+         ease: "power2.out",
+         y: 20,
+         onComplete: () => {
+            document.body.style.overflow = "";
+            localStorage.setItem("popupLastShown", Date.now());
+         },
+      });
+   });
 }
