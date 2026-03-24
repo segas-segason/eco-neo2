@@ -1,9 +1,9 @@
 import { gsap } from "gsap";
 
 export function initPopupOpen() {
-   const popup = document.querySelector("[data-popup]");
-   const close = document.querySelector("[data-popup-close]");
-   const balls = document.querySelector("[data-popup-balls]");
+   const popup = document.querySelector("[data-popup-open]");
+   const close = document.querySelector("[data-popup-open-close]");
+   const balls = document.querySelector("[data-popup-open-balls]");
 
    if (!popup) return;
 
@@ -32,9 +32,6 @@ export function initPopupOpen() {
       duration: 0.6,
       ease: "power2.out",
       y: 0,
-      onStart: () => {
-         document.body.style.overflow = "hidden";
-      },
    });
 
    tl.to(
@@ -46,7 +43,6 @@ export function initPopupOpen() {
          y: 20,
          ease: "power2.in",
          onComplete: () => {
-            document.body.style.overflow = "";
             localStorage.setItem("popupLastShown", Date.now());
          },
       },
@@ -64,7 +60,6 @@ export function initPopupOpen() {
          ease: "power2.out",
          y: 20,
          onComplete: () => {
-            document.body.style.overflow = "";
             localStorage.setItem("popupLastShown", Date.now());
          },
       });

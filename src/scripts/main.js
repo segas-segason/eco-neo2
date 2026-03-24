@@ -5,6 +5,7 @@ import { initIntro } from "./animations/intro";
 import { initMobileMenu } from "./animations/mobileMenu";
 import { initBackdropMenu } from "./animations/backdropMenu";
 import { initPopupOpen } from "./animations/popupOpen";
+import { initPopupLegal } from "./animations/popupLegal";
 import { initAccordionFaq } from "./animations/accordionFaq";
 import { initStartPage } from "./animations/startPage";
 import { initContactsFooter } from "./animations/contactsFooter";
@@ -33,6 +34,7 @@ async function initApp() {
    // UI
    initStartPage();
    initPopupOpen();
+   initPopupLegal();
    initBackdropMenu();
    initContactsFooter();
    initStockOpen();

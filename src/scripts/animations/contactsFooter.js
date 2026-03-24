@@ -11,36 +11,24 @@ export function initContactsFooter() {
    const icons = document.querySelectorAll("[data-contacts-social-icon]");
    const copy = document.querySelector("[data-contacts-copy]");
 
-   if (!sectionContacts || !title || !items.length === 0 || !icons.length === 0 || !map || !copy) return;
+   if (!sectionContacts || !title || !items.length || !icons.length || !map || !copy) return;
 
    gsap.set(title, {
       opacity: 0,
       yPercent: -100,
    });
 
-   gsap.set(sectionContacts, {
-      borderRadius: "",
-   });
-
    const tl = gsap.timeline({
       scrollTrigger: {
          trigger: sectionContacts,
-         start: "top 80%",
+         start: "top 50%",
       },
    });
 
-   tl.to(sectionContacts, {
+   tl.from(sectionContacts, {
       borderTopLeftRadius: 0,
       borderTopRightRadius: 0,
-
-      scrollTrigger: {
-         trigger: sectionContacts,
-         start: "top top",
-         end: "top top",
-         scrub: "true",
-         pin: true,
-         pinSpacing: false,
-      },
+      delay: 0.25,
    })
       .to(
          title,
@@ -65,10 +53,8 @@ export function initContactsFooter() {
          opacity: 0,
          yPercent: 100,
          stagger: 0.2,
-         ease: "back.out",
       })
       .from(copy, {
          opacity: 0,
-         yPercent: 10,
       });
 }

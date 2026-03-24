@@ -15,6 +15,7 @@
    --color-grey-light-transparent: rgba(247, 247, 246, 0.25);
    --color-grey: #666666;
    --color-grey-dark: #474a51;
+   --color-grey-dark-overlay: rgba(71, 74, 81, 0.8);
    --color-green-light: #e2ecd2;
    --color-green: #a1c938;
    --color-white: #ffffff;
@@ -99,6 +100,15 @@
 
 /* Переиспользуемые стили компонентов */
 @layer components {
+   /* Отключение всех элементов, пока не загрузиться старотовая анимация */
+   .page-content {
+      @apply invisible opacity-0;
+   }
+
+   .intro-done .page-content {
+      @apply visible opacity-100 transition-opacity duration-300;
+   }
+
    /* Верхнее меню */
    .nav-list__item {
       @apply border-b-grey-light-transparent border-b xl:border-0;
