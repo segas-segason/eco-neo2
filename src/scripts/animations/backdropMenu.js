@@ -10,6 +10,10 @@ export function initBackdropMenu() {
 
    if (!menuShell || !menuBackdrop) return;
 
+   gsap.set(menuBackdrop, {
+      backgroundColor: "rgba(138,179,172,1)",
+   });
+
    const tl = gsap.timeline({});
 
    let isHidden = false;
@@ -80,7 +84,6 @@ export function initBackdropMenu() {
    });
 
    gsap.to(menuBackdrop, {
-      backdropFilter: "blur(10px)",
       backgroundColor: "rgba(138,179,172,0.8)",
       ease: "power2.inOut",
       scrollTrigger: {

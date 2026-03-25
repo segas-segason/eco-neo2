@@ -9,8 +9,8 @@
    --text-base: 1.25rem;
 
    --color-*: initial;
-   --color-primary: #8ab3ac;
-   --color-primary-transparent: rgba(224, 235, 235, 0.9);
+   --color-primary: rgb(138, 179, 172);
+   --color-primary-light-transparent: rgba(224, 235, 235, 0.9);
    --color-grey-light: #f2f2f2;
    --color-grey-light-transparent: rgba(247, 247, 246, 0.25);
    --color-grey: #666666;
@@ -315,7 +315,7 @@
 
    /* Блок Что включено? */
    .included__title-container {
-      @apply bg-grey-light absolute z-10 rounded-br-3xl p-2 xl:w-md;
+      @apply bg-grey-light absolute z-10 w-fit rounded-br-3xl p-2;
    }
 
    .included__title-container::after {

@@ -25,21 +25,16 @@ export function initContactsFooter() {
       },
    });
 
-   tl.from(sectionContacts, {
-      borderTopLeftRadius: 0,
-      borderTopRightRadius: 0,
-      delay: 0.25,
-   })
-      .to(
-         title,
-         {
-            opacity: 1,
-            yPercent: 0,
-            duration: 0.3,
-            ease: "power2.out",
-         },
-         "<",
-      )
+   tl.to(
+      title,
+      {
+         opacity: 1,
+         yPercent: 0,
+         duration: 0.3,
+         ease: "power2.out",
+      },
+      "<",
+   )
       .from(items, {
          opacity: 0,
          yPercent: 100,

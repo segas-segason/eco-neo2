@@ -10,6 +10,7 @@ import { initAccordionFaq } from "./animations/accordionFaq";
 import { initStartPage } from "./animations/startPage";
 import { initContactsFooter } from "./animations/contactsFooter";
 import { initStockOpen } from "./animations/stockOpen";
+import { initSeatingOpen } from "./animations/seatingOpen";
 
 // Import Sections
 import { initSpaceSection } from "./sections/spaceSection";
@@ -38,6 +39,7 @@ async function initApp() {
    initBackdropMenu();
    initContactsFooter();
    initStockOpen();
+   initSeatingOpen();
 
    // Sections
    initSpaceSection();
