@@ -11,6 +11,7 @@ export function initBackdropMenu() {
    if (!menuShell || !menuBackdrop) return;
 
    gsap.set(menuBackdrop, {
+      backdropFilter: "blur(8px)",
       backgroundColor: "rgba(138,179,172,1)",
    });
 

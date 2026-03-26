@@ -33,7 +33,7 @@ function initStartPageLogic() {
       }
    });
 
-   gsap.set(logoHero, {
+   gsap.set([menuShell, logoHero], {
       autoAlpha: 0,
       yPercent: -50,
    });
@@ -96,7 +96,7 @@ function initStartPageLogic() {
             duration: 0.5,
             ease: "elastic(1.2, 1)",
          },
-         "-=0.1",
+         "<",
       );
 
       tl.to(
@@ -107,7 +107,7 @@ function initStartPageLogic() {
             duration: 1,
             ease: "elastic(1.2, 1)",
          },
-         "-=0.2",
+         "-=0.5",
       );
 
       tl.to(
@@ -150,10 +150,8 @@ function initStartPageLogic() {
          tl.from(
             splitTitle.words,
             {
-               duration: 1,
-               yPercent: -30,
-               autoAlpha: 0,
-               stagger: 0.1,
+               opacity: 0,
+               stagger: 0.05,
                ease: "power2.out",
             },
             "-=0.9",
@@ -164,13 +162,11 @@ function initStartPageLogic() {
          tl.from(
             splitDesc.words,
             {
-               duration: 1,
-               yPercent: -30,
-               autoAlpha: 0,
-               stagger: 0.1,
+               opacity: 0,
+               stagger: 0.05,
                ease: "power2.out",
             },
-            "-=0.6",
+            "-=0.3",
          );
       }
    }, 50);

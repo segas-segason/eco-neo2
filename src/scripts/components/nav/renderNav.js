@@ -1,4 +1,8 @@
 import { createNavItem } from "./navItems";
+import gsap from "gsap";
+import { Flip } from "gsap/flip";
+
+gsap.registerPlugin(Flip);
 
 export function renderNav(container, links) {
    if (!container) return;
@@ -12,32 +16,121 @@ export function renderNav(container, links) {
 
    container.appendChild(fragment);
 
-   const navLinks = container.querySelectorAll("a");
+   const navLinks = container.querySelectorAll(".nav-list__link");
+   const labels = container.querySelectorAll(".nav-list__label");
+
    const sections = links.map((link) => document.querySelector(link.href)).filter(Boolean);
 
-   if (sections.length === 0) return;
+   if (!labels.length) return;
 
-   function updateActiveLink() {
-      const viewportCenter = window.innerHeight / 2;
+   const underline = document.createElement("span");
+   underline.className = "nav-list__underline";
 
-      let found = false;
+   let activeLabel = null;
+   let isClicking = false;
+   let isScrolling = false;
+   let scrollTimeout = null;
+   let animationFrameId = null;
 
-      sections.forEach((section) => {
-         const rect = section.getBoundingClientRect();
-         if (rect.top <= viewportCenter && rect.bottom >= viewportCenter) {
-            // Секция находится в центре viewport
-            const link = Array.from(navLinks).find((a) => a.getAttribute("href") === `#${section.id}`);
-            if (link) {
-               navLinks.forEach((l) => l.classList.remove("active"));
-               link.classList.add("active");
-               found = true;
+   function moveUnderline(target, isClick = false) {
+      if (!target) return;
+
+      const state = Flip.getState(underline);
+      target.appendChild(underline);
+
+      Flip.from(state, {
+         duration: 0.5,
+         ease: "power2",
+         absolute: true,
+      });
+   }
+
+   requestAnimationFrame(() => {
+      activeLabel = labels[0];
+      moveUnderline(activeLabel);
+   });
+
+   function clearScrollTimeout() {
+      if (scrollTimeout) {
+         clearTimeout(scrollTimeout);
+         scrollTimeout = null;
+      }
+   }
+
+   navLinks.forEach((link) => {
+      const label = link.querySelector(".nav-list__label");
+
+      link.addEventListener("click", (e) => {
+         e.preventDefault();
+
+         clearScrollTimeout();
+
+         isClicking = true;
+         isScrolling = true;
+
+         navLinks.forEach((l) => l.classList.remove("active"));
+         link.classList.add("active");
+         activeLabel = label;
+
+         moveUnderline(label, true);
+
+         const href = link.getAttribute("href");
+         if (href?.startsWith("#")) {
+            const target = document.querySelector(href);
+            if (target) {
+               window.removeEventListener("scroll", updateActiveLink);
+
+               target.scrollIntoView({ behavior: "smooth", block: "start" });
+
+               scrollTimeout = setTimeout(() => {
+                  isScrolling = false;
+                  isClicking = false;
+                  window.addEventListener("scroll", updateActiveLink);
+                  updateActiveLink();
+                  clearScrollTimeout();
+               }, 1000);
             }
          }
       });
+   });
 
-      if (!found) {
-         navLinks.forEach((l) => l.classList.remove("active"));
+   function updateActiveLink() {
+      if (isClicking || isScrolling) return;
+
+      if (animationFrameId) {
+         cancelAnimationFrame(animationFrameId);
       }
+
+      animationFrameId = requestAnimationFrame(() => {
+         const viewportCenter = window.innerHeight / 2;
+         let found = false;
+
+         sections.forEach((section) => {
+            const rect = section.getBoundingClientRect();
+
+            if (rect.top <= viewportCenter && rect.bottom >= viewportCenter) {
+               const link = Array.from(navLinks).find((a) => a.getAttribute("href") === `#${section.id}`);
+
+               if (link) {
+                  if (!link.classList.contains("active")) {
+                     navLinks.forEach((l) => l.classList.remove("active"));
+                     link.classList.add("active");
+
+                     const label = link.querySelector(".nav-list__label");
+                     activeLabel = label;
+                     moveUnderline(label);
+                  }
+                  found = true;
+               }
+            }
+         });
+
+         if (!found && !isClicking && !isScrolling) {
+            navLinks.forEach((l) => l.classList.remove("active"));
+         }
+
+         animationFrameId = null;
+      });
    }
 
    window.addEventListener("scroll", updateActiveLink);

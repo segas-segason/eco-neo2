@@ -38,6 +38,6 @@ export function initSpaceSection() {
    }).from(spaceCard, {
       opacity: 0,
       yPercent: 10,
-      stagger: 0.25,
+      stagger: 0.2,
    });
 }

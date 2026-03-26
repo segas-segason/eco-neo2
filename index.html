@@ -1,3 +1,4 @@
+<!-- Экопосольство 2026, ecoposolstvo.ru -->
 <!doctype html>
 <html lang="ru" class="scroll-smooth">
    <head>
@@ -22,7 +23,7 @@
    </head>
 
    <body class="text-grey-dark selection:bg-primary-light-transparent bg-white font-sans text-base">
-      <!-- Интро перед загрузкой сайта -->
+      <!-- Интро перед загрузкой сайта (показывается один раз) -->
       <div id="intro" class="fixed z-1000 h-full w-full overflow-hidden bg-white" data-intro>
          <div class="relative flex h-full w-full flex-col items-center justify-center">
             <div class="bg-grey-light flex flex-col items-center justify-center opacity-0" data-intro-box>
@@ -63,8 +64,74 @@
          </div>
       </div>
 
-      <!-- Окно с Правовой информацией -->
       <div class="page-content">
+         <!-- Окно с информацией об открытии (активация раз в сутки) -->
+         <div
+            class="pointer-events-none invisible fixed z-100 flex h-full w-full items-center justify-center backdrop-blur-lg"
+            data-popup-open
+         >
+            <div
+               class="bg-grey-dark rounded-5xl pointer-events-auto relative flex h-full max-h-145 w-full max-w-220 flex-col justify-between overflow-hidden rounded-bl-none text-center text-2xl text-white md:h-auto md:flex-row lg:max-w-245 lg:text-3xl"
+            >
+               <div
+                  class="absolute top-0 right-0 z-56 flex -translate-x-6 translate-y-6 cursor-pointer items-center justify-center text-white hover:opacity-70"
+                  data-popup-open-close
+               >
+                  <svg class="icon icon-md">
+                     <use href="./src/assets/icons/sprite.svg#icon-close"></use>
+                  </svg>
+               </div>
+
+               <div
+                  class="font-heading relative z-55 flex w-full flex-col items-center justify-center gap-8 p-6 pt-15 pb-0 sm:p-16 sm:pb-0 md:pb-16 md:pl-0"
+               >
+                  <span class="text-primary font-bold uppercase"> Открытие в апреле 2026 года! </span>
+                  <div class="flex flex-col gap-6">
+                     <p class="font-bold">
+                        Принимаем заказы
+                        <br />
+                        на проведение мероприятий:
+                     </p>
+                     <div class="flex flex-col items-center gap-2">
+                        <a class="hover:opacity-70" href="tel:+79118607773"> +7 (911) 860-77-73 </a>
+                        <a class="hover:opacity-70" href="mailto:promo@ecoposolstvo.ru"> promo@ecoposolstvo.ru </a>
+                     </div>
+                  </div>
+
+                  <div class="flex justify-center gap-6">
+                     <a
+                        href="https://t.me/joinchat/@EcoPosolstvo"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="Telegram"
+                        data-contacts-social-icon
+                     >
+                        <svg class="icon icon-lg text-primary">
+                           <use href="./src/assets/icons/sprite.svg#icon-social-telegram"></use>
+                        </svg>
+                     </a>
+
+                     <a href="/" target="_blank" rel="noopener noreferrer" title="MAX" data-contacts-social-icon>
+                        <svg class="icon icon-lg text-primary">
+                           <use href="./src/assets/icons/sprite.svg#icon-social-max"></use>
+                        </svg>
+                     </a>
+                  </div>
+               </div>
+               <div class="relative h-full w-full shrink-0 md:order-first md:mt-auto md:max-w-[30%]">
+                  <img
+                     class="absolute top-0 left-0 z-54 w-[50%] -translate-x-[20%] translate-y-[5%] rotate-45 sm:translate-y-[0%] md:top-auto md:bottom-0 md:w-full md:translate-y-[20%]"
+                     src="/images/open-balls.webp"
+                     loading="eager"
+                     alt=""
+                     aria-hidden="true"
+                     data-popup-open-balls
+                  />
+               </div>
+            </div>
+         </div>
+
+         <!-- Окно с Правовой информацией -->
          <div
             id="popup-legal"
             class="pointer-events-none invisible fixed inset-0 z-100 overflow-y-auto opacity-0 transition-opacity duration-300"
@@ -78,10 +145,14 @@
                   class="bg-grey-dark relative min-h-full w-full p-10 text-white sm:my-10 sm:w-fit sm:rounded-4xl"
                   data-popup-legal-modal
                >
-                  <span
-                     class="absolute top-0 right-0 z-56 h-8 w-8 -translate-x-5 translate-y-5 cursor-pointer bg-[url(./assets/icons/close.svg)] bg-contain bg-center bg-no-repeat hover:opacity-70"
+                  <div
+                     class="absolute top-0 right-0 z-56 flex -translate-x-6 translate-y-6 cursor-pointer items-center justify-center text-white hover:opacity-70"
                      data-popup-legal-close
-                  ></span>
+                  >
+                     <svg class="icon icon-md">
+                        <use href="./src/assets/icons/sprite.svg#icon-close"></use>
+                     </svg>
+                  </div>
                   <div class="flex max-w-120 flex-col gap-6">
                      <span class="text-primary font-heading text-3xl"> Наши реквизиты </span>
                      <div class="flex flex-col">
@@ -216,61 +287,10 @@
 				</div>
 			</div> -->
 
-         <!-- Окно с информацией об открытии (активация раз в сутки) -->
-         <div
-            class="pointer-events-none invisible fixed z-100 flex h-full w-full items-center justify-center backdrop-blur-lg"
-            data-popup-open
-         >
+         <!-- Основное топ-меню -->
+         <header class="fixed top-4 z-50 w-full lg:px-6" data-menu-shell>
             <div
-               class="bg-grey-dark rounded-5xl pointer-events-auto relative flex h-full max-h-145 w-full max-w-220 flex-col justify-between overflow-hidden rounded-bl-none text-center text-2xl text-white md:h-auto md:flex-row lg:max-w-245 lg:text-3xl"
-            >
-               <span
-                  class="absolute top-0 right-0 z-56 h-8 w-8 -translate-x-5 translate-y-5 cursor-pointer bg-[url(./assets/icons/close.svg)] bg-contain bg-center bg-no-repeat hover:opacity-70"
-                  data-popup-open-close
-               ></span>
-               <div
-                  class="font-heading relative z-55 flex w-full flex-col items-center justify-center gap-8 p-6 pt-15 pb-0 sm:p-16 sm:pb-0 md:pb-16 md:pl-0"
-               >
-                  <span class="text-primary font-bold uppercase"> Открытие в апреле 2026 года! </span>
-                  <div class="flex flex-col gap-6">
-                     <p class="font-bold">
-                        Принимаем заказы
-                        <br />
-                        на проведение мероприятий:
-                     </p>
-                     <div class="flex flex-col items-center gap-2">
-                        <a class="hover:opacity-70" href="tel:+79118607773"> +7 (911) 860-77-73 </a>
-                        <a class="hover:opacity-70" href="mailto:promo@ecoposolstvo.ru"> promo@ecoposolstvo.ru </a>
-                     </div>
-                  </div>
-                  <div class="flex flex-row gap-8">
-                     <a
-                        href="https://t.me/joinchat/@EcoPosolstvo"
-                        class="bg-primary aspect-square w-10 shrink-0 mask-[url(./assets/icons/social-telegram.svg)] mask-contain mask-no-repeat lg:w-12"
-                     ></a>
-                     <a
-                        href="/"
-                        class="bg-primary aspect-square w-10 shrink-0 mask-[url(./assets/icons/social-max.svg)] mask-contain mask-no-repeat lg:w-12"
-                     ></a>
-                  </div>
-               </div>
-               <div class="relative h-full w-full shrink-0 md:order-first md:mt-auto md:max-w-[30%]">
-                  <img
-                     class="absolute top-0 left-0 z-54 w-[50%] -translate-x-[20%] translate-y-[5%] rotate-45 sm:translate-y-[0%] md:top-auto md:bottom-0 md:w-full md:translate-y-[20%]"
-                     src="/images/open-balls.webp"
-                     loading="eager"
-                     alt=""
-                     aria-hidden="true"
-                     data-popup-open-balls
-                  />
-               </div>
-            </div>
-         </div>
-
-         <!-- Топ-меню -->
-         <div class="fixed top-4 z-50 w-full lg:px-6" data-menu-shell>
-            <div
-               class="bg-primary/99 flex flex-col rounded-4xl shadow backdrop-blur xl:flex-row xl:justify-between"
+               class="bg-primary flex flex-col rounded-4xl shadow backdrop-blur xl:flex-row xl:justify-between"
                data-menu-backdrop
             >
                <div class="flex items-center justify-between rounded-full p-1 pr-6">
@@ -289,21 +309,20 @@
                      aria-expanded="false"
                      aria-controls="mobileNav"
                   >
-                     <span
-                        class="absolute inset-0 bg-[url(./assets/icons/menu.svg)] bg-contain bg-center bg-no-repeat"
-                        data-burger
-                     ></span>
-                     <span
-                        class="absolute inset-0 bg-[url(./assets/icons/close.svg)] bg-contain bg-center bg-no-repeat opacity-0"
-                        data-close
-                     ></span>
+                     <div class="absolute inset-0 flex items-center justify-center text-white" data-burger>
+                        <svg class="icon icon-md">
+                           <use href="./src/assets/icons/sprite.svg#icon-menu"></use>
+                        </svg>
+                     </div>
+
+                     <div class="absolute inset-0 flex items-center justify-center text-white" data-close>
+                        <svg class="icon icon-md">
+                           <use href="./src/assets/icons/sprite.svg#icon-close"></use>
+                        </svg>
+                     </div>
                   </button>
                </div>
-               <nav
-                  id="mobileNav"
-                  class="overflow-hidden px-6 text-xl text-white lowercase xl:flex xl:basis-[75%]"
-                  data-mobile-nav
-               >
+               <nav id="mobileNav" class="px-6 text-xl text-white lowercase xl:flex xl:basis-[75%]" data-mobile-nav>
                   <ul
                      id="nav-list"
                      class="flex w-full flex-col pb-1 lg:pb-0 xl:flex-row xl:justify-between"
@@ -311,76 +330,80 @@
                   ></ul>
                </nav>
             </div>
-         </div>
-         <header id="hero" class="hero rounded-5xl lg:rounded-b-6xl relative mb-6 bg-white lg:mb-15" data-hero>
-            <div class="overflow-hidden">
-               <div
-                  class="relative z-20 mx-auto mb-[clamp(11.25rem,3.75rem+37.5vw,18.75rem)] flex flex-col gap-8 p-6 pt-28 sm:mb-[clamp(12.5rem,calc(50rem-78.125vw),18.75rem)] lg:mb-[clamp(5rem,20rem-15.625vw,10rem)] lg:px-20"
-               >
-                  <div class="hidden w-full sm:block" data-hero-logo>
-                     <img
-                        class="pointer-events-none w-full"
-                        src="/src/assets/images/logo_hero.svg"
-                        alt="Экопосольство"
-                     />
-                  </div>
-                  <div class="flex flex-col gap-2">
-                     <h1
-                        class="text-primary text-[2rem] leading-tight tracking-[1px] uppercase sm:text-[2.5rem] md:max-w-[80%] lg:max-w-[70%] xl:max-w-[75%] xl:text-[3.5rem]"
-                        data-hero-title
-                     >
-                        Единственное большое
-                        <br />
-                        ивент-пространство
-                        <br />
-                        в Зеленоградске
-                     </h1>
-                     <p
-                        class="text-grey-dark text-2xl lowercase min-[494px]:w-[80%] sm:max-w-[60%] md:max-w-[55%] lg:max-w-[50%] xl:max-w-[48%] xl:text-[2.5rem] 2xl:max-w-160"
-                        data-hero-desc
-                     >
-                        Для проведения событий любого формата и масштаба
-                     </p>
-                  </div>
-               </div>
-               <section id="about" class="relative z-10 pb-6 md:px-6 lg:p-20 lg:pt-0 lg:pb-15" data-section-about>
-                  <div class="mx-auto">
-                     <div
-                        class="absolute right-0 z-30 w-[clamp(20rem,6.25rem+68.75vw,33.75rem)] -translate-y-[85%] p-6 lg:w-[clamp(33.75rem,11.25rem+35.1563vw,45rem)] xl:w-[clamp(43.75rem,calc(46.875rem-1.9531vw),45rem)]"
-                        data-hero-home
-                     >
-                        <img
-                           class="pointer-events-none aspect-auto w-full"
-                           src="/images/home.avif"
-                           loading="eager"
-                           alt="Домик Экопосольства"
-                           aria-hidden="true"
-                        />
-                     </div>
-                     <div class="hero__bg" data-hero-light>
-                        <img
-                           class="pointer-events-none absolute z-5 aspect-auto w-full"
-                           src="/src/assets/images/circle-hero-bg.svg"
-                           loading="eager"
-                           alt=""
-                           aria-hidden="true"
-                        />
-                     </div>
-                     <div
-                        id="stats"
-                        class="bg-grey-light rounded-5xl lg:rounded-6xl relative z-20 grid px-6 py-20 lowercase shadow sm:grid-cols-2 sm:gap-y-12 lg:py-25 xl:grid-cols-4"
-                        data-stats
-                     ></div>
-                     <div
-                        id="adventages"
-                        class="bg-primary adventages rounded-b-5xl lg:rounded-b-6xl relative z-0 -mt-20 grid items-stretch overflow-hidden px-6 py-10 pt-25 text-white lowercase shadow sm:grid-cols-2 lg:py-25 lg:pt-45 xl:grid-cols-4"
-                        data-adventages
-                     ></div>
-                  </div>
-               </section>
-            </div>
          </header>
+
+         <!-- Основная часть с контентом -->
          <main id="main">
+            <div id="hero" class="hero rounded-5xl lg:rounded-b-6xl relative mb-6 bg-white lg:mb-15" data-hero>
+               <div class="overflow-hidden">
+                  <section
+                     class="relative z-20 mx-auto mb-[clamp(11.25rem,3.75rem+37.5vw,18.75rem)] flex flex-col gap-8 p-6 pt-28 sm:mb-[clamp(12.5rem,calc(50rem-78.125vw),18.75rem)] lg:mb-[clamp(5rem,20rem-15.625vw,10rem)] lg:px-20"
+                  >
+                     <div class="hidden w-full sm:block" data-hero-logo>
+                        <img
+                           class="pointer-events-none w-full"
+                           src="/src/assets/images/logo_hero.svg"
+                           alt="Экопосольство"
+                        />
+                     </div>
+                     <div class="flex flex-col gap-2">
+                        <h1
+                           class="text-primary text-[2rem] leading-tight tracking-[1px] uppercase sm:text-[2.5rem] md:max-w-[80%] lg:max-w-[70%] xl:max-w-[75%] xl:text-[3.5rem]"
+                           data-hero-title
+                        >
+                           Единственное большое
+                           <br />
+                           ивент-пространство
+                           <br />
+                           в Зеленоградске
+                        </h1>
+                        <p
+                           class="text-grey-dark text-2xl lowercase min-[494px]:w-[80%] sm:max-w-[60%] md:max-w-[55%] lg:max-w-[50%] xl:max-w-[48%] xl:text-[2.5rem] 2xl:max-w-160"
+                           data-hero-desc
+                        >
+                           Для проведения событий любого формата и масштаба
+                        </p>
+                     </div>
+                  </section>
+
+                  <section id="about" class="relative z-10 pb-6 md:px-6 lg:p-20 lg:pt-0 lg:pb-15" data-section-about>
+                     <div class="mx-auto">
+                        <div
+                           class="absolute right-0 z-30 w-[clamp(20rem,6.25rem+68.75vw,33.75rem)] -translate-y-[85%] p-6 lg:w-[clamp(33.75rem,11.25rem+35.1563vw,45rem)] xl:w-[clamp(43.75rem,calc(46.875rem-1.9531vw),45rem)]"
+                           data-hero-home
+                        >
+                           <img
+                              class="pointer-events-none aspect-auto w-full"
+                              src="/images/home.avif"
+                              loading="eager"
+                              alt="Домик Экопосольства"
+                              aria-hidden="true"
+                           />
+                        </div>
+                        <div class="hero__bg" data-hero-light>
+                           <img
+                              class="pointer-events-none absolute z-5 aspect-auto w-full"
+                              src="/src/assets/images/circle-hero-bg.svg"
+                              loading="eager"
+                              alt=""
+                              aria-hidden="true"
+                           />
+                        </div>
+                        <div
+                           id="stats"
+                           class="bg-grey-light rounded-5xl lg:rounded-6xl relative z-20 grid px-6 py-20 lowercase shadow sm:grid-cols-2 sm:gap-y-12 lg:py-25 xl:grid-cols-4"
+                           data-stats
+                        ></div>
+                        <div
+                           id="adventages"
+                           class="bg-primary adventages rounded-b-5xl lg:rounded-b-6xl relative z-0 -mt-20 grid items-stretch overflow-hidden px-6 py-10 pt-25 text-white lowercase shadow sm:grid-cols-2 lg:py-25 lg:pt-45 xl:grid-cols-4"
+                           data-adventages
+                        ></div>
+                     </div>
+                  </section>
+               </div>
+            </div>
+
             <section
                id="space"
                class="space lg:rounded-b-6xl selection:text-primary! rounded-b-5xl relative -mt-15 mb-6 text-white shadow selection:bg-white! lg:mb-15"
@@ -406,6 +429,7 @@
                   </div>
                </div>
             </section>
+
             <div id="possibillities">
                <section id="services" class="services" data-services-section>
                   <div class="grid gap-4 px-6 sm:grid-cols-2 lg:grid-cols-3 lg:px-20">
@@ -418,18 +442,15 @@
                         </span>
                         <div class="service-card__img-container">
                            <div
-                              class="absolute top-1/2 right-0 flex h-full -translate-x-[10%] -translate-y-1/2 items-center p-6 2xl:-translate-x-[30%]"
+                              class="absolute top-1/2 right-0 -translate-x-[10%] -translate-y-1/2 rotate-[5.42deg] 2xl:p-6"
                            >
-                              <img
-                                 class="service-card__img h-full rotate-[5.42deg] 2xl:h-65"
-                                 src="/src/assets/images/cap.svg"
-                                 loading="lazy"
-                                 alt="Корпоративы и тимбилдинги"
-                                 aria-hidden="true"
-                              />
+                              <svg class="aspect-19/34 h-60 text-white opacity-50 2xl:opacity-90">
+                                 <use href="./src/assets/icons/services/sprite.svg#icon-flutes"></use>
+                              </svg>
                            </div>
                         </div>
                      </article>
+
                      <article class="service-card" data-service-card>
                         <div class="service-card__bg bg-linear-[149.11deg,#FFFFFF_-57.24%,#8AB3AC_81.32%]"></div>
                         <span class="service-card__title">
@@ -439,18 +460,15 @@
                         </span>
                         <div class="service-card__img-container">
                            <div
-                              class="absolute top-1/2 right-0 h-full -translate-x-[30%] -translate-y-1/2 items-center p-6 2xl:-translate-x-[30%]"
+                              class="absolute top-1/2 right-0 -translate-x-[10%] -translate-y-1/2 rotate-[7.85deg] 2xl:p-6"
                            >
-                              <img
-                                 class="service-card__img h-full rotate-[7.85deg]"
-                                 src="/src/assets/images/glasses.svg"
-                                 loading="lazy"
-                                 alt="Свадьбы и дни рождения"
-                                 aria-hidden="true"
-                              />
+                              <svg class="aspect-145/313 h-60 text-white opacity-50 2xl:opacity-90">
+                                 <use href="./src/assets/icons/services/sprite.svg#icon-flutes"></use>
+                              </svg>
                            </div>
                         </div>
                      </article>
+
                      <article class="service-card" data-service-card>
                         <div class="service-card__bg bg-linear-[210.64deg,#FFFFFF_-46.41%,#8AB3AC_81.36%]"></div>
                         <span class="service-card__title">
@@ -459,17 +477,14 @@
                            и презентации
                         </span>
                         <div class="service-card__img-container">
-                           <div class="absolute right-0 bottom-0 translate-[15%]">
-                              <img
-                                 class="service-card__img h-60 -rotate-20"
-                                 src="/src/assets/images/art.svg"
-                                 loading="lazy"
-                                 alt="Выставки и презентации"
-                                 aria-hidden="true"
-                              />
+                           <div class="absolute right-0 bottom-0 translate-[15%] -rotate-20">
+                              <svg class="aspect-379/250 h-60 text-white opacity-50 2xl:opacity-90">
+                                 <use href="./src/assets/icons/services/sprite.svg#icon-painting"></use>
+                              </svg>
                            </div>
                         </div>
                      </article>
+
                      <article class="service-card" data-service-card>
                         <div class="service-card__bg bg-linear-[332.91deg,#FFFFFF_-68.53%,#8AB3AC_83.08%]"></div>
                         <span class="service-card__title">
@@ -479,16 +494,13 @@
                         </span>
                         <div class="service-card__img-container">
                            <div class="absolute right-0 bottom-0 -translate-x-[10%] translate-y-[30%]">
-                              <img
-                                 class="service-card__img h-60 2xl:h-80"
-                                 src="/src/assets/images/mic.svg"
-                                 loading="lazy"
-                                 alt="Конференции и форумы"
-                                 aria-hidden="true"
-                              />
+                              <svg class="aspect-234/319 h-60 text-white opacity-50 2xl:h-80 2xl:opacity-90">
+                                 <use href="./src/assets/icons/services/sprite.svg#icon-microphone"></use>
+                              </svg>
                            </div>
                         </div>
                      </article>
+
                      <article class="service-card" data-service-card>
                         <div class="service-card__bg bg-linear-[29.51deg,#FFFFFF_-71.23%,#8AB3AC_84.65%]"></div>
                         <span class="service-card__title">
@@ -497,14 +509,10 @@
                            и мастер-классы
                         </span>
                         <div class="service-card__img-container">
-                           <div class="absolute right-0 bottom-0 translate-x-[20%] translate-y-[10%]">
-                              <img
-                                 class="service-card__img h-55 -rotate-10"
-                                 src="/src/assets/images/book.svg"
-                                 loading="lazy"
-                                 alt="Лекции и мастер-классы"
-                                 aria-hidden="true"
-                              />
+                           <div class="absolute right-0 bottom-0 translate-x-[20%] translate-y-[10%] -rotate-10">
+                              <svg class="aspect-445/239 h-55 text-white opacity-50 2xl:opacity-90">
+                                 <use href="./src/assets/icons/services/sprite.svg#icon-notebook"></use>
+                              </svg>
                            </div>
                         </div>
                      </article>
@@ -518,19 +526,16 @@
                            вечера
                         </span>
                         <div class="service-card__img-container">
-                           <div class="absolute right-0 bottom-0 translate-x-[10%] translate-y-[10%]">
-                              <img
-                                 class="service-card__img h-60 -rotate-20 2xl:h-65"
-                                 src="/src/assets/images/balls.svg"
-                                 loading="lazy"
-                                 alt="Торжества и выпускные вечера"
-                                 aria-hidden="true"
-                              />
+                           <div class="absolute right-0 bottom-0 translate-[10%] -rotate-20">
+                              <svg class="aspect-315/313 h-60 text-white opacity-50 xl:h-65 2xl:opacity-90">
+                                 <use href="./src/assets/icons/services/sprite.svg#icon-balls"></use>
+                              </svg>
                            </div>
                         </div>
                      </article>
                   </div>
                </section>
+
                <section class="why-us" data-whyus-section>
                   <div class="mx-auto grid gap-4 px-6 lg:gap-10 lg:px-20 xl:grid-cols-2">
                      <div class="relative" data-whyus-img>
@@ -541,10 +546,12 @@
                            >
                               Почему мы?
                            </span>
-                           <span
-                              class="ml-auto block aspect-square w-8 bg-[url(./assets/icons/arrow_outward.svg)] bg-contain bg-no-repeat xl:w-12"
-                              data-whyus-icon-arrow
-                           ></span>
+
+                           <div class="flex justify-end">
+                              <svg class="icon h-8 w-8 xl:h-12 xl:w-12">
+                                 <use href="./src/assets/icons/sprite.svg#icon-arrow-outward"></use>
+                              </svg>
+                           </div>
                         </div>
                         <div
                            class="lg:rounded-5xl h-full max-h-80 w-full overflow-hidden rounded-4xl xl:relative xl:max-h-none"
@@ -607,6 +614,7 @@
                      </div>
                   </div>
                </section>
+
                <section
                   class="tabs rounded-5xl lg:rounded-6xl bg-grey-light relative mx-auto mb-6 px-6 py-16 lg:p-20 lg:py-25"
                   data-seating
@@ -713,9 +721,12 @@
                               >
                                  Что включено
                               </span>
-                              <span
-                                 class="ml-auto block aspect-square w-8 bg-[url(./assets/icons/arrow_outward.svg)] bg-contain bg-no-repeat xl:w-12"
-                              ></span>
+
+                              <div class="flex justify-end">
+                                 <svg class="icon h-8 w-8 xl:h-12 xl:w-12">
+                                    <use href="./src/assets/icons/sprite.svg#icon-arrow-outward"></use>
+                                 </svg>
+                              </div>
                            </div>
                            <div class="h-full max-h-80 w-full overflow-hidden rounded-4xl xl:relative xl:max-h-none">
                               <img
@@ -729,35 +740,75 @@
                         <div class="grid gap-6">
                            <ul>
                               <li class="included-item" data-included-item>
-                                 <span class="included-item__icon--check"></span>
+                                 <div class="included-item__icon-shell">
+                                    <svg class="icon icon-sm">
+                                       <use href="./src/assets/icons/sprite.svg#icon-check"></use>
+                                    </svg>
+                                 </div>
+
                                  <span class="included-item__title"> Пространство общей площадью 900 м² </span>
                               </li>
                               <li class="included-item" data-included-item>
-                                 <span class="included-item__icon--check"></span>
+                                 <div class="included-item__icon-shell">
+                                    <svg class="icon icon-sm">
+                                       <use href="./src/assets/icons/sprite.svg#icon-check"></use>
+                                    </svg>
+                                 </div>
+
                                  <span class="included-item__title"> Сцена и подиум </span>
                               </li>
                               <li class="included-item" data-included-item>
-                                 <span class="included-item__icon--check"></span>
+                                 <div class="included-item__icon-shell">
+                                    <svg class="icon icon-sm">
+                                       <use href="./src/assets/icons/sprite.svg#icon-check"></use>
+                                    </svg>
+                                 </div>
+
                                  <span class="included-item__title"> Wi-Fi с высокой скоростью передачи данных </span>
                               </li>
                               <li class="included-item" data-included-item>
-                                 <span class="included-item__icon--check"></span>
+                                 <div class="included-item__icon-shell">
+                                    <svg class="icon icon-sm">
+                                       <use href="./src/assets/icons/sprite.svg#icon-check"></use>
+                                    </svg>
+                                 </div>
+
                                  <span class="included-item__title"> Full HD проектор и экран размером 3.8×3 м </span>
                               </li>
                               <li class="included-item" data-included-item>
-                                 <span class="included-item__icon--check"></span>
+                                 <div class="included-item__icon-shell">
+                                    <svg class="icon icon-sm">
+                                       <use href="./src/assets/icons/sprite.svg#icon-check"></use>
+                                    </svg>
+                                 </div>
+
                                  <span class="included-item__title"> Концертная акустическая система </span>
                               </li>
                               <li class="included-item" data-included-item>
-                                 <span class="included-item__icon--check"></span>
+                                 <div class="included-item__icon-shell">
+                                    <svg class="icon icon-sm">
+                                       <use href="./src/assets/icons/sprite.svg#icon-check"></use>
+                                    </svg>
+                                 </div>
+
                                  <span class="included-item__title"> Аудиопроцессор и микшерный пульт </span>
                               </li>
                               <li class="included-item" data-included-item>
-                                 <span class="included-item__icon--check"></span>
+                                 <div class="included-item__icon-shell">
+                                    <svg class="icon icon-sm">
+                                       <use href="./src/assets/icons/sprite.svg#icon-check"></use>
+                                    </svg>
+                                 </div>
+
                                  <span class="included-item__title"> Световое оборудование (базовое сценическое) </span>
                               </li>
                               <li class="included-item border-0!" data-included-item>
-                                 <span class="included-item__icon--check"></span>
+                                 <div class="included-item__icon-shell">
+                                    <svg class="icon icon-sm">
+                                       <use href="./src/assets/icons/sprite.svg#icon-check"></use>
+                                    </svg>
+                                 </div>
+
                                  <span class="included-item__title"> Пользование гримеркой </span>
                               </li>
                            </ul>
@@ -767,15 +818,30 @@
                               </span>
                               <ul class="flex flex-col">
                                  <li class="add-service-item" data-included-add-item>
-                                    <span class="add-service-item__icon--plus"></span>
+                                    <div class="add-service-item__icon-shell">
+                                       <svg class="icon icon-sm">
+                                          <use href="./src/assets/icons/sprite.svg#icon-plus"></use>
+                                       </svg>
+                                    </div>
+
                                     <span class="uppercase"> Оформление зала (в т. ч. флористическое) </span>
                                  </li>
                                  <li class="add-service-item" data-included-add-item>
-                                    <span class="add-service-item__icon--plus"></span>
+                                    <div class="add-service-item__icon-shell">
+                                       <svg class="icon icon-sm">
+                                          <use href="./src/assets/icons/sprite.svg#icon-plus"></use>
+                                       </svg>
+                                    </div>
+
                                     <span class="uppercase"> Аренда флипчартов </span>
                                  </li>
                                  <li class="add-service-item border-0!" data-included-add-item>
-                                    <span class="add-service-item__icon--plus"></span>
+                                    <div class="add-service-item__icon-shell">
+                                       <svg class="icon icon-sm">
+                                          <use href="./src/assets/icons/sprite.svg#icon-plus"></use>
+                                       </svg>
+                                    </div>
+
                                     <span class="uppercase"> Организация кейтеринга </span>
                                  </li>
                               </ul>
@@ -854,9 +920,18 @@
                   </h2>
                   <div class="grid gap-4 lg:grid-cols-2">
                      <article class="faq-card" data-accordion-item>
-                        <div class="faq-card__icon">
-                           <span class="faq-card__icon--plus" data-accordion-plus></span>
-                           <span class="faq-card__icon--minus" data-accordion-minus></span>
+                        <div class="faq-card__icons">
+                           <div class="faq-card__icon-shell" data-accordion-plus>
+                              <svg class="icon icon-sm">
+                                 <use href="./src/assets/icons/sprite.svg#icon-plus"></use>
+                              </svg>
+                           </div>
+
+                           <div class="faq-card__icon-shell" data-accordion-minus>
+                              <svg class="icon icon-sm">
+                                 <use href="./src/assets/icons/sprite.svg#icon-minus"></use>
+                              </svg>
+                           </div>
                         </div>
                         <span class="faq-card__question"> Какие размеры у площадки? </span>
                         <div class="faq-card__answer" data-accordion-content>
@@ -883,9 +958,18 @@
                         </div>
                      </article>
                      <article class="faq-card" data-accordion-item>
-                        <div class="faq-card__icon">
-                           <span class="faq-card__icon--plus" data-accordion-plus></span>
-                           <span class="faq-card__icon--minus" data-accordion-minus></span>
+                        <div class="faq-card__icons">
+                           <div class="faq-card__icon-shell" data-accordion-plus>
+                              <svg class="icon icon-sm">
+                                 <use href="./src/assets/icons/sprite.svg#icon-plus"></use>
+                              </svg>
+                           </div>
+
+                           <div class="faq-card__icon-shell" data-accordion-minus>
+                              <svg class="icon icon-sm">
+                                 <use href="./src/assets/icons/sprite.svg#icon-minus"></use>
+                              </svg>
+                           </div>
                         </div>
                         <span class="faq-card__question"> Какие условия аренды площадки? </span>
                         <p class="faq-card__answer" data-accordion-content>
@@ -893,9 +977,18 @@
                         </p>
                      </article>
                      <article class="faq-card" data-accordion-item>
-                        <div class="faq-card__icon">
-                           <span class="faq-card__icon--plus" data-accordion-plus></span>
-                           <span class="faq-card__icon--minus" data-accordion-minus></span>
+                        <div class="faq-card__icons">
+                           <div class="faq-card__icon-shell" data-accordion-plus>
+                              <svg class="icon icon-sm">
+                                 <use href="./src/assets/icons/sprite.svg#icon-plus"></use>
+                              </svg>
+                           </div>
+
+                           <div class="faq-card__icon-shell" data-accordion-minus>
+                              <svg class="icon icon-sm">
+                                 <use href="./src/assets/icons/sprite.svg#icon-minus"></use>
+                              </svg>
+                           </div>
                         </div>
                         <span class="faq-card__question"> На какой период можно арендовать площадку? </span>
                         <p class="faq-card__answer" data-accordion-content>
@@ -905,9 +998,18 @@
                         </p>
                      </article>
                      <article class="faq-card" data-accordion-item>
-                        <div class="faq-card__icon">
-                           <span class="faq-card__icon--plus" data-accordion-plus></span>
-                           <span class="faq-card__icon--minus" data-accordion-minus></span>
+                        <div class="faq-card__icons">
+                           <div class="faq-card__icon-shell" data-accordion-plus>
+                              <svg class="icon icon-sm">
+                                 <use href="./src/assets/icons/sprite.svg#icon-plus"></use>
+                              </svg>
+                           </div>
+
+                           <div class="faq-card__icon-shell" data-accordion-minus>
+                              <svg class="icon icon-sm">
+                                 <use href="./src/assets/icons/sprite.svg#icon-minus"></use>
+                              </svg>
+                           </div>
                         </div>
                         <span class="faq-card__question"> Какое мультимедийное оборудование доступно? </span>
                         <div class="faq-card__answer" data-accordion-content>
@@ -932,9 +1034,18 @@
                         </div>
                      </article>
                      <article class="faq-card" data-accordion-item>
-                        <div class="faq-card__icon">
-                           <span class="faq-card__icon--plus" data-accordion-plus></span>
-                           <span class="faq-card__icon--minus" data-accordion-minus></span>
+                        <div class="faq-card__icons">
+                           <div class="faq-card__icon-shell" data-accordion-plus>
+                              <svg class="icon icon-sm">
+                                 <use href="./src/assets/icons/sprite.svg#icon-plus"></use>
+                              </svg>
+                           </div>
+
+                           <div class="faq-card__icon-shell" data-accordion-minus>
+                              <svg class="icon icon-sm">
+                                 <use href="./src/assets/icons/sprite.svg#icon-minus"></use>
+                              </svg>
+                           </div>
                         </div>
                         <span class="faq-card__question"> Есть ли на территории Экопосольства парковка? </span>
                         <p class="faq-card__answer" data-accordion-content>
@@ -944,9 +1055,18 @@
                         </p>
                      </article>
                      <article class="faq-card" data-accordion-item>
-                        <div class="faq-card__icon">
-                           <span class="faq-card__icon--plus" data-accordion-plus></span>
-                           <span class="faq-card__icon--minus" data-accordion-minus></span>
+                        <div class="faq-card__icons">
+                           <div class="faq-card__icon-shell" data-accordion-plus>
+                              <svg class="icon icon-sm">
+                                 <use href="./src/assets/icons/sprite.svg#icon-plus"></use>
+                              </svg>
+                           </div>
+
+                           <div class="faq-card__icon-shell" data-accordion-minus>
+                              <svg class="icon icon-sm">
+                                 <use href="./src/assets/icons/sprite.svg#icon-minus"></use>
+                              </svg>
+                           </div>
                         </div>
                         <span class="faq-card__question">
                            Как добраться до Экопосольства на общественном транспорте?
@@ -959,9 +1079,18 @@
                         </p>
                      </article>
                      <article class="faq-card" data-accordion-item>
-                        <div class="faq-card__icon">
-                           <span class="faq-card__icon--plus" data-accordion-plus></span>
-                           <span class="faq-card__icon--minus" data-accordion-minus></span>
+                        <div class="faq-card__icons">
+                           <div class="faq-card__icon-shell" data-accordion-plus>
+                              <svg class="icon icon-sm">
+                                 <use href="./src/assets/icons/sprite.svg#icon-plus"></use>
+                              </svg>
+                           </div>
+
+                           <div class="faq-card__icon-shell" data-accordion-minus>
+                              <svg class="icon icon-sm">
+                                 <use href="./src/assets/icons/sprite.svg#icon-minus"></use>
+                              </svg>
+                           </div>
                         </div>
                         <span class="faq-card__question">
                            Сколько времени занимает дорога до Экопосольства на автомобиле?
@@ -975,6 +1104,8 @@
                </div>
             </section>
          </main>
+
+         <!-- Футер с контактами -->
          <footer
             id="contacts"
             class="bg-grey-dark rounded-t-5xl lg:rounded-t-6xl selection:text-primary! text-white selection:bg-white!"
@@ -989,9 +1120,10 @@
                </h2>
                <div class="grid justify-between gap-10 xl:grid-cols-3">
                   <article class="flex flex-row gap-2" data-contacts-item>
-                     <span
-                        class="mt-1 aspect-square w-6 shrink-0 bg-[url(./assets/icons/location.svg)] bg-no-repeat"
-                     ></span>
+                     <svg class="icon icon-sm">
+                        <use href="./src/assets/icons/sprite.svg#icon-location"></use>
+                     </svg>
+
                      <div class="flex flex-col gap-2">
                         <a
                            href="https://yandex.ru/maps/20139/zelenogradsk/?from=api-maps&ll=20.511492%2C54.927658&mode=poi&origin=jsapi21&poi%5Bpoint%5D=20.510324%2C54.928015&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D156239900763&utm_source=share&z=17"
@@ -1004,24 +1136,27 @@
                         <span class="text-white-transparent"> территория Экоплощадки «Зелёный КОТ» </span>
                      </div>
                   </article>
+
                   <article class="flex flex-row gap-2" data-contacts-item>
-                     <span
-                        class="mt-1 aspect-square w-6 shrink-0 bg-[url(./assets/icons/pace.svg)] bg-no-repeat"
-                     ></span>
+                     <svg class="icon icon-sm">
+                        <use href="./src/assets/icons/sprite.svg#icon-pace"></use>
+                     </svg>
+
                      <div class="flex flex-col gap-2">
                         <span class="text-white-transparent"> Время работы: </span>
                         <span>ежедневно с 10:00 до 18:00</span>
                      </div>
                   </article>
+
                   <article class="flex flex-col gap-2" data-contacts-item>
                      <a
                         class="flex items-center gap-2 hover:underline"
                         href="tel:+79118607773"
                         title="+7 (911) 860-77-73"
                      >
-                        <span
-                           class="aspect-square w-6 shrink-0 bg-[url(./assets/icons/phone_forwarded.svg)] bg-no-repeat"
-                        ></span>
+                        <svg class="icon icon-sm">
+                           <use href="./src/assets/icons/sprite.svg#icon-phone-forwarded"></use>
+                        </svg>
                         <span>+7 (911) 860-77-73</span>
                      </a>
                      <a
@@ -1029,7 +1164,10 @@
                         href="mailto:promo@ecoposolstvo.ru"
                         title="promo@ecoposolstvo.ru"
                      >
-                        <span class="aspect-square w-6 shrink-0 bg-[url(./assets/icons/email.svg)] bg-no-repeat"></span>
+                        <svg class="icon icon-sm">
+                           <use href="./src/assets/icons/sprite.svg#icon-email"></use>
+                        </svg>
+
                         <span>promo@ecoposolstvo.ru</span>
                      </a>
                   </article>
@@ -1043,20 +1181,21 @@
                   <div class="flex justify-center gap-6">
                      <a
                         href="https://t.me/joinchat/@EcoPosolstvo"
-                        class="bg-primary aspect-square w-8 shrink-0 mask-[url(./assets/icons/social-telegram.svg)] mask-contain mask-no-repeat lg:w-12"
                         target="_blank"
                         rel="noopener noreferrer"
                         title="Telegram"
                         data-contacts-social-icon
-                     ></a>
-                     <a
-                        href="/"
-                        class="bg-primary aspect-square w-8 shrink-0 mask-[url(./assets/icons/social-max.svg)] mask-contain mask-no-repeat lg:w-12"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        title="MAX"
-                        data-contacts-social-icon
-                     ></a>
+                     >
+                        <svg class="icon icon-lg text-primary">
+                           <use href="./src/assets/icons/sprite.svg#icon-social-telegram"></use>
+                        </svg>
+                     </a>
+
+                     <a href="/" target="_blank" rel="noopener noreferrer" title="MAX" data-contacts-social-icon>
+                        <svg class="icon icon-lg text-primary">
+                           <use href="./src/assets/icons/sprite.svg#icon-social-max"></use>
+                        </svg>
+                     </a>
                   </div>
                   <div
                      class="border-t-grey grid auto-rows-auto items-center gap-6 border-t py-10 text-center md:grid-cols-3"
@@ -1083,6 +1222,7 @@
          </footer>
       </div>
 
+      <!-- Подключение скриптов -->
       <script type="module" src="/src/scripts/main.js"></script>
       <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=307006f6-584d-408e-9f3c-687300b32685&amp;ver=1.0"></script>
       <noscript>

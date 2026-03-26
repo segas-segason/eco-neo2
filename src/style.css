@@ -98,6 +98,26 @@
    }
 }
 
+@layer utilities {
+   /* Спрайт иконок для всех SVG */
+   .icon {
+      @apply inline-block shrink-0 fill-current;
+   }
+
+   /* Размеры иконок */
+   .icon-sm {
+      @apply h-6 w-6;
+   }
+
+   .icon-md {
+      @apply h-8 w-8;
+   }
+
+   .icon-lg {
+      @apply h-12 w-12;
+   }
+}
+
 /* Переиспользуемые стили компонентов */
 @layer components {
    /* Отключение всех элементов, пока не загрузиться старотовая анимация */
@@ -119,11 +139,23 @@
    }
 
    .nav-list__link {
-      @apply block px-4 py-4 hover:underline hover:underline-offset-6;
+      @apply flex h-full items-center justify-start px-4 py-4 xl:justify-center xl:py-0;
    }
 
-   .nav-list__link.active {
-      @apply underline underline-offset-6;
+   .nav-list__label {
+      @apply relative;
+   }
+
+   .nav-list__underline {
+      @apply pointer-events-none absolute bottom-0 left-0 h-px w-full bg-white;
+   }
+
+   .nav-list__link:not(.active) .nav-list__underline {
+      @apply opacity-0;
+   }
+
+   .nav-list__link.active .nav-list__underline {
+      @apply opacity-100;
    }
 
    /* Блок Герой */
@@ -338,16 +370,16 @@
       @apply text-primary uppercase;
    }
 
-   .included-item__icon--check {
-      @apply aspect-square w-6 shrink-0 bg-[url(./assets/icons/check.svg)] bg-no-repeat;
+   .included-item__icon-shell {
+      @apply text-primary flex items-center;
    }
 
    .add-service-item {
       @apply border-b-grey-dark flex gap-2 border-b py-4;
    }
 
-   .add-service-item__icon--plus {
-      @apply aspect-square w-6 shrink-0 bg-[url(./assets/icons/plus.svg)] bg-no-repeat;
+   .add-service-item__icon-shell {
+      @apply flex items-center;
    }
 
    /* Секция Специальные предложения */
@@ -364,16 +396,12 @@
       @apply col-2 flex items-center lg:min-h-15 2xl:min-h-auto;
    }
 
-   .faq-card__icon {
+   .faq-card__icons {
       @apply bg-primary relative col-1 flex h-8 w-8 items-center justify-center rounded-full shadow;
    }
 
-   .faq-card__icon--plus {
-      @apply absolute block h-6 w-6 bg-white mask-[url(./assets/icons/plus.svg)] mask-contain mask-center mask-no-repeat;
-   }
-
-   .faq-card__icon--minus {
-      @apply absolute block h-6 w-6 bg-white mask-[url(./assets/icons/minus.svg)] mask-contain mask-center mask-no-repeat;
+   .faq-card__icon-shell {
+      @apply absolute flex items-center text-white;
    }
 
    .faq-card__answer {

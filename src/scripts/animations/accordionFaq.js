@@ -28,7 +28,7 @@ export function initAccordionFaq() {
    }).from(items, {
       opacity: 0,
       yPercent: 100,
-      stagger: 0.25,
+      stagger: 0.1,
    });
 
    let openItem = null;
