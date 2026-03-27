@@ -67,7 +67,7 @@
       <div class="page-content">
          <!-- Окно с информацией об открытии (активация раз в сутки) -->
          <div
-            class="pointer-events-none invisible fixed z-100 flex h-full w-full items-center justify-center backdrop-blur-lg"
+            class="pointer-events-none invisible fixed inset-0 z-100 flex h-full w-full items-center justify-center opacity-0 backdrop-blur-lg"
             data-popup-open
          >
             <div
@@ -104,14 +104,13 @@
                         target="_blank"
                         rel="noopener noreferrer"
                         title="Telegram"
-                        data-contacts-social-icon
                      >
                         <svg class="icon icon-lg text-primary">
                            <use href="./src/assets/icons/sprite.svg#icon-social-telegram"></use>
                         </svg>
                      </a>
 
-                     <a href="/" target="_blank" rel="noopener noreferrer" title="MAX" data-contacts-social-icon>
+                     <a href="/" target="_blank" rel="noopener noreferrer" title="MAX">
                         <svg class="icon icon-lg text-primary">
                            <use href="./src/assets/icons/sprite.svg#icon-social-max"></use>
                         </svg>
@@ -205,87 +204,100 @@
             </div>
          </div>
 
-         <!-- <div class="fixed z-100 mx-auto hidden h-full w-full items-center justify-center">
-				<div class="bg-grey-dark text-white shadow">
-					<div
-						class="after:to-#00000025 relative mb-1.5 h-full w-full bg-white bg-[conic-gradient(from_1.18deg_at_35.93%_62.78%,rgba(71,74,81,0.725923)_-69.06deg,#474A51_45.15deg,rgba(71,74,81,0.5)_290.9deg,rgba(71,74,81,0.725923)_290.94deg,#474A51_405.15deg)] after:absolute after:-bottom-1.5 after:h-1.5 after:w-full after:bg-linear-to-t after:from-white"
-					>
-						<div class="mx-auto flex flex-row justify-between gap-40 px-40">
-							<div class="relative flex items-end pb-45">
-								<div
-									class="absolute top-0 left-1/2 w-96 -translate-x-1/2 -translate-y-1/3 rounded-full p-9 shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] backdrop-blur-[3px]"
-								>
-									<img
-										class="aspect-square h-full w-full object-contain"
-										src="/src/assets/images/symbol-circle.png"
-									/>
-								</div>
-								<div class="mt-auto">
-									<h2 class="font-heading text-6xl font-medium -tracking-wider uppercase">Оставить заявку</h2>
-								</div>
-							</div>
-							<form action="" method="post" class="flex flex-col gap-6 py-20">
-								<p class="flex flex-col">
-									<label for="name" class="font-heading font-medium">Имя и фамилия</label>
-									<input
-										class="border-b border-b-white p-4 text-[1rem] focus:outline-0"
-										type="text"
-										name="name"
-										id="name"
-										placeholder="Как к вам обращаться"
-										required
-									/>
-								</p>
-								<p class="flex flex-col">
-									<label for="email" class="font-heading font-medium">E-mail</label>
-									<input
-										class="border-b border-b-white p-4 text-[1rem] focus:outline-0"
-										type="email"
-										name="email"
-										id="email"
-										placeholder="example@mail.ru"
-										required
-									/>
-								</p>
-								<p class="flex flex-col">
-									<label for="phone" class="font-heading font-medium">Телефон</label>
-									<input
-										class="border-b border-b-white p-4 text-[1rem] focus:outline-0"
-										type="tel"
-										name="phone"
-										id="phone"
-										placeholder="+7 (000) 000-00-00"
-										required
-									/>
-								</p>
-								<div class="flex flex-row items-baseline gap-2">
-									<input
-										class="checked:after:mask-repeat-no relative flex h-4 w-4 shrink-0 appearance-none items-center justify-center rounded-sm border border-white after:block after:h-3 after:w-3 after:rounded-xs checked:after:bg-white checked:after:mask-contain"
-										type="checkbox"
-										id="privacy-policy"
-										name="privacy"
-										value="agreed"
-										required
-									/>
-									<label class="block max-w-96 text-[1rem]" for="privacy-policy"
-										>Нажимая на кнопку «Получить консультацию», вы соглашаетесь с политикой в отношении обработки
-										персональных данных и даете
-										<a class="underline underline-offset-4 hover:decoration-transparent" href="/"
-											>согласие на обработку персональных данных</a
-										>.
-									</label>
-								</div>
-								<button
-									type="submit"
-									class="border-primary font-heading hover:bg-primary w-full cursor-pointer rounded-md border-4 py-3 font-bold uppercase"
-								>
-									Получить консультацию
-								</button>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div> -->
+         <!-- Окно Оставить заявку (отключено) -->
+         <div class="fixed inset-0 z-100 hidden overflow-y-auto transition-opacity duration-300">
+            <div class="bg-grey-dark-overlay flex min-h-full justify-center backdrop-blur sm:items-center">
+               <div
+                  class="rounded-t-5xl relative mt-20 flex min-h-full w-full max-w-7xl flex-col items-center gap-6 bg-white bg-[conic-gradient(from_1.18deg_at_35.93%_62.78%,rgba(71,74,81,0.725923)_-69.06deg,#474A51_45.15deg,rgba(71,74,81,0.5)_290.9deg,rgba(71,74,81,0.725923)_290.94deg,#474A51_405.15deg)] p-6 pt-0 text-white sm:mb-10 sm:w-fit sm:rounded-4xl sm:p-12 sm:pt-0 lg:mt-30 lg:w-full lg:flex-row lg:justify-between lg:pt-12 xl:p-20"
+               >
+                  <div class="absolute -translate-y-1/4 lg:top-0 lg:left-0 lg:translate-x-1/2">
+                     <div class="bg-grey/20 rounded-full p-3 shadow-md backdrop-blur-xs">
+                        <img
+                           class="aspect-square h-40 sm:h-50 lg:h-60 xl:h-90"
+                           src="/src/assets/images/circle-brand-fill.svg"
+                           alt="/"
+                        />
+                     </div>
+                  </div>
+
+                  <div class="mt-40 sm:mt-50 lg:mt-auto lg:mb-40">
+                     <h3 class="font-heading text-center text-4xl font-medium uppercase lg:text-5xl xl:text-6xl">
+                        Оставить заявку
+                     </h3>
+                  </div>
+
+                  <form action="" method="post" class="flex flex-col gap-6">
+                     <p class="flex flex-col">
+                        <label for="name" class="font-heading font-medium">Имя и фамилия</label>
+                        <input
+                           class="border-b border-b-white p-4 text-[1rem] focus:outline-0"
+                           type="text"
+                           name="name"
+                           id="name"
+                           placeholder="Как к вам обращаться"
+                           required
+                        />
+                     </p>
+                     <p class="flex flex-col">
+                        <label for="email" class="font-heading font-medium">E-mail</label>
+                        <input
+                           class="border-b border-b-white p-4 text-[1rem] focus:outline-0"
+                           type="email"
+                           name="email"
+                           id="email"
+                           placeholder="example@mail.ru"
+                           required
+                        />
+                     </p>
+                     <p class="flex flex-col">
+                        <label for="phone" class="font-heading font-medium">Телефон</label>
+                        <input
+                           class="border-b border-b-white p-4 text-[1rem] focus:outline-0"
+                           type="tel"
+                           name="phone"
+                           id="phone"
+                           placeholder="+7 (000) 000-00-00"
+                           required
+                        />
+                     </p>
+                     <div class="flex flex-row items-baseline gap-2">
+                        <input
+                           class="checked:after:mask-repeat-no relative flex h-4 w-4 shrink-0 cursor-pointer appearance-none items-center justify-center rounded-sm border border-white after:block after:h-3 after:w-3 after:rounded-xs checked:after:bg-white checked:after:mask-contain"
+                           type="checkbox"
+                           id="privacy-policy"
+                           name="privacy"
+                           value="agreed"
+                           required
+                        />
+                        <label class="block max-w-96 cursor-pointer text-[1rem] select-none" for="privacy-policy"
+                           >Нажимая на кнопку «Получить консультацию», вы соглашаетесь с политикой в отношении
+                           <a href="/" class="underline underline-offset-4 hover:decoration-transparent"
+                              >обработки персональных данных</a
+                           >
+                           и даете
+                           <a class="underline underline-offset-4 hover:decoration-transparent" href="/"
+                              >согласие на обработку персональных данных</a
+                           >.
+                        </label>
+                     </div>
+                     <div class="flex flex-col gap-2">
+                        <button
+                           type="submit"
+                           class="border-primary font-heading hover:bg-primary w-full cursor-pointer rounded-md border-4 p-3 text-[1rem] font-bold uppercase"
+                        >
+                           Получить консультацию
+                        </button>
+                        <button
+                           type="submit"
+                           class="border-grey-light-transparent font-heading hover:text-grey-dark hover:bg-grey-light w-full cursor-pointer rounded-md border-4 p-3 text-[1rem] font-bold uppercase"
+                        >
+                           Отменить
+                        </button>
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </div>
 
          <!-- Основное топ-меню -->
          <header class="fixed top-4 z-50 w-full lg:px-6" data-menu-shell>
@@ -404,6 +416,7 @@
                </div>
             </div>
 
+            <!-- Секция Пространство -->
             <section
                id="space"
                class="space lg:rounded-b-6xl selection:text-primary! rounded-b-5xl relative -mt-15 mb-6 text-white shadow selection:bg-white! lg:mb-15"
@@ -430,8 +443,10 @@
                </div>
             </section>
 
+            <!-- Контейнер Возможности -->
             <div id="possibillities">
-               <section id="services" class="services" data-services-section>
+               <!-- Секция Услуги -->
+               <section id="services" class="py-16 lg:py-25" data-services-section>
                   <div class="grid gap-4 px-6 sm:grid-cols-2 lg:grid-cols-3 lg:px-20">
                      <article class="service-card" data-service-card>
                         <div class="service-card__bg bg-linear-[206.73deg,#FFFFFF_-69.43%,#8AB3AC_83.22%]"></div>
@@ -536,6 +551,7 @@
                   </div>
                </section>
 
+               <!-- Секция Почему мы -->
                <section class="why-us" data-whyus-section>
                   <div class="mx-auto grid gap-4 px-6 lg:gap-10 lg:px-20 xl:grid-cols-2">
                      <div class="relative" data-whyus-img>
@@ -615,6 +631,7 @@
                   </div>
                </section>
 
+               <!-- Секция Варианты рассадки -->
                <section
                   class="tabs rounded-5xl lg:rounded-6xl bg-grey-light relative mx-auto mb-6 px-6 py-16 lg:p-20 lg:py-25"
                   data-seating
@@ -627,7 +644,7 @@
                         Варианты рассадки
                      </h2>
 
-                     <div class="flex flex-col gap-6">
+                     <div class="flex flex-col gap-12 xl:gap-20">
                         <ul class="flex w-full flex-row overflow-x-auto" data-layout-tabs>
                            <li class="w-full">
                               <button
@@ -705,13 +722,15 @@
                               </button>
                            </li>
                         </ul>
-                        <!-- <div class="mx-auto aspect-auto w-full max-w-[80%]">
-										<img
-											class="pointer-events-none"
-											src="/images/hall-layout.webp"
-											alt="Схема зала"
-										/>
-									</div> -->
+
+                        <div class="mx-auto aspect-auto w-full max-w-300" data-layout-container>
+                           <img
+                              class="pointer-events-none"
+                              src="./src/assets/images/options/hall-layout-banquet.webp"
+                              alt="Схема зала"
+                              data-layout-image
+                           />
+                        </div>
                      </div>
                      <div class="grid gap-6 md:gap-14 xl:grid-cols-2">
                         <div class="relative" data-included-images>
@@ -850,9 +869,11 @@
                      </div>
                   </div>
                </section>
+
+               <!-- Секция Специальные предложения -->
                <section
                   id="stock"
-                  class="stock bg-primary selection:text-primary! rounded-b-5xl relative -z-2 -mt-15 overflow-hidden pt-29 pb-10 selection:bg-white! lg:pt-49 lg:pb-25"
+                  class="stock bg-primary selection:text-primary! rounded-b-5xl lg:rounded-b-6xl relative -z-2 -mt-15 overflow-hidden pt-29 pb-10 selection:bg-white! lg:pt-49 lg:pb-25"
                   data-stock
                >
                   <div class="z-0 mx-auto flex flex-col gap-12 px-6 lg:gap-25 lg:px-20">
@@ -862,9 +883,10 @@
                      >
                         Специальные предложения
                      </h2>
-                     <div class="lg:rounded-6xl rounded-5xl overflow-hidden">
+
+                     <div class="lg:rounded-6xl rounded-5xl">
                         <article
-                           class="bg-grey-light relative z-1 flex flex-col gap-4 rounded-[inherit] px-6 py-10 shadow lg:gap-7 lg:px-20 lg:py-15"
+                           class="bg-grey-light lg:rounded-6xl rounded-5xl relative z-1 flex flex-col gap-4 px-6 py-10 shadow lg:gap-7 lg:px-20 lg:py-15"
                            data-stock-card
                         >
                            <span
@@ -884,8 +906,9 @@
                               <em>*Перечень оборудования согласовывается в индивидуальном порядке</em>
                            </p>
                         </article>
+
                         <article
-                           class="bg-grey-light relative -mt-20 flex flex-col gap-4 rounded-b-[inherit] px-6 py-10 pt-25 shadow lg:gap-7 lg:px-20 lg:py-15 lg:pt-35"
+                           class="bg-grey-light lg:rounded-b-6xl rounded-b-5xl relative -mt-20 flex flex-col gap-4 px-6 py-10 pt-25 shadow lg:gap-7 lg:px-20 lg:py-15 lg:pt-35"
                            data-stock-card
                         >
                            <span
@@ -910,6 +933,8 @@
                   </div>
                </section>
             </div>
+
+            <!-- Секция Вопросы и ответы -->
             <section id="faq" class="my-16 lg:my-25" data-faq>
                <div class="mx-auto flex flex-col gap-12 px-6 lg:gap-25 lg:px-20">
                   <h2
@@ -1105,7 +1130,7 @@
             </section>
          </main>
 
-         <!-- Футер с контактами -->
+         <!-- Футер с Контактами -->
          <footer
             id="contacts"
             class="bg-grey-dark rounded-t-5xl lg:rounded-t-6xl selection:text-primary! text-white selection:bg-white!"

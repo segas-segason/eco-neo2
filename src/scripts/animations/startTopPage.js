@@ -1,3 +1,4 @@
+// Анимация верхней части сайта header + hero + about после загрузки страницы
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
 
@@ -15,34 +16,41 @@ const SELS = {
 
 let parallaxHandler = null;
 
-export function initStartPage() {
-   const init = () => initStartPageLogic();
+export function initStartTopPage() {
+   const init = () => initStartTopPageLogic();
    document.readyState === "loading" ? document.addEventListener("DOMContentLoaded", init) : init();
 }
 
-function initStartPageLogic() {
+function initStartTopPageLogic() {
    const els = Object.values(SELS).map((s) => document.querySelector(s));
    const [menu, logo, title, desc, light, home, about] = els;
+
+   let splitTitle, splitDesc;
 
    if (!menu || !logo || !title || !desc || !light || !home) return;
 
    gsap.killTweensOf(els);
    gsap.set(els, { clearProps: "all" });
 
-   gsap.set([menu, logo], { autoAlpha: 0, yPercent: -50 });
-   gsap.set([title, desc], { autoAlpha: 1 });
-   gsap.set(light, { autoAlpha: 0, xPercent: 10, rotate: "90deg" });
-   gsap.set(home, { autoAlpha: 0 });
-   gsap.set(about, { autoAlpha: 0, yPercent: 10 });
-   gsap.set([home, light], { willChange: "transform" });
-
-   let splitTitle, splitDesc;
    try {
       splitTitle = new SplitText(title, { type: "lines, words" });
       splitDesc = new SplitText(desc, { type: "lines, words" });
    } catch (e) {
       console.error("SplitText error:", e);
    }
+
+   gsap.set([menu, logo], { autoAlpha: 0, yPercent: -50 });
+   gsap.set(light, { autoAlpha: 0, xPercent: 10, rotate: "90deg" });
+   gsap.set(home, { autoAlpha: 0 });
+   gsap.set(about, { autoAlpha: 0, yPercent: 10 });
+   gsap.set([home, light], { willChange: "transform" });
+
+   const words = [...(splitTitle?.words || []), ...(splitDesc?.words || [])];
+
+   gsap.set(words, {
+      autoAlpha: 0,
+      display: "inline-block",
+   });
 
    setTimeout(() => {
       const tl = gsap.timeline({
@@ -76,8 +84,8 @@ function initStartPageLogic() {
             "<",
          );
 
-      if (splitTitle?.words) tl.from(splitTitle.words, { opacity: 0, stagger: 0.05, ease: "power2.out" }, "-=0.9");
-      if (splitDesc?.words) tl.from(splitDesc.words, { opacity: 0, stagger: 0.05, ease: "power2.out" }, "-=0.3");
+      if (splitTitle?.words) tl.to(splitTitle.words, { autoAlpha: 1, stagger: 0.05, ease: "power2.out" }, "-=0.9");
+      if (splitDesc?.words) tl.to(splitDesc.words, { autoAlpha: 1, stagger: 0.05, ease: "power2.out" }, "-=0.3");
    }, 50);
 }
 
@@ -127,7 +135,7 @@ function startParallax(heroes) {
    window.addEventListener("mousemove", parallaxHandler);
 }
 
-export function cleanupStartPage() {
+export function cleanupStartTopPage() {
    if (parallaxHandler) {
       window.removeEventListener("mousemove", parallaxHandler);
       parallaxHandler = null;

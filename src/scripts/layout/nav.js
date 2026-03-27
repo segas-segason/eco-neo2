@@ -1,7 +1,7 @@
 import { navLinks } from "../data/navLinks";
 import { renderNav } from "../components/nav/renderNav";
 
-export function initNav() {
+export function initLayoutNav() {
    const ul = document.getElementById("nav-list");
    if (!ul) return;
 

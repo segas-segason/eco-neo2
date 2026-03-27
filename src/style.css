@@ -247,10 +247,6 @@
    }
 
    /* Секция Услуги */
-   .services {
-      @apply my-16 lg:my-25;
-   }
-
    .service-card {
       @apply relative mb-4 h-50 w-full rounded-4xl p-10 shadow lg:mb-6 xl:h-80 2xl:p-12.5;
    }

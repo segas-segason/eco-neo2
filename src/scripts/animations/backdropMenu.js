@@ -7,18 +7,25 @@ gsap.registerPlugin(ScrollTrigger);
 export function initBackdropMenu() {
    const menuShell = document.querySelector("[data-menu-shell]");
    const menuBackdrop = document.querySelector("[data-menu-backdrop]");
+   const links = document.querySelectorAll(".nav-list__link");
 
-   if (!menuShell || !menuBackdrop) return;
+   if (!menuShell || !menuBackdrop || !links.length) return;
 
    gsap.set(menuBackdrop, {
       backdropFilter: "blur(8px)",
       backgroundColor: "rgba(138,179,172,1)",
    });
 
-   const tl = gsap.timeline({});
-
    let isHidden = false;
    let isProcessing = false;
+   let clickOnLinkHappened = false;
+
+   links.forEach((el) => {
+      el.addEventListener("click", () => {
+         clickOnLinkHappened = true;
+         console.log(clickOnLinkHappened);
+      });
+   });
 
    const hideShell = () => {
       if (isHidden) return;
@@ -76,10 +83,12 @@ export function initBackdropMenu() {
             return;
          }
 
-         if (direction === 1) {
-            handleHideOnScrollDown();
-         } else if (direction === -1) {
-            showShell();
+         if (direction === 1 && !clickOnLinkHappened) {
+            handleHideOnScrollDown(); //скрыть
+            return;
+         } else if (direction === -1 || clickOnLinkHappened === true) {
+            showShell(); //показать
+            clickOnLinkHappened = false;
          }
       },
    });

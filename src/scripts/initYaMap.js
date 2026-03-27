@@ -14,9 +14,9 @@ export function initYaMap() {
       });
 
       const MyIconContentLayout = ymaps.templateLayoutFactory.createClass(`
-            <div style="margin: 10px;">
-                <b>{{properties.balloonContentHeader}}</b><br />
-                <span style="font-size: 0.9rem;">
+            <div class="p-2 ">
+                <span class="font-brand font-bold text-xl text-grey-dark sm:text-2xl">{{properties.balloonContentHeader}}</span><br />
+                <span class="font-sans text-base text-grey">
                     {{properties.balloonContentBody}}
                 </span>
             </div>

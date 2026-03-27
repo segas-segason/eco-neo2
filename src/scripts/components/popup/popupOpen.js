@@ -3,7 +3,6 @@ import { gsap } from "gsap";
 export function initPopupOpen() {
    const popup = document.querySelector("[data-popup-open]");
    const close = document.querySelector("[data-popup-open-close]");
-   const balls = document.querySelector("[data-popup-open-balls]");
 
    if (!popup) return;
 
@@ -12,35 +11,34 @@ export function initPopupOpen() {
 
    const lastShown = Number(localStorage.getItem("popupLastShown"));
    const now = Date.now();
-   const oneDay = 24 * 60 * 60 * 1000; // 24 часа в мс
+   const oneDay = 24 * 60 * 60 * 1000; // 24 часа в мсы
 
-   if (lastShown && now - lastShown < oneDay) {
-      return;
-   }
+   gsap.set(popup, { clearProps: "all" });
+
+   const shouldShow = !(lastShown && now - lastShown < oneDay);
 
    gsap.set(popup, {
       autoAlpha: 0,
-      pointerEvents: "none",
-      y: 20,
+      yPercent: 10,
    });
+
+   if (!shouldShow) return;
 
    const tl = gsap.timeline({ paused: true });
 
    tl.to(popup, {
       autoAlpha: 1,
-      pointerEvents: "auto",
       duration: 0.6,
       ease: "power2.out",
-      y: 0,
+      yPercent: 0,
    });
 
    tl.to(
       popup,
       {
          autoAlpha: 0,
-         pointerEvents: "none",
          duration: 0.6,
-         y: 20,
+         yPercent: 20,
          ease: "power2.in",
          onComplete: () => {
             localStorage.setItem("popupLastShown", Date.now());
@@ -55,10 +53,9 @@ export function initPopupOpen() {
       tl.kill();
       gsap.to(popup, {
          autoAlpha: 0,
-         pointerEvents: "none",
          duration: 0.6,
          ease: "power2.out",
-         y: 20,
+         yPercent: 10,
          onComplete: () => {
             localStorage.setItem("popupLastShown", Date.now());
          },

@@ -15,10 +15,11 @@ export function initStockOpen() {
 
    gsap.set(title, { opacity: 0, yPercent: -100 });
 
-   otherCards.forEach((card, i) => {
+   otherCards.forEach((card, index) => {
       gsap.set(card, {
-         yPercent: -100,
+         yPercent: -50,
          opacity: 0,
+         zIndex: -(index + 1),
       });
    });
 
@@ -41,7 +42,7 @@ export function initStockOpen() {
 
    tl.from(firstCard, {
       opacity: 0,
-      yPercent: 50,
+      yPercent: 10,
       duration: 0.6,
       ease: "power2.out",
    });
