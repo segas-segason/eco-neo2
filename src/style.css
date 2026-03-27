@@ -171,6 +171,10 @@
       @apply from-primary absolute -z-20 aspect-square w-full rounded-full bg-radial to-white blur-3xl content-[''];
    }
 
+   .hero__img-home {
+      @apply w-[clamp(20rem,6.25rem+68.75vw,33.75rem)] lg:w-[clamp(33.75rem,11.25rem+35.1563vw,45rem)] xl:w-[clamp(43.75rem,calc(46.875rem-1.9531vw),45rem)] 2xl:w-[clamp(50rem,50vw+0vw,50rem)];
+   }
+
    /* Секция Статистика */
    .stat-card {
       @apply flex flex-col items-center gap-3 p-6;
@@ -219,7 +223,7 @@
    }
 
    .space__container::after {
-      @apply bg-primary absolute top-1/2 left-1/2 aspect-square w-full -translate-y-1/2 mask-[url(./assets/images/circle.svg)] bg-cover bg-no-repeat opacity-25 content-[''];
+      @apply absolute top-1/2 left-1/2 aspect-square w-full -translate-y-1/2 bg-[url(./assets/images/circle.svg)] bg-cover bg-no-repeat content-[''];
    }
 
    .space__container::before {
