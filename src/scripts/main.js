@@ -1,66 +1,100 @@
+// xxxxxxxxxxxxxxxxxxxxxxxx
+// Основной файл приложения
+// xxxxxxxxxxxxxxxxxxxxxxxx
+
 import "../style.css";
 
-// Import Animations
-import { initIntro } from "./animations/intro";
-import { initStartTopPage } from "./animations/startTopPage";
+// Импорт Start Animations
+import {
+    initStartIntro,
+    initStartTopPage,
+    initStartSectionSpace,
+    initStartSectionServices,
+    initStartSectionWhyUs,
+    initStartSectionGallery,
+    initStartSectionSeating,
+    initStartSectionIncluded,
+    initStartSectionSpecialOffers,
+    initStartSectionFaq,
+    initStartSectionContacts,
+} from "./animations/index";
 
-import { initMobileMenu } from "./animations/mobileMenu";
-import { initBackdropMenu } from "./animations/backdropMenu";
-
-// Import Sections
+// Импорт Sections
+import { initStatsSection } from "./sections/statsSection";
+import { initAdventagesSection } from "./sections/adventagesSection";
 import { initSpaceSection } from "./sections/spaceSection";
-import { initServicesSection } from "./sections/servicesSection";
-import { initWhyusSection } from "./sections/whyusSection";
-import { initSeatingOpen } from "./animations/seatingOpen";
-import { initStockOpen } from "./animations/stockOpen";
-import { initAccordionFaq } from "./animations/accordionFaq";
-import { initContactsFooter } from "./animations/contactsFooter";
+import { initAuditoriumSection } from "./sections/auditoriumSection";
 
-// Import Layouts
-import { initLayoutTabs } from "./layout/tabs";
+// Импорт Layouts
 import { initLayoutNav } from "./layout/nav";
 
-// Import Components
-import { initAdventagesSection } from "./sections/adventagesSection";
-import { initStatsSection } from "./sections/statsSection";
-
+// Импорт Components
+import { initMobileMenu } from "./components/menu/mobileMenu";
+import { initBackdropMenu } from "./components/menu/backdropMenu";
 import { initPopupOpen } from "./components/popup/popupOpen";
 import { initPopupLegal } from "./components/popup/popupLegal";
+import { initAccordionFaq } from "./components/faq/accordionFaq";
+import { initCurrentYearContacts } from "./components/contacts/currentYearContacts";
 
-// Import External
-import { initYaMap } from "./initYaMap";
-import { initYaMetrika } from "./initYaMetrika";
+// Импорт Sliders
+import { initGallerySlider } from "./components/sliders/gallerySlider";
+import { initSeatingSlider } from "./components/sliders/seatingSlider";
+
+// Импорт Fancybox
+import { initFancyboxAppGallery } from "./components/fancybox/fancyboxApp";
+
+// Импорт External
+import { initYaMap } from "./external/initYaMap";
+import { initYaMetrika } from "./external/initYaMetrika";
+
+// xxxxxxxxxxxxxxxxxxxxxx
+// Инициализация скриптов
+// xxxxxxxxxxxxxxxxxxxxxx
 
 async function initApp() {
-   await initIntro();
+    await initStartIntro();
 
-   // UI
-   initStartTopPage();
-   initPopupOpen();
-   initPopupLegal();
-   initContactsFooter();
-   initStockOpen();
-   initSeatingOpen();
+    // Sliders
+    initGallerySlider();
+    initSeatingSlider();
 
-   // Sections
-   initSpaceSection();
-   initStatsSection();
-   initServicesSection();
-   initWhyusSection();
+    // Fancybox
+    initFancyboxAppGallery();
 
-   // Components
-   initAdventagesSection();
+    // UI
+    initPopupOpen();
+    initPopupLegal();
 
-   // Layout
-   initLayoutNav();
-   initBackdropMenu();
-   initMobileMenu();
-   initAccordionFaq();
-   initLayoutTabs();
+    // Sections
+    initStatsSection();
+    initAdventagesSection();
+    initSpaceSection();
+    initAuditoriumSection();
 
-   // External
-   initYaMap();
-   initYaMetrika();
+    // Components
+    initBackdropMenu();
+    initMobileMenu();
+    initAccordionFaq();
+    initCurrentYearContacts();
+
+    // Layout
+    initLayoutNav();
+
+    // Start Animations
+    initStartTopPage();
+    initStartSectionSpace();
+    initStartSectionServices();
+    initStartSectionWhyUs();
+    initStartSectionGallery();
+    initStartSectionSeating();
+    initStartSectionIncluded();
+    initStartSectionSpecialOffers();
+    initStartSectionFaq();
+    initStartSectionContacts();
+
+    // External
+    initYaMap();
+    initYaMetrika();
 }
 
 initApp();

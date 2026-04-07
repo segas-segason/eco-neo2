@@ -1,415 +1,505 @@
 @import "tailwindcss";
 
-/* Настройки темы tailwindcss */
+/*
+xxxxxxxxxxxxxxxxxxxxxxxxxx
+Настройки темы tailwindcss
+xxxxxxxxxxxxxxxxxxxxxxxxxx
+*/
 @theme {
-   --font-sans: "PT Sans", sans-serif;
-   --font-heading: "Montserrat", sans-serif;
-   --font-brand: "Arial", sans-serif;
+    --font-sans: "PT Sans", sans-serif;
+    --font-heading: "Montserrat", sans-serif;
+    --font-brand: "Arial", sans-serif;
 
-   --text-base: 1.25rem;
+    --text-base: 1.25rem;
 
-   --color-*: initial;
-   --color-primary: rgb(138, 179, 172);
-   --color-primary-light-transparent: rgba(224, 235, 235, 0.9);
-   --color-grey-light: #f2f2f2;
-   --color-grey-light-transparent: rgba(247, 247, 246, 0.25);
-   --color-grey: #666666;
-   --color-grey-dark: #474a51;
-   --color-grey-dark-overlay: rgba(71, 74, 81, 0.8);
-   --color-green-light: #e2ecd2;
-   --color-green: #a1c938;
-   --color-white: #ffffff;
-   --color-white-transparent: rgba(255, 255, 255, 0.5);
+    --color-*: initial;
+    --color-primary: rgb(138, 179, 172);
+    --color-primary-light-transparent: rgba(224, 235, 235, 0.9);
+    --color-grey-light: #f2f2f2;
+    --color-grey-light-transparent: rgba(247, 247, 246, 0.25);
+    --color-grey: #666666;
+    --color-grey-dark: #474a51;
+    --color-grey-dark-overlay: rgba(71, 74, 81, 0.8);
+    --color-green-light: #e2ecd2;
+    --color-green: #a1c938;
+    --color-white: #ffffff;
+    --color-white-transparent: rgba(255, 255, 255, 0.5);
 
-   --shadow: 0 4px 4px 0 rgba(102, 102, 102, 0.1);
-   --text-shadow: 0 4px 4px rgba(102, 102, 102, 0.1);
+    --shadow: 0 4px 4px 0 rgba(102, 102, 102, 0.1);
+    --text-shadow: 0 4px 4px rgba(102, 102, 102, 0.1);
 
-   --radius-5xl: 2.5rem;
-   --radius-6xl: 4rem;
+    --radius-5xl: 2.5rem;
+    --radius-6xl: 4rem;
 
-   --breakpoint-3xl: 120rem;
-   --breakpoint-4xl: 150rem;
+    --breakpoint-3xl: 120rem;
+    --breakpoint-4xl: 150rem;
 }
 
-/* Подключение шрифтов */
+/* 
+xxxxxxxxxxxxxxxxxxx
+Подключение шрифтов 
+xxxxxxxxxxxxxxxxxxx
+*/
 @layer base {
-   @font-face {
-      font-family: "PT Sans";
-      src: url("/fonts/PT-Sans/PTSans-Regular.woff2") format("woff2");
-      font-weight: 400;
-      font-style: normal;
-      font-display: swap;
-   }
+    @font-face {
+        font-family: "PT Sans";
+        src: url("/fonts/PT-Sans/PTSans-Regular.woff2") format("woff2");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+    }
 
-   @font-face {
-      font-family: "PT Sans";
-      src: url("/fonts/PT-Sans/PTSans-Bold.woff2") format("woff2");
-      font-weight: 700;
-      font-style: normal;
-      font-display: swap;
-   }
+    @font-face {
+        font-family: "PT Sans";
+        src: url("/fonts/PT-Sans/PTSans-Bold.woff2") format("woff2");
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+    }
 
-   @font-face {
-      font-family: "PT Sans";
-      src: url("/fonts/PT-Sans/PTSans-Italic.woff2") format("woff2");
-      font-weight: 400;
-      font-style: italic;
-      font-display: swap;
-   }
+    @font-face {
+        font-family: "PT Sans";
+        src: url("/fonts/PT-Sans/PTSans-Italic.woff2") format("woff2");
+        font-weight: 400;
+        font-style: italic;
+        font-display: swap;
+    }
 
-   @font-face {
-      font-family: "PT Sans";
-      src: url("/fonts/PT-Sans/PTSans-BoldItalic.woff2") format("woff2");
-      font-weight: 700;
-      font-style: italic;
-      font-display: swap;
-   }
+    @font-face {
+        font-family: "PT Sans";
+        src: url("/fonts/PT-Sans/PTSans-BoldItalic.woff2") format("woff2");
+        font-weight: 700;
+        font-style: italic;
+        font-display: swap;
+    }
 
-   @font-face {
-      font-family: "Montserrat";
-      src: url("/fonts/Montserrat/Montserrat-Regular.woff2") format("woff2");
-      font-weight: 400;
-      font-style: normal;
-      font-display: swap;
-   }
+    @font-face {
+        font-family: "Montserrat";
+        src: url("/fonts/Montserrat/Montserrat-Regular.woff2") format("woff2");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+    }
 
-   @font-face {
-      font-family: "Montserrat";
-      src: url("/fonts/Montserrat/Montserrat-Bold.woff2") format("woff2");
-      font-weight: 700;
-      font-style: normal;
-      font-display: swap;
-   }
+    @font-face {
+        font-family: "Montserrat";
+        src: url("/fonts/Montserrat/Montserrat-Bold.woff2") format("woff2");
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+    }
 
-   @font-face {
-      font-family: "Montserrat";
-      src: url("/fonts/Montserrat/Montserrat-Italic.woff2") format("woff2");
-      font-weight: 400;
-      font-style: italic;
-      font-display: swap;
-   }
+    @font-face {
+        font-family: "Montserrat";
+        src: url("/fonts/Montserrat/Montserrat-Italic.woff2") format("woff2");
+        font-weight: 400;
+        font-style: italic;
+        font-display: swap;
+    }
 
-   @font-face {
-      font-family: "Montserrat";
-      src: url("/fonts/Montserrat/Montserrat-BlackItalic.woff2") format("woff2");
-      font-weight: 900;
-      font-style: italic;
-      font-display: swap;
-   }
+    @font-face {
+        font-family: "Montserrat";
+        src: url("/fonts/Montserrat/Montserrat-BlackItalic.woff2") format("woff2");
+        font-weight: 900;
+        font-style: italic;
+        font-display: swap;
+    }
 }
 
 @layer utilities {
-   /* Спрайт иконок для всех SVG */
-   .icon {
-      @apply inline-block shrink-0 fill-current;
-   }
+    /* Спрайт иконок для всех SVG */
+    .icon {
+        @apply inline-block shrink-0 fill-current;
+    }
 
-   /* Размеры иконок */
-   .icon-sm {
-      @apply h-6 w-6;
-   }
+    /* Размеры иконок */
+    .icon-sm {
+        @apply h-6 w-6;
+    }
 
-   .icon-md {
-      @apply h-8 w-8;
-   }
+    .icon-md {
+        @apply h-8 w-8;
+    }
 
-   .icon-lg {
-      @apply h-12 w-12;
-   }
+    .icon-lg {
+        @apply h-12 w-12;
+    }
 }
 
-/* Переиспользуемые стили компонентов */
+/* 
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Переиспользуемые стили компонентов 
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+*/
 @layer components {
-   /* Отключение всех элементов, пока не загрузиться старотовая анимация */
-   .page-content {
-      @apply invisible opacity-0;
-   }
-
-   .intro-done .page-content {
-      @apply visible opacity-100 transition-opacity duration-300;
-   }
-
-   /* Верхнее меню */
-   .nav-list__item {
-      @apply border-b-grey-light-transparent border-b xl:border-0;
-   }
-
-   .nav-list__item:last-child {
-      @apply border-0;
-   }
-
-   .nav-list__link {
-      @apply flex h-full items-center justify-start px-4 py-4 xl:justify-center xl:py-0;
-   }
-
-   .nav-list__label {
-      @apply relative;
-   }
-
-   .nav-list__underline {
-      @apply pointer-events-none absolute bottom-0 left-0 h-px w-full bg-white;
-   }
-
-   .nav-list__link:not(.active) .nav-list__underline {
-      @apply opacity-0;
-   }
-
-   .nav-list__link.active .nav-list__underline {
-      @apply opacity-100;
-   }
-
-   /* Блок Герой */
-   .hero::after {
-      @apply absolute -bottom-6 -z-10 h-40 w-full rounded-[inherit] bg-[url(/images/bg-wall-white.webp)] bg-cover bg-no-repeat content-[''] lg:-bottom-15;
-   }
-
-   .hero__bg {
-      @apply absolute top-0 right-0 -z-20 aspect-square w-[clamp(20rem,6.25rem+68.75vw,33.75rem)] -translate-y-[85%] p-6 lg:w-[clamp(33.75rem,11.25rem+35.1563vw,45rem)] xl:w-[clamp(43.75rem,calc(46.875rem-1.9531vw),45rem)];
-   }
-
-   .hero__bg::before {
-      @apply from-primary absolute -z-20 aspect-square w-full rounded-full bg-radial to-white blur-3xl content-[''];
-   }
-
-   .hero__img-home {
-      @apply w-[clamp(20rem,6.25rem+68.75vw,33.75rem)] lg:w-[clamp(33.75rem,11.25rem+35.1563vw,45rem)] xl:w-[clamp(43.75rem,calc(46.875rem-1.9531vw),45rem)] 2xl:w-[clamp(50rem,50vw+0vw,50rem)];
-   }
-
-   /* Секция Статистика */
-   .stat-card {
-      @apply flex flex-col items-center gap-3 p-6;
-   }
-
-   .stat-card__indicator {
-      @apply text-primary text-shadow flex items-end;
-   }
-
-   .stat-card__counter {
-      @apply text-6xl font-bold 2xl:text-[6.25rem];
-   }
-
-   .stat-card__append {
-      @apply text-[1.75rem] 2xl:leading-normal;
-   }
-
-   .stat-card__unit {
-      @apply text-5xl font-bold 2xl:text-[6.25rem];
-   }
-
-   .stat-card__desc {
-      @apply text-center text-2xl;
-   }
-
-   /* Секция Приемущества */
-   .adventages::before {
-      @apply absolute top-0 left-0 -z-1 aspect-407/435 h-full bg-[url(./assets/images/dotted.svg)] bg-no-repeat content-[''];
-   }
-
-   .adventage-card {
-      @apply flex w-full flex-col justify-start gap-4 p-6 text-center;
-   }
-
-   .adventage-card__title {
-      @apply font-heading text-xl leading-[1.3] font-bold 2xl:text-[1.75rem];
-   }
-
-   .adventage-card__desc {
-      @apply 2xl:text-2xl;
-   }
-
-   /* Секция Пространство */
-   .space::after {
-      @apply absolute -bottom-6 left-0 -z-30 h-40 w-full rounded-b-[inherit] bg-[url(/images/bg-wall-graphite.webp)] bg-cover bg-no-repeat content-[''] lg:-bottom-15;
-   }
-
-   .space__container::after {
-      @apply absolute top-1/2 left-1/2 aspect-square w-full -translate-y-1/2 bg-[url(./assets/images/circle.svg)] bg-cover bg-no-repeat content-[''];
-   }
-
-   .space__container::before {
-      @apply from-primary to-grey-light absolute top-1/2 left-1/2 aspect-square w-full -translate-y-1/2 rounded-full bg-radial-[at_0%_100%] opacity-30 blur-3xl content-[''];
-   }
-
-   .space__decor::before {
-      @apply from-primary to-grey-light absolute right-full bottom-0 aspect-square w-1/2 translate-1/2 rounded-full bg-radial-[at_0%_100%] opacity-30 blur-3xl content-[''];
-   }
-
-   .space-card {
-      @apply flex flex-col gap-4 lg:gap-7;
-   }
-
-   .space-card__number {
-      @apply font-heading text-grey-dark w-fit bg-white px-1 text-xl font-bold lg:text-2xl;
-   }
-
-   .space-card__title {
-      @apply font-heading text-xl font-bold tracking-[1px] uppercase sm:min-h-14 md:min-h-auto lg:text-3xl;
-   }
-
-   .space-card__desc {
-      @apply opacity-80;
-   }
-
-   /* Секция Услуги */
-   .service-card {
-      @apply relative mb-4 h-50 w-full rounded-4xl p-10 shadow lg:mb-6 xl:h-80 2xl:p-12.5;
-   }
-
-   .service-card::before {
-      @apply absolute -bottom-4 left-0 z-0 h-20 w-full rounded-b-[inherit] bg-[url(/images/bg-wall-primary.webp)] bg-contain shadow content-[''] lg:-bottom-6;
-   }
-
-   .service-card__bg {
-      @apply bg-primary rounded-5xl absolute inset-0 z-10 shadow;
-   }
-
-   .service-card__title {
-      @apply font-heading text-shadow relative z-20 text-xl font-bold text-white lowercase xl:text-3xl;
-   }
-
-   .service-card__img {
-      @apply aspect-auto opacity-50 2xl:opacity-90;
-   }
-
-   .service-card__img-container {
-      @apply rounded-5xl absolute right-0 bottom-0 z-19 h-full w-full overflow-hidden;
-   }
-
-   /* Секция Почему мы? */
-   .why-us {
-      @apply mb-16 lg:mb-25;
-   }
-
-   .why-us__img-wrapper::after {
-      @apply absolute top-0 right-0 aspect-square w-10 translate-x-full bg-[url(./assets/images/triangle-rounded.svg)] content-[''];
-   }
-
-   .why-us__img-wrapper::before {
-      @apply absolute bottom-0 left-0 aspect-square w-10 translate-y-full bg-[url(./assets/images/triangle-rounded.svg)] content-[''];
-   }
-
-   .why-us__item--grey {
-      @apply rounded-t-5xl relative flex flex-col gap-3 px-6 py-14 md:px-14;
-   }
-
-   .why-us__card {
-      @apply relative mt-6 flex flex-col gap-7 rounded-t-[inherit] px-6 pt-16 pb-16 md:pt-10 md:pr-10 md:pb-20 md:pl-20 xl:mt-0;
-   }
-
-   .why-us__card:first-child {
-      @apply mt-10 lg:mt-0;
-   }
-
-   .why-us__card:last-child {
-      @apply rounded-[inherit] pb-10;
-   }
-
-   .why-us__card--grey {
-      @apply bg-grey-light;
-   }
-
-   .why-us__card--green-light {
-      @apply bg-green-light;
-   }
-
-   .why-us__card:not(:last-child)::before {
-      @apply absolute bottom-0 left-0 h-10 w-full rounded-t-[inherit] bg-white shadow-inner content-[''];
-   }
-
-   .why-us__card-number-wrapper {
-      @apply absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border-6 bg-white shadow md:top-1/2 md:left-0;
-   }
-
-   .why-us__card-number-wrapper--grey {
-      @apply border-grey-light;
-   }
-
-   .why-us__card-number-wrapper--green-light {
-      @apply border-green-light;
-   }
-
-   .why-us__card-number {
-      @apply font-heading flex aspect-square w-18 items-center justify-center text-3xl font-bold uppercase xl:w-20;
-   }
-
-   .why-us__card-title {
-      @apply text-shadow font-heading text-xl font-bold tracking-[1px] uppercase md:text-3xl;
-   }
-
-   /* Секция Варианты рассадки */
-   .tabs::after {
-      @apply absolute -bottom-6 left-0 -z-1 h-40 w-full rounded-b-[inherit] bg-[url(/images/bg-wall-white.webp)] bg-cover bg-no-repeat shadow content-[''] lg:-bottom-15;
-   }
-
-   .tabs::before {
-      @apply via-grey absolute right-0 bottom-0 z-1 aspect-407/435 w-80 rotate-180 rounded-br-[inherit] bg-linear-to-b from-inherit to-inherit mask-[url(./assets/images/dotted.svg)] content-[''];
-   }
-
-   /* Блок Что включено? */
-   .included__title-container {
-      @apply bg-grey-light absolute z-10 w-fit rounded-br-3xl p-2;
-   }
-
-   .included__title-container::after {
-      @apply bg-grey-light absolute top-0 right-0 aspect-square w-10 translate-x-full mask-[url(./assets/images/triangle-rounded.svg)] content-[''];
-   }
-
-   .included__title-container::before {
-      @apply bg-grey-light absolute bottom-0 left-0 aspect-square w-10 translate-y-full mask-[url(./assets/images/triangle-rounded.svg)] content-[''];
-   }
-
-   .included__title {
-      @apply font-heading block max-w-45 pr-4 text-2xl font-bold tracking-[1px] uppercase sm:max-w-none sm:text-5xl xl:text-6xl;
-   }
-
-   .included-item {
-      @apply border-b-primary flex gap-2 border-b py-4;
-   }
-
-   .included-item__title {
-      @apply text-primary uppercase;
-   }
-
-   .included-item__icon-shell {
-      @apply text-primary flex items-center;
-   }
-
-   .add-service-item {
-      @apply border-b-grey-dark flex gap-2 border-b py-4;
-   }
-
-   .add-service-item__icon-shell {
-      @apply flex items-center;
-   }
-
-   /* Секция Специальные предложения */
-   .stock::before {
-      @apply from-grey-light to-primary absolute top-0 left-0 -z-1 aspect-407/435 w-120 bg-linear-to-b mask-[url(./assets/images/dotted.svg)] mask-contain mask-no-repeat content-[''];
-   }
-
-   /* Секция Вопросы и ответы */
-   .faq-card {
-      @apply bg-grey-light border-primary grid h-fit w-full cursor-pointer grid-cols-[auto_1fr_auto] items-center gap-x-4 rounded-3xl border p-6 shadow;
-   }
-
-   .faq-card__question {
-      @apply col-2 flex items-center lg:min-h-15 2xl:min-h-auto;
-   }
-
-   .faq-card__icons {
-      @apply bg-primary relative col-1 flex h-8 w-8 items-center justify-center rounded-full shadow;
-   }
-
-   .faq-card__icon-shell {
-      @apply absolute flex items-center text-white;
-   }
-
-   .faq-card__answer {
-      @apply text-grey col-span-full sm:col-2;
-   }
-
-   /* Техническое для GSAP */
-   [data-menu-shell] {
-      will-change: transform;
-   }
+    /* Отключение всех элементов, пока не загрузиться старотовая анимация */
+    .page-content {
+        @apply invisible opacity-0;
+    }
+
+    .intro-done .page-content {
+        @apply visible opacity-100 transition-opacity duration-300;
+    }
+
+    /* Верхнее меню */
+    .nav-list__item {
+        @apply border-b-grey-light-transparent border-b xl:border-0;
+    }
+
+    .nav-list__item:last-child {
+        @apply border-0;
+    }
+
+    .nav-list__link {
+        @apply flex h-full items-center justify-start px-4 py-4 xl:justify-center xl:py-0;
+    }
+
+    .nav-list__label {
+        @apply relative;
+    }
+
+    .nav-list__underline {
+        @apply pointer-events-none absolute bottom-0 left-0 h-px w-full bg-white;
+    }
+
+    .nav-list__link:not(.active) .nav-list__underline {
+        @apply opacity-0;
+    }
+
+    .nav-list__link.active .nav-list__underline {
+        @apply opacity-100;
+    }
+
+    /* Блок Hero */
+    .hero::after {
+        @apply rounded-b-5xl lg:rounded-b-6xl absolute -bottom-6 -z-10 h-40 w-full bg-[url(/images/bg-wall-white.webp)] bg-cover bg-no-repeat content-[''] lg:-bottom-15;
+    }
+
+    .hero__bg {
+        @apply absolute top-0 right-0 -z-20 aspect-square w-[clamp(20rem,6.25rem+68.75vw,33.75rem)] -translate-y-[85%] p-6 lg:w-[clamp(33.75rem,11.25rem+35.1563vw,45rem)] xl:w-[clamp(43.75rem,calc(46.875rem-1.9531vw),45rem)] 2xl:w-[clamp(51rem,51rem+0vw,51rem)];
+    }
+
+    .hero__bg::before {
+        @apply from-primary absolute -z-20 aspect-square w-full rounded-full bg-radial to-white blur-3xl content-[''];
+    }
+
+    .hero__img-home {
+        @apply w-[clamp(20rem,6.25rem+68.75vw,33.75rem)] lg:w-[clamp(33.75rem,11.25rem+35.1563vw,45rem)] xl:w-[clamp(43.75rem,calc(46.875rem-1.9531vw),45rem)] 2xl:w-[clamp(51rem,51vw+0vw,51rem)];
+    }
+
+    /* Секция Статистика */
+    .stat-card {
+        @apply flex flex-col items-center gap-3 p-6;
+    }
+
+    .stat-card__indicator {
+        @apply text-primary text-shadow flex items-end;
+    }
+
+    .stat-card__counter {
+        @apply text-6xl font-bold 2xl:text-[6.25rem];
+    }
+
+    .stat-card__append {
+        @apply text-[1.75rem] 2xl:leading-normal;
+    }
+
+    .stat-card__unit {
+        @apply text-5xl font-bold 2xl:text-[6.25rem];
+    }
+
+    .stat-card__desc {
+        @apply text-center text-2xl;
+    }
+
+    /* Секция Приемущества */
+    .adventages::before {
+        @apply absolute top-0 left-0 -z-1 aspect-407/435 h-full bg-[url(./assets/images/dotted.svg)] bg-no-repeat content-[''];
+    }
+
+    .adventage-card {
+        @apply flex w-full flex-col justify-start gap-4 p-6 text-center;
+    }
+
+    .adventage-card__title {
+        @apply font-heading text-xl leading-[1.3] font-bold 2xl:text-[1.75rem];
+    }
+
+    .adventage-card__desc {
+        @apply 2xl:text-2xl;
+    }
+
+    /* Секция Пространство */
+    .space::after {
+        @apply absolute -bottom-6 left-0 -z-30 h-40 w-full rounded-b-[inherit] bg-[url(/images/bg-wall-graphite.webp)] bg-cover bg-no-repeat content-[''] lg:-bottom-15;
+    }
+
+    .space__container::after {
+        @apply absolute top-1/2 left-1/2 aspect-square w-full -translate-y-1/2 bg-[url(./assets/images/circle.svg)] bg-cover bg-no-repeat content-[''];
+    }
+
+    .space__container::before {
+        @apply from-primary to-grey-light absolute top-1/2 left-1/2 aspect-square w-full -translate-y-1/2 rounded-full bg-radial-[at_0%_100%] opacity-30 blur-3xl content-[''];
+    }
+
+    .space__decor::before {
+        @apply from-primary to-grey-light absolute right-full bottom-0 aspect-square w-1/2 translate-1/2 rounded-full bg-radial-[at_0%_100%] opacity-30 blur-3xl content-[''];
+    }
+
+    .space-card {
+        @apply flex flex-col gap-4 lg:gap-7;
+    }
+
+    .space-card__number {
+        @apply font-heading text-grey-dark w-fit bg-white px-1 text-xl font-bold lg:text-2xl;
+    }
+
+    .space-card__title {
+        @apply font-heading text-xl font-bold tracking-[1px] uppercase sm:min-h-14 md:min-h-auto lg:text-3xl;
+    }
+
+    .space-card__desc {
+        @apply opacity-80;
+    }
+
+    /* Секция Зал для рассадки ПАРАЛЛАКС */
+    .auditorium-parallax::before {
+        @apply content-[''];
+    }
+
+    .auditorium-parallax__container::before {
+        @apply absolute z-1 h-full w-full bg-linear-[83.25deg,rgba(56,52,47,0.5)31.1%,rgba(71,74,81,0.25)65.09%] content-[''];
+    }
+
+    .auditorium-parallax__substract-rounded::after,
+    .auditorium-parallax__substract-rounded::before {
+        @apply absolute bottom-0 h-10 w-10 bg-[url(./assets/images/substract-rounded-64.svg)] bg-contain content-[''] lg:h-16 lg:w-16;
+    }
+
+    .auditorium-parallax__substract-rounded::after {
+        @apply left-0;
+    }
+
+    .auditorium-parallax__substract-rounded::before {
+        @apply right-0 rotate-270;
+    }
+
+    /* Секция Услуги */
+    .service-card {
+        @apply relative z-2 mb-4 h-50 w-full rounded-4xl p-10 shadow lg:mb-6 xl:h-80 2xl:p-12.5;
+    }
+
+    .service-card::before {
+        @apply absolute -bottom-4 left-0 z-0 h-20 w-full rounded-b-[inherit] bg-[url(/images/bg-wall-primary.webp)] bg-contain shadow content-[''] lg:-bottom-6;
+    }
+
+    .service-card__bg {
+        @apply bg-primary rounded-5xl absolute inset-0 z-10 shadow;
+    }
+
+    .service-card__title {
+        @apply font-heading text-shadow relative z-20 text-xl font-bold text-white lowercase xl:text-3xl;
+    }
+
+    .service-card__img {
+        @apply aspect-auto opacity-50 2xl:opacity-90;
+    }
+
+    .service-card__img-container {
+        @apply rounded-5xl absolute right-0 bottom-0 z-19 h-full w-full overflow-hidden;
+    }
+
+    /* Секция Почему мы? */
+    .why-us__title-wrapper::after {
+        @apply absolute top-0 right-0 aspect-square w-10 translate-x-full bg-[url(./assets/images/triangle-rounded.svg)] content-[''];
+    }
+
+    .why-us__title-wrapper::before {
+        @apply absolute bottom-0 left-0 aspect-square w-10 translate-y-full bg-[url(./assets/images/triangle-rounded.svg)] content-[''];
+    }
+
+    .why-us__item--grey {
+        @apply rounded-t-5xl relative flex flex-col gap-3 px-6 py-14 md:px-14;
+    }
+
+    .why-us__card {
+        @apply relative mt-6 flex flex-col gap-7 rounded-t-[inherit] px-6 pt-16 pb-16 md:pt-10 md:pr-10 md:pb-20 md:pl-20 xl:mt-0;
+    }
+
+    .why-us__card:first-child {
+        @apply mt-10 lg:mt-0;
+    }
+
+    .why-us__card:last-child {
+        @apply rounded-[inherit] pb-10;
+    }
+
+    .why-us__card--grey {
+        @apply bg-grey-light;
+    }
+
+    .why-us__card--green-light {
+        @apply bg-green-light;
+    }
+
+    .why-us__card:not(:last-child)::before {
+        @apply absolute bottom-0 left-0 h-10 w-full rounded-t-[inherit] bg-white shadow-inner content-[''];
+    }
+
+    .why-us__card-number-wrapper {
+        @apply absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border-6 bg-white shadow md:top-1/2 md:left-0;
+    }
+
+    .why-us__card-number-wrapper--grey {
+        @apply border-grey-light;
+    }
+
+    .why-us__card-number-wrapper--green-light {
+        @apply border-green-light;
+    }
+
+    .why-us__card-number {
+        @apply font-heading flex aspect-square w-18 items-center justify-center text-3xl font-bold uppercase xl:w-20;
+    }
+
+    .why-us__card-title {
+        @apply text-shadow font-heading text-xl font-bold tracking-[1px] uppercase md:text-3xl;
+    }
+
+    /* Секция Галлерея > Слайдер Фото (splidejs) */
+    #gallery-slider .splide {
+        @apply flex flex-col gap-15 overflow-hidden bg-white pb-16 lg:pb-25;
+    }
+
+    #gallery-slider .splide:active {
+        @apply cursor-grabbing;
+    }
+
+    #gallery-slider .splide__slide {
+        @apply h-80 cursor-grab sm:h-120;
+    }
+
+    #gallery-slider .splide__slide:active {
+        @apply cursor-grabbing;
+    }
+
+    #gallery-slider .splide__image {
+        @apply h-full w-full object-cover;
+    }
+
+    #gallery-slider .splide__progress {
+        @apply bg-grey/20 h-1.5 w-full max-w-160;
+    }
+
+    #gallery-slider .splide__progress-bar {
+        @apply bg-primary h-full w-0 transition-[width_0.15s_ease];
+    }
+
+    /* Обертка Варианты рассадки и Что включено */
+    .seating-wrapper::after {
+        @apply absolute -bottom-6 left-0 -z-1 h-40 w-full rounded-b-[inherit] bg-[url(/images/bg-wall-white.webp)] bg-cover bg-no-repeat shadow content-[''] lg:-bottom-15;
+    }
+
+    .seating-wrapper::before {
+        @apply via-grey absolute right-0 bottom-0 z-1 aspect-407/435 w-80 rotate-180 rounded-br-[inherit] bg-linear-to-b from-inherit to-inherit mask-[url(./assets/images/dotted.svg)] content-[''];
+    }
+
+    /* Слайдер Вкладок секции Варианты рассадки (splidejs) */
+    #tabs-slider .splide {
+        @apply flex flex-col gap-12 xl:gap-20;
+    }
+
+    #tabs-slider .splide__tabs {
+        @apply flex w-full flex-col px-6 lg:flex-row lg:px-20;
+    }
+
+    #tabs-slider .splide__tab {
+        @apply w-full;
+    }
+
+    #tabs-slider .splide__btn {
+        @apply border-l-grey/20 lg:border-b-grey/20 flex w-full cursor-pointer flex-col items-start border-l px-4 py-4 whitespace-nowrap lg:border-b lg:border-l-0;
+    }
+
+    #tabs-slider .splide__line {
+        @apply bg-primary absolute top-0 -left-px h-full w-0.75 lg:top-auto lg:-bottom-px lg:left-0 lg:h-0.75 lg:w-full;
+    }
+
+    #tabs-slider .splide__list {
+        @apply flex flex-row;
+    }
+
+    #tabs-slider .splide__slide {
+        @apply flex aspect-auto w-full cursor-grab justify-center;
+    }
+
+    #tabs-slider .splide__image {
+        @apply w-full max-w-300 px-6;
+    }
+
+    #tabs-slider .splide__slide:active {
+        @apply cursor-grabbing;
+    }
+
+    /* Секция Что включено */
+    .included__title-wrapper::after {
+        @apply bg-grey-light absolute top-0 right-0 aspect-square w-10 translate-x-full mask-[url(./assets/images/triangle-rounded.svg)] content-[''];
+    }
+
+    .included__title-wrapper::before {
+        @apply bg-grey-light absolute bottom-0 left-0 aspect-square w-10 translate-y-full mask-[url(./assets/images/triangle-rounded.svg)] content-[''];
+    }
+
+    /* Секция Что включено > Блок пунктов Включительно */
+    .included-item {
+        @apply border-b-primary flex gap-2 border-b py-4;
+    }
+
+    .included-item__label {
+        @apply text-primary uppercase;
+    }
+
+    .included-item__icon-wrapper {
+        @apply text-primary flex items-center;
+    }
+
+    /* Секция Что включено > Блок пунктов Дополнительные услуги */
+    .add-service-item {
+        @apply border-b-grey-dark flex gap-2 border-b py-4;
+    }
+
+    .add-service-item__icon-shell {
+        @apply flex items-center;
+    }
+
+    /* Секция Специальные предложения */
+    .stock__container::before {
+        @apply from-grey-light to-primary absolute top-0 left-0 -z-1 aspect-407/435 w-120 bg-linear-to-b mask-[url(./assets/images/dotted.svg)] mask-contain mask-no-repeat content-[''];
+    }
+
+    /* Секция Вопросы и ответы */
+    .faq-card {
+        @apply bg-grey-light border-primary grid h-fit w-full cursor-pointer grid-cols-[auto_1fr_auto] items-center gap-x-4 rounded-3xl border p-6 shadow;
+    }
+
+    .faq-card__question {
+        @apply col-2 flex items-center lg:min-h-15 2xl:min-h-auto;
+    }
+
+    .faq-card__icons {
+        @apply bg-primary relative col-1 flex h-8 w-8 items-center justify-center rounded-full shadow;
+    }
+
+    .faq-card__icon-shell {
+        @apply absolute flex items-center text-white;
+    }
+
+    .faq-card__answer {
+        @apply text-grey col-span-full sm:col-2;
+    }
+
+    /* Техническое для GSAP */
+    [data-menu-shell] {
+        will-change: transform;
+    }
 }
