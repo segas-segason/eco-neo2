@@ -43,7 +43,7 @@ xxxxxxxxxxxxxxxxxxx
 @layer base {
     @font-face {
         font-family: "PT Sans";
-        src: url("/fonts/PT-Sans/PTSans-Regular.woff2") format("woff2");
+        src: url("/assets/fonts/PT-Sans/PTSans-Regular.woff2") format("woff2");
         font-weight: 400;
         font-style: normal;
         font-display: swap;
@@ -51,7 +51,7 @@ xxxxxxxxxxxxxxxxxxx
 
     @font-face {
         font-family: "PT Sans";
-        src: url("/fonts/PT-Sans/PTSans-Bold.woff2") format("woff2");
+        src: url("/assets/fonts/PT-Sans/PTSans-Bold.woff2") format("woff2");
         font-weight: 700;
         font-style: normal;
         font-display: swap;
@@ -59,7 +59,7 @@ xxxxxxxxxxxxxxxxxxx
 
     @font-face {
         font-family: "PT Sans";
-        src: url("/fonts/PT-Sans/PTSans-Italic.woff2") format("woff2");
+        src: url("/assets/fonts/PT-Sans/PTSans-Italic.woff2") format("woff2");
         font-weight: 400;
         font-style: italic;
         font-display: swap;
@@ -67,7 +67,7 @@ xxxxxxxxxxxxxxxxxxx
 
     @font-face {
         font-family: "PT Sans";
-        src: url("/fonts/PT-Sans/PTSans-BoldItalic.woff2") format("woff2");
+        src: url("/assets/fonts/PT-Sans/PTSans-BoldItalic.woff2") format("woff2");
         font-weight: 700;
         font-style: italic;
         font-display: swap;
@@ -75,7 +75,7 @@ xxxxxxxxxxxxxxxxxxx
 
     @font-face {
         font-family: "Montserrat";
-        src: url("/fonts/Montserrat/Montserrat-Regular.woff2") format("woff2");
+        src: url("/assets/fonts/Montserrat/Montserrat-Regular.woff2") format("woff2");
         font-weight: 400;
         font-style: normal;
         font-display: swap;
@@ -83,7 +83,7 @@ xxxxxxxxxxxxxxxxxxx
 
     @font-face {
         font-family: "Montserrat";
-        src: url("/fonts/Montserrat/Montserrat-Bold.woff2") format("woff2");
+        src: url("/assets/fonts/Montserrat/Montserrat-Bold.woff2") format("woff2");
         font-weight: 700;
         font-style: normal;
         font-display: swap;
@@ -91,7 +91,7 @@ xxxxxxxxxxxxxxxxxxx
 
     @font-face {
         font-family: "Montserrat";
-        src: url("/fonts/Montserrat/Montserrat-Italic.woff2") format("woff2");
+        src: url("/assets/fonts/Montserrat/Montserrat-Italic.woff2") format("woff2");
         font-weight: 400;
         font-style: italic;
         font-display: swap;
@@ -99,15 +99,19 @@ xxxxxxxxxxxxxxxxxxx
 
     @font-face {
         font-family: "Montserrat";
-        src: url("/fonts/Montserrat/Montserrat-BlackItalic.woff2") format("woff2");
+        src: url("/assets/fonts/Montserrat/Montserrat-BlackItalic.woff2") format("woff2");
         font-weight: 900;
         font-style: italic;
         font-display: swap;
     }
 }
 
+/* 
+xxxxxxxxxxxxxxxxxxxxxxxxxx
+Спрайт иконок для всех SVG
+xxxxxxxxxxxxxxxxxxxxxxxxxx
+*/
 @layer utilities {
-    /* Спрайт иконок для всех SVG */
     .icon {
         @apply inline-block shrink-0 fill-current;
     }
@@ -172,7 +176,7 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
     /* Блок Hero */
     .hero::after {
-        @apply rounded-b-5xl lg:rounded-b-6xl absolute -bottom-6 -z-10 h-40 w-full bg-[url(/images/bg-wall-white.webp)] bg-cover bg-no-repeat content-[''] lg:-bottom-15;
+        @apply rounded-b-5xl lg:rounded-b-6xl absolute -bottom-6 -z-10 h-40 w-full bg-[url(/assets/images/textures/bg-wall-white.webp)] bg-cover bg-no-repeat content-[''] lg:-bottom-15;
     }
 
     .hero__bg {
@@ -231,7 +235,7 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
     /* Секция Пространство */
     .space::after {
-        @apply absolute -bottom-6 left-0 -z-30 h-40 w-full rounded-b-[inherit] bg-[url(/images/bg-wall-graphite.webp)] bg-cover bg-no-repeat content-[''] lg:-bottom-15;
+        @apply absolute -bottom-6 left-0 -z-30 h-40 w-full rounded-b-[inherit] bg-[url(/assets/images/textures/bg-wall-graphite.webp)] bg-cover bg-no-repeat content-[''] lg:-bottom-15;
     }
 
     .space__container::after {
@@ -286,11 +290,11 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
     /* Секция Услуги */
     .service-card {
-        @apply relative z-2 mb-4 h-50 w-full rounded-4xl p-10 shadow lg:mb-6 xl:h-80 2xl:p-12.5;
+        @apply rounded-5xl relative z-2 mb-4 h-50 w-full p-10 shadow lg:mb-6 xl:h-80 2xl:p-12.5;
     }
 
     .service-card::before {
-        @apply absolute -bottom-4 left-0 z-0 h-20 w-full rounded-b-[inherit] bg-[url(/images/bg-wall-primary.webp)] bg-contain shadow content-[''] lg:-bottom-6;
+        @apply absolute -bottom-4 left-0 z-0 h-20 w-full rounded-b-[inherit] bg-[url(/assets/images/textures/bg-wall-primary.webp)] bg-contain shadow content-[''] lg:-bottom-6;
     }
 
     .service-card__bg {
@@ -306,7 +310,7 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
     }
 
     .service-card__img-container {
-        @apply rounded-5xl absolute right-0 bottom-0 z-19 h-full w-full overflow-hidden;
+        @apply absolute right-0 bottom-0 z-19 h-full w-full overflow-hidden;
     }
 
     /* Секция Почему мы? */
@@ -397,7 +401,7 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
     /* Обертка Варианты рассадки и Что включено */
     .seating-wrapper::after {
-        @apply absolute -bottom-6 left-0 -z-1 h-40 w-full rounded-b-[inherit] bg-[url(/images/bg-wall-white.webp)] bg-cover bg-no-repeat shadow content-[''] lg:-bottom-15;
+        @apply absolute -bottom-6 left-0 -z-1 h-40 w-full rounded-b-[inherit] bg-[url(/assets/images/textures/bg-wall-white.webp)] bg-cover bg-no-repeat shadow content-[''] lg:-bottom-15;
     }
 
     .seating-wrapper::before {

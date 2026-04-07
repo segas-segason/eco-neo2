@@ -47,9 +47,9 @@ import { initFancyboxAppGallery } from "./components/fancybox/fancyboxApp";
 import { initYaMap } from "./external/initYaMap";
 import { initYaMetrika } from "./external/initYaMetrika";
 
-// xxxxxxxxxxxxxxxxxxxxxx
-// Инициализация скриптов
-// xxxxxxxxxxxxxxxxxxxxxx
+// xxxxxxxxxxxxxxxxxxxxxxxx
+// Инициализация приложения
+// xxxxxxxxxxxxxxxxxxxxxxxx
 
 async function initApp() {
     await initStartIntro();
