@@ -12,7 +12,6 @@ export function initBackdropMenu() {
     if (!menuShell || !menuBackdrop || !links.length) return;
 
     gsap.set(menuBackdrop, {
-        backdropFilter: "blur(8px)",
         backgroundColor: "rgba(138,179,172,1)",
     });
 
@@ -49,7 +48,7 @@ export function initBackdropMenu() {
             y: -menuShell.offsetHeight - 24,
             duration: 0.35,
             ease: "power2.inOut",
-            overwrite: "auto",
+
             onStart: () => {
                 menuShell.style.pointerEvents = "none";
             },
@@ -65,7 +64,7 @@ export function initBackdropMenu() {
             y: 0,
             duration: 0.35,
             ease: "power2.inOut",
-            overwrite: "auto",
+
             onStart: () => {
                 menuShell.style.pointerEvents = "auto";
             },
@@ -116,6 +115,7 @@ export function initBackdropMenu() {
     gsap.to(menuBackdrop, {
         backgroundColor: "rgba(138,179,172,0.8)",
         ease: "power2.inOut",
+
         scrollTrigger: {
             trigger: document.body,
             start: "top top",

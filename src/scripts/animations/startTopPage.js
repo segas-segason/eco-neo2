@@ -36,13 +36,6 @@ function initStartTopPageLogic() {
 
     gsap.set(els, { clearProps: "all" });
 
-    try {
-        splitTitle = new SplitText(title, { type: "lines, words" });
-        splitDesc = new SplitText(desc, { type: "lines, words" });
-    } catch (e) {
-        console.error("SplitText error:", e);
-    }
-
     gsap.set([menu, logo], {
         autoAlpha: 0,
         yPercent: -50,
@@ -67,48 +60,115 @@ function initStartTopPageLogic() {
         willChange: "transform",
     });
 
-    const words = [...(splitTitle?.words || []), ...(splitDesc?.words || [])];
-
-    gsap.set(words, {
-        autoAlpha: 0,
-        display: "inline-block",
+    const tl = gsap.timeline({
+        onComplete: () => gsap.set(light, { clearProps: "rotate" }),
     });
 
-    setTimeout(() => {
-        const tl = gsap.timeline({
-            onComplete: () => gsap.set(light, { clearProps: "rotate" }),
+    tl.to(menu, {
+        autoAlpha: 1,
+        yPercent: 0,
+        duration: 0.7,
+        ease: "elastic(1.2, 1)",
+        delay: 0.5,
+    })
+
+        .to(
+            about,
+            {
+                autoAlpha: 1,
+                yPercent: 0,
+                duration: 0.5,
+                ease: "elastic(1.2, 1)",
+            },
+            "<",
+        )
+
+        .to(
+            logo,
+            {
+                autoAlpha: 1,
+                yPercent: 0,
+                duration: 1,
+                ease: "elastic(1.2, 1)",
+            },
+            "-=0.5",
+        )
+
+        .to(
+            light,
+            {
+                autoAlpha: 0.5,
+                duration: 0.5,
+                ease: "power2.out",
+            },
+            "<",
+        )
+
+        .to(
+            light,
+            {
+                xPercent: 0,
+                rotate: "0deg",
+                duration: 1.2,
+                ease: "back.out(0.6)",
+
+                onStart: () => {
+                    gsap.to(home, {
+                        autoAlpha: 1,
+                        ease: "elastic(1, 0.8)",
+                        duration: 1.2,
+
+                        onComplete: () =>
+                            startParallax([
+                                { el: home, invert: true },
+                                { el: light, invert: false },
+                            ]),
+                    });
+                },
+            },
+            "<",
+        );
+
+    document.fonts.ready.then(() => {
+        splitTitle = new SplitText(title, {
+            type: "lines, words",
+            tag: "span",
+            wordDelimiter: {
+                delimiter: "|",
+            },
         });
 
-        tl.to(menu, { autoAlpha: 1, yPercent: 0, duration: 0.7, ease: "elastic(1.2, 1)", delay: 0.5 })
-            .to(about, { autoAlpha: 1, yPercent: 0, duration: 0.5, ease: "elastic(1.2, 1)" }, "<")
-            .to(logo, { autoAlpha: 1, yPercent: 0, duration: 1, ease: "elastic(1.2, 1)" }, "-=0.5")
-            .to(light, { autoAlpha: 0.5, duration: 0.5, ease: "power2.out" }, "<")
-            .to(
-                light,
-                {
-                    xPercent: 0,
-                    rotate: "0deg",
-                    duration: 1.2,
-                    ease: "back.out(0.6)",
-                    onStart: () => {
-                        gsap.to(home, {
-                            autoAlpha: 1,
-                            ease: "elastic(1, 0.8)",
-                            duration: 1.2,
-                            onComplete: () =>
-                                startParallax([
-                                    { el: home, invert: true },
-                                    { el: light, invert: false },
-                                ]),
-                        });
-                    },
-                },
-                "<",
-            );
+        splitDesc = new SplitText(desc, {
+            type: "lines, words",
+            tag: "span",
+        });
 
-        if (splitTitle?.words) tl.to(splitTitle.words, { autoAlpha: 1, stagger: 0.05, ease: "power2.out" }, "-=0.9");
-        if (splitDesc?.words) tl.to(splitDesc.words, { autoAlpha: 1, stagger: 0.05, ease: "power2.out" }, "-=0.3");
-    }, 50);
+        const words = [...(splitTitle?.words || []), ...(splitDesc?.words || [])];
+
+        gsap.set(words, {
+            autoAlpha: 0,
+        });
+
+        tl.to(
+            splitTitle.words,
+            {
+                autoAlpha: 1,
+                stagger: 0.05,
+                ease: "power2.out",
+            },
+            "-=0.9",
+        )
+
+            .to(
+                splitDesc.words,
+                {
+                    autoAlpha: 1,
+                    stagger: 0.05,
+                    ease: "power2.out",
+                },
+                "-=0.3",
+            );
+    });
 }
 
 function startParallax(heroes) {
@@ -130,17 +190,22 @@ function startParallax(heroes) {
         if (!ticking) {
             requestAnimationFrame(() => {
                 const mouseX = (e.clientX / window.innerWidth - 0.5) * maxOffset * 2;
+
                 if (Math.abs(mouseX - lastMouseX) > 0.01) {
                     lastMouseX = mouseX;
+
                     heroes.forEach((h) => {
                         if (!h.el) return;
+
                         const targetX = mouseX * (h.invert ? -1 : 1);
+
                         if (Math.abs(targetX - h.currentX) > 0.01) {
                             gsap.to(h.el, {
                                 x: targetX,
                                 duration: 0.4,
                                 ease: "power2.out",
                                 overwrite: true,
+
                                 onUpdate: () => {
                                     h.currentX = targetX;
                                 },

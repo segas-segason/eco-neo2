@@ -132,7 +132,7 @@ xxxxxxxxxxxxxxxxxxxxxxxxxx
 
 /* 
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-Переиспользуемые стили компонентов 
+Переиспользуемые стили компонентов
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 */
 @layer components {
@@ -145,6 +145,23 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
         @apply visible opacity-100 transition-opacity duration-300;
     }
 
+    /* Подчеркивание ссылок */
+    .link {
+        @apply w-fit;
+    }
+
+    .link:hover .link-underline::before {
+        @apply w-full;
+    }
+
+    .link-underline {
+        @apply relative inline-block;
+    }
+
+    .link-underline::before {
+        @apply absolute bottom-0.5 left-0 h-px w-0 bg-white transition-[width] duration-500 ease-in-out content-[''];
+    }
+
     /* Верхнее меню */
     .nav-list__item {
         @apply border-b-grey-light-transparent border-b xl:border-0;
@@ -155,7 +172,15 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
     }
 
     .nav-list__link {
-        @apply flex h-full items-center justify-start px-4 py-4 xl:justify-center xl:py-0;
+        @apply flex h-full items-center justify-start px-4 py-4 transition-opacity xl:justify-center xl:py-0;
+    }
+
+    .nav-list__link:hover {
+        @apply opacity-75;
+    }
+
+    .nav-list__link.active:hover {
+        @apply opacity-100;
     }
 
     .nav-list__label {
@@ -164,14 +189,6 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
     .nav-list__underline {
         @apply pointer-events-none absolute bottom-0 left-0 h-px w-full bg-white;
-    }
-
-    .nav-list__link:not(.active) .nav-list__underline {
-        @apply opacity-0;
-    }
-
-    .nav-list__link.active .nav-list__underline {
-        @apply opacity-100;
     }
 
     /* Блок Hero */
@@ -267,12 +284,8 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
     }
 
     /* Секция Зал для рассадки ПАРАЛЛАКС */
-    .auditorium-parallax::before {
-        @apply content-[''];
-    }
-
     .auditorium-parallax__container::before {
-        @apply absolute z-1 h-full w-full bg-linear-[83.25deg,rgba(56,52,47,0.5)31.1%,rgba(71,74,81,0.25)65.09%] content-[''];
+        @apply absolute z-1 h-full w-full bg-linear-[83.25deg,rgba(56,52,47,0.5)_31.1%,rgba(71,74,81,0.25)_65.09%] content-[''];
     }
 
     .auditorium-parallax__substract-rounded::after,
@@ -422,7 +435,22 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
     }
 
     #tabs-slider .splide__btn {
-        @apply border-l-grey/20 lg:border-b-grey/20 flex w-full cursor-pointer flex-col items-start border-l px-4 py-4 whitespace-nowrap lg:border-b lg:border-l-0;
+        @apply border-l-grey/20 lg:border-b-grey/20 flex w-full cursor-pointer flex-col items-start border-l px-4 py-4 whitespace-nowrap transition-opacity lg:border-b lg:border-l-0 lg:pt-0;
+    }
+
+    #tabs-slider .splide__btn .tab__title,
+    #tabs-slider .splide__btn .tab__description {
+        @apply transition-opacity;
+    }
+
+    #tabs-slider .splide__btn:hover .tab__title,
+    #tabs-slider .splide__btn:hover .tab__description {
+        @apply opacity-75;
+    }
+
+    #tabs-slider .splide__btn.active:hover .tab__title,
+    #tabs-slider .splide__btn.active:hover .tab__description {
+        @apply opacity-100;
     }
 
     #tabs-slider .splide__line {
@@ -445,6 +473,18 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
         @apply cursor-grabbing;
     }
 
+    .tab__title {
+        @apply font-heading text-xl font-bold tracking-[1px] uppercase xl:text-3xl;
+    }
+
+    .tab__description {
+        @apply text-primary text-shadow text-center font-sans font-normal lowercase;
+    }
+
+    .tab__description-number {
+        @apply text-xl font-bold xl:text-2xl;
+    }
+
     /* Секция Что включено */
     .included__title-wrapper::after {
         @apply bg-grey-light absolute top-0 right-0 aspect-square w-10 translate-x-full mask-[url(./assets/images/triangle-rounded.svg)] content-[''];
@@ -460,7 +500,7 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
     }
 
     .included-item__label {
-        @apply text-primary uppercase;
+        @apply text-primary normal-case sm:uppercase;
     }
 
     .included-item__icon-wrapper {
@@ -474,6 +514,10 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
     .add-service-item__icon-shell {
         @apply flex items-center;
+    }
+
+    .add-service-item__label {
+        @apply normal-case sm:uppercase;
     }
 
     /* Секция Специальные предложения */
@@ -500,6 +544,23 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
     .faq-card__answer {
         @apply text-grey col-span-full sm:col-2;
+    }
+
+    .faq-card__answer ul {
+        @apply list-disc pl-10;
+    }
+
+    /* Окно Наши реквизиты */
+    .details__link {
+        @apply relative w-fit;
+    }
+
+    .details__link .link-underline {
+        @apply w-full opacity-100;
+    }
+
+    .details__link:hover .link-underline {
+        @apply w-0 opacity-0;
     }
 
     /* Техническое для GSAP */

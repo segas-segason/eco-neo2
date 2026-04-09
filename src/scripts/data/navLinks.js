@@ -1,6 +1,6 @@
 export const navLinks = [
     {
-        href: "#about",
+        href: "#hero",
         text: "О нас",
         title: "О нас",
     },

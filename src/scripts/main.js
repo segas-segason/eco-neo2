@@ -17,6 +17,7 @@ import {
     initStartSectionSpecialOffers,
     initStartSectionFaq,
     initStartSectionContacts,
+    initHoverUnderline,
 } from "./animations/index";
 
 // Импорт Sections
@@ -36,12 +37,12 @@ import { initPopupLegal } from "./components/popup/popupLegal";
 import { initAccordionFaq } from "./components/faq/accordionFaq";
 import { initCurrentYearContacts } from "./components/contacts/currentYearContacts";
 
+// Импорт Fancybox
+import { initFancyboxAppGallery } from "./components/fancybox/fancyboxApp";
+
 // Импорт Sliders
 import { initGallerySlider } from "./components/sliders/gallerySlider";
 import { initSeatingSlider } from "./components/sliders/seatingSlider";
-
-// Импорт Fancybox
-import { initFancyboxAppGallery } from "./components/fancybox/fancyboxApp";
 
 // Импорт External
 import { initYaMap } from "./external/initYaMap";
@@ -71,14 +72,14 @@ async function initApp() {
     initSpaceSection();
     initAuditoriumSection();
 
+    // Layout
+    initLayoutNav();
+
     // Components
     initBackdropMenu();
     initMobileMenu();
     initAccordionFaq();
     initCurrentYearContacts();
-
-    // Layout
-    initLayoutNav();
 
     // Start Animations
     initStartTopPage();
@@ -91,6 +92,8 @@ async function initApp() {
     initStartSectionSpecialOffers();
     initStartSectionFaq();
     initStartSectionContacts();
+
+    initHoverUnderline();
 
     // External
     initYaMap();

@@ -1,4 +1,4 @@
-import { gsap } from 'gsap';
+import { gsap } from "gsap";
 
 let isInited = false;
 let externalCloseMenu = null;
@@ -9,7 +9,7 @@ export function isMobileMenuOpen() {
 }
 
 export function closeMobileMenu() {
-    if (typeof externalCloseMenu === 'function') {
+    if (typeof externalCloseMenu === "function") {
         return externalCloseMenu();
     }
 
@@ -20,23 +20,23 @@ export function initMobileMenu() {
     if (isInited) return;
     isInited = true;
 
-    const button = document.querySelector('[data-button]');
-    const burger = document.querySelector('[data-burger]');
-    const close = document.querySelector('[data-close]');
-    const nav = document.querySelector('[data-mobile-nav]');
-    const links = Array.from(document.querySelectorAll('[data-mobile-links] li'));
+    const button = document.querySelector("[data-button]");
+    const burger = document.querySelector("[data-burger]");
+    const close = document.querySelector("[data-close]");
+    const nav = document.querySelector("[data-mobile-nav]");
+    const links = Array.from(document.querySelectorAll("[data-mobile-links] li"));
 
     if (!button || !burger || !close || !nav) return;
 
     const mm = gsap.matchMedia();
 
-    mm.add('(max-width: 1279px)', () => {
+    mm.add("(max-width: 1279px)", () => {
         let isOpen = false;
 
         gsap.set(nav, {
             height: 0,
             opacity: 0,
-            overflow: 'hidden',
+            overflow: "hidden",
         });
 
         gsap.set(links, {
@@ -58,15 +58,16 @@ export function initMobileMenu() {
 
         const menuTl = gsap.timeline({
             paused: true,
-            defaults: { ease: 'power1.inOut' },
+            defaults: { ease: "power1.inOut" },
         });
 
         menuTl
             .to(nav, {
-                height: 'auto',
+                height: "auto",
                 opacity: 1,
                 duration: 0.3,
             })
+
             .to(
                 links,
                 {
@@ -80,7 +81,7 @@ export function initMobileMenu() {
 
         const iconTl = gsap.timeline({
             paused: true,
-            defaults: { ease: 'power1.inOut', duration: 0.35 },
+            defaults: { ease: "power1.inOut", duration: 0.35 },
         });
 
         iconTl
@@ -93,6 +94,7 @@ export function initMobileMenu() {
                 },
                 0,
             )
+
             .to(
                 close,
                 {
@@ -107,7 +109,7 @@ export function initMobileMenu() {
             if (isOpen || menuTl.isActive() || iconTl.isActive()) return;
 
             isOpen = true;
-            button.setAttribute('aria-expanded', 'true');
+            button.setAttribute("aria-expanded", "true");
             menuTl.play();
             iconTl.play();
         };
@@ -120,7 +122,7 @@ export function initMobileMenu() {
                 }
 
                 isOpen = false;
-                button.setAttribute('aria-expanded', 'false');
+                button.setAttribute("aria-expanded", "false");
 
                 let doneCount = 0;
                 const done = () => {
@@ -128,13 +130,13 @@ export function initMobileMenu() {
                     if (doneCount === 2) resolve();
                 };
 
-                menuTl.eventCallback('onReverseComplete', () => {
-                    menuTl.eventCallback('onReverseComplete', null);
+                menuTl.eventCallback("onReverseComplete", () => {
+                    menuTl.eventCallback("onReverseComplete", null);
                     done();
                 });
 
-                iconTl.eventCallback('onReverseComplete', () => {
-                    iconTl.eventCallback('onReverseComplete', null);
+                iconTl.eventCallback("onReverseComplete", () => {
+                    iconTl.eventCallback("onReverseComplete", null);
                     done();
                 });
 
@@ -155,15 +157,15 @@ export function initMobileMenu() {
             closeMenu();
         };
 
-        button.addEventListener('click', onButtonClick);
-        links.forEach((link) => link.addEventListener('click', onLinkClick));
+        button.addEventListener("click", onButtonClick);
+        links.forEach((link) => link.addEventListener("click", onLinkClick));
 
         return () => {
             externalCloseMenu = null;
             externalIsOpen = () => false;
 
-            button.removeEventListener('click', onButtonClick);
-            links.forEach((link) => link.removeEventListener('click', onLinkClick));
+            button.removeEventListener("click", onButtonClick);
+            links.forEach((link) => link.removeEventListener("click", onLinkClick));
 
             menuTl.kill();
             iconTl.kill();

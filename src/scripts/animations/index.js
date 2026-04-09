@@ -14,6 +14,8 @@ import { initStartSectionSpecialOffers } from "./startSectionSpecialOffers"; // 
 import { initStartSectionFaq } from "./startSectionFaq"; // Стартовая анимация секции Вопросы и ответы
 import { initStartSectionContacts } from "./startSectionContacts"; // Стартовая анимация секции Контакты
 
+import { initHoverUnderline } from "./hoverUnderline"; // Анимация ссылки при наведении
+
 // xxxxxxxxxxxxxxxxxxxxx
 // Экспорт всех анимаций
 // xxxxxxxxxxxxxxxxxxxxx
@@ -30,4 +32,5 @@ export {
     initStartSectionSpecialOffers,
     initStartSectionFaq,
     initStartSectionContacts,
+    initHoverUnderline,
 };
