@@ -12,12 +12,12 @@ const SELS = {
     logo: "[data-hero-logo]",
     title: "[data-hero-title]",
     desc: "[data-hero-desc]",
+    lightImage: "[data-hero-light-image]",
     light: "[data-hero-light]",
-    home: "[data-hero-home]",
+    home: "[data-hero-home-image]",
     about: "[data-section-about]",
+    open: "[data-we-opened]",
 };
-
-let parallaxHandler = null;
 
 export function initStartTopPage() {
     const init = () => initStartTopPageLogic();
@@ -26,43 +26,37 @@ export function initStartTopPage() {
 
 function initStartTopPageLogic() {
     const els = Object.values(SELS).map((s) => document.querySelector(s));
-    const [menu, logo, title, desc, light, home, about] = els;
+    const [menu, logo, title, desc, light, lightImage, home, about, open] = els;
 
     let splitTitle, splitDesc;
 
-    if (!menu || !logo || !title || !desc || !light || !home) return;
+    if (!menu || !logo || !title || !desc || !light || !lightImage || !home || !open) return;
 
-    gsap.killTweensOf(els);
-
-    gsap.set(els, { clearProps: "all" });
+    gsap.set(els, {
+        autoAlpha: 0,
+    });
 
     gsap.set([menu, logo], {
-        autoAlpha: 0,
         yPercent: -50,
     });
 
     gsap.set(light, {
-        autoAlpha: 0,
-        xPercent: 10,
-        rotate: "90deg",
+        scale: 0.6,
     });
 
     gsap.set(home, {
-        autoAlpha: 0,
+        yPercent: -10,
     });
 
     gsap.set(about, {
-        autoAlpha: 0,
         yPercent: 10,
     });
 
-    gsap.set([home, light], {
-        willChange: "transform",
+    gsap.set(open, {
+        yPercent: 10,
     });
 
-    const tl = gsap.timeline({
-        onComplete: () => gsap.set(light, { clearProps: "rotate" }),
-    });
+    const tl = gsap.timeline({});
 
     tl.to(menu, {
         autoAlpha: 1,
@@ -95,11 +89,23 @@ function initStartTopPageLogic() {
         )
 
         .to(
-            light,
+            open,
             {
-                autoAlpha: 0.5,
-                duration: 0.5,
-                ease: "power2.out",
+                autoAlpha: 1,
+                duration: 0.8,
+                ease: "elastic(1.2, 1)",
+                yPercent: 0,
+            },
+            "<",
+        )
+
+        .to(
+            home,
+            {
+                autoAlpha: 1,
+                duration: 0.8,
+                ease: "elastic(1.2, 1)",
+                yPercent: 0,
             },
             "<",
         )
@@ -107,34 +113,32 @@ function initStartTopPageLogic() {
         .to(
             light,
             {
-                xPercent: 0,
-                rotate: "0deg",
-                duration: 1.2,
-                ease: "back.out(0.6)",
+                autoAlpha: 1,
+                duration: 0.55,
+                ease: "elastic(1.2, 2)",
+                scale: 1,
+            },
+            "<",
+        )
 
-                onStart: () => {
-                    gsap.to(home, {
-                        autoAlpha: 1,
-                        ease: "elastic(1, 0.8)",
-                        duration: 1.2,
-
-                        onComplete: () =>
-                            startParallax([
-                                { el: home, invert: true },
-                                { el: light, invert: false },
-                            ]),
-                    });
-                },
+        .to(
+            lightImage,
+            {
+                autoAlpha: 1,
             },
             "<",
         );
 
     document.fonts.ready.then(() => {
+        gsap.set([title, desc], {
+            autoAlpha: 1,
+        });
+
         splitTitle = new SplitText(title, {
             type: "lines, words",
             tag: "span",
             wordDelimiter: {
-                delimiter: "|",
+                delimiter: "",
             },
         });
 
@@ -143,90 +147,33 @@ function initStartTopPageLogic() {
             tag: "span",
         });
 
-        const words = [...(splitTitle?.words || []), ...(splitDesc?.words || [])];
+        const titleWords = splitTitle.words || [];
+        const descWords = splitDesc.words || [];
 
-        gsap.set(words, {
+        gsap.set([...titleWords, ...descWords], {
             autoAlpha: 0,
         });
 
         tl.to(
-            splitTitle.words,
+            titleWords,
             {
                 autoAlpha: 1,
                 stagger: 0.05,
                 ease: "power2.out",
             },
+
             "-=0.9",
         )
 
             .to(
-                splitDesc.words,
+                descWords,
                 {
                     autoAlpha: 1,
-                    stagger: 0.05,
+                    stagger: 0.025,
                     ease: "power2.out",
                 },
+
                 "-=0.3",
             );
     });
-}
-
-function startParallax(heroes) {
-    const maxOffset = 15;
-    if (parallaxHandler) window.removeEventListener("mousemove", parallaxHandler);
-
-    heroes.forEach((h) => {
-        if (h.el) {
-            gsap.set(h.el, { x: 0 });
-            h.currentX = 0;
-            h.el.style.willChange = "transform";
-        }
-    });
-
-    let ticking = false;
-    let lastMouseX = 0;
-
-    parallaxHandler = (e) => {
-        if (!ticking) {
-            requestAnimationFrame(() => {
-                const mouseX = (e.clientX / window.innerWidth - 0.5) * maxOffset * 2;
-
-                if (Math.abs(mouseX - lastMouseX) > 0.01) {
-                    lastMouseX = mouseX;
-
-                    heroes.forEach((h) => {
-                        if (!h.el) return;
-
-                        const targetX = mouseX * (h.invert ? -1 : 1);
-
-                        if (Math.abs(targetX - h.currentX) > 0.01) {
-                            gsap.to(h.el, {
-                                x: targetX,
-                                duration: 0.4,
-                                ease: "power2.out",
-                                overwrite: true,
-
-                                onUpdate: () => {
-                                    h.currentX = targetX;
-                                },
-                            });
-                        }
-                    });
-                }
-                ticking = false;
-            });
-            ticking = true;
-        }
-    };
-
-    window.addEventListener("mousemove", parallaxHandler);
-}
-
-export function cleanupStartTopPage() {
-    if (parallaxHandler) {
-        window.removeEventListener("mousemove", parallaxHandler);
-        parallaxHandler = null;
-    }
-    gsap.killTweensOf("*");
-    document.querySelectorAll(Object.values(SELS).join(", ")).forEach((el) => el.removeAttribute("style"));
 }

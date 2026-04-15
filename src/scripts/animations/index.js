@@ -1,6 +1,6 @@
-// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-// Импорт всех стартовых анимаций
-// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+// Импорт и экспорт всех стартовых анимаций
+// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 import { initStartIntro } from "./startIntro"; // Стартовая анимация Интро (Проигрывается один раз)
 import { initStartTopPage } from "./startTopPage"; // Стартовая анимация верхний части
@@ -14,11 +14,8 @@ import { initStartSectionSpecialOffers } from "./startSectionSpecialOffers"; // 
 import { initStartSectionFaq } from "./startSectionFaq"; // Стартовая анимация секции Вопросы и ответы
 import { initStartSectionContacts } from "./startSectionContacts"; // Стартовая анимация секции Контакты
 
+import { initStatsCounter } from "./statsCounter"; // Анимация счетчика секции Статистика
 import { initHoverUnderline } from "./hoverUnderline"; // Анимация ссылки при наведении
-
-// xxxxxxxxxxxxxxxxxxxxx
-// Экспорт всех анимаций
-// xxxxxxxxxxxxxxxxxxxxx
 
 export {
     initStartIntro,
@@ -32,5 +29,6 @@ export {
     initStartSectionSpecialOffers,
     initStartSectionFaq,
     initStartSectionContacts,
+    initStatsCounter,
     initHoverUnderline,
 };

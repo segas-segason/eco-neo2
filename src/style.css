@@ -145,6 +145,20 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
         @apply visible opacity-100 transition-opacity duration-300;
     }
 
+    /* Заголовки */
+    .why-us__title,
+    .included__title {
+        @apply font-heading inline-block pr-4 text-[clamp(1.5rem,0.75rem+3.75vw,3.75rem)] leading-[0.75] font-bold tracking-[1px] uppercase;
+    }
+
+    .space__title,
+    .seating__title,
+    .special-offers__title,
+    .faq__title,
+    .contacts__title {
+        @apply font-heading text-[clamp(1.875rem,1.25rem+3.125vw,3.75rem)] leading-[0.75] font-bold tracking-[1px] uppercase text-shadow-xs;
+    }
+
     /* Подчеркивание ссылок */
     .link {
         @apply w-fit;
@@ -164,7 +178,7 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
     /* Верхнее меню */
     .nav-list__item {
-        @apply border-b-grey-light-transparent border-b xl:border-0;
+        @apply border-b-grey-light-transparent border-b lg:border-0;
     }
 
     .nav-list__item:last-child {
@@ -172,7 +186,7 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
     }
 
     .nav-list__link {
-        @apply flex h-full items-center justify-start px-4 py-4 transition-opacity xl:justify-center xl:py-0;
+        @apply flex h-full items-center justify-start px-4 py-4 transition-opacity lg:justify-center lg:px-3 lg:py-0;
     }
 
     .nav-list__link:hover {
@@ -193,44 +207,37 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
     /* Блок Hero */
     .hero::after {
-        @apply rounded-b-5xl lg:rounded-b-6xl absolute -bottom-6 -z-10 h-40 w-full bg-[url(/assets/images/textures/bg-wall-white.webp)] bg-cover bg-no-repeat content-[''] lg:-bottom-15;
+        @apply rounded-b-5xl xl:rounded-b-6xl absolute -bottom-6 -z-10 h-40 w-full bg-[url(/assets/images/textures/bg-wall-white.webp)] bg-cover bg-no-repeat content-[''] xl:-bottom-15;
     }
 
     .hero__bg {
-        @apply absolute top-0 right-0 -z-20 aspect-square w-[clamp(20rem,6.25rem+68.75vw,33.75rem)] -translate-y-[85%] p-6 lg:w-[clamp(33.75rem,11.25rem+35.1563vw,45rem)] xl:w-[clamp(43.75rem,calc(46.875rem-1.9531vw),45rem)] 2xl:w-[clamp(51rem,51rem+0vw,51rem)];
+        @apply absolute top-0 right-1/2 -z-20 aspect-square w-[clamp(37.5rem,32.5658rem+24.6711vw,56.25rem)] translate-x-1/2 -translate-y-1/2 will-change-transform min-[840px]:translate-x-[10%]! min-[1280px]:translate-x-[5%]! min-[1440px]:-translate-x-[15%]! sm:right-0 sm:translate-x-[30%] sm:-translate-y-[60%] xl:-translate-y-[70%];
     }
 
     .hero__bg::before {
-        @apply from-primary absolute -z-20 aspect-square w-full rounded-full bg-radial to-white blur-3xl content-[''];
-    }
-
-    .hero__img-home {
-        @apply w-[clamp(20rem,6.25rem+68.75vw,33.75rem)] lg:w-[clamp(33.75rem,11.25rem+35.1563vw,45rem)] xl:w-[clamp(43.75rem,calc(46.875rem-1.9531vw),45rem)] 2xl:w-[clamp(51rem,51vw+0vw,51rem)];
+        @apply from-primary absolute -z-20 aspect-square w-full rounded-full bg-radial to-white opacity-40 blur-3xl content-[''];
     }
 
     /* Секция Статистика */
     .stat-card {
-        @apply flex flex-col items-center gap-3 p-6;
+        @apply flex flex-col items-center gap-2 lg:gap-4;
     }
 
     .stat-card__indicator {
         @apply text-primary text-shadow flex items-end;
     }
 
-    .stat-card__counter {
-        @apply text-6xl font-bold 2xl:text-[6.25rem];
+    .stat-card__counter,
+    .stat-card__unit {
+        @apply -my-1 text-[clamp(3.75rem,2.9167rem+4.1667vw,6.25rem)] leading-none font-bold;
     }
 
     .stat-card__append {
-        @apply text-[1.75rem] 2xl:leading-normal;
-    }
-
-    .stat-card__unit {
-        @apply text-5xl font-bold 2xl:text-[6.25rem];
+        @apply text-[1.75rem] xl:leading-normal;
     }
 
     .stat-card__desc {
-        @apply text-center text-2xl;
+        @apply text-center text-[clamp(1.25rem,1.1667rem+0.4167vw,1.5rem)] normal-case;
     }
 
     /* Секция Приемущества */
@@ -239,20 +246,28 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
     }
 
     .adventage-card {
-        @apply flex w-full flex-col justify-start gap-4 p-6 text-center;
+        @apply flex w-full flex-col justify-start gap-2 px-2! py-6 text-center min-[1700px]:py-14! xl:p-8;
+    }
+
+    .adventage-card:first-child {
+        @apply 2xl:pl-0!;
+    }
+
+    .adventage-card:last-child {
+        @apply pb-0 sm:pb-6 2xl:pr-0!;
     }
 
     .adventage-card__title {
-        @apply font-heading text-xl leading-[1.3] font-bold 2xl:text-[1.75rem];
+        @apply font-heading text-[clamp(1.25rem,1.161rem+0.4451vw,1.625rem)] leading-[1.3] font-bold min-[1668px]:text-[28px];
     }
 
     .adventage-card__desc {
-        @apply 2xl:text-2xl;
+        @apply text-[clamp(1.25rem,1.1667rem+0.4167vw,1.5rem)];
     }
 
     /* Секция Пространство */
     .space::after {
-        @apply absolute -bottom-6 left-0 -z-30 h-40 w-full rounded-b-[inherit] bg-[url(/assets/images/textures/bg-wall-graphite.webp)] bg-cover bg-no-repeat content-[''] lg:-bottom-15;
+        @apply absolute -bottom-6 left-0 -z-30 h-40 w-full rounded-b-[inherit] bg-[url(/assets/images/textures/bg-wall-graphite.webp)] bg-cover bg-no-repeat content-[''] xl:-bottom-15;
     }
 
     .space__container::after {
@@ -268,19 +283,19 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
     }
 
     .space-card {
-        @apply flex flex-col gap-4 lg:gap-7;
+        @apply flex flex-col gap-[clamp(1rem,0.75rem+1.25vw,1.75rem)];
     }
 
     .space-card__number {
-        @apply font-heading text-grey-dark w-fit bg-white px-1 text-xl font-bold lg:text-2xl;
+        @apply font-heading text-grey-dark w-fit bg-white px-1 text-[clamp(1.25rem,1.1667rem+0.4167vw,1.5rem)] font-bold;
     }
 
     .space-card__title {
-        @apply font-heading text-xl font-bold tracking-[1px] uppercase sm:min-h-14 md:min-h-auto lg:text-3xl;
+        @apply font-heading text-[clamp(1.25rem,1.0417rem+1.0417vw,1.875rem)] font-bold tracking-[1px] uppercase;
     }
 
     .space-card__desc {
-        @apply opacity-80;
+        @apply flex-1 opacity-80;
     }
 
     /* Секция Зал для рассадки ПАРАЛЛАКС */
@@ -290,7 +305,7 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
     .auditorium-parallax__substract-rounded::after,
     .auditorium-parallax__substract-rounded::before {
-        @apply absolute bottom-0 h-10 w-10 bg-[url(./assets/images/substract-rounded-64.svg)] bg-contain content-[''] lg:h-16 lg:w-16;
+        @apply absolute bottom-0 h-10 w-10 bg-[url(./assets/images/substract-rounded-64.svg)] bg-contain content-[''] xl:h-16 xl:w-16;
     }
 
     .auditorium-parallax__substract-rounded::after {
@@ -303,11 +318,11 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
     /* Секция Услуги */
     .service-card {
-        @apply rounded-5xl relative z-2 mb-4 h-50 w-full p-10 shadow lg:mb-6 xl:h-80 2xl:p-12.5;
+        @apply rounded-5xl relative z-2 mb-4 h-[clamp(12.5rem,10rem+12.5vw,20rem)] w-full p-10 shadow xl:mb-6 2xl:p-12.5;
     }
 
     .service-card::before {
-        @apply absolute -bottom-4 left-0 z-0 h-20 w-full rounded-b-[inherit] bg-[url(/assets/images/textures/bg-wall-primary.webp)] bg-contain shadow content-[''] lg:-bottom-6;
+        @apply absolute -bottom-4 left-0 z-0 h-20 w-full rounded-b-[inherit] bg-[url(/assets/images/textures/bg-wall-primary.webp)] bg-contain shadow content-[''] xl:-bottom-6;
     }
 
     .service-card__bg {
@@ -315,7 +330,7 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
     }
 
     .service-card__title {
-        @apply font-heading text-shadow relative z-20 text-xl font-bold text-white lowercase xl:text-3xl;
+        @apply font-heading text-shadow relative z-20 text-[clamp(1.25rem,1.0417rem+1.0417vw,1.875rem)] font-bold text-white lowercase;
     }
 
     .service-card__img {
@@ -340,7 +355,7 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
     }
 
     .why-us__card {
-        @apply relative mt-6 flex flex-col gap-7 rounded-t-[inherit] px-6 pt-16 pb-16 md:pt-10 md:pr-10 md:pb-20 md:pl-20 xl:mt-0;
+        @apply relative mt-4 flex flex-col gap-4 rounded-t-[inherit] px-6 pt-16 pb-16 md:mt-0 md:pt-10 md:pr-10 md:pb-20 md:pl-20 xl:p-8 xl:pb-16 xl:pl-16 2xl:gap-7;
     }
 
     .why-us__card:first-child {
@@ -376,11 +391,11 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
     }
 
     .why-us__card-number {
-        @apply font-heading flex aspect-square w-18 items-center justify-center text-3xl font-bold uppercase xl:w-20;
+        @apply font-heading flex aspect-square w-[clamp(4rem,3.6667rem+1.6667vw,5rem)] items-center justify-center text-[clamp(1.25rem,1.0417rem+1.0417vw,1.875rem)] font-bold uppercase;
     }
 
     .why-us__card-title {
-        @apply text-shadow font-heading text-xl font-bold tracking-[1px] uppercase md:text-3xl;
+        @apply text-shadow font-heading text-[clamp(1.25rem,1.0417rem+1.0417vw,1.875rem)] font-bold tracking-[1px] uppercase;
     }
 
     /* Секция Галлерея > Слайдер Фото (splidejs) */
@@ -414,11 +429,11 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
     /* Обертка Варианты рассадки и Что включено */
     .seating-wrapper::after {
-        @apply absolute -bottom-6 left-0 -z-1 h-40 w-full rounded-b-[inherit] bg-[url(/assets/images/textures/bg-wall-white.webp)] bg-cover bg-no-repeat shadow content-[''] lg:-bottom-15;
+        @apply absolute -bottom-6 left-0 -z-1 h-40 w-full rounded-b-[inherit] bg-[url(/assets/images/textures/bg-wall-white.webp)] bg-cover bg-no-repeat shadow content-[''] xl:-bottom-15;
     }
 
     .seating-wrapper::before {
-        @apply via-grey absolute right-0 bottom-0 z-1 aspect-407/435 w-80 rotate-180 rounded-br-[inherit] bg-linear-to-b from-inherit to-inherit mask-[url(./assets/images/dotted.svg)] content-[''];
+        @apply via-grey absolute right-0 bottom-0 z-0 aspect-407/435 w-80 rotate-180 rounded-br-[inherit] bg-linear-to-b from-inherit to-inherit mask-[url(./assets/images/dotted.svg)] content-[''];
     }
 
     /* Слайдер Вкладок секции Варианты рассадки (splidejs) */
@@ -427,7 +442,7 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
     }
 
     #tabs-slider .splide__tabs {
-        @apply flex w-full flex-col px-6 lg:flex-row lg:px-20;
+        @apply flex w-full flex-col px-4 md:px-8 lg:flex-row lg:px-12 2xl:px-20;
     }
 
     #tabs-slider .splide__tab {
@@ -547,7 +562,7 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
     }
 
     .faq-card__answer ul {
-        @apply list-disc pl-10;
+        @apply list-["—_"] pl-8;
     }
 
     /* Окно Наши реквизиты */
@@ -561,10 +576,5 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
     .details__link:hover .link-underline {
         @apply w-0 opacity-0;
-    }
-
-    /* Техническое для GSAP */
-    [data-menu-shell] {
-        will-change: transform;
     }
 }

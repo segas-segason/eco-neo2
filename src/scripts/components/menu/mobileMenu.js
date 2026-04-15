@@ -12,7 +12,6 @@ export function closeMobileMenu() {
     if (typeof externalCloseMenu === "function") {
         return externalCloseMenu();
     }
-
     return Promise.resolve();
 }
 
@@ -25,12 +24,13 @@ export function initMobileMenu() {
     const close = document.querySelector("[data-close]");
     const nav = document.querySelector("[data-mobile-nav]");
     const links = Array.from(document.querySelectorAll("[data-mobile-links] li"));
+    const width = "(max-width: 1023px)";
 
     if (!button || !burger || !close || !nav) return;
 
     const mm = gsap.matchMedia();
 
-    mm.add("(max-width: 1279px)", () => {
+    mm.add(width, () => {
         let isOpen = false;
 
         gsap.set(nav, {
@@ -81,7 +81,10 @@ export function initMobileMenu() {
 
         const iconTl = gsap.timeline({
             paused: true,
-            defaults: { ease: "power1.inOut", duration: 0.35 },
+            defaults: {
+                ease: "power1.inOut",
+                duration: 0.35,
+            },
         });
 
         iconTl
@@ -125,6 +128,7 @@ export function initMobileMenu() {
                 button.setAttribute("aria-expanded", "false");
 
                 let doneCount = 0;
+
                 const done = () => {
                     doneCount += 1;
                     if (doneCount === 2) resolve();

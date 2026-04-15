@@ -17,13 +17,11 @@ import {
     initStartSectionSpecialOffers,
     initStartSectionFaq,
     initStartSectionContacts,
+    initStatsCounter,
     initHoverUnderline,
 } from "./animations/index";
 
 // Импорт Sections
-import { initStatsSection } from "./sections/statsSection";
-import { initAdventagesSection } from "./sections/adventagesSection";
-import { initSpaceSection } from "./sections/spaceSection";
 import { initAuditoriumSection } from "./sections/auditoriumSection";
 
 // Импорт Layouts
@@ -63,13 +61,10 @@ async function initApp() {
     initFancyboxAppGallery();
 
     // UI
-    initPopupOpen();
+    //initPopupOpen();
     initPopupLegal();
 
     // Sections
-    initStatsSection();
-    initAdventagesSection();
-    initSpaceSection();
     initAuditoriumSection();
 
     // Layout
@@ -93,6 +88,7 @@ async function initApp() {
     initStartSectionFaq();
     initStartSectionContacts();
 
+    initStatsCounter();
     initHoverUnderline();
 
     // External

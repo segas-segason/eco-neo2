@@ -1,9 +1,13 @@
+// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+// Анимация счетчика секции Статистики
+// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export function initStatsSection() {
+export function initStatsCounter() {
     const statsSection = document.querySelector("[data-stats]");
     const counters = statsSection.querySelectorAll("[data-counter]");
 

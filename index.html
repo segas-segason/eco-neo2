@@ -65,8 +65,8 @@
         </div>
 
         <div class="page-content relative">
-            <!-- Окно с информацией об открытии (активация раз в сутки) -->
-            <div
+            <!-- Окно с информацией об открытии (активация раз в сутки) - (отключено) -->
+            <!-- <div
                 class="pointer-events-none invisible fixed inset-0 z-100 flex h-full w-full items-center justify-center opacity-0 backdrop-blur-lg"
                 data-popup-open
             >
@@ -137,7 +137,7 @@
                         />
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <!-- Окно с Правовой информацией -->
             <div
@@ -215,7 +215,7 @@
             </div>
 
             <!-- Окно Оставить заявку (отключено) -->
-            <div class="fixed inset-0 z-100 hidden overflow-y-auto transition-opacity duration-300">
+            <!-- <div class="fixed inset-0 z-100 hidden overflow-y-auto transition-opacity duration-300">
                 <div class="bg-grey-dark-overlay flex min-h-full justify-center backdrop-blur sm:items-center">
                     <div
                         class="rounded-t-5xl relative mt-20 flex min-h-full w-full max-w-7xl flex-col items-center gap-6 bg-white bg-[conic-gradient(from_1.18deg_at_35.93%_62.78%,rgba(71,74,81,0.725923)_-69.06deg,#474A51_45.15deg,rgba(71,74,81,0.5)_290.9deg,rgba(71,74,81,0.725923)_290.94deg,#474A51_405.15deg)] p-6 pt-0 text-white sm:mb-10 sm:w-fit sm:rounded-4xl sm:p-12 sm:pt-0 lg:mt-30 lg:w-full lg:flex-row lg:justify-between lg:pt-12 xl:p-20"
@@ -316,18 +316,18 @@
                         </form>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <!-- Топ-меню -->
             <header
-                class="fixed top-4 left-1/2 z-50 w-full -translate-x-1/2 rounded-4xl backdrop-blur will-change-contents lg:mx-auto lg:w-[calc(100vw-3rem)]"
+                class="fixed top-4 left-1/2 z-50 w-[calc(100vw-1rem)] -translate-x-1/2 rounded-4xl backdrop-blur will-change-contents lg:mx-auto lg:w-[calc(100vw-3rem)]"
                 data-menu-shell
             >
                 <div
-                    class="bg-primary flex flex-col rounded-4xl shadow xl:flex-row xl:justify-between"
+                    class="bg-primary flex flex-col rounded-4xl shadow lg:flex-row lg:justify-between"
                     data-menu-backdrop
                 >
-                    <div class="flex items-center justify-between rounded-full p-1 pr-6">
+                    <div class="flex items-center justify-between rounded-full p-1 pr-6 lg:pr-0">
                         <a href="/" class="flex h-14 items-center rounded-4xl bg-white px-6 py-1">
                             <img
                                 class="h-full w-auto"
@@ -336,9 +336,10 @@
                                 title="Экопосольство «Зеленый Кот»"
                             />
                         </a>
+
                         <button
                             type="button"
-                            class="relative flex h-8 w-8 cursor-pointer items-center justify-center xl:hidden"
+                            class="relative flex h-8 w-8 cursor-pointer items-center justify-center lg:hidden"
                             data-button
                             aria-expanded="false"
                             aria-controls="mobileNav"
@@ -359,12 +360,12 @@
 
                     <nav
                         id="mobileNav"
-                        class="px-6 text-xl text-white lowercase xl:flex xl:basis-[75%]"
+                        class="px-6 text-xl text-white lowercase lg:flex lg:pl-0! xl:basis-[75%]"
                         data-mobile-nav
                     >
                         <ul
                             id="nav-list"
-                            class="flex w-full flex-col pb-1 lg:pb-0 xl:flex-row xl:justify-between"
+                            class="flex w-full flex-col pb-1 lg:flex-row lg:justify-between lg:pb-0"
                             data-mobile-links
                         ></ul>
                     </nav>
@@ -373,13 +374,13 @@
 
             <!-- Основная часть с контентом -->
             <main id="main">
-                <div id="hero" class="hero relative z-2 mb-6 lg:mb-15" data-hero>
-                    <div class="rounded-b-5xl lg:rounded-b-6xl overflow-hidden bg-white">
+                <div id="hero" class="hero relative z-2 mb-6 xl:mb-15" data-hero>
+                    <div class="rounded-b-5xl xl:rounded-b-6xl overflow-hidden bg-white">
                         <!-- Секция hero -->
                         <section
-                            class="relative z-20 mx-auto mb-[clamp(11.25rem,3.75rem+37.5vw,18.75rem)] flex flex-col gap-8 p-6 pt-28 sm:mb-[clamp(12.5rem,calc(50rem-78.125vw),18.75rem)] lg:mb-[clamp(5rem,20rem-15.625vw,10rem)] lg:px-20"
+                            class="relative z-20 mx-auto mb-35 flex flex-col gap-3.5 p-4 px-4 pt-24 sm:mb-8 md:px-8 lg:px-12 xl:pt-28 2xl:px-20"
                         >
-                            <div class="hidden w-full sm:block" data-hero-logo>
+                            <div class="w-full" data-hero-logo>
                                 <img
                                     class="pointer-events-none w-full"
                                     src="/src/assets/images/logo_hero.svg"
@@ -389,33 +390,36 @@
 
                             <span class="flex flex-col gap-2">
                                 <h1
-                                    class="text-primary grid text-[2rem] leading-tight tracking-[1px] uppercase sm:text-[2.5rem] md:max-w-[80%] lg:max-w-[70%] xl:max-w-[75%] xl:text-[3.5rem]"
+                                    class="text-primary grid text-[clamp(1.625rem,1rem+3.125vw,3.5rem)] leading-tight font-bold tracking-[1px] uppercase sm:leading-tight md:max-w-[80%] lg:max-w-[70%] xl:max-w-[75%]"
                                     data-hero-title
                                 >
-                                    <span>Единственное| большое</span> <br />
-                                    ивент-пространство <br />
-                                    в Зеленоградске
+                                    <span>Единственное большое</span>
+                                    <span>ивент-пространство</span>
+                                    <span>в Зеленоградске</span>
                                 </h1>
 
-                                <p
-                                    class="text-grey-dark text-2xl lowercase min-[494px]:w-[80%] sm:max-w-[60%] md:max-w-[55%] lg:max-w-[50%] xl:max-w-[48%] xl:text-[2.5rem] 2xl:max-w-160"
+                                <div
+                                    class="text-grey-dark inline-block text-[clamp(1.5rem,1.1667rem+1.6667vw,2.5rem)] leading-tight lowercase sm:w-[clamp(21.25rem,5rem+40.625vw,37.5rem)]"
                                     data-hero-desc
                                 >
-                                    Для проведения событий любого формата и масштаба
-                                </p>
+                                    <span
+                                        >Для проведения событий <br />
+                                        любого формата <br class="2xl:hidden" />
+                                        и масштаба</span
+                                    >
+                                </div>
                             </span>
                         </section>
 
                         <!-- Секция О нас -->
                         <section
                             id="about"
-                            class="relative z-10 pb-6 md:px-6 lg:p-20 lg:pt-0 lg:pb-15"
+                            class="relative z-10 pb-6 sm:px-4 md:px-8 lg:px-12 xl:py-20 xl:pt-0 xl:pb-15 2xl:px-20"
                             data-section-about
                         >
-                            <div class="mx-auto">
+                            <div>
                                 <div
-                                    class="hero__img-home absolute right-0 z-30 -translate-y-[85%] p-6 select-none"
-                                    data-hero-home
+                                    class="absolute right-1/2 z-30 w-95 translate-x-1/2 -translate-y-[57%] will-change-transform select-none sm:right-0 sm:w-[clamp(28.75rem,11.7857rem+42.4107vw,52.5rem)] sm:translate-x-[20%] sm:-translate-y-[90%] lg:translate-x-[5%] xl:translate-x-0 2xl:-translate-x-[10%] 2xl:-translate-y-[85%]"
                                 >
                                     <img
                                         class="pointer-events-none aspect-auto w-full"
@@ -423,8 +427,10 @@
                                         loading="eager"
                                         alt="Домик Экопосольства"
                                         aria-hidden="true"
+                                        data-hero-home-image
                                     />
                                 </div>
+
                                 <div class="hero__bg" data-hero-light>
                                     <img
                                         class="pointer-events-none absolute z-5 aspect-auto w-full select-none"
@@ -432,54 +438,206 @@
                                         loading="eager"
                                         alt=""
                                         aria-hidden="true"
+                                        data-hero-light-image
                                     />
                                 </div>
+
+                                <!-- Блок "Мы открылись!" -->
+                                <div
+                                    class="absolute top-0 left-0 z-50 -translate-y-[205%] pl-4 sm:-translate-y-[60%] md:pl-8 lg:pl-12 2xl:pl-20"
+                                    data-we-opened-shell
+                                >
+                                    <div
+                                        class="bg-grey-dark relative flex flex-row items-center gap-2 rounded-3xl rounded-bl-none shadow min-[375px]:w-auto sm:gap-6 lg:rounded-4xl"
+                                        data-we-opened
+                                    >
+                                        <div
+                                            class="w-14 shrink-0 pt-4 sm:w-[clamp(3.5rem,-3.625rem+17.8125vw,8.625rem)]"
+                                        >
+                                            <img
+                                                class="pointer-events-none h-full w-full"
+                                                src="/assets/images/decorations/open-balls-april.webp"
+                                                alt=""
+                                                aria-hidden="true"
+                                            />
+                                        </div>
+
+                                        <span
+                                            class="font-heading pr-6 text-[1rem] font-bold whitespace-nowrap text-white sm:pr-15 sm:text-[clamp(1rem,-0.25rem+3.125vw,2.25rem)]"
+                                            >Мы открылись!</span
+                                        >
+                                    </div>
+                                </div>
+
+                                <!-- Блок Статистика -->
                                 <div
                                     id="stats"
-                                    class="bg-grey-light rounded-5xl lg:rounded-6xl relative z-20 grid px-6 py-20 lowercase shadow sm:grid-cols-2 sm:gap-y-12 lg:py-25 xl:grid-cols-4"
+                                    class="bg-grey-light rounded-5xl min-[480px]:rounded-t-5xl xl:rounded-6xl relative z-20 mt-[clamp(3rem,-2.75rem+14.375vw,6.25rem)] grid gap-8 rounded-t-none px-4 py-12 pt-32 lowercase shadow sm:grid-cols-2 sm:gap-y-12 sm:px-6 sm:py-16 xl:py-25 2xl:grid-cols-4 2xl:gap-0"
                                     data-stats
-                                ></div>
+                                >
+                                    <div class="stat-card">
+                                        <span class="stat-card__indicator gap-1 leading-none">
+                                            <span class="stat-card__append">До</span>
+                                            <span class="stat-card__counter" data-counter="400">0</span>
+                                            <span class="stat-card__append">гостей</span>
+                                        </span>
+                                        <p class="stat-card__desc">общая вместимость</p>
+                                    </div>
+
+                                    <div class="stat-card">
+                                        <span class="stat-card__indicator gap-1 leading-none">
+                                            <span class="stat-card__counter" data-counter="600">0</span>
+                                            <span class="stat-card__unit">м²</span>
+                                        </span>
+                                        <p class="stat-card__desc">основной зал со сценой</p>
+                                    </div>
+
+                                    <div class="stat-card">
+                                        <span class="stat-card__indicator gap-1 leading-none">
+                                            <span class="stat-card__counter" data-counter="180">0</span>
+                                            <span class="stat-card__unit">м²</span>
+                                        </span>
+                                        <p class="stat-card__desc">просторная зона приветствия</p>
+                                    </div>
+
+                                    <div class="stat-card">
+                                        <span class="stat-card__indicator gap-1 leading-none">
+                                            <span class="stat-card__counter" data-counter="35">0</span>
+                                            <span class="stat-card__append">Минут</span>
+                                        </span>
+                                        <p class="stat-card__desc">от центра Калининграда</p>
+                                    </div>
+                                </div>
+
+                                <!-- Блок Возможности -->
                                 <div
                                     id="adventages"
-                                    class="bg-primary adventages rounded-b-5xl lg:rounded-b-6xl relative z-0 -mt-20 grid items-stretch overflow-hidden px-6 py-10 pt-25 text-white lowercase shadow sm:grid-cols-2 lg:py-25 lg:pt-45 xl:grid-cols-4"
+                                    class="bg-primary adventages rounded-b-5xl xl:rounded-b-6xl relative z-0 -mt-20 grid items-stretch overflow-hidden p-10 pt-23 text-white lowercase shadow sm:grid-cols-2 sm:pt-30 xl:pt-37 xl:pb-17 2xl:grid-cols-4"
                                     data-adventages
-                                ></div>
+                                >
+                                    <div
+                                        class="adventage-card border-b-grey-light-transparent sm:border-r-grey-light-transparent border-b sm:border-r 2xl:border-b-0"
+                                    >
+                                        <span class="adventage-card__title">Площадка</span>
+                                        <span class="adventage-card__desc">Под любые сценарии и идеи</span>
+                                    </div>
+
+                                    <div
+                                        class="adventage-card border-b-grey-light-transparent 2xl:border-r-grey-light-transparent border-b 2xl:border-r 2xl:border-b-0"
+                                    >
+                                        <span class="adventage-card__title">Отдельная VIP-зона</span>
+                                        <span class="adventage-card__desc">Балкон 100 м²</span>
+                                    </div>
+
+                                    <div
+                                        class="adventage-card border-b-grey-light-transparent sm:border-r-grey-light-transparent border-b sm:border-r sm:border-b-0"
+                                    >
+                                        <span class="adventage-card__title">Зона кейтеринга</span>
+                                        <span class="adventage-card__desc">Для организации питания</span>
+                                    </div>
+
+                                    <div class="adventage-card">
+                                        <span class="adventage-card__title">Собственная парковка</span>
+                                        <span class="adventage-card__desc">Для автомобилей и автобусов</span>
+                                    </div>
+                                </div>
                             </div>
                         </section>
                     </div>
                 </div>
 
                 <!-- Секция Пространство -->
-                <div id="space">
-                    <section
-                        class="space lg:rounded-b-6xl selection:text-primary! rounded-b-5xl relative z-0 -mt-15 mb-6 text-white shadow selection:bg-white! lg:mb-15"
+                <section id="space">
+                    <div
+                        class="space xl:rounded-b-6xl selection:text-primary! rounded-b-5xl relative z-0 -mt-15 mb-6 text-white shadow selection:bg-white! lg:mb-15"
                         data-space
                     >
                         <div class="space__container bg-grey-dark relative -z-20 overflow-hidden rounded-b-[inherit]">
                             <div class="space__decor">
                                 <div
-                                    class="mx-auto flex flex-col gap-10 overflow-hidden px-6 py-12 pt-25 lg:gap-25 lg:p-20 lg:py-25 lg:pt-37.5 lg:pb-25"
+                                    class="mx-auto flex flex-col gap-15 overflow-hidden px-4 py-15 pt-30 md:px-8 lg:gap-15 lg:px-12 lg:pt-30 lg:pb-15 xl:gap-25 xl:py-25 xl:pt-37.5 xl:pb-25 2xl:px-20"
                                 >
-                                    <h2
-                                        class="text-primary font-heading my-3 text-3xl leading-0 font-bold tracking-[1px] uppercase sm:my-4.5 sm:text-5xl lg:my-5.5 lg:text-6xl"
-                                        data-space-title
-                                    >
-                                        Пространство
-                                    </h2>
+                                    <h2 class="text-primary space__title" data-space-title>Пространство</h2>
+
                                     <div
                                         id="space-grid"
-                                        class="relative z-1 grid gap-10 sm:grid-rows-3 lg:grid-flow-col lg:gap-y-15 xl:gap-x-32"
+                                        class="relative z-1 grid gap-10 sm:grid-rows-3 lg:grid-flow-col xl:gap-x-32 xl:gap-y-15"
                                         data-space-grid
-                                    ></div>
+                                    >
+                                        <article class="space-card" data-space-card>
+                                            <span class="space-card__number">01</span>
+                                            <span class="space-card__title">Функциональный дизайн</span>
+                                            <p class="space-card__desc">
+                                                Основной зал — 600 м² свободной площади без колонн, выполненный в
+                                                соответствии с современными требованиями технического оснащения и
+                                                безопасности. Реализация мероприятий любой сложности — от камерных
+                                                приемов до выставочных экспозиций.
+                                            </p>
+                                        </article>
+
+                                        <article class="space-card" data-space-card>
+                                            <span class="space-card__number">02</span>
+                                            <span class="space-card__title">Комплексная доступность</span>
+                                            <p class="space-card__desc">
+                                                Собственная парковка на 50 машино-мест и 5 мест для туристических
+                                                автобусов. Просторная зона приветствия 180 м² для встречи гостей,
+                                                регистрации, фуршета или нетворкинга. Инфраструктура площадки полностью
+                                                адаптирована для маломобильных групп населения.
+                                            </p>
+                                        </article>
+
+                                        <article class="space-card" data-space-card>
+                                            <span class="space-card__number">03</span>
+                                            <span class="space-card__title"
+                                                >Профессиональное техническое оснащение</span
+                                            >
+                                            <p class="space-card__desc">
+                                                Стационарный проекционный экран, концертная акустическая система,
+                                                сценическое освещение, продуманная инфраструктура коммуникаций и точек
+                                                подключения оборудования. Вы можете реализовать сценарии мероприятий с
+                                                любыми спецэффектами и декорациями.
+                                            </p>
+                                        </article>
+
+                                        <article class="space-card" data-space-card>
+                                            <span class="space-card__number">04</span>
+                                            <span class="space-card__title">Зона кейтеринга</span>
+                                            <p class="space-card__desc">
+                                                Профессиональная кухня для работы приглашённой кейтеринговой компании
+                                                позволяет организовать питание любого формата — от фуршета до банкетного
+                                                обслуживания, без пересечения с гостевыми потоками.
+                                            </p>
+                                        </article>
+
+                                        <article class="space-card" data-space-card>
+                                            <span class="space-card__number">05</span>
+                                            <span class="space-card__title">Инфраструктура бэкстейджа</span>
+                                            <p class="space-card__desc">
+                                                Отдельные зоны для организаторов, спикеров и артистов. Подходит для
+                                                подготовки перед выходом, смены образа и решения рабочих задач, вдали от
+                                                внимания гостей.
+                                            </p>
+                                        </article>
+
+                                        <article class="space-card" data-space-card>
+                                            <span class="space-card__number">06</span>
+                                            <span class="space-card__title">Удобная навигация</span>
+                                            <p class="space-card__desc">
+                                                Входные группы для посетителей, технических служб и артистов исключают
+                                                пересечения и сохраняют целостность сценария. Для почетных гостей
+                                                оборудован балкон второго уровня с панорамным обзором на основной зал.
+                                            </p>
+                                        </article>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </section>
+                    </div>
 
-                    <!-- Секция ПАРАЛЛАКС -->
-                    <section
+                    <!-- Блок ПАРАЛЛАКС -->
+                    <div
                         id="auditorium-parallax"
-                        class="auditorium-parallax relative -z-50 -mt-20 h-screen max-h-100 overflow-hidden select-none lg:max-h-140 xl:max-h-180"
+                        class="auditorium-parallax relative -z-50 -mt-20 h-120 overflow-hidden select-none xl:h-160"
                         data-auditorium-parallax
                     >
                         <div class="h-full w-full shadow">
@@ -487,32 +645,33 @@
                                 class="auditorium-parallax__container relative flex h-full items-center justify-center"
                             >
                                 <img
-                                    class="fixed top-0 h-[120%] w-full bg-cover object-cover object-center select-none"
+                                    class="top-0 h-lvh w-full scale-120 object-cover object-center select-none"
                                     src="/assets/images/backgrounds/bg-parallax.webp"
                                     alt="Зал для рассадки с проектором"
                                     loading="lazy"
                                     data-auditorium-parallax-bg
                                 />
+
                                 <div class="auditorium-parallax__substract-rounded absolute z-1 h-full w-full"></div>
                             </div>
                         </div>
-                    </section>
-                </div>
+                    </div>
+                </section>
 
                 <!-- Контейнер Возможности -->
                 <div id="possibillities">
                     <!-- Секция Услуги -->
                     <section id="services" class="bg-white py-16 lg:py-25" data-services-section>
-                        <div class="grid gap-4 px-6 sm:grid-cols-2 lg:grid-cols-3 lg:px-20">
+                        <div class="grid gap-4 px-4 sm:grid-cols-2 md:px-8 lg:px-12 xl:grid-cols-3 2xl:px-20">
                             <article class="service-card" data-service-card>
                                 <div
                                     class="service-card__bg bg-linear-[206.73deg,#FFFFFF_-69.43%,#8AB3AC_83.22%]"
                                 ></div>
-                                <span class="service-card__title">
-                                    Корпоративы
+                                <div class="service-card__title">
+                                    <span>Корпоративы</span>
                                     <br />
-                                    и тимбилдинги
-                                </span>
+                                    <span>и тимбилдинги</span>
+                                </div>
                                 <div class="service-card__img-container">
                                     <div
                                         class="absolute top-1/2 right-0 -translate-x-[10%] -translate-y-1/2 rotate-[5.42deg] 2xl:p-6"
@@ -528,11 +687,11 @@
                                 <div
                                     class="service-card__bg bg-linear-[149.11deg,#FFFFFF_-57.24%,#8AB3AC_81.32%]"
                                 ></div>
-                                <span class="service-card__title">
-                                    Свадьбы
+                                <div class="service-card__title">
+                                    <span>Свадьбы</span>
                                     <br />
-                                    и дни рождения
-                                </span>
+                                    <span>и дни рождения</span>
+                                </div>
                                 <div class="service-card__img-container">
                                     <div
                                         class="absolute top-1/2 right-0 -translate-x-[10%] -translate-y-1/2 rotate-[7.85deg] 2xl:p-6"
@@ -548,11 +707,11 @@
                                 <div
                                     class="service-card__bg bg-linear-[210.64deg,#FFFFFF_-46.41%,#8AB3AC_81.36%]"
                                 ></div>
-                                <span class="service-card__title">
-                                    Выставки
+                                <div class="service-card__title">
+                                    <span>Выставки</span>
                                     <br />
-                                    и презентации
-                                </span>
+                                    <span>и презентации</span>
+                                </div>
                                 <div class="service-card__img-container">
                                     <div class="absolute right-0 bottom-0 translate-[15%] -rotate-20">
                                         <svg class="aspect-379/250 h-60 text-white opacity-50 2xl:opacity-90">
@@ -566,11 +725,11 @@
                                 <div
                                     class="service-card__bg bg-linear-[332.91deg,#FFFFFF_-68.53%,#8AB3AC_83.08%]"
                                 ></div>
-                                <span class="service-card__title">
-                                    Конференции
+                                <div class="service-card__title">
+                                    <span>Конференции</span>
                                     <br />
-                                    и форумы
-                                </span>
+                                    <span>и форумы</span>
+                                </div>
                                 <div class="service-card__img-container">
                                     <div class="absolute right-0 bottom-0 -translate-x-[10%] translate-y-[30%]">
                                         <svg class="aspect-234/319 h-60 text-white opacity-50 2xl:h-80 2xl:opacity-90">
@@ -582,11 +741,11 @@
 
                             <article class="service-card" data-service-card>
                                 <div class="service-card__bg bg-linear-[29.51deg,#FFFFFF_-71.23%,#8AB3AC_84.65%]"></div>
-                                <span class="service-card__title">
-                                    Лекции
+                                <div class="service-card__title">
+                                    <span>Лекции</span>
                                     <br />
-                                    и мастер-классы
-                                </span>
+                                    <span>и мастер-классы</span>
+                                </div>
                                 <div class="service-card__img-container">
                                     <div
                                         class="absolute right-0 bottom-0 translate-x-[20%] translate-y-[10%] -rotate-10"
@@ -601,13 +760,13 @@
                                 <div
                                     class="service-card__bg bg-linear-[330.73deg,#FFFFFF_-54.84%,#8AB3AC_82.04%]"
                                 ></div>
-                                <span class="service-card__title">
-                                    Торжества
+                                <div class="service-card__title">
+                                    <span>Торжества</span>
                                     <br />
-                                    и выпускные
+                                    <span>и выпускные</span>
                                     <br />
-                                    вечера
-                                </span>
+                                    <span>вечера</span>
+                                </div>
                                 <div class="service-card__img-container">
                                     <div class="absolute right-0 bottom-0 translate-[10%] -rotate-20">
                                         <svg class="aspect-315/313 h-60 text-white opacity-50 xl:h-65 2xl:opacity-90">
@@ -621,22 +780,20 @@
 
                     <!-- Секция Почему мы -->
                     <section class="why-us bg-white pb-16 lg:pb-25" data-whyus-section>
-                        <div class="mx-auto grid gap-4 px-6 lg:gap-10 lg:px-20 xl:grid-cols-2">
+                        <div
+                            class="mx-auto grid gap-4 px-4 md:px-8 lg:px-12 xl:grid-cols-2 xl:gap-6 2xl:gap-10 2xl:px-20"
+                        >
                             <div class="relative" data-whyus-img>
-                                <div class="why-us__title-wrapper absolute z-10 rounded-br-3xl bg-white p-2 lg:pt-10">
-                                    <div
-                                        class="font-heading inline-block pr-4 font-bold tracking-[1px] uppercase"
-                                        data-whyus-title
+                                <div class="why-us__title-wrapper absolute z-10 rounded-br-3xl bg-white p-2">
+                                    <h2
+                                        class="why-us__title grid flex-wrap gap-2 min-[375px]:flex sm:gap-4 xl:grid 2xl:flex"
                                     >
-                                        <h2
-                                            class="max-w-40 text-3xl sm:max-w-none sm:text-5xl xl:max-w-75 xl:text-6xl 2xl:max-w-max"
-                                        >
-                                            Почему мы?
-                                        </h2>
-                                    </div>
+                                        <span>Почему</span>
+                                        <span>мы?</span>
+                                    </h2>
 
                                     <div class="flex justify-end">
-                                        <svg class="icon h-8 w-8 xl:h-12 xl:w-12">
+                                        <svg class="icon aspect-square h-[clamp(2rem,1.6667rem+1.6667vw,3rem)]">
                                             <use href="./src/assets/icons/sprite.svg#icon-arrow-outward"></use>
                                         </svg>
                                     </div>
@@ -822,7 +979,7 @@
                                 </div>
                             </div>
 
-                            <div class="splide__progress-shell flex justify-center px-6">
+                            <div class="splide__progress-shell flex justify-center px-4">
                                 <div class="splide__progress">
                                     <div class="splide__progress-bar"></div>
                                 </div>
@@ -831,17 +988,18 @@
                     </section>
 
                     <!-- Обертка для секции Варианты рассадки и секции Что включено -->
-                    <div class="seating-wrapper rounded-b-5xl lg:rounded-b-6xl relative z-1 mb-6 bg-white">
+                    <div class="seating-wrapper rounded-b-5xl xl:rounded-b-6xl relative z-1 mb-6 bg-white">
                         <div
-                            class="rounded-5xl lg:rounded-6xl bg-grey-light flex flex-col gap-16 py-16 lg:gap-25 lg:py-25"
+                            id="seating-variant"
+                            class="rounded-5xl xl:rounded-6xl bg-grey-light flex flex-col gap-15 py-16 xl:gap-25 xl:py-25"
                         >
                             <!-- Секция Варианты Рассадки и Слайдер Вкладок (splidejs) -->
-                            <section id="tabs-slider" class="flex flex-col gap-16 lg:gap-25">
+                            <section id="tabs-slider" class="flex flex-col gap-16 xl:gap-25">
                                 <h2
-                                    class="text-primary font-heading px-6 text-3xl font-bold tracking-[1px] uppercase sm:text-5xl md:my-4.5 md:leading-0 lg:my-5.5 lg:px-20 xl:text-6xl"
+                                    class="seating__title text-primary flex flex-wrap gap-2 px-4 sm:gap-4 md:px-8 lg:px-12 2xl:px-20"
                                     data-seating-title
                                 >
-                                    Варианты рассадки
+                                    <span>Варианты</span> <span>рассадки</span>
                                 </h2>
 
                                 <div class="splide">
@@ -952,23 +1110,19 @@
 
                             <!-- Секция Что включено -->
                             <section
-                                class="grid gap-6 overflow-hidden px-6 md:gap-14 lg:px-20 xl:grid-cols-2"
+                                class="grid gap-6 overflow-hidden px-4 md:gap-14 md:px-8 lg:px-12 xl:grid-cols-2 2xl:px-20"
                                 data-included
                             >
                                 <div class="relative" data-included-image>
-                                    <div
-                                        class="included__title-wrapper bg-grey-light absolute z-10 rounded-br-3xl p-2 lg:pt-10"
-                                    >
-                                        <div class="font-heading inline-block pr-4 font-bold tracking-[1px] uppercase">
-                                            <h2
-                                                class="max-w-42 text-[1.6rem] sm:max-w-none sm:text-5xl xl:max-w-min xl:text-6xl 2xl:max-w-max"
-                                            >
-                                                Что включено
-                                            </h2>
-                                        </div>
+                                    <div class="included__title-wrapper bg-grey-light absolute z-10 rounded-br-3xl p-2">
+                                        <h2
+                                            class="included__title grid flex-wrap gap-2 min-[425px]:flex sm:gap-4 xl:grid 2xl:flex"
+                                        >
+                                            <span>Что</span> <span>включено</span>
+                                        </h2>
 
                                         <div class="flex justify-end">
-                                            <svg class="icon h-8 w-8 xl:h-12 xl:w-12">
+                                            <svg class="icon aspect-square h-[clamp(2rem,1.6667rem+1.6667vw,3rem)]">
                                                 <use href="./src/assets/icons/sprite.svg#icon-arrow-outward"></use>
                                             </svg>
                                         </div>
@@ -1132,18 +1286,18 @@
                     data-special-offers
                 >
                     <div
-                        class="bg-primary stock__container rounded-b-5xl lg:rounded-b-6xl relative z-0 mx-auto -mt-15 flex flex-col gap-12 overflow-hidden px-6 pt-29 pb-10 lg:gap-25 lg:px-20 lg:pt-49 lg:pb-25"
+                        class="bg-primary stock__container rounded-b-5xl xl:rounded-b-6xl relative z-0 mx-auto -mt-15 flex flex-col gap-15 overflow-hidden px-4 pt-29 pb-10 md:px-8 lg:px-12 lg:pb-15 xl:gap-25 xl:pt-49 xl:pb-25 2xl:px-20"
                     >
                         <h2
-                            class="font-heading text-3xl font-bold tracking-[1px] text-white uppercase text-shadow-xs sm:text-5xl xl:my-5.5 xl:text-6xl xl:leading-0"
+                            class="special-offers__title flex flex-wrap gap-2 text-white sm:gap-4"
                             data-special-offers-title
                         >
-                            Специальные предложения
+                            <span>Специальные</span> <span>предложения</span>
                         </h2>
 
                         <div class="lg:rounded-6xl rounded-5xl">
                             <article
-                                class="bg-grey-light lg:rounded-6xl rounded-5xl relative z-1 flex flex-col gap-4 px-6 py-10 shadow lg:gap-7 lg:px-20 lg:py-15"
+                                class="bg-grey-light xl:rounded-6xl rounded-5xl relative z-1 flex flex-col gap-4 px-6 py-10 shadow xl:gap-7 xl:px-20 xl:py-15"
                                 data-special-offers-card
                             >
                                 <span
@@ -1166,7 +1320,7 @@
                             </article>
 
                             <article
-                                class="bg-grey-light lg:rounded-b-6xl rounded-b-5xl relative -mt-20 flex flex-col gap-4 px-6 py-10 pt-25 shadow lg:gap-7 lg:px-20 lg:py-15 lg:pt-35"
+                                class="bg-grey-light xl:rounded-b-6xl rounded-b-5xl relative -mt-20 flex flex-col gap-4 px-6 py-10 pt-25 shadow xl:gap-7 xl:px-20 xl:py-15 xl:pt-35"
                                 data-special-offers-card
                             >
                                 <span
@@ -1192,13 +1346,10 @@
                 </section>
 
                 <!-- Секция Вопросы и ответы -->
-                <section id="faq" class="bg-white py-16 lg:py-25" data-faq>
-                    <div class="mx-auto flex flex-col gap-12 px-6 lg:gap-25 lg:px-20">
-                        <h2
-                            class="font-heading text-3xl font-bold tracking-[1px] uppercase sm:my-4.5 sm:text-5xl sm:leading-0 lg:my-5.5 xl:text-6xl"
-                            data-faq-title
-                        >
-                            Вопросы и ответы
+                <section id="faq" class="bg-white py-15 xl:py-25" data-faq>
+                    <div class="mx-auto flex flex-col gap-15 px-4 md:px-8 lg:px-12 xl:gap-25 2xl:px-20">
+                        <h2 class="faq__title flex flex-wrap gap-2 sm:gap-4" data-faq-title>
+                            <span>Вопросы</span> <span>и</span> <span>ответы</span>
                         </h2>
 
                         <div class="grid gap-4 lg:grid-cols-2">
@@ -1216,27 +1367,52 @@
                                         </svg>
                                     </div>
                                 </div>
-                                <span class="faq-card__question"> Какие размеры у площадки? </span>
+                                <span class="faq-card__question"> Для каких мероприятий подходит площадка? </span>
                                 <div class="faq-card__answer" data-accordion-content>
                                     <p>
-                                        Общая площадь пространства — 900 м².
-                                        <br />
-                                        Максимальная вместимость — 400 человек.
+                                        Пространство подходит для деловых и частных событий: конференций, презентаций,
+                                        концертов, выставок, съёмок и других форматов. <br /><br />
+                                        Площадка легко адаптируется под задачи проекта.
                                     </p>
+                                </div>
+                            </article>
+
+                            <article class="faq-card" data-accordion-item>
+                                <div class="faq-card__icons">
+                                    <div class="faq-card__icon-shell" data-accordion-plus>
+                                        <svg class="icon icon-sm">
+                                            <use href="./src/assets/icons/sprite.svg#icon-plus"></use>
+                                        </svg>
+                                    </div>
+
+                                    <div class="faq-card__icon-shell" data-accordion-minus>
+                                        <svg class="icon icon-sm">
+                                            <use href="./src/assets/icons/sprite.svg#icon-minus"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <span class="faq-card__question"> Какая площадь и вместимость площадки? </span>
+                                <div class="faq-card__answer" data-accordion-content>
+                                    <p>Общая площадь — 900 м², вместимость — до 400 гостей.</p>
+
                                     <br />
-                                    <p>Основной зал — 600 м²:</p>
+
+                                    <span>Основной зал (600 м²):</span>
+
                                     <ul>
-                                        <li>выставочный зал со сценой — 420 м²;</li>
-                                        <li>зона бара — 75 м²;</li>
-                                        <li>VIP-зона (балкон) — 100 м².</li>
+                                        <li>выставочное пространство со сценой — 420 м²</li>
+                                        <li>барная зона — 75 м²</li>
+                                        <li>VIP-балкон — 100 м²</li>
                                     </ul>
+
                                     <br />
-                                    <p>Зона приветствия — 180 м².</p>
-                                    <br />
-                                    <p>Дополнительные зоны:</p>
+
+                                    <span>Дополнительно:</span>
+
                                     <ul>
-                                        <li>гримёрка — 56 м²;</li>
-                                        <li>зона кейтеринга — 65 м².</li>
+                                        <li>зона приветствия — 180 м²</li>
+                                        <li>гримёрка — 56 м²</li>
+                                        <li>кейтеринг-зона — 65 м²</li>
                                     </ul>
                                 </div>
                             </article>
@@ -1255,32 +1431,16 @@
                                         </svg>
                                     </div>
                                 </div>
-                                <span class="faq-card__question"> Какие условия аренды площадки? </span>
-                                <p class="faq-card__answer" data-accordion-content>
-                                    Бронирование осуществляется после внесения 30% предоплаты.
-                                </p>
-                            </article>
-
-                            <article class="faq-card" data-accordion-item>
-                                <div class="faq-card__icons">
-                                    <div class="faq-card__icon-shell" data-accordion-plus>
-                                        <svg class="icon icon-sm">
-                                            <use href="./src/assets/icons/sprite.svg#icon-plus"></use>
-                                        </svg>
-                                    </div>
-
-                                    <div class="faq-card__icon-shell" data-accordion-minus>
-                                        <svg class="icon icon-sm">
-                                            <use href="./src/assets/icons/sprite.svg#icon-minus"></use>
-                                        </svg>
-                                    </div>
+                                <span class="faq-card__question"> Какие условия аренды и бронирования? </span>
+                                <div class="faq-card__answer" data-accordion-content>
+                                    <p>
+                                        Минимальный срок аренды — 4 часа.
+                                        <br />
+                                        В это время входят монтаж, подготовка, мероприятие и демонтаж.
+                                        <br /><br />
+                                        Дата закрепляется после внесения предоплаты 30%.
+                                    </p>
                                 </div>
-                                <span class="faq-card__question"> На какой период можно арендовать площадку? </span>
-                                <p class="faq-card__answer" data-accordion-content>
-                                    Минимальное время аренды — 4 часа.
-                                    <br />
-                                    Время аренды включает монтаж, репетиции, мероприятие и демонтаж.
-                                </p>
                             </article>
 
                             <article class="faq-card" data-accordion-item>
@@ -1301,36 +1461,29 @@
                                 <span class="faq-card__question"> Какое мультимедийное оборудование доступно? </span>
 
                                 <div class="faq-card__answer" data-accordion-content>
-                                    <p>
-                                        1. Проекционный экран размером 3.8×3 м.
-                                        <br />
-                                        2. FullHD проектор.
-                                        <br />
-                                        3. Концертная акустическая система:
-                                    </p>
-
-                                    <ul>
-                                        <li>Активная акустика RCF 712 (700 Вт) — 6 шт.</li>
-                                        <li>Сценические мониторы RCF 712 (700 Вт) — 2 шт.</li>
-                                        <li>Активные сабвуферы dB technologies SUB618 (1200 Вт) — 4 шт.</li>
-                                    </ul>
-
-                                    <p>
-                                        4. Аудиопроцессор Behringer DCX 2496 ULTRA-DRIVE — 1 шт.
-                                        <br />
-                                        5. Цифровой микшерный пульт Behringer Flow 8 — 1 шт.
-                                        <br />
-                                        6. Радиомикрофон Shure BLX24/SM58 — 2 шт.
-                                        <br />
-                                        7. Сценическое световое оборудование:
-                                    </p>
-
-                                    <ul>
-                                        <li>Световая голова Wash-Zoom (динамический прибор заливного света) — 8 шт.</li>
-                                        <li>
-                                            Световой прибор Blinder (статичный прибор для освещения аванс сцены) — 4 шт.
-                                        </li>
-                                        <li>Световой пульт Pilot 2000 — 1 шт.</li>
+                                    <ul class="list-decimal">
+                                        <li>Проекционный экран размером 3.8×3 м.</li>
+                                        <li>FullHD проектор.</li>
+                                        <li>Концертная акустическая система:</li>
+                                        <ul>
+                                            <li>Активная акустика RCF 712 (700 Вт) — 6 шт.</li>
+                                            <li>Сценические мониторы RCF 712 (700 Вт) — 2 шт.</li>
+                                            <li>Активные сабвуферы dB technologies SUB618 (1200 Вт) — 4 шт.</li>
+                                        </ul>
+                                        <li>Аудиопроцессор Behringer DCX 2496 ULTRA-DRIVE — 1 шт.</li>
+                                        <li>Цифровой микшерный пульт Behringer Flow 8 — 1 шт.</li>
+                                        <li>Радиомикрофон Shure BLX24/SM58 — 2 шт.</li>
+                                        <li>Сценическое световое оборудование:</li>
+                                        <ul>
+                                            <li>
+                                                Световая голова Wash-Zoom (динамический прибор заливного света) — 8 шт.
+                                            </li>
+                                            <li>
+                                                Световой прибор Blinder (статичный прибор для освещения аванс сцены) — 4
+                                                шт.
+                                            </li>
+                                            <li>Световой пульт Pilot 2000 — 1 шт.</li>
+                                        </ul>
                                     </ul>
                                 </div>
                             </article>
@@ -1349,12 +1502,86 @@
                                         </svg>
                                     </div>
                                 </div>
-                                <span class="faq-card__question"> Есть ли на территории Экопосольства парковка? </span>
-                                <p class="faq-card__answer" data-accordion-content>
-                                    Для гостей Экопосольства доступна бесплатная парковка на 50 машино-мест. Также
-                                    предусмотрено 5 мест для автобусов и 6 парковочных мест для автомобилей людей с
-                                    ограниченными возможностями здоровья.
-                                </p>
+                                <span class="faq-card__question"> Как добраться до площадки? Есть ли парковка? </span>
+                                <div class="faq-card__answer" data-accordion-content>
+                                    <span>На автомобиле:</span>
+                                    <ul>
+                                        <li>10 минут от центра Зеленоградска</li>
+                                        <li>20 минут от аэропорта Храброво</li>
+                                        <li>35 минут от Калининграда</li>
+                                    </ul>
+                                    <br />
+                                    <span>Общественный транспорт:</span>
+                                    <ul>
+                                        <li>остановка «Сосновка-1», пешком около 8 минут</li>
+                                    </ul>
+                                    <br />
+                                    <span>На территории — бесплатная парковка:</span>
+                                    <ul>
+                                        <li>50 мест для автомобилей</li>
+                                        <li>5 мест для автобусов</li>
+                                        <li>6 мест для гостей с ОВЗ</li>
+                                    </ul>
+                                    <br />
+                                    <p>При необходимости поможем организовать трансфер.</p>
+                                </div>
+                            </article>
+
+                            <article class="faq-card" data-accordion-item>
+                                <div class="faq-card__icons">
+                                    <div class="faq-card__icon-shell" data-accordion-plus>
+                                        <svg class="icon icon-sm">
+                                            <use href="./src/assets/icons/sprite.svg#icon-plus"></use>
+                                        </svg>
+                                    </div>
+
+                                    <div class="faq-card__icon-shell" data-accordion-minus>
+                                        <svg class="icon icon-sm">
+                                            <use href="./src/assets/icons/sprite.svg#icon-minus"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <span class="faq-card__question"> Помогаете ли вы с организацией мероприятия? </span>
+                                <div class="faq-card__answer" data-accordion-content>
+                                    <p>
+                                        Да, мы помогаем с подбором подрядчиков: кейтеринг, техническое обеспечение,
+                                        ведущие, декор и другие специалисты.
+                                    </p>
+
+                                    <br />
+
+                                    <p>
+                                        При этом вы можете привлекать собственную команду — мы гибко подстраиваемся под
+                                        формат работы.
+                                    </p>
+                                </div>
+                            </article>
+
+                            <article class="faq-card" data-accordion-item>
+                                <div class="faq-card__icons">
+                                    <div class="faq-card__icon-shell" data-accordion-plus>
+                                        <svg class="icon icon-sm">
+                                            <use href="./src/assets/icons/sprite.svg#icon-plus"></use>
+                                        </svg>
+                                    </div>
+
+                                    <div class="faq-card__icon-shell" data-accordion-minus>
+                                        <svg class="icon icon-sm">
+                                            <use href="./src/assets/icons/sprite.svg#icon-minus"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <span class="faq-card__question"> Можно ли реализовать своё оформление? </span>
+                                <div class="faq-card__answer" data-accordion-content>
+                                    <p>Да, вы можете привозить собственную мебель, декор и оборудование.</p>
+
+                                    <br />
+
+                                    <p>
+                                        Мы заранее согласуем технические детали, чтобы всё корректно интегрировалось
+                                        в пространство.
+                                    </p>
+                                </div>
                             </article>
 
                             <article class="faq-card" data-accordion-item>
@@ -1372,35 +1599,14 @@
                                     </div>
                                 </div>
                                 <span class="faq-card__question">
-                                    Как добраться до Экопосольства на общественном транспорте?
+                                    Есть ли на площадке зоны для подготовки и работы команды?
                                 </span>
-                                <p class="faq-card__answer" data-accordion-content>
-                                    Доехать до Экопосольства можно на автобусе или маршрутке — рядом находится
-                                    автобусная остановка «Сосновка-1». Дорога от остановки занимает 8 минут.
-                                </p>
-                            </article>
-
-                            <article class="faq-card" data-accordion-item>
-                                <div class="faq-card__icons">
-                                    <div class="faq-card__icon-shell" data-accordion-plus>
-                                        <svg class="icon icon-sm">
-                                            <use href="./src/assets/icons/sprite.svg#icon-plus"></use>
-                                        </svg>
-                                    </div>
-
-                                    <div class="faq-card__icon-shell" data-accordion-minus>
-                                        <svg class="icon icon-sm">
-                                            <use href="./src/assets/icons/sprite.svg#icon-minus"></use>
-                                        </svg>
-                                    </div>
+                                <div class="faq-card__answer" data-accordion-content>
+                                    <p>
+                                        Да, предусмотрены гримёрка, зона кейтеринга и служебные пространства для
+                                        подготовки мероприятия и работы команды.
+                                    </p>
                                 </div>
-                                <span class="faq-card__question">
-                                    Сколько времени занимает дорога до Экопосольства на автомобиле?
-                                </span>
-                                <p class="faq-card__answer" data-accordion-content>
-                                    Дорога без пробок занимает примерно 10 минут от центра Зеленоградска, 20 минут от
-                                    аэропорта Храброво и 35 минут от центра Калининграда.
-                                </p>
                             </article>
                         </div>
                     </div>
@@ -1410,18 +1616,13 @@
             <!-- Футер с Контактами -->
             <footer id="contacts" class="selection:text-primary! bg-white text-white selection:bg-white!" data-contacts>
                 <div
-                    class="rounded-t-5xl lg:rounded-t-6xl bg-grey-dark mx-auto flex flex-col gap-12 px-6 pt-16 lg:gap-25 lg:px-20 lg:pt-25"
+                    class="rounded-t-5xl xl:rounded-t-6xl bg-grey-dark mx-auto flex flex-col gap-12 px-4 pt-16 md:px-8 lg:px-12 xl:gap-25 xl:pt-25 2xl:px-20"
                 >
-                    <h2
-                        class="text-primary font-heading my-3 text-3xl leading-0 font-bold tracking-[1px] uppercase sm:my-4.5 sm:text-5xl lg:my-5.5 xl:text-6xl"
-                        data-contacts-title
-                    >
-                        Контакты
-                    </h2>
+                    <h2 class="text-primary contacts__title" data-contacts-title>Контакты</h2>
 
                     <div class="grid justify-between gap-10 xl:grid-cols-3">
                         <article class="flex flex-row gap-2" data-contacts-item>
-                            <svg class="icon icon-sm">
+                            <svg class="icon icon-sm mt-0.5">
                                 <use href="./src/assets/icons/sprite.svg#icon-location"></use>
                             </svg>
 
@@ -1432,14 +1633,15 @@
                                     target="_blank"
                                     class="link relative"
                                 >
-                                    г. Зеленоградск, ул. Калининградская, д. 4а
+                                    г. Зеленоградск, ул. Калининградская, <span class="text-nowrap">д. 4а</span>
                                 </a>
-                                <span class="text-white-transparent"> территория Экоплощадки «Зелёный КОТ» </span>
+
+                                <span class="text-white-transparent"> территория Экоплощадки «Зелёный&nbsp;КОТ» </span>
                             </div>
                         </article>
 
                         <article class="flex flex-row gap-2" data-contacts-item>
-                            <svg class="icon icon-sm">
+                            <svg class="icon icon-sm mt-0.5">
                                 <use href="./src/assets/icons/sprite.svg#icon-pace"></use>
                             </svg>
 
@@ -1514,8 +1716,10 @@
                         >
                             <div class="text-white-transparent row-2 md:col-2 md:row-1">
                                 © Экопосольство.
-                                <span class="whitespace-nowrap">Официальный сайт.</span>
-                                <span data-contacts-year></span>
+                                <div class="whitespace-nowrap">
+                                    <span>Официальный сайт.</span>
+                                    <span data-contacts-year></span>
+                                </div>
                             </div>
 
                             <div class="row-1 flex justify-center md:col-3 md:row-1 md:justify-end">

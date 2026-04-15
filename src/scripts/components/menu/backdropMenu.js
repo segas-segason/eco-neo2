@@ -17,7 +17,6 @@ export function initBackdropMenu() {
 
     let isHidden = false;
     let isProcessing = false;
-    let lockVisible = false;
     let userScrolled = false;
 
     const markUserScroll = () => {
@@ -34,7 +33,6 @@ export function initBackdropMenu() {
 
     links.forEach((el) => {
         el.addEventListener("click", () => {
-            lockVisible = true;
             userScrolled = false;
         });
     });
@@ -63,7 +61,7 @@ export function initBackdropMenu() {
         gsap.to(menuShell, {
             y: 0,
             duration: 0.35,
-            ease: "power2.inOut",
+            ease: "power1.out",
 
             onStart: () => {
                 menuShell.style.pointerEvents = "auto";
@@ -71,43 +69,35 @@ export function initBackdropMenu() {
         });
     };
 
-    const handleHideOnScrollDown = async () => {
-        if (isProcessing || isHidden) return;
+    const handleScrollDown = async () => {
+        if (isProcessing) return;
         isProcessing = true;
 
-        if (isMobileMenuOpen()) {
-            await closeMobileMenu();
+        try {
+            if (isMobileMenuOpen()) {
+                await closeMobileMenu();
+            } else {
+                hideShell();
+            }
+        } finally {
+            isProcessing = false;
         }
+    };
 
-        hideShell();
-        isProcessing = false;
+    const handleScrollUp = () => {
+        showShell();
     };
 
     ScrollTrigger.create({
-        start: 0,
+        start: 180,
         end: "max",
         onUpdate: (self) => {
-            const scrollY = self.scroll();
-            const direction = self.direction;
-
-            if (scrollY <= 80) {
-                showShell();
-                return;
-            }
-
             if (!userScrolled) return;
 
-            if (direction === 1) {
-                if (lockVisible) {
-                    lockVisible = false;
-                }
-
-                handleHideOnScrollDown();
-                return;
-            }
-
-            if (direction === -1) {
-                showShell();
+            if (self.direction === 1) {
+                handleScrollDown();
+            } else if (self.direction === -1) {
+                handleScrollUp();
             }
         },
     });

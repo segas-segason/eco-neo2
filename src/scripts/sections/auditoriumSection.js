@@ -7,25 +7,32 @@ export function initAuditoriumSection() {
     const section = document.querySelector("[data-auditorium-parallax]");
     const bg = document.querySelector("[data-auditorium-parallax-bg]");
 
-    if (!bg) return;
+    if (!bg || !section) return;
 
+    // Анимация позиции Y
     gsap.to(bg, {
-        ease: "power2.out",
+        yPercent: 10, // Смещение при скролле
+        ease: "none",
         scrollTrigger: {
             trigger: section,
             start: "top bottom",
-            end: "bottom top ",
+            end: "bottom top",
             scrub: true,
 
-            onUpdate: (self) => {
-                const progress = self.progress;
-                const slowProgress = progress * 0.8;
+            onEnter: () => {
+                gsap.set(bg, { position: "fixed", top: 0 });
+            },
 
-                const y = -slowProgress * 200;
+            onLeave: () => {
+                gsap.set(bg, { position: "absolute", top: "auto" });
+            },
 
-                gsap.set(bg, {
-                    y: y,
-                });
+            onEnterBack: () => {
+                gsap.set(bg, { position: "fixed", top: 0 });
+            },
+
+            onLeaveBack: () => {
+                gsap.set(bg, { position: "absolute", top: "auto" });
             },
         },
     });
